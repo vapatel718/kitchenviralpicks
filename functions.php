@@ -31,7 +31,7 @@ function kvp_enqueue_assets() {
         'kvp-style',
         get_stylesheet_uri(),
         array( 'kvp-fonts' ),
-        wp_get_theme()->get( 'Version' )
+        filemtime( get_stylesheet_directory() . '/style.css' )
     );
 }
 add_action( 'wp_enqueue_scripts', 'kvp_enqueue_assets' );
