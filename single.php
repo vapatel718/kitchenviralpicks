@@ -42,7 +42,7 @@
       <div>
         <p style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:2px;">Research rating</p>
         <p style="font-size:14px; font-weight:500; color:#1A1A1A;">
-          <span style="color:#E8401C;"><?php echo str_repeat('★', round(get_post_meta(get_the_ID(), 'kvp_rating', true))); ?></span>
+          <span style="color:#E8401C;"><?php $kvp_rating = get_post_meta(get_the_ID(), 'kvp_rating', true); echo $kvp_rating ? str_repeat('★', round((float)$kvp_rating)) : '★★★★★'; ?></span>
           <?php echo esc_html(get_post_meta(get_the_ID(), 'kvp_rating', true)); ?> / 5
         </p>
       </div>
