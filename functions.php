@@ -64,7 +64,7 @@ add_action( 'wp_head', 'kvp_brand_variables' );
 function kvp_enqueue_fonts() {
     wp_enqueue_style(
         'kvp-google-fonts',
-        'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;500&display=swap',
+        'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap',
         array(),
         null
     );
