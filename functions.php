@@ -60,3 +60,13 @@ function kvp_brand_variables() {
     </style>';
 }
 add_action( 'wp_head', 'kvp_brand_variables' );
+
+function kvp_enqueue_fonts() {
+    wp_enqueue_style(
+        'kvp-google-fonts',
+        'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;500&display=swap',
+        array(),
+        null
+    );
+}
+add_action( 'wp_enqueue_scripts', 'kvp_enqueue_fonts' );
