@@ -1,5 +1,5 @@
 # tasks.md — KitchenViralPicks Task Board
-# Updated: 2026-05-06
+# Updated: 2026-05-08 (Task 3.3 complete)
 
 ---
 
@@ -14,7 +14,7 @@
 | Phase 2D | Single Review Template | Complete |
 | Phase 2E | Footer | Complete |
 | Phase 2F | Archive / Category Pages | Complete |
-| Phase 3 | Static Pages (About, Contact, Disclosure) | Not started |
+| Phase 3 | Content Setup & Static Pages | In Progress — 3/15 |
 | Phase 4 | SEO & Performance | Not started |
 | Phase 5 | Launch & Deployment | Not started |
 
@@ -108,14 +108,25 @@
 
 ---
 
-## Phase 3 — Static Pages
-**Status: Not started**
+## Phase 3 — Content Setup & Static Pages
+**Status: In Progress — 3/15 complete**
 
-- [ ] 3.1 — Create page.php template
-- [ ] 3.2 — Build About page content (Rick's bio and site mission)
-- [ ] 3.3 — Build Contact page with form
-- [ ] 3.4 — Build Affiliate Disclosure page
-- [ ] 3.5 — Verify all static pages render correctly
+- [x] 3.1 — Set up WordPress categories (Air Fryers, Cookware, Kettles, Bakeware, Multicooker)
+- [x] 3.2 — Configure Rank Math SEO global settings (separator, homepage title/description, sitemap, robots, social)
+- [x] 3.3 — Publish Article 1: Cosori TurboBlaze Air Fryer 6 Qt Review (post ID 13, category: Air Fryers)
+- [ ] 3.4 — Build About page content (Rick's bio and site mission)
+- [ ] 3.4 — Build Contact page with form
+- [ ] 3.5 — Build Affiliate Disclosure page
+- [ ] 3.6 — Verify all static pages render correctly
+- [ ] 3.7 — (Planned)
+- [ ] 3.8 — (Planned)
+- [ ] 3.9 — (Planned)
+- [ ] 3.10 — (Planned)
+- [ ] 3.11 — (Planned)
+- [ ] 3.12 — (Planned)
+- [ ] 3.13 — (Planned)
+- [ ] 3.14 — (Planned)
+- [ ] 3.15 — (Planned)
 
 ---
 
@@ -139,3 +150,13 @@
 - [ ] 5.3 — Deploy theme to Hostinger
 - [ ] 5.4 — Verify live site on kitchenviralpicks.com
 - [ ] 5.5 — Push final state to GitHub
+
+---
+
+## Change Log
+
+| Date | Task | Description |
+|---|---|---|
+| 2026-05-08 | 3.1 | Set up 5 WordPress categories via WP-CLI — Air Fryers, Cookware, Kettles, Bakeware, Multicooker |
+| 2026-05-08 | 3.2 | Installed and configured Rank Math SEO — separator `\|`, homepage title, homepage meta description, sitemap enabled (posts/pages/categories, tags excluded), robots noindex on date/author/search, Open Graph and Twitter Cards active |
+| 2026-05-08 | 3.3 | Published Article 1 — Cosori TurboBlaze Air Fryer 6 Qt Review (post ID 13, slug: cosori-turboblaze-air-fryer-review, category: Air Fryers, Rank Math title and meta set, 154-char meta description) |
