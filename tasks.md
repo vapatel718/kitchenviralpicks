@@ -1,5 +1,5 @@
 # tasks.md — KitchenViralPicks Task Board
-# Updated: 2026-05-08 (Task 3.3 complete)
+# Updated: 2026-05-08 (Task 3.4 complete)
 
 ---
 
@@ -14,7 +14,7 @@
 | Phase 2D | Single Review Template | Complete |
 | Phase 2E | Footer | Complete |
 | Phase 2F | Archive / Category Pages | Complete |
-| Phase 3 | Content Setup & Static Pages | In Progress — 3/15 |
+| Phase 3 | Content Setup & Static Pages | In Progress — 4/15 |
 | Phase 4 | SEO & Performance | Not started |
 | Phase 5 | Launch & Deployment | Not started |
 
@@ -109,15 +109,16 @@
 ---
 
 ## Phase 3 — Content Setup & Static Pages
-**Status: In Progress — 3/15 complete**
+**Status: In Progress — 4/15 complete**
 
 - [x] 3.1 — Set up WordPress categories (Air Fryers, Cookware, Kettles, Bakeware, Multicooker)
 - [x] 3.2 — Configure Rank Math SEO global settings (separator, homepage title/description, sitemap, robots, social)
 - [x] 3.3 — Publish Article 1: Cosori TurboBlaze Air Fryer 6 Qt Review (post ID 13, category: Air Fryers)
-- [ ] 3.4 — Build About page content (Rick's bio and site mission)
-- [ ] 3.4 — Build Contact page with form
-- [ ] 3.5 — Build Affiliate Disclosure page
-- [ ] 3.6 — Verify all static pages render correctly
+- [x] 3.4 — Publish Article 2: Ninja Air Fryer 5 QT (AF141) Review (post ID 14, slug: ninja-air-fryer-5-qt-review, category: Air Fryers, Rank Math title and meta set, 154-char meta description)
+- [ ] 3.5 — Build About page content (Rick's bio and site mission)
+- [ ] 3.6 — Build Contact page with form
+- [ ] 3.7 — Build Affiliate Disclosure page
+- [ ] 3.8 — Verify all static pages render correctly
 - [ ] 3.7 — (Planned)
 - [ ] 3.8 — (Planned)
 - [ ] 3.9 — (Planned)
@@ -160,3 +161,4 @@
 | 2026-05-08 | 3.1 | Set up 5 WordPress categories via WP-CLI — Air Fryers, Cookware, Kettles, Bakeware, Multicooker |
 | 2026-05-08 | 3.2 | Installed and configured Rank Math SEO — separator `\|`, homepage title, homepage meta description, sitemap enabled (posts/pages/categories, tags excluded), robots noindex on date/author/search, Open Graph and Twitter Cards active |
 | 2026-05-08 | 3.3 | Published Article 1 — Cosori TurboBlaze Air Fryer 6 Qt Review (post ID 13, slug: cosori-turboblaze-air-fryer-review, category: Air Fryers, Rank Math title and meta set, 154-char meta description) |
+| 2026-05-08 | 3.4 | Published Article 2 — Ninja Air Fryer Pro 4-in-1 5 QT (AF141) Review (post ID 14, slug: ninja-air-fryer-5-qt-review, category: Air Fryers, Rank Math title and meta set, 154-char meta description) |
