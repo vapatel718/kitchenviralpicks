@@ -1,169 +1,320 @@
-<?php get_header(); ?>
+<?php
 
-<style>
-@media (max-width: 600px) {
-  .kvp-pros-cons { grid-template-columns: 1fr !important; }
-  .kvp-who { grid-template-columns: 1fr !important; }
-  .kvp-verdict-grid { grid-template-columns: 1fr !important; }
-}
-</style>
+get_header();
 
-<main style="background:#FFF8F5; min-height:100vh; padding: 32px 16px;">
-<div style="max-width:740px; margin:0 auto;">
+while ( have_posts() ) : the_post();
 
-  <!-- BREADCRUMB -->
-  <p style="font-size:12px; color:#888; margin-bottom:16px;">
-    <a href="<?php echo home_url(); ?>" style="color:#888; text-decoration:none;">Home</a>
-    <?php $cats = get_the_category(); if($cats){ echo ' › <a href="'.get_category_link($cats[0]->term_id).'" style="color:#E8401C;text-decoration:none;">'.esc_html($cats[0]->name).'</a>'; } ?>
-    › <?php the_title(); ?>
-  </p>
+	$post_id = get_the_ID();
 
-  <!-- ARTICLE TITLE -->
-  <h1 style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:28px; color:#1A1A1A; line-height:1.25; margin-bottom:10px;">
-    <?php the_title(); ?>
-  </h1>
+	$kvp_price          = get_post_meta( $post_id, 'kvp_price',          true );
+	$kvp_rating         = get_post_meta( $post_id, 'kvp_rating',         true );
+	$kvp_review_count   = get_post_meta( $post_id, 'kvp_review_count',   true );
+	$kvp_verdict_line   = get_post_meta( $post_id, 'kvp_verdict_line',   true );
+	$kvp_amazon_url     = get_post_meta( $post_id, 'kvp_amazon_url',     true );
+	$kvp_final_verdict  = get_post_meta( $post_id, 'kvp_final_verdict',  true );
+	$kvp_best_for       = get_post_meta( $post_id, 'kvp_best_for',       true );
+	$kvp_skip_if_detail = get_post_meta( $post_id, 'kvp_skip_if_detail', true );
 
-  <!-- META -->
-  <p style="font-size:12px; color:#888; margin-bottom:18px;">
-    By Rick — Kitchen Researcher &nbsp;·&nbsp; <?php echo get_the_date(); ?> &nbsp;·&nbsp;
-    <?php echo esc_html(get_post_meta(get_the_ID(), 'kvp_review_count', true)); ?> verified reviews analyzed
-  </p>
+	$buy_if_raw  = get_post_meta( $post_id, 'kvp_buy_if',  true );
+	$skip_if_raw = get_post_meta( $post_id, 'kvp_skip_if', true );
+	$pros_raw    = get_post_meta( $post_id, 'kvp_pros',    true );
+	$cons_raw    = get_post_meta( $post_id, 'kvp_cons',    true );
+	$specs_raw   = get_post_meta( $post_id, 'kvp_specs',   true );
 
-  <!-- FTC DISCLOSURE -->
-  <div style="background:#fff3cd; border:0.5px solid #f0c040; border-radius:8px; padding:10px 14px; font-size:12px; color:#7a5f00; margin-bottom:20px;">
-    Disclosure: As an Amazon Associate, I earn from qualifying purchases at no extra cost to you. Recommendations are based on research and verified customer reviews.
-  </div>
+	// Parse specs: rows separated by \n, each row is Key|Value
+	$spec_pairs   = array();
+	$kvp_capacity = '';
+	if ( $specs_raw ) {
+		foreach ( kvp_split_lines( $specs_raw ) as $row ) {
+			$parts = explode( '|', $row, 2 );
+			if ( 2 === count( $parts ) ) {
+				$key          = trim( $parts[0] );
+				$val          = trim( $parts[1] );
+				$spec_pairs[] = array( $key, $val );
+				if ( ! $kvp_capacity && 'capacity' === strtolower( $key ) ) {
+					$kvp_capacity = $val;
+				}
+			}
+		}
+	}
 
-  <!-- VERDICT BOX -->
-  <div style="background:white; border:2px solid #E8401C; border-radius:12px; padding:20px; margin-bottom:24px;">
-    <span style="background:#E8401C; color:white; font-size:11px; font-weight:500; padding:3px 12px; border-radius:999px; letter-spacing:0.5px;">Quick verdict</span>
+	$cats        = get_the_category();
+	$cat         = $cats ? $cats[0] : null;
+	$crumb_title = preg_replace( '/ Review.*$/i', '', get_the_title() );
+	$amazon_href = $kvp_amazon_url ? $kvp_amazon_url : '#';
 
-    <div class="kvp-verdict-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0;">
-      <div>
-        <p style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:2px;">Research rating</p>
-        <p style="font-size:14px; font-weight:500; color:#1A1A1A;">
-          <span style="color:#E8401C;"><?php $kvp_rating = get_post_meta(get_the_ID(), 'kvp_rating', true); echo $kvp_rating ? str_repeat('★', round((float)$kvp_rating)) : '★★★★★'; ?></span>
-          <?php echo esc_html(get_post_meta(get_the_ID(), 'kvp_rating', true)); ?> / 5
-        </p>
-      </div>
-      <div>
-        <p style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:2px;">Price (at time of writing)</p>
-        <p style="font-size:14px; font-weight:500; color:#1A1A1A;"><?php echo esc_html(get_post_meta(get_the_ID(), 'kvp_price', true)); ?></p>
-      </div>
-      <div>
-        <p style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:2px;">Best for</p>
-        <p style="font-size:14px; font-weight:500; color:#1A1A1A;"><?php echo esc_html(get_post_meta(get_the_ID(), 'kvp_best_for', true)); ?></p>
-      </div>
-      <div>
-        <p style="font-size:11px; color:#888; text-transform:uppercase; letter-spacing:0.8px; margin-bottom:2px;">Skip if</p>
-        <p style="font-size:14px; font-weight:500; color:#1A1A1A;"><?php echo esc_html(get_post_meta(get_the_ID(), 'kvp_skip_if', true)); ?></p>
-      </div>
-    </div>
+	// Deborah's quote: first 2 sentences of final verdict
+	$deborah_quote = '';
+	if ( $kvp_final_verdict ) {
+		$sentences     = preg_split( '/(?<=[.!?])\s+/', trim( $kvp_final_verdict ) );
+		$deborah_quote = implode( ' ', array_slice( $sentences, 0, 2 ) );
+	}
 
-    <div style="background:#FFF8F5; border-left:3px solid #E8401C; border-radius:0 8px 8px 0; padding:10px 14px; font-size:14px; color:#1A1A1A; font-style:italic; margin-bottom:16px;">
-      <?php echo esc_html(get_post_meta(get_the_ID(), 'kvp_verdict_line', true)); ?>
-    </div>
+?>
+<main id="kvp-single-main">
+<div class="kvp-single-wrap kvp-single">
 
-    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'kvp_amazon_url', true)); ?>" rel="sponsored nofollow" target="_blank"
-      style="display:block; text-align:center; background:#E8401C; color:white; font-size:15px; font-weight:500; padding:14px; border-radius:999px; text-decoration:none;">
-      Check Price on Amazon
-    </a>
-    <p style="font-size:11px; color:#888; text-align:center; margin-top:6px;">Price verified at time of writing — may vary</p>
-  </div>
+	<!-- BREADCRUMB -->
+	<nav class="crumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'kvp-theme' ); ?>">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'kvp-theme' ); ?></a>
+		<span aria-hidden="true" style="color:#ddd;">&#8250;</span>
+		<?php if ( $cat ) : ?>
+		<a href="<?php echo esc_url( get_category_link( $cat->term_id ) ); ?>"><?php echo esc_html( $cat->name ); ?></a>
+		<span aria-hidden="true" style="color:#ddd;">&#8250;</span>
+		<?php endif; ?>
+		<span style="color:#555;"><?php echo esc_html( $crumb_title ); ?></span>
+	</nav>
 
-  <!-- ARTICLE CONTENT -->
-  <div style="font-size:15px; line-height:1.8; color:#1A1A1A; margin-bottom:24px;">
-    <?php the_content(); ?>
-  </div>
+	<!-- H1 -->
+	<h1 class="h1"><?php the_title(); ?></h1>
 
-  <hr style="border:none; border-top:0.5px solid #e0d8d4; margin:24px 0;">
+	<!-- BYLINE -->
+	<div class="byline">
+		<strong><?php esc_html_e( 'By Deborah', 'kvp-theme' ); ?></strong>
+		<span class="bdot" aria-hidden="true"></span>
+		<span><?php esc_html_e( 'Kitchen Researcher &amp; Product Analyst', 'kvp-theme' ); ?></span>
+		<span class="bdot" aria-hidden="true"></span>
+		<span><?php echo esc_html( get_the_date( 'F Y' ) ); ?></span>
+	</div>
 
-  <!-- PROS AND CONS -->
-  <h2 style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:20px; color:#1A1A1A; margin-bottom:16px;">Pros & cons at a glance</h2>
-  <div class="kvp-pros-cons" style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:24px;">
-    <div style="background:#eaf3de; border:0.5px solid #97c459; border-radius:8px; padding:14px;">
-      <h4 style="color:#3b6d11; font-size:13px; font-weight:500; margin-bottom:10px;">✓ What buyers love</h4>
-      <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:7px;">
-        <?php
-        $pros = explode("\n", get_post_meta(get_the_ID(), 'kvp_pros', true));
-        foreach($pros as $pro){ if(trim($pro)) echo '<li style="font-size:13px; color:#27500a;">✓ '.esc_html(trim($pro)).'</li>'; }
-        ?>
-      </ul>
-    </div>
-    <div style="background:#fcebeb; border:0.5px solid #f09595; border-radius:8px; padding:14px;">
-      <h4 style="color:#a32d2d; font-size:13px; font-weight:500; margin-bottom:10px;">✕ Common complaints</h4>
-      <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:7px;">
-        <?php
-        $cons = explode("\n", get_post_meta(get_the_ID(), 'kvp_cons', true));
-        foreach($cons as $con){ if(trim($con)) echo '<li style="font-size:13px; color:#791f1f;">✕ '.esc_html(trim($con)).'</li>'; }
-        ?>
-      </ul>
-    </div>
-  </div>
+	<!-- FTC DISCLOSURE — must appear before first affiliate link -->
+	<div class="ftc" role="note">
+		<svg class="ftc-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+			<circle cx="12" cy="12" r="10" stroke="#E8401C" stroke-width="1.8"/>
+			<line x1="12" y1="8" x2="12" y2="12" stroke="#E8401C" stroke-width="2" stroke-linecap="round"/>
+			<circle cx="12" cy="16" r="1" fill="#E8401C"/>
+		</svg>
+		<span>
+			<strong style="color:#555;"><?php esc_html_e( 'Disclosure:', 'kvp-theme' ); ?></strong>
+			<?php esc_html_e( 'KitchenViralPicks.com participates in the Amazon Associates Program. If you buy through our links we may earn a small commission — at no extra cost to you. This never affects our recommendations.', 'kvp-theme' ); ?>
+		</span>
+	</div>
 
-  <hr style="border:none; border-top:0.5px solid #e0d8d4; margin:24px 0;">
+	<!-- SCORE BAR — CTA button 1 of 3 -->
+	<div class="score-bar">
 
-  <!-- SPECS TABLE -->
-  <h2 style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:20px; color:#1A1A1A; margin-bottom:16px;">Quick specs</h2>
-  <table style="width:100%; border-collapse:collapse; font-size:13px; margin-bottom:24px;">
-    <?php
-    $specs = explode("\n", get_post_meta(get_the_ID(), 'kvp_specs', true));
-    $alt = false;
-    foreach($specs as $spec){
-      $parts = explode("|", $spec);
-      if(count($parts) === 2){
-        $bg = $alt ? 'background:#f9f6f4;' : '';
-        echo '<tr style="border-bottom:0.5px solid #e0d8d4;'.$bg.'">
-          <td style="padding:9px 6px; color:#888; width:44%;">'.esc_html(trim($parts[0])).'</td>
-          <td style="padding:9px 6px; font-weight:500; color:#1A1A1A;">'.esc_html(trim($parts[1])).'</td>
-        </tr>';
-        $alt = !$alt;
-      }
-    }
-    ?>
-  </table>
+		<div class="score-img">
+			<?php if ( has_post_thumbnail() ) : ?>
+				<?php echo get_the_post_thumbnail( get_the_ID(), 'medium', array( 'alt' => esc_attr( get_the_title() ) ) ); ?>
+			<?php else : ?>
+			<svg width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+				<rect x="4" y="10" width="40" height="28" rx="3" stroke="rgba(232,64,28,0.35)" stroke-width="2" fill="none"/>
+				<circle cx="18" cy="21" r="5" stroke="rgba(232,64,28,0.35)" stroke-width="2" fill="none"/>
+				<path d="M4 34 L16 24 L26 32 L34 26 L44 34" stroke="rgba(232,64,28,0.35)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+			</svg>
+			<span style="font-size:9px;color:#bbb;letter-spacing:0.04em;"><?php esc_html_e( 'Product image', 'kvp-theme' ); ?></span>
+			<?php endif; ?>
+		</div>
 
-  <hr style="border:none; border-top:0.5px solid #e0d8d4; margin:24px 0;">
+		<div>
+			<?php
+			$kvp_product_name = get_post_meta( get_the_ID(), 'kvp_product_name', true );
+			$display_name     = ! empty( $kvp_product_name ) ? $kvp_product_name : get_the_title();
+			?>
+			<div class="score-title"><?php echo esc_html( $display_name ); ?></div>
 
-  <!-- WHO SHOULD BUY -->
-  <h2 style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:20px; color:#1A1A1A; margin-bottom:16px;">Who should buy this</h2>
-  <div class="kvp-who" style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:24px;">
-    <div style="background:white; border:0.5px solid #e0d8d4; border-radius:8px; padding:14px;">
-      <h4 style="color:#3b6d11; font-size:13px; font-weight:500; margin-bottom:10px;">✓ Buy this if you are...</h4>
-      <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:7px;">
-        <?php
-        $buy = explode("\n", get_post_meta(get_the_ID(), 'kvp_buy_if', true));
-        foreach($buy as $item){ if(trim($item)) echo '<li style="font-size:13px; color:#444;">→ '.esc_html(trim($item)).'</li>'; }
-        ?>
-      </ul>
-    </div>
-    <div style="background:white; border:0.5px solid #e0d8d4; border-radius:8px; padding:14px;">
-      <h4 style="color:#a32d2d; font-size:13px; font-weight:500; margin-bottom:10px;">✕ Skip this if you are...</h4>
-      <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:7px;">
-        <?php
-        $skip = explode("\n", get_post_meta(get_the_ID(), 'kvp_skip_if_detail', true));
-        foreach($skip as $item){ if(trim($item)) echo '<li style="font-size:13px; color:#444;">→ '.esc_html(trim($item)).'</li>'; }
-        ?>
-      </ul>
-    </div>
-  </div>
+			<?php if ( $kvp_price ) : ?>
+			<div class="price-pill-row">
+				<span class="price-pill"><?php echo esc_html( $kvp_price ); ?></span>
+				<span class="price-note"><?php esc_html_e( 'at time of writing', 'kvp-theme' ); ?><br><?php esc_html_e( 'price may vary', 'kvp-theme' ); ?></span>
+			</div>
+			<?php endif; ?>
 
-  <hr style="border:none; border-top:0.5px solid #e0d8d4; margin:24px 0;">
+			<?php if ( $kvp_verdict_line ) : ?>
+			<div class="verdict-line"><?php echo esc_html( $kvp_verdict_line ); ?></div>
+			<?php endif; ?>
 
-  <!-- FINAL VERDICT -->
-  <div style="background:white; border:0.5px solid #e0d8d4; border-radius:12px; padding:20px; margin-bottom:24px;">
-    <h2 style="font-family:'Plus Jakarta Sans',sans-serif; font-weight:800; font-size:20px; color:#1A1A1A; margin-bottom:12px;">The verdict</h2>
-    <p style="font-size:14px; line-height:1.8; color:#1A1A1A; margin-bottom:16px;">
-      <?php echo esc_html(get_post_meta(get_the_ID(), 'kvp_final_verdict', true)); ?>
-    </p>
-    <a href="<?php echo esc_url(get_post_meta(get_the_ID(), 'kvp_amazon_url', true)); ?>" rel="sponsored nofollow" target="_blank"
-      style="display:block; text-align:center; background:#E8401C; color:white; font-size:15px; font-weight:500; padding:14px; border-radius:999px; text-decoration:none;">
-      Check Current Price on Amazon
-    </a>
-    <p style="font-size:11px; color:#888; text-align:center; margin-top:6px;">Price verified at time of writing — may vary</p>
-  </div>
+			<a href="<?php echo esc_url( $amazon_href ); ?>" rel="sponsored nofollow" target="_blank" class="btn-red">
+				<?php esc_html_e( 'Check price on Amazon', 'kvp-theme' ); ?>
+			</a>
+		</div>
+
+	</div>
+
+	<!-- METRICS -->
+	<?php if ( $kvp_rating || $kvp_review_count || $kvp_price || $kvp_capacity ) : ?>
+	<div class="metrics">
+		<?php if ( $kvp_rating ) : ?>
+		<div class="mbox">
+			<div class="mnum"><?php echo esc_html( $kvp_rating ); ?>&#9733;</div>
+			<div class="mlbl"><?php esc_html_e( 'Amazon rating', 'kvp-theme' ); ?></div>
+		</div>
+		<?php endif; ?>
+		<?php if ( $kvp_review_count ) : ?>
+		<div class="mbox">
+			<div class="mnum"><?php echo esc_html( $kvp_review_count ); ?></div>
+			<div class="mlbl"><?php esc_html_e( 'Verified reviews', 'kvp-theme' ); ?></div>
+		</div>
+		<?php endif; ?>
+		<?php if ( $kvp_price ) : ?>
+		<div class="mbox">
+			<div class="mnum"><?php echo esc_html( $kvp_price ); ?></div>
+			<div class="mlbl"><?php esc_html_e( 'Current price', 'kvp-theme' ); ?></div>
+		</div>
+		<?php endif; ?>
+		<?php if ( $kvp_capacity ) : ?>
+		<div class="mbox">
+			<div class="mnum"><?php echo esc_html( $kvp_capacity ); ?></div>
+			<div class="mlbl"><?php esc_html_e( 'Capacity', 'kvp-theme' ); ?></div>
+		</div>
+		<?php endif; ?>
+	</div>
+	<?php endif; ?>
+
+	<!-- ARTICLE BODY -->
+	<?php if ( get_the_content() ) : ?>
+	<div class="article-body">
+		<?php the_content(); ?>
+	</div>
+	<?php endif; ?>
+
+	<!-- WHO SHOULD BUY -->
+	<?php
+	$buy_if_items  = $buy_if_raw  ? kvp_split_lines( $buy_if_raw )  : array();
+	$skip_if_items = $skip_if_raw ? kvp_split_lines( $skip_if_raw ) : array();
+	if ( $buy_if_items || $skip_if_items ) :
+	?>
+	<div class="sec">
+		<h2 class="sec-title"><?php esc_html_e( 'Who should buy this', 'kvp-theme' ); ?></h2>
+		<div class="buy-grid">
+			<?php if ( $buy_if_items ) : ?>
+			<div class="buy-card b">
+				<div class="buy-title b">&#10003; <?php esc_html_e( 'Buy it if you…', 'kvp-theme' ); ?></div>
+				<ul class="buy-list">
+					<?php foreach ( $buy_if_items as $item ) : ?>
+					<li><?php echo esc_html( $item ); ?></li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+			<?php endif; ?>
+			<?php if ( $skip_if_items ) : ?>
+			<div class="buy-card s">
+				<div class="buy-title s">&#10007; <?php esc_html_e( 'Skip it if you…', 'kvp-theme' ); ?></div>
+				<ul class="buy-list">
+					<?php foreach ( $skip_if_items as $item ) : ?>
+					<li><?php echo esc_html( $item ); ?></li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>
+	<?php endif; ?>
+
+	<!-- PROS / CONS -->
+	<?php
+	$pros_items = $pros_raw ? kvp_split_lines( $pros_raw ) : array();
+	$cons_items = $cons_raw ? kvp_split_lines( $cons_raw ) : array();
+	if ( $pros_items || $cons_items ) :
+	?>
+	<div class="sec">
+		<h2 class="sec-title"><?php esc_html_e( 'Pros and cons', 'kvp-theme' ); ?></h2>
+		<div class="pc-grid">
+			<?php if ( $pros_items ) : ?>
+			<div class="pc-col">
+				<div class="pc-head p">&#8593; <?php esc_html_e( 'What buyers love', 'kvp-theme' ); ?></div>
+				<ul class="pc-list">
+					<?php foreach ( $pros_items as $item ) : ?>
+					<li><span class="pc-icon p" aria-hidden="true">+</span><?php echo esc_html( $item ); ?></li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+			<?php endif; ?>
+			<?php if ( $cons_items ) : ?>
+			<div class="pc-col">
+				<div class="pc-head c">&#8595; <?php esc_html_e( 'What buyers dislike', 'kvp-theme' ); ?></div>
+				<ul class="pc-list">
+					<?php foreach ( $cons_items as $item ) : ?>
+					<li><span class="pc-icon c" aria-hidden="true">&#8722;</span><?php echo esc_html( $item ); ?></li>
+					<?php endforeach; ?>
+				</ul>
+			</div>
+			<?php endif; ?>
+		</div>
+	</div>
+	<?php endif; ?>
+
+	<!-- SPECS TABLE -->
+	<?php if ( $spec_pairs ) : ?>
+	<div class="sec">
+		<h2 class="sec-title"><?php esc_html_e( 'Quick specs', 'kvp-theme' ); ?></h2>
+		<table class="specs">
+			<tbody>
+				<?php foreach ( $spec_pairs as $pair ) : ?>
+				<tr>
+					<td><?php echo esc_html( $pair[0] ); ?></td>
+					<td><?php echo esc_html( $pair[1] ); ?></td>
+				</tr>
+				<?php endforeach; ?>
+			</tbody>
+		</table>
+	</div>
+	<?php endif; ?>
+
+	<!-- CTA 1 — mid-page price bar (always renders) -->
+	<div class="cta1">
+		<div>
+			<?php if ( $kvp_price ) : ?>
+			<div class="cta1-price"><?php echo esc_html( $kvp_price ); ?></div>
+			<?php endif; ?>
+			<div class="cta1-note"><?php esc_html_e( 'Price at time of writing · may vary on Amazon', 'kvp-theme' ); ?></div>
+		</div>
+		<a href="<?php echo esc_url( $amazon_href ); ?>" rel="sponsored nofollow" target="_blank" class="btn-cta1">
+			<?php esc_html_e( 'Check price on Amazon', 'kvp-theme' ); ?>
+		</a>
+	</div>
+
+	<!-- CTA 2 — Deborah's verdict (always renders) -->
+	<div class="cta2">
+		<div class="cta2-label">
+			<div class="cta2-avatar" aria-hidden="true">
+				<svg width="13" height="13" viewBox="0 0 24 24" fill="none">
+					<circle cx="12" cy="8" r="4" fill="white"/>
+					<path d="M4 20 Q4 14 12 14 Q20 14 20 20" fill="white"/>
+				</svg>
+			</div>
+			<?php esc_html_e( "Deborah's verdict", 'kvp-theme' ); ?>
+		</div>
+		<?php if ( $deborah_quote ) : ?>
+		<p class="cta2-quote">&#8220;<?php echo esc_html( $deborah_quote ); ?>&#8221;</p>
+		<?php endif; ?>
+		<a href="<?php echo esc_url( $amazon_href ); ?>" rel="sponsored nofollow" target="_blank" class="btn-red">
+			<?php esc_html_e( 'Check price on Amazon', 'kvp-theme' ); ?>
+		</a>
+	</div>
+
+	<!-- FINAL VERDICT — red box (always renders) — CTA button 3 of 3 -->
+	<div class="final">
+		<div class="final-badge"><?php esc_html_e( 'Final verdict', 'kvp-theme' ); ?></div>
+
+		<?php if ( $kvp_rating ) : ?>
+		<div class="final-score-row">
+			<span class="final-score-num"><?php echo esc_html( $kvp_rating ); ?></span>
+			<div>
+				<div class="final-stars" aria-label="<?php esc_attr_e( '5 stars', 'kvp-theme' ); ?>">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+				<?php if ( $kvp_review_count ) : ?>
+				<div class="final-sub">
+					<?php
+					/* translators: %s: review count */
+					printf( esc_html__( 'Based on %s verified Amazon reviews', 'kvp-theme' ), esc_html( $kvp_review_count ) );
+					?>
+				</div>
+				<?php endif; ?>
+			</div>
+		</div>
+		<?php endif; ?>
+
+		<?php if ( $kvp_final_verdict ) : ?>
+		<p class="final-text"><?php echo esc_html( $kvp_final_verdict ); ?></p>
+		<?php endif; ?>
+
+		<a href="<?php echo esc_url( $amazon_href ); ?>" rel="sponsored nofollow" target="_blank" class="btn-red-block">
+			<?php esc_html_e( 'Check price on Amazon →', 'kvp-theme' ); ?>
+		</a>
+	</div>
 
 </div>
 </main>
 
-<?php get_footer(); ?>
+<?php endwhile; ?>
+<?php get_footer();

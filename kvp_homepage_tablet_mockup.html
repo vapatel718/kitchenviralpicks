@@ -1,0 +1,229 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@400;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+.kvp-t{font-family:'Lato',sans-serif;background:#FFF8F5;border-radius:12px;overflow:hidden;border:0.5px solid var(--color-border-tertiary);width:100%;max-width:768px;margin:0 auto;}
+
+.hdr{background:#E8401C;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:62px;}
+.logo{display:flex;align-items:center;gap:10px;}
+.logo-box{background:#FFF8F5;border-radius:8px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.wm-top{font-size:8px;font-weight:700;color:rgba(255,255,255,0.6);letter-spacing:0.14em;text-transform:uppercase;display:block;}
+.wm-bot{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#fff;line-height:1;display:block;}
+.nav{display:flex;gap:2px;}
+.nav a{color:rgba(255,255,255,0.82);font-size:12px;text-decoration:none;padding:5px 11px;border-radius:999px;font-family:'Lato',sans-serif;}
+.nav a.act{background:rgba(0,0,0,0.18);color:#fff;}
+
+.hero{background:#FFF8F5;padding:36px 24px 32px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:start;}
+.hero-eye{font-size:10px;font-weight:700;color:#E8401C;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 12px;display:flex;align-items:center;gap:6px;}
+.hero-dot{width:5px;height:5px;border-radius:50%;background:#E8401C;flex-shrink:0;}
+.hero-h1{font-family:'Playfair Display',serif;font-size:28px;font-weight:600;color:#1A1A1A;line-height:1.2;margin:0 0 12px;}
+.hero-h1 em{color:#E8401C;font-style:normal;}
+.hero-sub{font-size:13px;color:#555;line-height:1.65;margin:0 0 20px;}
+.hero-btn{display:inline-block;background:#E8401C;color:#fff;font-size:13px;font-weight:700;padding:11px 22px;border-radius:999px;text-decoration:none;font-family:'Lato',sans-serif;}
+.trust{display:flex;flex-direction:column;gap:8px;margin-top:16px;}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:11px;color:#888;}
+.trust-d{width:4px;height:4px;border-radius:50%;background:#E8401C;opacity:0.5;flex-shrink:0;}
+
+.hcard{background:#fff;border-radius:12px;border:0.5px solid rgba(232,64,28,0.2);overflow:hidden;}
+.hcard-badge{background:#FFF0EB;color:#A32D0D;font-size:9px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:8px 14px;display:block;border-bottom:0.5px solid rgba(232,64,28,0.1);}
+.hcard-img{background:#F5F0EB;height:110px;display:flex;align-items:center;justify-content:center;}
+.hcard-body{padding:14px;}
+.hcard-title{font-size:13px;font-weight:700;color:#1A1A1A;margin:0 0 5px;line-height:1.4;}
+.hcard-rating{font-size:11px;color:#888;margin:0 0 2px;}
+.hcard-rating em{color:#E8401C;font-weight:700;font-style:normal;}
+.hcard-price{font-size:20px;font-weight:700;color:#E8401C;margin:0 0 3px;line-height:1;}
+.hcard-price-note{font-size:9px;color:#aaa;margin:0 0 10px;}
+.hcard-verdict{border-left:3px solid #E8401C;border-radius:0;padding:7px 10px;font-size:11px;color:#555;line-height:1.55;margin:0 0 12px;font-style:italic;background:#FFF8F5;}
+.hcard-btn{display:block;text-align:center;background:#E8401C;color:#fff;font-size:12px;font-weight:700;padding:10px;border-radius:999px;text-decoration:none;font-family:'Lato',sans-serif;}
+
+.stats{background:#1A0A06;display:grid;grid-template-columns:repeat(3,1fr);}
+.stat{padding:16px 12px;text-align:center;border-right:0.5px solid rgba(232,64,28,0.2);}
+.stat:last-child{border-right:none;}
+.stat-num{font-size:20px;font-weight:700;color:#E8401C;line-height:1;font-family:'Lato',sans-serif;}
+.stat-lbl{font-size:9px;color:rgba(255,255,255,0.38);margin-top:4px;letter-spacing:0.06em;text-transform:uppercase;font-family:'Lato',sans-serif;}
+
+.reviews{background:#fff;padding:32px 24px 28px;border-top:0.5px solid rgba(232,64,28,0.08);}
+.sec-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;padding-bottom:9px;border-bottom:2.5px solid #E8401C;}
+.sec-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:#1A1A1A;margin:0;}
+.sec-link{font-size:11px;color:#E8401C;text-decoration:none;font-weight:700;font-family:'Lato',sans-serif;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:28px;}
+
+.rc{background:#FFF8F5;border-radius:10px;border:0.5px solid rgba(232,64,28,0.12);overflow:hidden;display:flex;flex-direction:column;}
+.rc-img{background:#F0EBE8;height:80px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.rc-body{padding:12px;display:flex;flex-direction:column;flex:1;}
+.rc-cat{font-size:9px;font-weight:700;color:#E8401C;letter-spacing:0.08em;text-transform:uppercase;margin:0 0 4px;font-family:'Lato',sans-serif;}
+.rc-title{font-size:12px;font-weight:700;color:#1A1A1A;margin:0 0 4px;line-height:1.35;font-family:'Lato',sans-serif;}
+.rc-meta{font-size:10px;color:#999;margin:0 0 10px;font-family:'Lato',sans-serif;}
+.rc-meta em{color:#E8401C;font-weight:700;font-style:normal;}
+.rc-spacer{flex:1;}
+.rc-btn{display:block;text-align:center;background:#E8401C;color:#fff;font-size:11px;font-weight:700;padding:9px;border-radius:999px;text-decoration:none;font-family:'Lato',sans-serif;}
+
+.cats-wrap{background:#FFF8F5;padding:28px 24px 32px;border-top:0.5px solid rgba(232,64,28,0.08);}
+.cats-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:#1A1A1A;margin:0 0 16px;}
+.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+.cat{background:#fff;border-radius:10px;border:0.5px solid rgba(232,64,28,0.12);padding:14px 8px;text-align:center;text-decoration:none;display:flex;flex-direction:column;align-items:center;}
+.cat-icon{width:36px;height:36px;border-radius:8px;background:#FFF0EB;display:flex;align-items:center;justify-content:center;margin:0 0 8px;font-size:18px;}
+.cat-name{font-size:11px;font-weight:700;color:#1A1A1A;font-family:'Lato',sans-serif;}
+.cat-count{font-size:10px;color:#999;margin-top:2px;font-family:'Lato',sans-serif;}
+
+.footer{background:#1A1A1A;padding:24px 24px 14px;}
+.footer-top{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:20px;padding-bottom:18px;border-bottom:0.5px solid rgba(255,255,255,0.08);}
+.footer-logo{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
+.footer-icon{background:#FFF8F5;border-radius:7px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.footer-wm-top{font-size:7px;font-weight:700;color:rgba(255,255,255,0.35);letter-spacing:0.14em;text-transform:uppercase;display:block;font-family:'Lato',sans-serif;}
+.footer-wm-bot{font-family:'Playfair Display',serif;font-size:14px;color:#fff;display:block;line-height:1;}
+.footer-disc{font-size:10px;color:rgba(255,255,255,0.3);line-height:1.65;font-family:'Lato',sans-serif;}
+.footer-col-title{font-size:9px;font-weight:700;color:rgba(255,255,255,0.4);letter-spacing:0.08em;text-transform:uppercase;margin:0 0 10px;font-family:'Lato',sans-serif;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.footer-links a{font-size:11px;color:rgba(255,255,255,0.55);text-decoration:none;font-family:'Lato',sans-serif;}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:12px;flex-wrap:wrap;gap:8px;}
+.footer-copy{font-size:10px;color:rgba(255,255,255,0.25);font-family:'Lato',sans-serif;}
+.footer-legal{display:flex;gap:14px;}
+.footer-legal a{font-size:10px;color:rgba(255,255,255,0.3);text-decoration:none;font-family:'Lato',sans-serif;}
+</style>
+
+<div style="padding:1rem 0;">
+<div style="font-size:11px;color:var(--color-text-secondary);text-align:center;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;">Tablet — 768px</div>
+
+<div class="kvp-t">
+  <div class="hdr">
+    <div class="logo">
+      <div class="logo-box">
+        <svg width="26" height="26" viewBox="0 0 48 48" fill="none">
+          <path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/>
+          <path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/>
+          <path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M20 15 C19 11.5 20.5 8.5 19.5 5.5" stroke="#E8401C" stroke-width="2" stroke-linecap="round"/>
+          <path d="M7.5 27 L32.5 27" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.4"/>
+        </svg>
+      </div>
+      <div>
+        <span class="wm-top">Kitchen Viral</span>
+        <span class="wm-bot">Picks</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#" class="act">Home</a>
+      <a href="#">Air Fryers</a>
+      <a href="#">Cookware</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
+
+  <div class="hero">
+    <div>
+      <p class="hero-eye"><span class="hero-dot"></span>Research-backed kitchen picks</p>
+      <h1 class="hero-h1">Stop guessing.<br>Buy the <em>right</em> pan.</h1>
+      <p class="hero-sub">Deborah researches thousands of verified buyer reviews so you don't waste money on the wrong kitchen gear.</p>
+      <a href="#" class="hero-btn">See our top picks</a>
+      <div class="trust">
+        <div class="trust-item"><span class="trust-d"></span>No fake reviews</div>
+        <div class="trust-item"><span class="trust-d"></span>Real buyer data</div>
+        <div class="trust-item"><span class="trust-d"></span>Zero fluff</div>
+      </div>
+    </div>
+    <div class="hcard">
+      <span class="hcard-badge">Top pick — Air Fryers</span>
+      <div class="hcard-img">
+        <svg width="44" height="44" viewBox="0 0 48 48" fill="none" opacity="0.15">
+          <path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/>
+          <path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/>
+          <path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="hcard-body">
+        <p class="hcard-title">Cosori TurboBlaze Air Fryer 6 Qt</p>
+        <p class="hcard-rating"><em>4.8★</em> on Amazon (19,000+ reviews)</p>
+        <p class="hcard-price">~$89.87</p>
+        <p class="hcard-price-note">at time of writing · price may vary</p>
+        <div class="hcard-verdict">"Buyers consistently report faster cook times and easier cleanup."</div>
+        <a href="#" class="hcard-btn">Read full review</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-num">10</div><div class="stat-lbl">Products reviewed</div></div>
+    <div class="stat"><div class="stat-num">100K+</div><div class="stat-lbl">Buyer reviews analyzed</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Categories covered</div></div>
+  </div>
+
+  <div class="reviews">
+    <div class="sec-hdr"><h2 class="sec-title">Air Fryers</h2><a href="#" class="sec-link">See all →</a></div>
+    <div class="grid2">
+      <div class="rc"><div class="rc-img"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" opacity="0.15"><path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/><path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/><path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/></svg></div><div class="rc-body"><p class="rc-cat">Air Fryers</p><p class="rc-title">Cosori TurboBlaze Air Fryer 6 Qt</p><p class="rc-meta"><em>4.8★</em> · 19,000+ reviews · ~$89</p><div class="rc-spacer"></div><a href="#" class="rc-btn">Read review</a></div></div>
+      <div class="rc"><div class="rc-img"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" opacity="0.15"><path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/><path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/><path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/></svg></div><div class="rc-body"><p class="rc-cat">Air Fryers</p><p class="rc-title">Ninja Air Fryer 5 Qt</p><p class="rc-meta"><em>4.7★</em> · 12,000+ reviews · ~$90</p><div class="rc-spacer"></div><a href="#" class="rc-btn">Read review</a></div></div>
+    </div>
+
+    <div class="sec-hdr"><h2 class="sec-title">Cookware</h2><a href="#" class="sec-link">See all →</a></div>
+    <div class="grid3">
+      <div class="rc"><div class="rc-img"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" opacity="0.15"><path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/><path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/><path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/></svg></div><div class="rc-body"><p class="rc-cat">Cookware</p><p class="rc-title">CAROTE 19pcs Pots and Pans Set</p><p class="rc-meta"><em>4.4★</em> · 8,000+ reviews · ~$50</p><div class="rc-spacer"></div><a href="#" class="rc-btn">Read review</a></div></div>
+      <div class="rc"><div class="rc-img"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" opacity="0.15"><path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/><path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/><path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/></svg></div><div class="rc-body"><p class="rc-cat">Cookware</p><p class="rc-title">Tramontina 12-Inch Frying Pan</p><p class="rc-meta"><em>4.6★</em> · 8,000+ reviews · ~$29</p><div class="rc-spacer"></div><a href="#" class="rc-btn">Read review</a></div></div>
+      <div class="rc"><div class="rc-img"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" opacity="0.15"><path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/><path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/><path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/></svg></div><div class="rc-body"><p class="rc-cat">Cookware</p><p class="rc-title">Lodge Cast Iron Braiser 3.6 Qt</p><p class="rc-meta"><em>4.7★</em> · 5,000+ reviews · ~$80</p><div class="rc-spacer"></div><a href="#" class="rc-btn">Read review</a></div></div>
+    </div>
+
+    <div class="sec-hdr"><h2 class="sec-title">Kettles</h2><a href="#" class="sec-link">See all →</a></div>
+    <div class="grid2" style="margin-bottom:0;">
+      <div class="rc"><div class="rc-img"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" opacity="0.15"><path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/><path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/><path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/></svg></div><div class="rc-body"><p class="rc-cat">Kettles</p><p class="rc-title">Cosori Electric Kettle 1.7L</p><p class="rc-meta"><em>4.5★</em> · 9,000+ reviews · ~$26</p><div class="rc-spacer"></div><a href="#" class="rc-btn">Read review</a></div></div>
+      <div class="rc"><div class="rc-img"><svg width="28" height="28" viewBox="0 0 48 48" fill="none" opacity="0.15"><path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/><path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/><path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/></svg></div><div class="rc-body"><p class="rc-cat">Multicooker</p><p class="rc-title">Instant Pot 7.5Qt RIO Wide</p><p class="rc-meta"><em>4.7★</em> · 7,000+ reviews · ~$120</p><div class="rc-spacer"></div><a href="#" class="rc-btn">Read review</a></div></div>
+    </div>
+  </div>
+
+  <div class="cats-wrap">
+    <h2 class="cats-title">Browse by category</h2>
+    <div class="cats">
+      <a href="#" class="cat"><div class="cat-icon">🍳</div><div class="cat-name">Air Fryers</div><div class="cat-count">2 reviews</div></a>
+      <a href="#" class="cat"><div class="cat-icon" style="background:#E6F1FB;">🥘</div><div class="cat-name">Cookware</div><div class="cat-count">6 reviews</div></a>
+      <a href="#" class="cat"><div class="cat-icon" style="background:#EDFAF3;">☕</div><div class="cat-name">Kettles</div><div class="cat-count">1 review</div></a>
+      <a href="#" class="cat"><div class="cat-icon" style="background:#FAEEDA;">🫙</div><div class="cat-name">Multicooker</div><div class="cat-count">1 review</div></a>
+      <a href="#" class="cat"><div class="cat-icon" style="background:#F1EFE8;">🥐</div><div class="cat-name">Bakeware</div><div class="cat-count">0 reviews</div></a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <div class="footer-icon">
+            <svg width="18" height="18" viewBox="0 0 48 48" fill="none">
+              <path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/>
+              <path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/>
+              <path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="footer-wm-top">Kitchen Viral</span>
+            <span class="footer-wm-bot">Picks</span>
+          </div>
+        </div>
+        <p class="footer-disc">As an Amazon Associate, KitchenViralPicks.com earns from qualifying purchases at no extra cost to you.</p>
+      </div>
+      <div>
+        <p class="footer-col-title">Navigate</p>
+        <ul class="footer-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-col-title">Legal</p>
+        <ul class="footer-links">
+          <li><a href="#">Affiliate disclosure</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms of use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 KitchenViralPicks.com — All rights reserved.</span>
+      <div class="footer-legal">
+        <a href="#">Affiliate disclosure</a>
+        <a href="#">Privacy policy</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

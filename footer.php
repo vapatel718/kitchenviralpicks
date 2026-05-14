@@ -22,13 +22,13 @@
                     </div>
                 </a>
                 <p class="kvp-footer-disclosure">
-                    <?php _e( 'As an Amazon Associate, KitchenViralPicks.com earns from qualifying purchases at no extra cost to you. All recommendations are based on research and verified customer reviews.', 'kvp-theme' ); ?>
+                    <?php esc_html_e( 'As an Amazon Associate, KitchenViralPicks.com earns from qualifying purchases at no extra cost to you. All recommendations are based on research and verified customer reviews.', 'kvp-theme' ); ?>
                 </p>
             </div>
 
             <!-- Column 2: Navigate -->
             <div class="kvp-footer-nav-col">
-                <p class="kvp-footer-col-heading"><?php _e( 'NAVIGATE', 'kvp-theme' ); ?></p>
+                <p class="kvp-footer-col-heading"><?php esc_html_e( 'NAVIGATE', 'kvp-theme' ); ?></p>
                 <?php if ( has_nav_menu( 'footer' ) ) : ?>
                     <?php wp_nav_menu( array(
                         'theme_location' => 'footer',
@@ -38,21 +38,21 @@
                     ) ); ?>
                 <?php else : ?>
                     <ul class="kvp-footer-links">
-                        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php _e( 'Home', 'kvp-theme' ); ?></a></li>
-                        <li><a href="#"><?php _e( 'Reviews', 'kvp-theme' ); ?></a></li>
-                        <li><a href="#"><?php _e( 'About', 'kvp-theme' ); ?></a></li>
-                        <li><a href="#"><?php _e( 'Contact', 'kvp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'kvp-theme' ); ?></a></li>
+                        <li><a href="#"><?php esc_html_e( 'Reviews', 'kvp-theme' ); ?></a></li>
+                        <li><a href="#"><?php esc_html_e( 'About', 'kvp-theme' ); ?></a></li>
+                        <li><a href="#"><?php esc_html_e( 'Contact', 'kvp-theme' ); ?></a></li>
                     </ul>
                 <?php endif; ?>
             </div>
 
             <!-- Column 3: Legal -->
             <div class="kvp-footer-legal-col">
-                <p class="kvp-footer-col-heading"><?php _e( 'LEGAL', 'kvp-theme' ); ?></p>
+                <p class="kvp-footer-col-heading"><?php esc_html_e( 'LEGAL', 'kvp-theme' ); ?></p>
                 <ul class="kvp-footer-links">
-                    <li><a href="#"><?php _e( 'Affiliate disclosure', 'kvp-theme' ); ?></a></li>
-                    <li><a href="#"><?php _e( 'Privacy policy', 'kvp-theme' ); ?></a></li>
-                    <li><a href="#"><?php _e( 'Terms of use', 'kvp-theme' ); ?></a></li>
+                    <li><a href="#"><?php esc_html_e( 'Affiliate disclosure', 'kvp-theme' ); ?></a></li>
+                    <li><a href="#"><?php esc_html_e( 'Privacy policy', 'kvp-theme' ); ?></a></li>
+                    <li><a href="#"><?php esc_html_e( 'Terms of use', 'kvp-theme' ); ?></a></li>
                 </ul>
             </div>
 
@@ -65,12 +65,25 @@
     <!-- SECTION 3: BOTTOM ROW -->
     <div class="kvp-footer-bottom">
         <span class="kvp-footer-copy">
-            &copy; <?php echo esc_html( date( 'Y' ) ); ?> KitchenViralPicks.com &mdash; <?php _e( 'All rights reserved.', 'kvp-theme' ); ?>
+            &copy; <?php echo esc_html( date( 'Y' ) ); ?> KitchenViralPicks.com &mdash; <?php esc_html_e( 'All rights reserved.', 'kvp-theme' ); ?>
         </span>
     </div>
 
 </footer>
 
 <?php wp_footer(); ?>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var toggle = document.querySelector('.kvp-nav-toggle');
+    var nav    = document.querySelector('.kvp-nav');
+    if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+            var isOpen = nav.classList.toggle('is-open');
+            toggle.setAttribute('aria-expanded', isOpen);
+        });
+    }
+});
+</script>
 </body>
 </html>
