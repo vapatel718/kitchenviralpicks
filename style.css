@@ -954,7 +954,7 @@ main,
 .kvp-single-wrap {
   max-width: 780px;
   margin: 0 auto;
-  padding: 22px 24px;
+  padding: 92px 24px 22px;
   background: #FFF8F5;
 }
 
@@ -1216,7 +1216,7 @@ main,
   .kvp-single-wrap {
     max-width: 100%;
     overflow-x: hidden;
-    padding: 0 16px;
+    padding: 90px 16px 0;
     box-sizing: border-box;
   }
 
