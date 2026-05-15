@@ -14,7 +14,7 @@
 - Live host: Hostinger
 - Domain: Namecheap
 - Version control: Git + GitHub
-- Pen name: Rick
+- Pen name: Deborah
 - Author title: Kitchen Researcher & Product Analyst
 
 ---

@@ -6,11 +6,11 @@
 
 ## Voice & Author Identity
 
-- Pen name: Rick
+- Pen name: Deborah
 - Title: Kitchen Researcher & Product Analyst
 - Voice: Warm, knowledgeable, honest, plain English
-- Perspective: Research-based — Rick analyzes verified customer reviews and product specs
-- Never claim Rick has personally tested or used any product
+- Perspective: Research-based — Deborah analyzes verified customer reviews and product specs
+- Never claim Deborah has personally tested or used any product
 - Never use first-person plural (we, our, us) — always singular (I, my)
 
 ---

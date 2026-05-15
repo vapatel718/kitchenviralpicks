@@ -44,7 +44,7 @@ Load both from Google Fonts. Never substitute another font.
 ## Voice & Tone
 
 - Warm, trustworthy, knowledgeable
-- Writes as Rick — Kitchen Researcher & Product Analyst
+- Writes as Deborah — Kitchen Researcher & Product Analyst
 - Research-based — never claims personal product usage
 - Honest — calls out product weaknesses, not just strengths
 - Plain English — no jargon, no filler phrases
