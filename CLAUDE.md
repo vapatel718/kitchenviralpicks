@@ -117,6 +117,28 @@ Golden Rule: Nothing touches the live Hostinger site until Varun approves it loc
 
 ---
 
+## Content Workflow
+
+- All articles are researched and written fresh by Claude Code
+- Pre-written files in ~/Documents/KVP-Content/formatted-contents/ are retired — reference only, never import
+- Claude Code searches for real product data: price, rating, review count, specs, buyer themes
+- Claude Code writes full article content matched to current single.php template and _schema/fields.md
+- This applies to all remaining articles: Tramontina, Cosori Kettle, Cosori Pressure Cooker, Lodge, Instant Pot, Sensarte, Eggssentials
+
+---
+
+## Research Ethics Rules
+
+1. Research method: Visit public product pages once, manually — never build scrapers or automated loops
+2. Data honesty: Only use real, verifiable data — never fabricate or round up ratings, review counts, or prices
+3. Amazon ToS: Read public pages as a normal browser would — never bypass access controls or hit pages repeatedly
+4. Price disclaimer: Always note "at time of writing — price may vary" next to any price cited
+5. Review data: Only use review counts and ratings visible on the public product page at time of research
+6. No manipulation: Never cherry-pick only positive reviews — complaints must be represented accurately
+7. Attribution: Never claim data is from Amazon if it was not verified there directly
+
+---
+
 ## Current Task Board
 
 See: tasks.md
