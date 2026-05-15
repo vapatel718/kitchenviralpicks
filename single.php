@@ -108,9 +108,13 @@ while ( have_posts() ) : the_post();
 
 		<div>
 			<?php
-			$kvp_product_name = get_post_meta( get_the_ID(), 'kvp_product_name', true );
-			$display_name     = ! empty( $kvp_product_name ) ? $kvp_product_name : get_the_title();
+			$kvp_product_name  = get_post_meta( get_the_ID(), 'kvp_product_name', true );
+			$kvp_card_verdict  = get_post_meta( get_the_ID(), 'kvp_card_verdict', true );
+			$display_name      = ! empty( $kvp_product_name ) ? $kvp_product_name : get_the_title();
 			?>
+			<?php if ( $kvp_card_verdict ) : ?>
+			<span class="kvp-pick-badge"><?php esc_html_e( 'KVP Pick', 'kvp-theme' ); ?></span>
+			<?php endif; ?>
 			<div class="score-title"><?php echo esc_html( $display_name ); ?></div>
 
 			<?php if ( $kvp_price ) : ?>
