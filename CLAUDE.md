@@ -119,11 +119,27 @@ Golden Rule: Nothing touches the live Hostinger site until Varun approves it loc
 
 ## Content Workflow
 
-- All articles are researched and written fresh by Claude Code
-- Pre-written files in ~/Documents/KVP-Content/formatted-contents/ are retired — reference only, never import
-- Claude Code searches for real product data: price, rating, review count, specs, buyer themes
-- Claude Code writes full article content matched to current single.php template and _schema/fields.md
-- This applies to all remaining articles: Tramontina, Cosori Kettle, Cosori Pressure Cooker, Lodge, Instant Pot, Sensarte, Eggssentials
+ARTICLE WORKFLOW — SPLIT APPROACH (active as of May 2026)
+
+Research is always done by Claude (chat) before Claude Code is involved.
+Claude Code receives pre-filled product data and never researches independently.
+
+Step 1 — Claude (chat) researches the product using web search and compiles a data block covering:
+- Full product name, ASIN, current price, badges
+- Amazon star rating and review count
+- Minimum 4 buyer praise themes (from verified review patterns)
+- Minimum 2 buyer complaints (honest negatives)
+- Full spec sheet
+- Competitive context (1-2 points)
+- Primary SEO keyword and search intent
+
+Step 2 — Varun reviews and approves the data block in chat.
+
+Step 3 — Claude (chat) writes the Claude Code prompt with all product data pre-filled.
+
+Step 4 — Claude Code receives the prompt, writes the article using provided data only, publishes via WP-CLI, updates STATE.md, and commits.
+
+RULE: Claude Code must never browse, search, or independently research any product. If product data is missing from the prompt, Claude Code must stop and report what is missing — never fill gaps by guessing or researching.
 
 ---
 
