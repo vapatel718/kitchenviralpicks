@@ -2482,6 +2482,10 @@ h1, h2, h3,
     .kvp-arc-also-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
+@media (max-width: 480px) {
+    .kvp-arc-banner { padding-top: 90px; }
+}
+
 
 /* ================================================
    header.php styles
