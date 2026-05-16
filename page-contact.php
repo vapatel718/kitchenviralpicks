@@ -10,7 +10,7 @@ get_header();
 <main id="kvp-contact-main">
 
     <div class="kvp-contact-outer">
-        <div class="kvp-contact-wrap">
+        <div class="kvp-contact-inner">
 
             <h1 class="kvp-contact-h1"><?php _e( 'Contact', 'kvp-theme' ); ?></h1>
             <div class="kvp-contact-rule" aria-hidden="true"></div>
