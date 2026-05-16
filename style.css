@@ -910,6 +910,18 @@ main,
     gap: 16px;
   }
 
+  .kvp-grid-3 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .kvp-grid-3 > * {
+    width: calc(33.333% - 16px);
+    flex-shrink: 0;
+  }
+
   .kvp-rc-img {
     height: 90px;
   }
@@ -942,10 +954,15 @@ main,
   }
 
   .kvp-cat-grid {
-    gap: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
   }
 
   .kvp-cat-card {
+    width: 130px;
+    flex-shrink: 0;
     padding: 18px 10px;
   }
 
