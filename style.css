@@ -2724,6 +2724,11 @@ h1, h2, h3,
     margin: 1em 0;
 }
 
+/* ── Mobile — clear sticky header (≤767px) ── */
+@media (max-width: 767px) {
+    .page-wrapper { padding-top: 90px; }
+}
+
 /* ── Tablet and up ── */
 @media (min-width: 768px) {
     .page-wrapper {
@@ -2994,7 +2999,10 @@ h1, h2, h3,
         padding: 0 20px;
     }
 
-    .kvp-about-hero,
+    .kvp-about-hero {
+        padding: 90px 0 40px;
+    }
+
     .kvp-about-story,
     .kvp-about-method,
     .kvp-about-cta-section {
