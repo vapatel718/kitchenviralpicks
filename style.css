@@ -4113,6 +4113,15 @@ h1, h2, h3,
    page-contact.php styles
    ================================================ */
 
+.page-id-9 {
+    background-color: #1A1A1A;
+    min-height: 100vh;
+}
+
+.page-id-9 #kvp-contact-main {
+    background-color: #FFF8F5;
+}
+
 #kvp-contact-main {
     background: var(--color-bg);
     margin-bottom: 0;
