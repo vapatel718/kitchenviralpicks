@@ -1866,7 +1866,7 @@ h1, h2, h3,
 .kvp-arc-banner {
     background: var(--color-bg, #FFF8F5);
     border-bottom: 1px solid #f0e8e3;
-    padding: 28px 0 22px;
+    padding: 90px 0 22px;
     overflow-x: hidden;
 }
 
@@ -2466,6 +2466,7 @@ h1, h2, h3,
 }
 
 @media (max-width: 767px) {
+    .kvp-arc-banner { padding-top: 90px; }
     .kvp-arc-wrap { padding: 0 16px; }
     .kvp-arc-grid { grid-template-columns: 1fr; }
     .kvp-arc-tp-row { flex-direction: column; gap: 12px; }
@@ -2476,6 +2477,7 @@ h1, h2, h3,
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+    .kvp-arc-banner { padding-top: 90px; }
     .kvp-arc-wrap { padding: 0 24px; }
     .kvp-arc-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
     .kvp-arc-card-img { height: 180px; }
