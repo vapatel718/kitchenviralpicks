@@ -622,6 +622,11 @@ main,
 
 @media (max-width: 599px) {
 
+  .kvp-cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+
   .kvp-cat-card {
     padding: 12px 8px;
   }
