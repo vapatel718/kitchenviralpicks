@@ -764,8 +764,24 @@ main,
     margin-bottom: 16px;
   }
 
+}
+
+/* ================================================
+   HOMEPAGE — Category grid tablet (600px–1023px)
+   ================================================ */
+
+@media (min-width: 600px) and (max-width: 1023px) {
+
   .kvp-cat-grid {
-    grid-template-columns: repeat(5, 1fr);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .kvp-cat-card {
+    width: 120px;
+    flex-shrink: 0;
   }
 
 }
