@@ -2867,6 +2867,10 @@ h1, h2, h3,
 }
 
 @media (min-width: 768px) {
+    .kvp-about-hero {
+        padding-top: 90px;
+    }
+
     .kvp-about-hero-grid {
         display: grid;
         grid-template-columns: 280px 1fr;
