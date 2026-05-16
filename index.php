@@ -257,10 +257,10 @@
         $kt_cat = get_category_by_slug( 'kettles' );
     ?>
     <div class="kvp-sec-hdr">
-      <h2 class="kvp-sec-title"><?php esc_html_e( 'Kettles', 'kvp-theme' ); ?></h2>
+      <h2 class="kvp-sec-title"><?php esc_html_e( 'Kettles & Multicookers', 'kvp-theme' ); ?></h2>
       <?php if ( $kt_cat ) : ?>
       <a href="<?php echo esc_url( get_category_link( $kt_cat->term_id ) ); ?>" class="kvp-sec-link">
-        <?php esc_html_e( 'See all Kettle reviews →', 'kvp-theme' ); ?>
+        <?php esc_html_e( 'See all reviews →', 'kvp-theme' ); ?>
       </a>
       <?php endif; ?>
     </div>
