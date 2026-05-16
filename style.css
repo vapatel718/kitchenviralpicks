@@ -24,6 +24,10 @@ Tags: affiliate, reviews, kitchen, custom
     padding: 0;
 }
 
+html {
+    scroll-padding-top: 80px;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -63,16 +67,6 @@ main,
     padding: 0 !important;
     margin: 0 !important;
     max-width: none !important;
-}
-
-.kvp-page-wrap {
-    display: block;
-    background: #FFF8F5;
-    font-family: 'Lato', Arial, sans-serif;
-    font-size: 16px;
-    color: #1A1A1A;
-    margin-top: 0;
-    padding-top: 70px;
 }
 
 /* ================================================
