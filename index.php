@@ -320,16 +320,18 @@
         'exclude'    => $uncategorized_id,
     ] );
     $cat_icons = [
-        'air-fryers'  => 'A',
-        'cookware'    => 'C',
-        'kettles'     => 'K',
-        'multicooker' => 'M',
-        'bakeware'    => 'B',
+        'air-fryers'   => '<i class="ti ti-wind"></i>',
+        'bakeware'     => '<i class="ti ti-bread"></i>',
+        'blenders'     => '<i class="ti ti-blender"></i>',
+        'cookware'     => '<i class="ti ti-tools-kitchen-2"></i>',
+        'kettles'      => '<i class="ti ti-coffee"></i>',
+        'multicooker'  => '<i class="ti ti-pot"></i>',
+        'stand-mixers' => '<i class="ti ti-mixer"></i>',
     ];
     ?>
     <div class="kvp-cat-grid">
       <?php foreach ( $all_cats as $sc ) :
-          $icon        = isset( $cat_icons[ $sc->slug ] ) ? $cat_icons[ $sc->slug ] : '🍴';
+          $icon        = isset( $cat_icons[ $sc->slug ] ) ? $cat_icons[ $sc->slug ] : '<i class="ti ti-tool"></i>';
           $count_label = sprintf(
               /* translators: %d: review count */
               _n( '%d review', '%d reviews', $sc->count, 'kvp-theme' ),

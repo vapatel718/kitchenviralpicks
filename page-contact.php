@@ -25,7 +25,7 @@ get_header();
                     <?php _e( 'I read every message and do my best to reply within a few days. This is just me &#8212; no team, no assistant &#8212; so I appreciate your patience.', 'kvp-theme' ); ?>
                 </p>
 
-                <a href="mailto:deborah@kitchenviralpicks.com" class="kvp-contact-btn">
+                <a href="mailto:hello@kitchenviralpicks.com" class="kvp-contact-btn">
                     <?php _e( 'Send me an email', 'kvp-theme' ); ?>
                 </a>
 

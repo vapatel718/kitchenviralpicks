@@ -47,7 +47,7 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
     <div class="kvp-arc-wrap">
 
         <!-- ================================================================
-             4. RICK'S TOP PICK BANNER
+             4. DEBORAH'S TOP PICK BANNER
              Tries sticky posts in the category first; falls back to the
              highest-rated post.
              ================================================================ -->

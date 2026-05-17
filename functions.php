@@ -18,6 +18,12 @@ add_action( 'after_setup_theme', 'kvp_theme_setup' );
 
 // ─── ENQUEUE STYLES & FONTS ────────────────────────────────────
 function kvp_enqueue_assets() {
+    wp_enqueue_style(
+        'tabler-icons',
+        'https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css',
+        array(),
+        '3.31.0'
+    );
     // Main stylesheet (self-hosted @font-face declared inside style.css)
     wp_enqueue_style(
         'kvp-style',
