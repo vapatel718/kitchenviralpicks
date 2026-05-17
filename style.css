@@ -2762,6 +2762,12 @@ h1, h2, h3,
 
 @media (min-width: 768px) {
     .kvp-about-steps {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 1024px) {
+    .kvp-about-steps {
         grid-template-columns: repeat(3, 1fr);
     }
 }

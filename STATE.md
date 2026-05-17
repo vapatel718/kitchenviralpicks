@@ -4,20 +4,23 @@
 Phase 3 — Content Setup & Static Pages
 
 ## Last Completed Task
-Task 3.13 — Deborah's Top Pick banner price upgraded to bold red pill (#E8401C, 18px, rounded) on archive page (2026-05-17)
+Task 3.18 — Reverted all footer/gap changes from Tasks 3.15–3.17 (2026-05-17)
 
-- archive.php: price removed from .kvp-arc-tp-meta inline flow; replaced with .kvp-arc-top-price-row div containing .kvp-arc-price-pill and .kvp-arc-price-note spans
-- style.css: added .kvp-arc-price-pill, .kvp-arc-price-note, .kvp-arc-top-price-row rules
-- Approved on desktop
+- style.css: removed `height: 100%` from `html, body` block
+- style.css: restored `.page-wrapper` to original (`background-color: #FFF8F5; padding: 48px 20px 64px;`)
+- style.css: restored `.page-container` to original (`max-width: 800px; margin: 0 auto;`)
+- `.kvp-footer` was already clean (no margin-top: auto)
+- page.php was never modified — no change needed
+- Original approved layout restored as-is
 
 ## Phase 3 Sweep Status
 - Homepage ✅
 - Single article ✅
 - Category page ✅
-- Static pages (About, Contact, Privacy Policy, Affiliate Disclosure, Terms of Use) — pending next session
+- Static pages (About, Contact, Privacy Policy, Affiliate Disclosure, Terms of Use) — layout approved as-is; footer gap accepted
 
 ## Next Session
-Continue and complete Phase 3 final sweep — static pages only.
+Continue Phase 3 final sweep — static page content and layout review.
 
 ## Pen Name
 DEBORAH (never Rick, never anything else)
@@ -30,3 +33,5 @@ STATE.md was missing and recreated on 2026-05-16
 Phase 2H audit and all fixes completed 2026-05-16
 Task 3.10 static pages audit completed 2026-05-17
 Tasks 3.11–3.13 completed 2026-05-17
+Task 3.14 spacing revert completed 2026-05-17
+Tasks 3.15–3.17 (footer gap experiments) reverted by Task 3.18 — original layout restored
