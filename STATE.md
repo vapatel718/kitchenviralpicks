@@ -5,10 +5,10 @@ Phase 3 — Content Setup & Static Pages
 
 ## Last Completed Task
 3.9 — Terms of Use page (page-terms.php, page ID 12, slug: terms-of-use)
-Commit: pending approval
+Commit: a4306e9
 
 ## Next Task
-3.10 — Full static pages review (all 5 legal pages)
+3.10 — Full static pages review (all 5 pages across all viewports)
 
 ## Pen Name
 DEBORAH (never Rick, never anything else)

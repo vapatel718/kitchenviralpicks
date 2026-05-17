@@ -1,5 +1,5 @@
 # tasks.md — KitchenViralPicks Task Board
-# Updated: 2026-05-16 (Task 3.8 complete)
+# Updated: 2026-05-16 (Task 3.9 complete)
 
 ---
 
@@ -14,7 +14,7 @@
 | Phase 2D | Single Review Template | Complete |
 | Phase 2E | Footer | Complete |
 | Phase 2F | Archive / Category Pages | Complete |
-| Phase 3 | Content Setup & Static Pages | In Progress — 8/15 |
+| Phase 3 | Content Setup & Static Pages | In Progress — 9/15 |
 | Phase 4 | SEO & Performance | Not started |
 | Phase 5 | Launch & Deployment | Not started |
 
@@ -109,7 +109,7 @@
 ---
 
 ## Phase 3 — Content Setup & Static Pages
-**Status: In Progress — 8/15 complete**
+**Status: In Progress — 9/15 complete**
 
 - [x] 3.1 — Set up WordPress categories (Air Fryers, Cookware, Kettles, Bakeware, Multicooker)
 - [x] 3.2 — Configure Rank Math SEO global settings (separator, homepage title/description, sitemap, robots, social)
@@ -119,7 +119,7 @@
 - [x] 3.6 — Build Contact page with form — Complete 2026-05-16
 - [x] 3.7 — Build Affiliate Disclosure page — Complete 2026-05-16
 - [x] 3.8 — Build Privacy Policy page (page-privacy.php) — Complete 2026-05-16
-- [ ] 3.9 — (Planned)
+- [x] 3.9 — Build Terms of Use page (page-terms.php) — Complete 2026-05-16
 - [ ] 3.10 — (Planned)
 - [ ] 3.11 — (Planned)
 - [ ] 3.12 — (Planned)
@@ -164,3 +164,4 @@
 | 2026-05-16 | 3.6 | Built Contact page (page-contact.php) — email CTA, brand card layout — all viewports approved |
 | 2026-05-16 | 3.7 | Built Affiliate Disclosure page (page-disclosure.php) — 4-paragraph disclosure, contact email — page ID 10, slug: affiliate-disclosure, template: page-disclosure.php |
 | 2026-05-16 | 3.8 | Built Privacy Policy page (page-privacy.php) — 5 sections, reused kvp-contact-* and kvp-about-section-h2 classes, no new CSS — page ID 3, slug: privacy-policy, template: page-privacy.php |
+| 2026-05-16 | 3.9 | Built Terms of Use page (page-terms.php) — 6 sections, same pattern as Privacy Policy, no new CSS — page ID 12, slug: terms-of-use, template: page-terms.php |
