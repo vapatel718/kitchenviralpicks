@@ -4,27 +4,16 @@
 Phase 3 — Content Setup & Static Pages
 
 ## Last Completed Task
-Task 3.10 — Full static pages audit (2026-05-17)
+Task 3.11 — Category icons replaced with custom inline SVG product illustrations (2026-05-17)
 
-Bugs fixed:
-- S-1: article-body h3 — added border-left: 4px solid #E8401C, padding-left: 12px, margin: 24px 0 8px, font-weight: 700
-- A-1: About page job title corrected from "Kitchen Product Curator" → "Kitchen Researcher & Product Analyst"
-- A-2: Added border-top: 1px solid rgba(232,64,28,0.1) to .kvp-about-story for hero/body transition
-- A-3+A-4: Trust dots now vertical stack on mobile/tablet (base flex-direction: column), horizontal at min-width: 768px
-- C-1: Contact page padding-bottom capped at 48px on all breakpoints (was 64px mobile, 60px desktop)
-- C-2: Contact email button forced full-width (display: block, width: 100%) on all viewports — removed tablet inline-block override
-- C-3: Added explicit padding-top: 90px at max-width: 768px for contact outer
-- PP-1: h2 section dividers in legal cards — margin-top: 32px, padding-top: 24px, border-top: 1px solid rgba(232,64,28,0.08); first h2 gets margin-top: 0, no border
-- PP-3/TU-2 (GLOBAL): tablet font-size — body text 13px, headings 15px in all legal cards at max-width: 768px
-- PP-4: "Last updated: May 2026" line added below Privacy Policy title
-- AD-2: Affiliate Disclosure structured with 4 h2 headings: "How affiliate links work", "How it affects our recommendations", "About pricing", "Questions"
-- AD-4: "Last updated: May 2026" line added below Affiliate Disclosure title
-- TU-1: Terms of Use h2 section dividers — same CSS as PP-1 (shared rule covers all legal cards)
-- TU-2: Same tablet font-size fix as PP-3 — covered by global rule
-- TU-3: "Last updated: May 2026" extracted from final paragraph, now standalone line below Terms title
+- All 7 category icons replaced in index.php ($cat_icons array)
+- Categories: air fryers, bakeware, blenders, cookware, kettles, multicooker, stand mixers
+- Each SVG is 80×80, viewBox="0 0 84 84", brand colours (#E8401C, #C4300F, #FF6B45, #B8220A)
+- Approved across desktop, tablet, mobile
+- To be replaced with real product images in a future phase
 
 ## Next Task
-Phase 3 final full-site sweep — review all pages across all viewports and confirm Phase 3 complete
+Continue Phase 3 final sweep — move to single article page screenshots
 
 ## Pen Name
 DEBORAH (never Rick, never anything else)
