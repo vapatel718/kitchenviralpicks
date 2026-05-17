@@ -13,6 +13,7 @@ get_header();
         <div class="kvp-contact-inner">
 
             <h1 class="kvp-contact-h1"><?php _e( 'Privacy Policy', 'kvp-theme' ); ?></h1>
+            <p class="kvp-legal-last-updated"><?php _e( 'Last updated: May 2026', 'kvp-theme' ); ?></p>
             <div class="kvp-contact-rule" aria-hidden="true"></div>
 
             <div class="kvp-contact-card">

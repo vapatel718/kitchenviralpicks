@@ -13,6 +13,7 @@ get_header();
         <div class="kvp-contact-inner">
 
             <h1 class="kvp-contact-h1"><?php _e( 'Terms of Use', 'kvp-theme' ); ?></h1>
+            <p class="kvp-legal-last-updated"><?php _e( 'Last updated: May 2026', 'kvp-theme' ); ?></p>
             <div class="kvp-contact-rule" aria-hidden="true"></div>
 
             <div class="kvp-contact-card">
@@ -46,7 +47,7 @@ get_header();
 
                 <h2 class="kvp-about-section-h2"><?php _e( 'Changes to these terms', 'kvp-theme' ); ?></h2>
                 <p class="kvp-contact-body">
-                    <?php _e( 'We reserve the right to update these terms at any time. Continued use of the site after any changes constitutes acceptance of the new terms. Last updated: May 2026.', 'kvp-theme' ); ?>
+                    <?php _e( 'We reserve the right to update these terms at any time. Continued use of the site after any changes constitutes acceptance of the new terms.', 'kvp-theme' ); ?>
                 </p>
 
             </div>

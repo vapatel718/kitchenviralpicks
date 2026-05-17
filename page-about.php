@@ -31,7 +31,7 @@ get_header();
                 <div class="kvp-about-hero-right">
                     <p class="kvp-about-eyebrow"><?php _e( 'FOUNDER &amp; CURATOR', 'kvp-theme' ); ?></p>
                     <h1 class="kvp-about-name"><?php _e( 'Deborah', 'kvp-theme' ); ?></h1>
-                    <p class="kvp-about-job-title"><?php _e( 'Kitchen Product Curator', 'kvp-theme' ); ?></p>
+                    <p class="kvp-about-job-title"><?php _e( 'Kitchen Researcher &amp; Product Analyst', 'kvp-theme' ); ?></p>
                     <div class="kvp-about-trust">
                         <span class="kvp-about-trust-item">
                             <span class="kvp-about-trust-dot" aria-hidden="true"></span>

@@ -1343,7 +1343,7 @@ main,
 /* ARTICLE BODY */
 .kvp-single .article-body { font-size: 16px; color: #444; line-height: 1.75; margin: 0 0 26px; }
 .kvp-single .article-body h2 { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: #1A1A1A; margin: 0 0 13px; padding-bottom: 8px; border-bottom: 2px solid #E8401C; }
-.kvp-single .article-body h3 { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 600; color: #1A1A1A; margin: 20px 0 7px; }
+.kvp-single .article-body h3 { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: #1A1A1A; margin: 24px 0 8px; border-left: 4px solid #E8401C; padding-left: 12px; }
 .kvp-single .article-body p { font-size: 16px; color: #444; line-height: 1.75; margin: 0 0 11px; }
 .kvp-single .article-body p:last-child { margin-bottom: 0; }
 .kvp-single .article-body ul, .kvp-single .article-body ol { margin: 0 0 11px; padding-left: 20px; }
@@ -2659,10 +2659,9 @@ h1, h2, h3,
 
 .kvp-about-trust {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
     font-size: 13px;
     color: #888;
 }
@@ -2699,6 +2698,9 @@ h1, h2, h3,
     }
 
     .kvp-about-trust {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
         justify-content: flex-start;
         gap: 20px;
     }
@@ -2708,6 +2710,7 @@ h1, h2, h3,
 .kvp-about-story {
     background: #fff;
     padding: 60px 0;
+    border-top: 1px solid rgba(232,64,28,0.1);
 }
 
 .kvp-about-body-text {
@@ -2865,7 +2868,7 @@ h1, h2, h3,
 }
 
 .kvp-contact-outer {
-    padding: 90px 20px 64px;
+    padding: 90px 20px 48px;
 }
 
 .kvp-contact-inner {
@@ -2946,14 +2949,47 @@ h1, h2, h3,
     }
 
     .kvp-contact-btn {
-        display: inline-block;
-        width: auto;
-        padding: 12px 32px;
+        display: block;
+        width: 100%;
+        padding: 12px 24px;
     }
 }
 
 @media (min-width: 1024px) {
     .kvp-contact-outer {
-        padding: 100px 40px 60px;
+        padding: 100px 40px 48px;
     }
+}
+
+/* C-3: Explicit top padding on tablet/mobile so title clears fixed header */
+@media (max-width: 768px) {
+    .kvp-contact-outer {
+        padding-top: 90px;
+    }
+}
+
+/* PP-1, TU-1, AD-2 — h2 section dividers inside legal page content cards */
+.kvp-contact-card .kvp-about-section-h2 {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(232,64,28,0.08);
+}
+.kvp-contact-card .kvp-about-section-h2:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+/* PP-3, TU-2 — tablet font sizes for all legal page content cards (global) */
+@media (max-width: 768px) {
+    .kvp-contact-card .kvp-contact-body { font-size: 13px; }
+    .kvp-contact-card .kvp-about-section-h2 { font-size: 15px; }
+}
+
+/* PP-4, AD-4, TU-3 — "Last updated" line below legal page titles */
+.kvp-legal-last-updated {
+    font-size: 12px;
+    color: #999;
+    margin-top: -8px;
+    margin-bottom: 24px;
 }
