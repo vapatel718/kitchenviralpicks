@@ -4,11 +4,11 @@
 Phase 3 — Content Setup & Static Pages
 
 ## Last Completed Task
-3.8 — Privacy Policy page (page-privacy.php, page ID 3, slug: privacy-policy)
+3.9 — Terms of Use page (page-terms.php, page ID 12, slug: terms-of-use)
 Commit: pending approval
 
 ## Next Task
-3.9 — Terms of Use page
+3.10 — Full static pages review (all 5 legal pages)
 
 ## Pen Name
 DEBORAH (never Rick, never anything else)
