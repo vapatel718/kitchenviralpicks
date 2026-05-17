@@ -4,33 +4,36 @@
 Phase 4 — Go Live on Hostinger
 
 ## Last Completed
-Task 4.1 — Internal link audit: all # placeholders and hardcoded URLs replaced with dynamic WordPress functions (2026-05-17)
+Task 4.2 — Permanent dynamic permalink fix for all nav and footer links (2026-05-17)
+Commit: 941878d
 
-Files changed:
-- header.php: nav fallback 5 category links replaced — now use get_category_by_slug() + get_category_link()
-- footer.php: navigate fallback — Reviews now home_url('/'), About and Contact use get_page_by_path() + get_permalink()
-- footer.php: legal column — all 3 links (affiliate-disclosure, privacy-policy, terms-of-use) use get_page_by_path() + get_permalink()
-- archive.php: breadcrumb "Reviews" link fixed from home_url('/reviews/') to home_url('/')
+### Files changed and links updated:
 
-Already correct (no change):
-- header.php logo, footer.php logo, footer.php Home nav: all use home_url('/')
-- index.php hero CTA #reviews: intentional same-page anchor
-- All post/category links in index.php, single.php, archive.php: use the_permalink(), get_permalink(), get_category_link()
-- page-about.php CTA: home_url('/')
-- page-contact.php email: mailto: (external, correct)
+**header.php** — fallback nav (fires only when no WordPress primary menu is assigned):
+- All 5 category links upgraded from get_category_by_slug() + get_category_link() to get_term_by('slug', $slug, 'category') + get_term_link($term)
+- Null/WP_Error check: falls back to home_url('/category/slug/') if term not found
+
+**footer.php** — navigate fallback + legal column (fires only when no WordPress footer menu is assigned):
+- Home: home_url('/')
+- Reviews: home_url('/')
+- About: get_page_by_path('about') + get_permalink() — fallback to home_url('/about/')
+- Contact: get_page_by_path('contact') + get_permalink() — fallback to home_url('/contact/')
+- Affiliate disclosure: get_page_by_path('affiliate-disclosure') + get_permalink() — fallback to home_url('/affiliate-disclosure/')
+- Privacy policy: get_page_by_path('privacy-policy') + get_permalink() — fallback to home_url('/privacy-policy/')
+- Terms of use: get_page_by_path('terms-of-use') + get_permalink() — fallback to home_url('/terms-of-use/')
+
+**archive.php** — breadcrumb:
+- Reviews link: changed from home_url('/reviews/') (would 404) to home_url('/')
+
+**index.php, single.php, page.php** — no changes needed:
+- All post/category links already use the_permalink(), get_permalink(), get_category_link()
+- index.php href="#reviews" is an intentional same-page anchor — correct
 
 ## Next Action
 Phase 4 — Go live on Hostinger.
 
-## Phase 3 Sweep Status — Complete
-- Homepage ✅
-- Single article ✅
-- Category page ✅
-- About ✅
-- Contact ✅
-- Privacy Policy ✅
-- Affiliate Disclosure ✅
-- Terms of Use ✅
+## Phase 3 Sweep Status — Complete ✅
+All pages approved across desktop, tablet, mobile.
 
 ## Pen Name
 DEBORAH (never Rick, never anything else)
@@ -42,4 +45,5 @@ None
 STATE.md was missing and recreated on 2026-05-16
 Phase 2H audit and all fixes completed 2026-05-16
 Phase 3 completed 2026-05-17 — all pages approved across all viewports
-Task 4.1 internal link audit completed 2026-05-17
+Task 4.1 initial link audit completed 2026-05-17
+Task 4.2 permanent link fix committed 2026-05-17
