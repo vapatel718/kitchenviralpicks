@@ -1,5 +1,5 @@
 # tasks.md — KitchenViralPicks Task Board
-# Updated: 2026-05-08 (Task 3.4 complete)
+# Updated: 2026-05-16 (Task 3.7 complete)
 
 ---
 
@@ -14,7 +14,7 @@
 | Phase 2D | Single Review Template | Complete |
 | Phase 2E | Footer | Complete |
 | Phase 2F | Archive / Category Pages | Complete |
-| Phase 3 | Content Setup & Static Pages | In Progress — 4/15 |
+| Phase 3 | Content Setup & Static Pages | In Progress — 7/15 |
 | Phase 4 | SEO & Performance | Not started |
 | Phase 5 | Launch & Deployment | Not started |
 
@@ -115,12 +115,10 @@
 - [x] 3.2 — Configure Rank Math SEO global settings (separator, homepage title/description, sitemap, robots, social)
 - [x] 3.3 — Publish Article 1: Cosori TurboBlaze Air Fryer 6 Qt Review (post ID 13, category: Air Fryers)
 - [x] 3.4 — Publish Article 2: Ninja Air Fryer 5 QT (AF141) Review (post ID 14, slug: ninja-air-fryer-5-qt-review, category: Air Fryers, Rank Math title and meta set, 154-char meta description)
-- [ ] 3.5 — Build About page content (Rick's bio and site mission)
-- [ ] 3.6 — Build Contact page with form
-- [ ] 3.7 — Build Affiliate Disclosure page
+- [x] 3.5 — Build About page content (Deborah's bio and site mission) — Complete 2026-05-16
+- [x] 3.6 — Build Contact page with form — Complete 2026-05-16
+- [x] 3.7 — Build Affiliate Disclosure page — Complete 2026-05-16
 - [ ] 3.8 — Verify all static pages render correctly
-- [ ] 3.7 — (Planned)
-- [ ] 3.8 — (Planned)
 - [ ] 3.9 — (Planned)
 - [ ] 3.10 — (Planned)
 - [ ] 3.11 — (Planned)
@@ -162,3 +160,6 @@
 | 2026-05-08 | 3.2 | Installed and configured Rank Math SEO — separator `\|`, homepage title, homepage meta description, sitemap enabled (posts/pages/categories, tags excluded), robots noindex on date/author/search, Open Graph and Twitter Cards active |
 | 2026-05-08 | 3.3 | Published Article 1 — Cosori TurboBlaze Air Fryer 6 Qt Review (post ID 13, slug: cosori-turboblaze-air-fryer-review, category: Air Fryers, Rank Math title and meta set, 154-char meta description) |
 | 2026-05-08 | 3.4 | Published Article 2 — Ninja Air Fryer Pro 4-in-1 5 QT (AF141) Review (post ID 14, slug: ninja-air-fryer-5-qt-review, category: Air Fryers, Rank Math title and meta set, 154-char meta description) |
+| 2026-05-16 | 3.5 | Built About page (page-about.php) — Deborah's bio, research method, and CTA — all viewports approved |
+| 2026-05-16 | 3.6 | Built Contact page (page-contact.php) — email CTA, brand card layout — all viewports approved |
+| 2026-05-16 | 3.7 | Built Affiliate Disclosure page (page-disclosure.php) — 4-paragraph disclosure, contact email — page ID 10, slug: affiliate-disclosure, template: page-disclosure.php |
