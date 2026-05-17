@@ -4,18 +4,20 @@
 Phase 3 — Content Setup & Static Pages
 
 ## Last Completed Task
-Phase 2H — Full Site Audit + All Fixes Applied (2026-05-16)
+Homepage polish fixes (2026-05-16)
 
 Fixes applied:
-- FIX 1: Deleted nested wp-content/themes/twentytwenty* directories from inside kvp-theme
-- FIX 2: Deleted local-xdebuginfo.php debug file from theme root
-- FIX 3: Removed 4 orphaned dead CSS blocks from style.css (1,279 lines removed; 4,222 → 2,943 lines)
-- FIX 4: Fixed undefined CSS variable var(--color-bg) → var(--color-background) in style.css
-- FIX 5: Fixed tablet padding bug — .page-wrapper @768px padding-top: 64px → 80px in style.css
-- FIX 6: Replaced "Rick" with "Deborah" in 3 comments (archive.php, style.css ×2)
-- FIX 7: Standardized contact email to hello@kitchenviralpicks.com in page-contact.php
-
-Pending commit: awaiting Varun browser review
+- Phase 2H full site audit — 7 fixes (cleanup, CSS, contact email)
+- FIX A1: Hero padding-top clears fixed header at all 3 breakpoints (76/82/88px)
+- FIX A2: Category grid desktop — full-width 5-col grid, no centering constraint
+- FIX A3: Tabler Icons CDN v3.31.0 enqueued in functions.php
+- FIX B1: Mobile category grid changed to 3 columns
+- FIX B2: Mobile review card alignment — flex:1 on .kvp-rc-meta, flex:0 on .kvp-rc-spacer
+- FIX B3: Tablet review card grid changed to 2 columns
+- Tablet card alignment fix — same flex:1 rule at 768px breakpoint
+- Category icons replaced with Tabler Icons <i class="ti ti-*"> tags
+- Corrected 4 broken icon names (ti-cookie, ti-tools-kitchen, ti-cup, ti-kettle)
+- Desktop category grid changed to repeat(4, 1fr) — 4+3 rows for 7 categories
 
 ## Next Task
 3.10 — Full static pages review (all 5 pages across all viewports)
@@ -28,4 +30,4 @@ None
 
 ## Notes
 STATE.md was missing and recreated on 2026-05-16
-Phase 2H audit and all 7 fixes completed 2026-05-16
+Phase 2H audit and all fixes completed 2026-05-16

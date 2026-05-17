@@ -321,11 +321,11 @@
     ] );
     $cat_icons = [
         'air-fryers'   => '<i class="ti ti-wind"></i>',
-        'bakeware'     => '<i class="ti ti-bread"></i>',
+        'bakeware'     => '<i class="ti ti-cookie"></i>',
         'blenders'     => '<i class="ti ti-blender"></i>',
-        'cookware'     => '<i class="ti ti-tools-kitchen-2"></i>',
-        'kettles'      => '<i class="ti ti-coffee"></i>',
-        'multicooker'  => '<i class="ti ti-pot"></i>',
+        'cookware'     => '<i class="ti ti-tools-kitchen"></i>',
+        'kettles'      => '<i class="ti ti-cup"></i>',
+        'multicooker'  => '<i class="ti ti-kettle"></i>',
         'stand-mixers' => '<i class="ti ti-mixer"></i>',
     ];
     ?>
