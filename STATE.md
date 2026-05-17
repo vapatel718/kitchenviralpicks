@@ -4,11 +4,11 @@
 Phase 3 — Content Setup & Static Pages
 
 ## Last Completed Task
-3.7 — Affiliate Disclosure page (page-disclosure.php, page ID 10, slug: affiliate-disclosure)
+3.8 — Privacy Policy page (page-privacy.php, page ID 3, slug: privacy-policy)
 Commit: pending approval
 
 ## Next Task
-3.8 — Verify all static pages render correctly
+3.9 — Terms of Use page
 
 ## Pen Name
 DEBORAH (never Rick, never anything else)
