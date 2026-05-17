@@ -39,9 +39,9 @@
                 <?php else : ?>
                     <ul class="kvp-footer-links">
                         <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'kvp-theme' ); ?></a></li>
-                        <li><a href="#"><?php esc_html_e( 'Reviews', 'kvp-theme' ); ?></a></li>
-                        <li><a href="#"><?php esc_html_e( 'About', 'kvp-theme' ); ?></a></li>
-                        <li><a href="#"><?php esc_html_e( 'Contact', 'kvp-theme' ); ?></a></li>
+                        <li><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Reviews', 'kvp-theme' ); ?></a></li>
+                        <li><a href="<?php $p = get_page_by_path( 'about' ); echo esc_url( $p ? get_permalink( $p->ID ) : home_url( '/about/' ) ); ?>"><?php esc_html_e( 'About', 'kvp-theme' ); ?></a></li>
+                        <li><a href="<?php $p = get_page_by_path( 'contact' ); echo esc_url( $p ? get_permalink( $p->ID ) : home_url( '/contact/' ) ); ?>"><?php esc_html_e( 'Contact', 'kvp-theme' ); ?></a></li>
                     </ul>
                 <?php endif; ?>
             </div>
@@ -50,9 +50,9 @@
             <div class="kvp-footer-legal-col">
                 <p class="kvp-footer-col-heading"><?php esc_html_e( 'LEGAL', 'kvp-theme' ); ?></p>
                 <ul class="kvp-footer-links">
-                    <li><a href="#"><?php esc_html_e( 'Affiliate disclosure', 'kvp-theme' ); ?></a></li>
-                    <li><a href="#"><?php esc_html_e( 'Privacy policy', 'kvp-theme' ); ?></a></li>
-                    <li><a href="#"><?php esc_html_e( 'Terms of use', 'kvp-theme' ); ?></a></li>
+                    <li><a href="<?php $p = get_page_by_path( 'affiliate-disclosure' ); echo esc_url( $p ? get_permalink( $p->ID ) : home_url( '/affiliate-disclosure/' ) ); ?>"><?php esc_html_e( 'Affiliate disclosure', 'kvp-theme' ); ?></a></li>
+                    <li><a href="<?php $p = get_page_by_path( 'privacy-policy' ); echo esc_url( $p ? get_permalink( $p->ID ) : home_url( '/privacy-policy/' ) ); ?>"><?php esc_html_e( 'Privacy policy', 'kvp-theme' ); ?></a></li>
+                    <li><a href="<?php $p = get_page_by_path( 'terms-of-use' ); echo esc_url( $p ? get_permalink( $p->ID ) : home_url( '/terms-of-use/' ) ); ?>"><?php esc_html_e( 'Terms of use', 'kvp-theme' ); ?></a></li>
                 </ul>
             </div>
 

@@ -26,7 +26,7 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
             <nav class="kvp-arc-breadcrumb" aria-label="<?php esc_attr_e( 'Breadcrumb', 'kvp-theme' ); ?>">
                 <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Home', 'kvp-theme' ); ?></a>
                 <span class="kvp-arc-sep" aria-hidden="true">›</span>
-                <a href="<?php echo esc_url( home_url( '/reviews/' ) ); ?>"><?php esc_html_e( 'Reviews', 'kvp-theme' ); ?></a>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Reviews', 'kvp-theme' ); ?></a>
                 <span class="kvp-arc-sep" aria-hidden="true">›</span>
                 <span class="kvp-arc-current"><?php echo esc_html( $cat_name ); ?></span>
             </nav>

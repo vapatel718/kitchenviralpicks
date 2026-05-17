@@ -42,13 +42,20 @@
                 'container'      => false,
                 'menu_class'     => 'kvp-nav__list',
                 'fallback_cb'    => function() {
-                    echo '<ul class="kvp-nav__list">
-                        <li><a href="#">Air Fryers</a></li>
-                        <li><a href="#">Cookware</a></li>
-                        <li><a href="#">Kettles</a></li>
-                        <li><a href="#">Bakeware</a></li>
-                        <li><a href="#">Multicooker</a></li>
-                    </ul>';
+                    $nav_cats = array(
+                        'air-fryers'  => 'Air Fryers',
+                        'cookware'    => 'Cookware',
+                        'kettles'     => 'Kettles',
+                        'bakeware'    => 'Bakeware',
+                        'multicooker' => 'Multicooker',
+                    );
+                    echo '<ul class="kvp-nav__list">';
+                    foreach ( $nav_cats as $slug => $label ) {
+                        $term = get_term_by( 'slug', $slug, 'category' );
+                        $url  = ( $term && ! is_wp_error( $term ) ) ? get_term_link( $term ) : home_url( '/category/' . $slug . '/' );
+                        echo '<li><a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a></li>';
+                    }
+                    echo '</ul>';
                 },
             ) );
             ?>
