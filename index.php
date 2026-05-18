@@ -1,5 +1,40 @@
 <?php get_header(); ?>
 
+<?php
+if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
+    $dbg_hero = new WP_Query( [
+        'category_name'  => 'air-fryers',
+        'posts_per_page' => 1,
+        'post_status'    => 'publish',
+        'meta_key'       => 'kvp_rating',
+        'orderby'        => 'meta_value_num',
+        'order'          => 'DESC',
+    ] );
+    $dbg_af = new WP_Query( [
+        'category_name'  => 'air-fryers',
+        'posts_per_page' => 1,
+        'post_status'    => 'publish',
+    ] );
+    $dbg_cw = new WP_Query( [
+        'tax_query'      => [ [ 'taxonomy' => 'category', 'field' => 'slug', 'terms' => [ 'cookware' ] ] ],
+        'posts_per_page' => 1,
+        'post_status'    => 'publish',
+    ] );
+    $dbg_kt = new WP_Query( [
+        'tax_query'      => [ [ 'taxonomy' => 'category', 'field' => 'slug', 'terms' => [ 'kettles', 'multicooker' ], 'operator' => 'IN' ] ],
+        'posts_per_page' => 1,
+        'post_status'    => 'publish',
+    ] );
+    echo "<!--\n";
+    echo "KVP DEBUG — WP_Query found_posts (admin only, temporary)\n";
+    echo "hero_q  (air-fryers, ordered by kvp_rating):  found_posts=" . intval( $dbg_hero->found_posts ) . "\n";
+    echo "af_q    (air-fryers, up to 4):                found_posts=" . intval( $dbg_af->found_posts ) . "\n";
+    echo "cw_q    (cookware, up to 6):                  found_posts=" . intval( $dbg_cw->found_posts ) . "\n";
+    echo "kt_q    (kettles + multicooker, up to 4):     found_posts=" . intval( $dbg_kt->found_posts ) . "\n";
+    echo "-->\n";
+}
+?>
+
 <div class="kvp-page-wrap">
 
   <!-- ================================================
@@ -177,6 +212,17 @@
       </div>
       <?php endwhile; wp_reset_postdata(); ?>
     </div>
+    <?php else : ?>
+    <div class="kvp-sec-hdr">
+      <h2 class="kvp-sec-title"><?php esc_html_e( 'Air Fryers', 'kvp-theme' ); ?></h2>
+    </div>
+    <div class="kvp-grid kvp-grid-2 kvp-grid--af">
+      <div class="kvp-rc kvp-rc--coming-soon">
+        <div class="kvp-rc-body">
+          <p class="kvp-rc-title"><?php esc_html_e( 'Reviews coming soon', 'kvp-theme' ); ?></p>
+        </div>
+      </div>
+    </div>
     <?php endif; ?>
 
 
@@ -235,6 +281,17 @@
         </div>
       </div>
       <?php endwhile; wp_reset_postdata(); ?>
+    </div>
+    <?php else : ?>
+    <div class="kvp-sec-hdr">
+      <h2 class="kvp-sec-title"><?php esc_html_e( 'Cookware', 'kvp-theme' ); ?></h2>
+    </div>
+    <div class="kvp-grid kvp-grid-3">
+      <div class="kvp-rc kvp-rc--coming-soon">
+        <div class="kvp-rc-body">
+          <p class="kvp-rc-title"><?php esc_html_e( 'Reviews coming soon', 'kvp-theme' ); ?></p>
+        </div>
+      </div>
     </div>
     <?php endif; ?>
 
@@ -297,6 +354,17 @@
         </div>
       </div>
       <?php endwhile; wp_reset_postdata(); ?>
+    </div>
+    <?php else : ?>
+    <div class="kvp-sec-hdr">
+      <h2 class="kvp-sec-title"><?php esc_html_e( 'Kettles & Multicookers', 'kvp-theme' ); ?></h2>
+    </div>
+    <div class="kvp-grid kvp-grid-2 kvp-grid--kt kvp-grid--last">
+      <div class="kvp-rc kvp-rc--coming-soon">
+        <div class="kvp-rc-body">
+          <p class="kvp-rc-title"><?php esc_html_e( 'Reviews coming soon', 'kvp-theme' ); ?></p>
+        </div>
+      </div>
     </div>
     <?php endif; ?>
 
