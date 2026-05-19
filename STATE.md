@@ -4,19 +4,15 @@
 Phase 4 — Go Live on Hostinger
 
 ## Last Completed
-Phase 3 fully closed — all internal links fixed and working across all templates and viewports (2026-05-17)
+Task 5.1B — Replaced placeholder email hello@kitchenviralpicks.com with kitchenviralpicks@gmail.com in all 3 template files (2026-05-19)
 
-Fix committed as: 941878d — "fix: permanent dynamic permalink fix for all nav and footer links across all templates"
-
-### What was fixed:
-- header.php: fallback nav — 5 category links now use get_term_by() + get_term_link() with WP_Error guard
-- footer.php: navigate fallback — Reviews/About/Contact use home_url() and get_page_by_path() + get_permalink() with null fallback
-- footer.php: legal column — affiliate-disclosure/privacy-policy/terms-of-use use get_page_by_path() + get_permalink() with null fallback
-- archive.php: breadcrumb "Reviews" link fixed from home_url('/reviews/') to home_url('/')
-- index.php, single.php, page.php: confirmed correct — no changes needed
+### What was changed:
+- page-contact.php: mailto href updated
+- page-disclosure.php: mailto href and display text updated
+- page-privacy.php: mailto href and display text updated
 
 ## Next Action
-Phase 4 — Go live on Hostinger.
+Phase 4 — Go live on Hostinger (continue pre-launch checklist).
 
 ## Phase 3 Sweep Status — Complete ✅
 - Homepage ✅

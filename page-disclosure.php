@@ -40,7 +40,7 @@ get_header();
                 <h2 class="kvp-about-section-h2"><?php _e( 'Questions', 'kvp-theme' ); ?></h2>
                 <p class="kvp-contact-body">
                     <?php _e( 'If you have any questions about our affiliate relationships, contact us at:', 'kvp-theme' ); ?>
-                    <a href="mailto:hello@kitchenviralpicks.com">hello@kitchenviralpicks.com</a>
+                    <a href="mailto:kitchenviralpicks@gmail.com">kitchenviralpicks@gmail.com</a>
                 </p>
 
             </div>
