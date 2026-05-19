@@ -4,15 +4,15 @@
 Phase 4 — Go Live on Hostinger
 
 ## Last Completed
-Task 5.1B — Replaced placeholder email hello@kitchenviralpicks.com with kitchenviralpicks@gmail.com in all 3 template files (2026-05-19)
+Task 5.4A — Added real affiliate link to COSORI TurboBlaze article (2026-05-19)
 
 ### What was changed:
-- page-contact.php: mailto href updated
-- page-disclosure.php: mailto href and display text updated
-- page-privacy.php: mailto href and display text updated
+- wp_postmeta: kvp_amazon_url for post ID 13 set to https://amzn.to/4nEtNxK (tracking ID: kitchenviralp-20)
+- wp_postmeta: kvp_affiliate_url for post ID 13 set to https://amzn.to/4nEtNxK (consistency)
+- single.php: confirmed — all 4 "Check price on Amazon" buttons use $amazon_href from kvp_amazon_url, no hardcoded # in template
 
 ## Next Action
-Phase 4 — Go live on Hostinger (continue pre-launch checklist).
+Phase 4 — Go live on Hostinger (continue pre-launch checklist — add affiliate links to remaining articles).
 
 ## Phase 3 Sweep Status — Complete ✅
 - Homepage ✅
