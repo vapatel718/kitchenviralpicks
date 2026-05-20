@@ -446,7 +446,7 @@ main,
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: auto;
 }
 
 /* Review Card — horizontal layout on mobile */
@@ -474,6 +474,7 @@ main,
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: 100%;
 }
 
 .kvp-rc-cat {
