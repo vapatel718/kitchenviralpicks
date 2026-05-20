@@ -4,16 +4,20 @@
 Phase 6 — TBD
 
 ## Last Completed
-Task 5.6 — Dynamic homepage deployed to live Hostinger server (2026-05-19)
+Task 6.1 — Equal-height card fix deployed to live Hostinger server (2026-05-19)
 
 ### What was changed (live Hostinger server):
-- index.php uploaded via SCP to /home/u834996894/domains/kitchenviralpicks.com/public_html/wp-content/themes/kvp-theme/index.php
-- File size: 26,960 bytes
-- Timestamp confirmed: May 20 01:19 on live server
-- Phase 5 fully complete
+- style.css: .kvp-grid — added align-items: stretch
+- style.css: .kvp-grid-2, .kvp-grid-3 — added align-items: stretch
+- style.css: .kvp-rc — added height: 100% (display: flex; flex-direction: column already present)
+- style.css: .kvp-rc-spacer — flex: 1 already present, no change needed
+- style.css deployed via SCP — timestamp May 20 01:26
 
 ## Next Action
-Phase 6 — TBD
+Task 6.2 — TBD
+
+## Phase 6 Status
+- Task 6.1: Equal-height cards, buttons aligned to bottom on archive pages ✅
 
 ## Phase 5 Status — Complete ✅
 - Task 5.4A: COSORI TurboBlaze affiliate link live ✅

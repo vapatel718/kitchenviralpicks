@@ -417,12 +417,14 @@ main,
 /* Grids */
 .kvp-grid {
   margin-bottom: 0;
+  align-items: stretch;
 }
 
 .kvp-grid-2,
 .kvp-grid-3 {
   display: grid;
   gap: 12px;
+  align-items: stretch;
 }
 
 /* Mobile: Air Fryers + Kettles — 1-col horizontal cards */
@@ -443,6 +445,7 @@ main,
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 /* Review Card — horizontal layout on mobile */
