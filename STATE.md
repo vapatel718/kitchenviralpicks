@@ -4,12 +4,12 @@
 Phase 6 — TBD
 
 ## Last Completed
-Task 6.1C — Equal height card fix deployed to live Hostinger server (2026-05-19)
+Task 6.1D — Archive card button alignment fix deployed to live Hostinger server (2026-05-19)
 
 ### What was changed (live Hostinger server):
-- style.css: .kvp-rc — height: 100% changed to height: auto
-- style.css: .kvp-rc-body — added height: 100% (display:flex, flex-direction:column, flex:1 already present)
-- style.css deployed via SCP — timestamp May 20 01:35
+- style.css: .kvp-arc-card-body — display:flex, flex-direction:column, flex:1 already present, no change needed
+- style.css: .kvp-arc-card-btn — added margin-top: auto
+- style.css deployed via SCP — timestamp May 20 01:41
 
 ## Next Action
 Task 6.2 — TBD
@@ -18,6 +18,7 @@ Task 6.2 — TBD
 - Task 6.1: Equal-height cards, align-items + height:100% on .kvp-rc ✅
 - Task 6.1B: display:grid added to .kvp-grid ✅
 - Task 6.1C: .kvp-rc height:auto, .kvp-rc-body height:100% ✅
+- Task 6.1D: margin-top:auto on .kvp-arc-card-btn ✅
 
 ## Phase 5 Status — Complete ✅
 - Task 5.4A: COSORI TurboBlaze affiliate link live ✅
