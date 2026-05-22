@@ -1,95 +1,138 @@
 # CLAUDE.md — KitchenViralPicks Master Rules
-# Every agent reads this file before doing anything else.
+# Every session: Claude Code reads this file AND STATE.md before doing anything.
 # Last updated: May 2026
 
 ---
 
-## Project Identity
+## 1. Project Identity
 
 - Site: KitchenViralPicks.com
-- Type: Affiliate marketing site — kitchen product reviews
+- Type: Affiliate review site — kitchen products
 - Monetization: Amazon Associates
 - Stack: Custom WordPress theme (kvp-theme)
 - Local dev: kitchenviralpicks.local (Local by Flywheel)
-- Live host: Hostinger
+- Live host: Hostinger (SSH port 65002)
 - Domain: Namecheap
 - Version control: Git + GitHub
-- Pen name: Deborah
+- Pen name: Deborah — permanent, locked, never changes
 - Author title: Kitchen Researcher & Product Analyst
 
 ---
 
-## Operator
+## 2. Brand — Never Change
 
-- Name: Varun
-- Technical level: Beginner — explain every term first time it appears
-- Goal: Passive income for family financial freedom
-- Rule: One task at a time. Never jump ahead.
-
----
-
-## Brand Colors — Never Change These
-
+Colors:
 - Primary (Flame Red): #E8401C
 - Accent (Warm Orange): #F76B35
 - Background (Cream): #FFF8F5
 - Text (Charcoal): #1A1A1A
 
----
-
-## Brand Typography — Never Change These
-
+Typography:
 - Headings: Playfair Display
 - Body: Lato
 
----
-
-## Design Rules — Never Compromise
-
+Design principles:
 - Mobile-first — majority of visitors are on phones
 - Warm and trustworthy — not cold, not corporate
-- Clean and uncluttered — fast loading, easy to read
+- Clean, fast, easy to read
 - Verdict boxes and affiliate buttons must be prominent
 - No generic AI aesthetics — must look like a real kitchen brand
 
 ---
 
-## Agent Rules
+## 3. Environments — Declare Before Every Command
 
-- kvp-architect: Plans only. Never writes code. Never touches WordPress.
-- kvp-builder: Builds theme files only. Never touches live site.
-- kvp-reviewer: Checks code quality and brand compliance. Never touches WordPress.
-- kvp-publisher: Deploys to Hostinger ONLY after explicit Varun approval in chat.
+| Task | Environment |
+|------|-------------|
+| WP-CLI commands | Site Shell (Local by Flywheel) |
+| Git commands | Regular Terminal only |
+| Live server changes | SSH: ssh -p 65002 u834996894@157.173.208.147 |
+
+Rule: Never mix environments in a single task.
+Rule: State which environment and WHY before running any command.
+Rule: If uncertain which environment — STOP and ask. Never guess.
 
 ---
 
-## Workflow — Every Task Without Exception
+## 4. Core Workflow — Every Task Without Exception
 
-1. Plan the task in chat
-2. Varun reviews the plan
+1. Claude (chat) plans the task and writes the Claude Code prompt
+2. Varun reviews the plan in chat
 3. Varun approves
-4. Execute locally (kitchenviralpicks.local)
-5. pre-edit hook runs — Git snapshot taken
-6. Varun reviews in browser
-7. Varun approves or rejects
-8. If approved — update tasks.md — move to next task
-9. If rejected — fix — re-review
-10. Phase complete — push to Hostinger
+4. Claude Code executes locally (kitchenviralpicks.local)
+5. Varun reviews in browser
+6. Varun types "approved" or describes what is wrong
+7. If approved → Claude Code commits → updates STATE.md
+8. If rejected → diagnose root cause → fix → re-review
+9. Phase complete → Varun approves deploy → push to Hostinger via SSH
 
-Golden Rule: Nothing touches the live Hostinger site until Varun approves it locally.
-
----
-
-## Safety Rules
-
-- Git snapshot taken before EVERY file change (pre-edit hook)
-- If anything breaks: git checkout . restores previous version instantly
-- Nothing in review-queue.md executes without Varun typing "approved"
-- Publisher agent never runs without explicit Varun approval in chat
+Golden Rule: Nothing touches the live Hostinger site until Varun approves locally.
+Golden Rule: One fix = one commit. Never batch fixes into one commit.
 
 ---
 
-## Content Rules — Non-Negotiable
+## 5. Fix Protocol — Every Code Change Without Exception
+
+This is the single most important protocol. Follow it exactly, every time.
+
+Step 1 — READ
+Grep or view the exact file and selector being changed.
+Print the findings — exact lines, exact selectors.
+
+Step 2 — REPORT
+State what was found.
+State the exact line(s) that will be changed and why.
+If findings are unexpected — STOP and report to Varun before proceeding.
+
+Step 3 — FIX
+Make the single targeted change based on what was actually found.
+Touch ONLY the file and selector explicitly named in the prompt.
+
+Step 4 — VERIFY
+Grep again to confirm the change exists in the file exactly as intended.
+Confirm no adjacent approved file was touched.
+
+Step 5 — COMMIT
+Commit immediately with a clear message: what changed and why.
+Format: git commit -m "fix: [what] — [why]"
+
+Step 6 — UPDATE STATE.md
+Update STATE.md as the final step, every time, no exceptions.
+
+---
+
+## 6. Chat Prompt Standard — Claude (chat) Before Writing Any Claude Code Prompt
+
+Before writing any Claude Code prompt, answer these internally:
+1. What is the root cause — not the symptom?
+2. Which exact file, selector, and line is responsible?
+3. What could conflict — specificity, inheritance, breakpoints, caching?
+4. Is the fix local-only or does it also need to deploy to live?
+
+If any answer is uncertain → instruct Claude Code to READ the file first and report back.
+Never write a fix prompt based on assumption.
+
+---
+
+## 7. Surgical Change Rule — Absolute
+
+- Touch ONLY the file and function explicitly named in the prompt
+- Do NOT refactor, reformat, or improve adjacent code
+- Do NOT touch functions.php, style.css, or any approved file unless it is the explicit target
+- If something unrelated looks wrong — report it, do not fix it
+- Approved files are protected: single.php, archive.php, index.php, footer.php, page.php, style.css
+
+---
+
+## 8. Pen Name — Pre-Flight Check Every Session
+
+- Pen name is Deborah. Permanent. Non-negotiable.
+- Before writing ANY article content or author attribution — verify pen name is Deborah
+- If any content in the session used a different name — flag it immediately
+
+---
+
+## 9. Content Rules — Non-Negotiable
 
 - NEVER claim personal product usage — Varun has not tested these products
 - ALWAYS use research-based voice: "Based on X verified reviews..."
@@ -97,97 +140,92 @@ Golden Rule: Nothing touches the live Hostinger site until Varun approves it loc
 - NEVER copy Amazon product descriptions — always rewrite in original words
 - Prices always: "at the time of writing, priced around $X"
 - Amazon ratings always: "X.X stars on Amazon (XX,XXX reviews)"
-- All Amazon links must include rel="sponsored nofollow" in HTML
+- All Amazon links must include rel="sponsored nofollow"
 - NEVER use: game-changer, must-have, look no further, boasts, features, we tested
 
 ---
 
-## Rule Files
+## 10. Article Workflow — Split Approach
 
-- Brand rules: .claude/rules/brand-rules.md
-- Code rules: .claude/rules/code-rules.md
-- Content rules: .claude/rules/content-rules.md
+Research is always done by Claude (chat). Claude Code never researches independently.
 
----
-
-## Hook Files
-
-- Pre-edit (auto Git snapshot): .claude/hooks/pre-edit.sh
-- Post-edit (auto verify): .claude/hooks/post-edit.sh
-
----
-
-## Content Workflow
-
-ARTICLE WORKFLOW — SPLIT APPROACH (active as of May 2026)
-
-Research is always done by Claude (chat) before Claude Code is involved.
-Claude Code receives pre-filled product data and never researches independently.
-
-Step 1 — Claude (chat) researches the product using web search and compiles a data block covering:
+Step 1 — Claude (chat) researches the product and compiles a data block:
 - Full product name, ASIN, current price, badges
 - Amazon star rating and review count
 - Minimum 4 buyer praise themes (from verified review patterns)
 - Minimum 2 buyer complaints (honest negatives)
 - Full spec sheet
-- Competitive context (1-2 points)
 - Primary SEO keyword and search intent
 
 Step 2 — Varun reviews and approves the data block in chat.
 
-Step 3 — Claude (chat) writes the Claude Code prompt with all product data pre-filled.
+Step 3 — Claude (chat) writes the Claude Code prompt with all data pre-filled.
 
-Step 4 — Claude Code receives the prompt, writes the article using provided data only, publishes via WP-CLI, updates STATE.md, and commits.
+Step 4 — Claude Code receives the prompt, writes the article using provided data only,
+publishes via WP-CLI, updates STATE.md, and commits.
 
-RULE: Claude Code must never browse, search, or independently research any product. If product data is missing from the prompt, Claude Code must stop and report what is missing — never fill gaps by guessing or researching.
-
----
-
-## Research Ethics Rules
-
-1. Research method: Visit public product pages once, manually — never build scrapers or automated loops
-2. Data honesty: Only use real, verifiable data — never fabricate or round up ratings, review counts, or prices
-3. Amazon ToS: Read public pages as a normal browser would — never bypass access controls or hit pages repeatedly
-4. Price disclaimer: Always note "at time of writing — price may vary" next to any price cited
-5. Review data: Only use review counts and ratings visible on the public product page at time of research
-6. No manipulation: Never cherry-pick only positive reviews — complaints must be represented accurately
-7. Attribution: Never claim data is from Amazon if it was not verified there directly
+Rule: Claude Code must never browse, search, or independently research any product.
+Rule: If product data is missing from the prompt — STOP and report what is missing. Never guess.
 
 ---
 
-## Current Task Board
+## 11. Research Ethics
 
-See: tasks.md
+1. Only use real, verifiable data — never fabricate ratings, review counts, or prices
+2. Always note "at time of writing — price may vary" next to any price cited
+3. Never cherry-pick only positive reviews — complaints must be represented honestly
+4. Never claim data is from Amazon if it was not verified there directly
 
 ---
 
-## Behavioral Rules — How to Act (Read Before Every Task)
+## 12. No Speculative Work
 
-### 1. Surgical Changes — Absolute Rule
-- Touch ONLY the file and function explicitly named in the prompt
-- Do NOT refactor, reformat, or "improve" adjacent code, comments, or whitespace
-- Do NOT touch functions.php, style.css, or any approved file unless it is the explicit target of the current task
-- If you notice something unrelated that looks wrong — report it in your response, do not fix it
-- Approved files (single.php, archive.php, index.php, footer.php, page.php) are protected — extra caution required on any task touching these
-
-### 2. Declare Environment Before Every Command
-- Before running any command, state which environment you are using: Site Shell (WP-CLI) / Regular Terminal (Git) / SSH (live server)
-- State WHY that environment is correct for this command
-- If uncertain which environment applies — STOP and ask. Never guess.
-- Never mix environments in a single task
-
-### 3. State Assumptions Before Acting
-- If the prompt has more than one valid interpretation — list them, pick none, ask
-- If product data, a file path, or a URL is missing from the prompt — STOP and report exactly what is missing. Never fill gaps by guessing
-- Never proceed on an assumption you have not stated out loud
-
-### 4. Pen Name Pre-Flight Check
-- Before writing ANY article content, author attribution, or UI copy — verify pen name is Deborah
-- Deborah is permanent and non-negotiable
-- If any prior content in the session used a different name — flag it immediately before continuing
-
-### 5. No Speculative Work
 - Build exactly what was asked. Nothing more.
-- No extra custom fields, hooks, helper functions, or "while I'm here" additions
-- No future-proofing or abstractions for single-use code
+- No extra fields, hooks, or "while I'm here" additions
+- No future-proofing for single-use code
 - If a simpler approach exists — say so before coding, then wait for approval
+
+---
+
+## 13. STATE.md — Required Format
+
+Claude Code updates STATE.md after every task using this exact format:
+
+```
+# STATE.md — KitchenViralPicks
+
+Last updated: [date]
+Last commit: [hash — message]
+
+## Current Phase
+[Phase number and name]
+
+## Last Completed Task
+[Task ID and description]
+
+## Next Task
+[Task ID and description]
+
+## Known Issues
+[Any open issues — or "None"]
+
+## Live Server Status
+[Deployed up to which commit — or "Not yet deployed"]
+```
+
+---
+
+## 14. Safety Rules
+
+- Git snapshot taken before EVERY file change via pre-edit hook
+- If anything breaks: git checkout . restores the previous version instantly
+- Nothing deploys to live without Varun typing "approved" in chat
+- One fix = one commit — never batch multiple fixes into one commit
+
+---
+
+## 15. Assumptions Rule
+
+- If the prompt has more than one valid interpretation — list them, pick none, ask Varun
+- If any file path, URL, or product data is missing — STOP and report exactly what is missing
+- Never proceed on an assumption that has not been stated out loud first
