@@ -15,6 +15,28 @@ Phase 6 session complete. All changes committed to Git. Deploy to live pending S
 ## Next Action
 Task 6.2 — Rank Math SEO configuration
 
+## Recent Fixes (uncommitted)
+- Fix A: .kvp-rc--horiz-mobile .kvp-rc-img height: 100% → height: 100px (style.css line 491) ✅
+- Fix B: .kvp-arc-card-price margin: 0 0 10px → margin: auto 0 10px (style.css line 2169) ✅
+- Fix C: .kvp-rc-img img width/height: auto → 100% (style.css line 469-470) ✅
+- Fix D: .kvp-grid-3 orphan card rule wrapped in @media (min-width: 1024px) — no longer fires on mobile/tablet (style.css line 476) ✅
+- Fix E: .kvp-arc-card-price margin: auto 0 10px confirmed in place — no change needed ✅
+- Fix F: .kvp-rc-img img margin: auto added (style.css line 474) ✅
+- Fix G: .kvp-rc-price margin: 6px 0 2px → auto 0 2px — top now auto for price push-down (style.css line 565) ✅
+- Fix H: .kvp-arc-card-price color: #666 → #E8401C (style.css line 2171) ✅
+- Fix I: .kvp-rc-img img width/height reverted 100% → auto; margin: auto retained (style.css line 469-470) ✅
+- Fix J: .kvp-rc--horiz-mobile .kvp-rc-img display:flex + align-items:center + justify-content:center added explicitly to mobile override (style.css line 498-500) ✅
+- Fix K: .kvp-rc--horiz-mobile .kvp-rc-img img updated inside @media (max-width:767px) — width:auto !important, height:auto !important, max-width/max-height:100% !important, object-fit:contain, object-position:center, display:block, margin:auto — !important overrides WP-injected inline width/height attributes ✅
+- Fix L: .kvp-rc--horiz-mobile .kvp-rc-img background: #FFF8F5 added in mobile override — removes white box mismatch against cream card background ✅
+- Fix M: .kvp-rc--horiz-mobile .kvp-rc-img + img rewritten inside @media (max-width:767px) — absolute positioning with transform:translate(-50%,-50%) centering; padding:0, overflow:hidden, position:relative on container; height:100%!important, max-width:none!important, object-fit:unset on img — reliably centers images of unknown dimensions regardless of WP-injected attributes (style.css lines 491-514) ✅
+- Fix N: .kvp-rc--horiz-mobile .kvp-rc-img + img reverted to white padded box approach (matching live site) — 110px container, padding:8px, background:#ffffff, overflow:hidden; img uses width/height:auto!important, max-width/max-height:100%!important, object-fit:contain, object-position:center, position:static, transform:none, margin:auto — absolute positioning removed (style.css lines 491-515) ✅
+- Fix O: .kvp-rc--horiz-mobile .kvp-rc-img background: #ffffff → #FFF8F5 (line 498); .kvp-rc--horiz-mobile .kvp-rc-img img align-self:center added (line 514) ✅
+- Fix P: all three .kvp-rc--horiz-mobile rules rewritten inside @media (max-width:767px) — grid-template-columns: 100px→110px; container background:#ffffff, flex-shrink:0 added; img rule: display:block, max-width:94px!important, max-height:94px!important (concrete pixel cap = 110px - 8px padding each side), position/transform/align-self removed — clean slate (style.css lines 487-516) ✅
+- Fix Q: align-items:start added to .kvp-rc--horiz-mobile grid inside @media (max-width:767px) — prevents grid from stretching image cell to match card body height (style.css line 490) ✅
+- Fix R: three changes inside @media (max-width:767px) — (1) align-items:start removed from .kvp-rc--horiz-mobile (grid stretches both columns to equal height); (2) border-right:1px solid rgba(0,0,0,0.06) added to .kvp-rc--horiz-mobile .kvp-rc-img (subtle boundary between white box and cream body); (3) max-width/max-height on img: 94px→80px !important (more white space around image for visual centering) (style.css lines 487-515) ✅
+- Fix S: Phase 6 fix — mobile horizontal card image stretch fixed. .kvp-rc--horiz-mobile .kvp-rc-img img replaced with width:100%, height:100%, object-fit:contain, object-position:center — all !important overrides and max-width/max-height removed (style.css lines 506-512) — local ✅ / live pending (SSH auth failed — run scp manually)
+- Fix T: Phase 6 fix — mobile horizontal card image centered with max-width/height 90% and margin auto. .kvp-rc--horiz-mobile .kvp-rc-img img: max-width:90%, max-height:90%, width:auto, height:auto, object-fit:contain, object-position:center, margin:auto (style.css lines 506-515) — local ✅ / not deployed
+
 ## Phase 6 Status
 - Task 6.1: Equal-height cards, align-items + height:100% on .kvp-rc ✅
 - Task 6.1B: display:grid added to .kvp-grid ✅

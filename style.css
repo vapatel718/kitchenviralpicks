@@ -471,27 +471,47 @@ main,
   object-fit: contain;
   object-position: center;
   display: block;
+  margin: auto;
 }
 
-.kvp-grid-3 .kvp-rc:last-child:nth-child(3n+1) {
-  grid-column: 1 / -1;
-  max-width: 380px;
-  margin: 0 auto;
+@media (min-width: 1024px) {
+  .kvp-grid-3 .kvp-rc:last-child:nth-child(3n+1) {
+    grid-column: 1 / -1;
+    max-width: 380px;
+    margin: 0 auto;
+  }
 }
 
 /* Horizontal card layout — mobile only */
 @media (max-width: 767px) {
   .kvp-rc--horiz-mobile {
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 110px 1fr;
   }
   .kvp-rc--horiz-mobile .kvp-rc-img {
-    width: 100px;
-    min-width: 100px;
-    height: 100%;
-    min-height: 100px;
-    padding: 10px;
+    width: 110px;
+    min-width: 110px;
+    height: 110px;
+    min-height: 110px;
+    padding: 8px;
     aspect-ratio: unset;
+    background: #ffffff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-right: 1px solid rgba(0,0,0,0.06);
+  }
+  .kvp-rc--horiz-mobile .kvp-rc-img img {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    margin: auto;
   }
 }
 
@@ -560,7 +580,7 @@ main,
   font-size: 20px;
   font-weight: 700;
   color: #E8401C;
-  margin: 6px 0 2px;
+  margin: auto 0 2px;
   line-height: 1;
 }
 
@@ -2165,8 +2185,8 @@ h1, h2, h3,
 
 .kvp-arc-card-price {
     font-size: 13px;
-    color: #666;
-    margin: 0 0 10px;
+    color: #E8401C;
+    margin: auto 0 10px;
 }
 
 .kvp-arc-card-snippet {
