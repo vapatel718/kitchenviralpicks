@@ -4,15 +4,16 @@
 Phase 6 — TBD
 
 ## Last Completed
-Phase 6 fix — category page image background set to white. CAROTE orphan card fixed with grid-column span. (2026-05-21)
+Phase 6 session complete. All changes committed to Git. Deploy to live pending SSH fix. (2026-05-21)
 
-### What was changed:
-- style.css: .kvp-arc-card-img background #FFF8F5 → #ffffff (base rule + media query override)
-- style.css: .kvp-grid-3 .kvp-rc:last-child:nth-child(3n+1) orphan rule added
-- Deploy to live Hostinger: SSH auth failed in this shell — run scp manually
+### What was committed (a1438b6):
+- index.php: hero card image wired to featured thumbnail; all review card images wired to featured thumbnails
+- style.css: full clean rewrite of .kvp-rc-img rules; horiz-mobile scoped to max-width 767px; .kvp-arc-card-img background → #ffffff; CAROTE orphan card rule; .kvp-reviews background restored
+- functions.php: kvp_remove_featured_from_content() added
+- Deploy to live Hostinger: SSH auth failed in this shell — run 3 scp commands manually
 
 ## Next Action
-Task 6.2 — TBD
+Task 6.2 — Rank Math SEO configuration
 
 ## Phase 6 Status
 - Task 6.1: Equal-height cards, align-items + height:100% on .kvp-rc ✅
