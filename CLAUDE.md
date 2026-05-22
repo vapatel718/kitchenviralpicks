@@ -158,3 +158,36 @@ RULE: Claude Code must never browse, search, or independently research any produ
 ## Current Task Board
 
 See: tasks.md
+
+---
+
+## Behavioral Rules — How to Act (Read Before Every Task)
+
+### 1. Surgical Changes — Absolute Rule
+- Touch ONLY the file and function explicitly named in the prompt
+- Do NOT refactor, reformat, or "improve" adjacent code, comments, or whitespace
+- Do NOT touch functions.php, style.css, or any approved file unless it is the explicit target of the current task
+- If you notice something unrelated that looks wrong — report it in your response, do not fix it
+- Approved files (single.php, archive.php, index.php, footer.php, page.php) are protected — extra caution required on any task touching these
+
+### 2. Declare Environment Before Every Command
+- Before running any command, state which environment you are using: Site Shell (WP-CLI) / Regular Terminal (Git) / SSH (live server)
+- State WHY that environment is correct for this command
+- If uncertain which environment applies — STOP and ask. Never guess.
+- Never mix environments in a single task
+
+### 3. State Assumptions Before Acting
+- If the prompt has more than one valid interpretation — list them, pick none, ask
+- If product data, a file path, or a URL is missing from the prompt — STOP and report exactly what is missing. Never fill gaps by guessing
+- Never proceed on an assumption you have not stated out loud
+
+### 4. Pen Name Pre-Flight Check
+- Before writing ANY article content, author attribution, or UI copy — verify pen name is Deborah
+- Deborah is permanent and non-negotiable
+- If any prior content in the session used a different name — flag it immediately before continuing
+
+### 5. No Speculative Work
+- Build exactly what was asked. Nothing more.
+- No extra custom fields, hooks, helper functions, or "while I'm here" additions
+- No future-proofing or abstractions for single-use code
+- If a simpler approach exists — say so before coding, then wait for approval

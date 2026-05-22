@@ -4,12 +4,12 @@
 Phase 6 — TBD
 
 ## Last Completed
-Task 6.1D — Archive card button alignment fix deployed to live Hostinger server (2026-05-19)
+Phase 6 fix — category page image background set to white. CAROTE orphan card fixed with grid-column span. (2026-05-21)
 
-### What was changed (live Hostinger server):
-- style.css: .kvp-arc-card-body — display:flex, flex-direction:column, flex:1 already present, no change needed
-- style.css: .kvp-arc-card-btn — added margin-top: auto
-- style.css deployed via SCP — timestamp May 20 01:41
+### What was changed:
+- style.css: .kvp-arc-card-img background #FFF8F5 → #ffffff (base rule + media query override)
+- style.css: .kvp-grid-3 .kvp-rc:last-child:nth-child(3n+1) orphan rule added
+- Deploy to live Hostinger: SSH auth failed in this shell — run scp manually
 
 ## Next Action
 Task 6.2 — TBD
@@ -19,6 +19,15 @@ Task 6.2 — TBD
 - Task 6.1B: display:grid added to .kvp-grid ✅
 - Task 6.1C: .kvp-rc height:auto, .kvp-rc-body height:100% ✅
 - Task 6.1D: margin-top:auto on .kvp-arc-card-btn ✅
+- Phase 6 fix: featured image removed from article body content filter ✅
+- Phase 6 fix: wp:post-featured-image block removed from all 10 posts — local + live ✅
+- Phase 6 fix: score bar image background #ffffff at all breakpoints — local + live ✅
+- Phase 6 fix: score bar image object-fit contain + object-position center at all breakpoints — local + live ✅
+- Phase 6 fix: Post 14 kvp_product_name corrected — local + live ✅
+- Phase 6 fix: Post 37 kvp_product_name shortened — local + live ✅
+- Phase 6 fix: homepage card images wired to featured images — local + live ✅
+- Phase 6 fix: homepage card image container switched to aspect-ratio:1/1 + padding (Option C) — local ✅ / live pending
+- Phase 6 fix: max-height:180px added to .kvp-rc-img — local ✅ / live pending
 
 ## Phase 5 Status — Complete ✅
 - Task 5.4A: COSORI TurboBlaze affiliate link live ✅
@@ -64,3 +73,24 @@ Task 5.5 affiliate links live on Hostinger 2026-05-19
 Task 5.5C force-update confirmed 9/9 — 2026-05-19
 Task 5.6 dynamic homepage deployed — 2026-05-19
 Phase 5 fully complete — 2026-05-19
+Phase 6 fix: kvp_remove_featured_from_content() added to functions.php — 2026-05-21
+Phase 6 fix: wp:post-featured-image block removed from all 10 posts local + live — 2026-05-21
+Phase 6 fix: score bar image background set to #ffffff all breakpoints — local + live — 2026-05-21
+Phase 6 fix: score bar image object-fit contain + object-position center — local + live — 2026-05-21
+Phase 6 fix: Post 14 kvp_product_name corrected — local + live — 2026-05-21
+Phase 6 fix: Post 37 kvp_product_name shortened — local + live — 2026-05-21
+Phase 6 fix: homepage card images wired to featured images, SVG fallback — local + live — 2026-05-21
+Phase 6 fix: homepage card image container aspect-ratio:1/1 + padding:16px (Option C) — local 2026-05-21 / live pending
+Phase 6 fix: max-height:180px added to .kvp-rc-img — local 2026-05-21 / live pending
+Phase 6 fix: .kvp-rc--horiz-mobile .kvp-rc-img fixed — width:80px, aspect-ratio:unset — local 2026-05-21 / live pending
+Phase 6 fix: hero card image wired to featured thumbnail ($h_img_url) — local 2026-05-21 / live pending
+Phase 6 fix: .kvp-rc-meta flex:1 removed from tablet media query — local 2026-05-21 / live pending
+Phase 6 fix: .kvp-rc-spacer flex:0 removed from tablet media query — local 2026-05-21 / live pending
+Phase 6 fix: .kvp-rc height auto → 100% — local 2026-05-21 / live pending
+Phase 6 fix: hero card + review card images re-applied after revert; hero card CSS corrected — local 2026-05-21 / live pending
+Phase 6 fix: style.css reverted to HEAD; .kvp-hero-card-img background → #ffffff — local 2026-05-21 / live pending
+Phase 6 fix: .kvp-rc--horiz-mobile 90px grid column + .kvp-rc-img 90px fixed — local 2026-05-21 / live pending (SSH auth failed)
+Phase 6 fix: .kvp-rc--horiz-mobile rules moved into @media (max-width: 767px) — local 2026-05-21 / live pending (SSH auth failed)
+Phase 6 fix: horizontal mobile card background: #ffffff — local 2026-05-21 / live pending (SSH auth failed)
+Phase 6 fix: full clean rewrite of card image CSS; .kvp-reviews background restored — local 2026-05-21 / live pending (SSH auth failed)
+Phase 6 fix: .kvp-arc-card-img background → #ffffff; CAROTE orphan card grid-column rule added — local 2026-05-21 / live pending (SSH auth failed)

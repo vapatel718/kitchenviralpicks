@@ -231,7 +231,7 @@ main,
 
 /* Hero Card */
 .kvp-hero-card {
-  background: #fff;
+  background: #FFF8F5;
   border-radius: 12px;
   border: 0.5px solid rgba(232,64,28,0.2);
   overflow: hidden;
@@ -250,11 +250,12 @@ main,
 }
 
 .kvp-hero-card-img {
-  background: #F5F0EB;
+  background: #ffffff;
   height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 12px;
 }
 
 .kvp-hero-card-body {
@@ -375,7 +376,7 @@ main,
    ================================================ */
 
 .kvp-reviews {
-  background: #fff;
+  background: #FFF8F5;
   padding: 24px 0 28px;
   border-top: 0.5px solid rgba(232,64,28,0.08);
 }
@@ -449,24 +450,49 @@ main,
   height: auto;
 }
 
-/* Review Card — horizontal layout on mobile */
-.kvp-rc--horiz-mobile {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-}
-
-.kvp-rc--horiz-mobile .kvp-rc-img {
-  height: 100%;
-  min-height: 80px;
-}
-
+/* Card image container — all cards, all breakpoints */
 .kvp-rc-img {
-  background: #F0EBE8;
-  height: 80px;
+  background: #ffffff;
+  width: 100%;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 12px;
   flex-shrink: 0;
+  overflow: hidden;
+}
+
+.kvp-rc-img img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.kvp-grid-3 .kvp-rc:last-child:nth-child(3n+1) {
+  grid-column: 1 / -1;
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* Horizontal card layout — mobile only */
+@media (max-width: 767px) {
+  .kvp-rc--horiz-mobile {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+  }
+  .kvp-rc--horiz-mobile .kvp-rc-img {
+    width: 100px;
+    min-width: 100px;
+    height: 100%;
+    min-height: 100px;
+    padding: 10px;
+    aspect-ratio: unset;
+  }
 }
 
 .kvp-rc-body {
@@ -754,16 +780,6 @@ main,
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Horizontal cards revert to vertical on tablet+ */
-  .kvp-rc--horiz-mobile {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .kvp-rc--horiz-mobile .kvp-rc-img {
-    height: 80px;
-  }
-
   .kvp-rc-meta {
     flex: 1;
   }
@@ -937,10 +953,6 @@ main,
   .kvp-grid-3 > * {
     width: calc(33.333% - 16px);
     flex-shrink: 0;
-  }
-
-  .kvp-rc-img {
-    height: 90px;
   }
 
   .kvp-rc-body {
@@ -2078,7 +2090,7 @@ h1, h2, h3,
     width: 100%;
     height: 200px;
     overflow: hidden;
-    background: #FFF8F5;
+    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2317,7 +2329,7 @@ h1, h2, h3,
     .kvp-arc-tp-right { width: 100%; }
     .kvp-arc-top-pick-btn { display: block; text-align: center; width: 100%; box-sizing: border-box; }
     .kvp-arc-also-grid { grid-template-columns: 1fr 1fr; }
-    .kvp-arc-card-img { height: 220px; background: #FFF8F5; }
+    .kvp-arc-card-img { height: 220px; background: #ffffff; }
     .kvp-arc-card-img img { object-fit: contain; object-position: center; }
 }
 

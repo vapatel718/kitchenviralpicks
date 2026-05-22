@@ -161,3 +161,22 @@ add_action( 'save_post', 'kvp_review_meta_box_save' );
 function kvp_split_lines( $raw ) {
 	return array_filter( array_map( 'trim', preg_split( '/\r?\n/', (string) $raw ) ) );
 }
+
+// Remove featured image from article body — image is output manually in score bar via single.php
+add_filter( 'the_content', 'kvp_remove_featured_from_content', 5 );
+function kvp_remove_featured_from_content( $content ) {
+    if ( is_single() && has_post_thumbnail() ) {
+        $thumb_id  = get_post_thumbnail_id();
+        $thumb_url = wp_get_attachment_image_url( $thumb_id, 'full' );
+        $medium_url = wp_get_attachment_image_url( $thumb_id, 'medium' );
+        $large_url  = wp_get_attachment_image_url( $thumb_id, 'large' );
+        // Strip any <img> tag referencing this attachment
+        $content = preg_replace( '/<img[^>]+' . preg_quote( parse_url( $thumb_url, PHP_URL_PATH ), '/' ) . '[^>]*>/i', '', $content );
+        $content = preg_replace( '/<img[^>]+' . preg_quote( parse_url( $medium_url, PHP_URL_PATH ), '/' ) . '[^>]*>/i', '', $content );
+        $content = preg_replace( '/<img[^>]+' . preg_quote( parse_url( $large_url, PHP_URL_PATH ), '/' ) . '[^>]*>/i', '', $content );
+        // Also strip wrapping <figure> or <p> that may be left empty
+        $content = preg_replace( '/<figure[^>]*>\s*<\/figure>/i', '', $content );
+        $content = preg_replace( '/<p>\s*<\/p>/i', '', $content );
+    }
+    return $content;
+}
