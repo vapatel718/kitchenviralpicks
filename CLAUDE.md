@@ -1,6 +1,9 @@
 # CLAUDE.md — KitchenViralPicks Master Rules
-# Every session: Claude Code reads this file AND STATE.md before doing anything.
-# Last updated: May 2026
+# Every session: Claude Code reads CLAUDE.md and STATE.md only.
+# Reference .claude/rules/ files only when task requires it:
+#   brand decision → brand-rules.md
+#   code change → code-rules.md  
+#   content writing → content-rules.md# Last updated: May 2026
 
 ---
 
@@ -75,8 +78,9 @@ Golden Rule: One fix = one commit. Never batch fixes into one commit.
 
 This is the single most important protocol. Follow it exactly, every time.
 
-Step 1 — READ
-Grep or view the exact file and selector being changed.
+Step 1 — SNAPSHOT + READ
+Run: bash .claude/hooks/pre-edit.sh
+Then grep or view the exact file and selector being changed.
 Print the findings — exact lines, exact selectors.
 
 Step 2 — REPORT
