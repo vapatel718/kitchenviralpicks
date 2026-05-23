@@ -1,7 +1,7 @@
 # KVP Theme — State
 
 ## Current Phase
-Phase 6 — TBD
+Phase 6 — SEO & Analytics Setup
 
 ## Last Completed
 Phase 6 session complete. All changes committed to Git. Deploy to live pending SSH fix. (2026-05-21)
@@ -12,8 +12,17 @@ Phase 6 session complete. All changes committed to Git. Deploy to live pending S
 - functions.php: kvp_remove_featured_from_content() added
 - Deploy to live Hostinger: SSH auth failed in this shell — run 3 scp commands manually
 
+## Last Completed Task
+Session complete — the following were accomplished:
+- Mobile score-bar image background corrected to #ffffff at all breakpoints and deployed to live (commit 43f3d9a + rsync)
+- Google Search Console verified on kitchenviralpicks@gmail.com (DNS TXT record method)
+- Rank Math Setup Wizard completed: site type set to Other Business Website, Search Console connected (sc-domain:kitchenviralpicks.com), sitemaps enabled, nofollow external links ON, open external links in new tab ON, 404 Monitor ON, Redirections ON, Schema type Article
+- GA4 property created: KitchenViralPicks.com, Measurement ID G-1PE28YGJYW, Eastern Time, Shopping category
+- GA4 connected to Rank Math: account KitchenViralPicks (395527948), property and data stream selected, Install analytics code ON
+
 ## Next Action
-Task 6.2 — Rank Math SEO configuration
+1. Titles & Meta configuration in Rank Math
+2. Per-article SEO — Cosori TurboBlaze article first (focus keyword, meta description, OG image)
 
 ## Recent Fixes (uncommitted)
 - Fix A: .kvp-rc--horiz-mobile .kvp-rc-img height: 100% → height: 100px (style.css line 491) ✅
