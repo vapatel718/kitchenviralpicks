@@ -1,27 +1,20 @@
 # KVP Theme — State
 
 ## Current Phase
-Phase 6 — SEO & Analytics Setup
-
-## Last Completed
-Phase 6 session complete. All changes committed to Git. Deploy to live pending SSH fix. (2026-05-21)
-
-### What was committed (a1438b6):
-- index.php: hero card image wired to featured thumbnail; all review card images wired to featured thumbnails
-- style.css: full clean rewrite of .kvp-rc-img rules; horiz-mobile scoped to max-width 767px; .kvp-arc-card-img background → #ffffff; CAROTE orphan card rule; .kvp-reviews background restored
-- functions.php: kvp_remove_featured_from_content() added
-- Deploy to live Hostinger: SSH auth failed in this shell — run 3 scp commands manually
+Phase 6 — SEO & Analytics
 
 ## Last Completed Task
-Session complete — the following were accomplished:
-- Rank Math Titles & Meta fully configured
-- OG image created and uploaded globally and for homepage Facebook
-- Cosori TurboBlaze article SEO done — focus keyword, meta description, SEO title set
-- Indexing requested in Google Search Console
-- Sitemap confirmed working with 11 URLs
+Per-article SEO done for all 10 articles. Focus keyword, SEO title, meta description set for all. Indexing requested for 5 articles today — quota hit. 5 remaining to submit tomorrow. (2026-05-23)
+
+## Indexing Requests — Submit Tomorrow
+- https://kitchenviralpicks.com/lodge-essential-enamel-braiser-review-2026/
+- https://kitchenviralpicks.com/instant-pot-7-5qt-rio-wide-review-2026/
+- https://kitchenviralpicks.com/kitchenaid-artisan-5qt-stand-mixer-review-2026/
+- https://kitchenviralpicks.com/ninja-bn701-professional-plus-blender-review-2026/
+- https://kitchenviralpicks.com/cuisinart-chefs-classic-enameled-cast-iron-dutch-oven-review-2026/
 
 ## Next Action
-1. Per-article SEO for remaining 9 articles — focus keyword, meta description, request indexing for each
+1. Submit remaining 5 indexing requests in Search Console
 2. Check Search Console in 48 hours for indexing status
 
 ## Recent Fixes (uncommitted)
