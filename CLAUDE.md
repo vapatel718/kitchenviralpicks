@@ -193,6 +193,8 @@ Rule: If product data is missing from the prompt — STOP and report what is mis
 
 ## 13. STATE.md — Required Format
 
+STATE.md must be updated before every session-end commit. It must reflect: current phase, last completed task, resolved issues, and exact next action. No session closes without STATE.md being current. This is non-negotiable.
+
 Claude Code updates STATE.md after every task using this exact format:
 
 ```
