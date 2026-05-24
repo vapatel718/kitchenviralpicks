@@ -17,14 +17,8 @@ get_header();
             <div class="kvp-about-hero-grid">
 
                 <div class="kvp-about-photo-col">
-                    <div class="kvp-about-photo" role="img" aria-label="<?php esc_attr_e( 'Founder photo placeholder', 'kvp-theme' ); ?>">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                            <rect x="4" y="13" width="32" height="21" rx="3" stroke="#999" stroke-width="2"/>
-                            <circle cx="20" cy="23" r="6" stroke="#999" stroke-width="2"/>
-                            <path d="M14 13 l2.5-5 h7 l2.5 5" stroke="#999" stroke-width="2" stroke-linejoin="round"/>
-                            <circle cx="32" cy="17" r="1.5" fill="#999"/>
-                        </svg>
-                        <p class="kvp-about-photo-label"><?php _e( 'Photo coming soon', 'kvp-theme' ); ?></p>
+                    <div class="kvp-about-photo">
+                        <img src="https://kitchenviralpicks.com/wp-content/uploads/2026/05/deborah-author-kitchenviralpicks.jpg.jpg" alt="Deborah — Kitchen Researcher and Product Analyst" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />
                     </div>
                 </div>
 
