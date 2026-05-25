@@ -141,6 +141,9 @@ get_header();
   .rnd-compare-table .col-bestfor{width:24%;}
   .rnd-cards{padding:0 1.5rem 1rem;}
   .rnd-usecase-section{padding:1rem 1.5rem;}
+  .rnd-card-badge{font-size:11px;padding:5px 13px;}
+  .rnd-section-label{padding-left:1.5rem;}
+  .rnd-btn-verdict{margin-bottom:4px;}
 }
 </style>
 
