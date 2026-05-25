@@ -1,7 +1,7 @@
 # STATE.md — KitchenViralPicks
 
-Last updated: 2026-05-24
-Last commit: 161b425 — chore: sync STATE.md to reality — Phase 7 begins, enforce STATE.md update rule in CLAUDE.md
+Last updated: 2026-05-25
+Last commit: 6762ae8 — chore: record Phase 7A decisions — blog section, Creators API plan, seasonal calendar, roundup article approved
 
 ## Current Phase
 Phase 7A — Infrastructure + Content Growth
@@ -12,14 +12,44 @@ Phase 7A — Infrastructure + Content Growth
 - Creators API (replaces retired PA-API v5): locked until 10 qualifying sales. Plugin skeleton to be built in parallel with content. Activate after credentials obtained.
 - Immediate priority: publish June Week 1 roundup article first — every sale counts toward API unlock
 
+## Decisions Made 2026-05-25 — Roundup Strategy Locked
+- Roundup layout: Magazine hero + card stack hybrid
+- Word count target: 2,800–3,200 words
+- Deborah voice rule locked
+- SiteStripe image method confirmed going forward
+- Roundup publishes first (Option A) — three standalone reviews follow
+
+### Roundup Button Mapping
+- Ninja AF141 → Read full review (live)
+- Cosori TurboBlaze → Read full review (live)
+- Ninja AF101 → Check price on Amazon (no review yet)
+- Instant Vortex Plus → Check price on Amazon (no review yet)
+- Chefman TurboFry → Check price on Amazon (no review yet)
+
+### Templates Needed
+- single-roundup.php (new — to be built)
+- single-blog.php (new — to be built)
+- single.php already exists (approved)
+
+### Content Queue (in order)
+1. Roundup article (build + publish)
+2. Ninja AF101 review
+3. Instant Vortex Plus review
+4. Chefman TurboFry review
+5. Update roundup links (after reviews are live)
+
+### CLAUDE.md Update Pending
+- Deborah voice rule to be added next session
+
 ## Next Actions (in order)
-1. Finalize roundup article layout and brief (chat)
-2. Claude Code writes and publishes roundup article
-3. Claude Code builds Creators API plugin skeleton
-4. Activate live data after 10 sales
+1. Write roundup article brief (new chat session)
+2. Claude Code builds single-roundup.php template
+3. Claude Code writes and publishes roundup article
+4. Claude Code builds Creators API plugin skeleton
+5. Activate live data after 10 sales
 
 ## Last Completed Task
-Phase 7 infrastructure planning — blog section, Creators API path, seasonal calendar, roundup article approved (2026-05-24)
+Roundup strategy session — layout approved (Magazine hero + card stack hybrid), word count target 2,800–3,200 words, content queue confirmed, button mapping locked (2026-05-25)
 
 ## Known Issues
 None
