@@ -16,7 +16,7 @@ get_header();
 
 /* HERO */
 .rnd-hero{padding:3.5rem 1.5rem 2rem;border-bottom:0.5px solid var(--color-border-tertiary,#e5e5e5);}
-.rnd-eyebrow{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:500;color:#E8401C;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;}
+.rnd-eyebrow{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:500;color:#E8401C;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:14px;margin-top:2rem;}
 .rnd-eyebrow-dot{width:6px;height:6px;border-radius:50%;background:#E8401C;flex-shrink:0;}
 .rnd-hero h1.rnd-title{font-family:'Playfair Display',serif;font-size:30px;font-weight:600;color:#1A1A1A;line-height:1.25;margin:0 0 16px;}
 .rnd-byline-row{display:flex;align-items:center;gap:10px;margin-bottom:18px;flex-wrap:wrap;}
