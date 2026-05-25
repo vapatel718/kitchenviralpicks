@@ -108,6 +108,8 @@ get_header();
 .rnd-verdict-section{margin:0 1.5rem 2rem;background:#E8401C;border-radius:12px;padding:24px 26px;}
 .rnd-verdict-title{font-family:'Playfair Display',serif;font-size:20px;font-weight:600;color:#fff;padding-bottom:12px;border-bottom:0.5px solid rgba(255,255,255,0.25);margin-bottom:14px;}
 .rnd-verdict-body{font-size:15px;color:rgba(255,255,255,0.92);line-height:1.8;margin-bottom:10px;}
+.rnd-verdict-body p{margin-bottom:14px;}
+.rnd-verdict-body p:last-child{margin-bottom:0;}
 .rnd-verdict-caveat{font-size:12px;color:rgba(255,255,255,0.65);font-style:italic;margin-bottom:20px;line-height:1.6;}
 .rnd-btn-verdict{display:block;text-align:center;background:#fff;color:#E8401C;font-size:14px;font-weight:700;padding:13px;border-radius:999px;text-decoration:none;}
 
