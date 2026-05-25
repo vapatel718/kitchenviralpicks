@@ -139,6 +139,8 @@ get_header();
   .rnd-compare-table .col-price{width:22%;}
   .rnd-compare-table .col-rating{width:18%;}
   .rnd-compare-table .col-bestfor{width:24%;}
+  .rnd-cards{padding:0 1.5rem 1rem;}
+  .rnd-usecase-section{padding:1rem 1.5rem;}
 }
 </style>
 
