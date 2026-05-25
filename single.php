@@ -94,7 +94,11 @@ while ( have_posts() ) : the_post();
 	<div class="score-bar">
 
 		<div class="score-img">
-			<?php if ( has_post_thumbnail() ) : ?>
+			<?php
+			$kvp_img = get_post_meta( get_the_ID(), 'kvp_product_image', true );
+			if ( $kvp_img ) : ?>
+				<img src="<?php echo esc_url( $kvp_img ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" style="max-width:100%;height:auto;">
+			<?php elseif ( has_post_thumbnail() ) : ?>
 				<?php echo get_the_post_thumbnail( get_the_ID(), 'medium', array( 'alt' => esc_attr( get_the_title() ) ) ); ?>
 			<?php else : ?>
 			<svg width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true">
