@@ -122,6 +122,7 @@ get_header();
   .rnd-toppick-cta{align-items:flex-start;}
   .rnd-toppick-note{text-align:left;}
   .rnd-card-img-strip{height:180px;overflow:hidden;}
+  .rnd-card-badge-overlay{bottom:auto;top:12px;left:12px;}
   .rnd-card-review-count{font-size:18px;}
   .rnd-usecase-grid{grid-template-columns:1fr;}
   .rnd-compare-table{font-size:11px;}
