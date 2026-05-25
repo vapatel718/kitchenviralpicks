@@ -122,7 +122,20 @@ get_header();
   .rnd-card-review-count{font-size:18px;}
   .rnd-usecase-grid{grid-template-columns:1fr;}
   .rnd-compare-table{font-size:11px;}
-  .rnd-compare-table td,.rnd-compare-table th{padding:8px 8px;}
+  .rnd-compare-table td,.rnd-compare-table th{padding:8px 6px;}
+  .rnd-compare-table .col-reviews,
+  .rnd-compare-table .col-capacity,
+  .rnd-compare-table .col-functions,
+  .rnd-compare-table th:nth-child(3),
+  .rnd-compare-table th:nth-child(5),
+  .rnd-compare-table th:nth-child(6),
+  .rnd-compare-table td:nth-child(3),
+  .rnd-compare-table td:nth-child(5),
+  .rnd-compare-table td:nth-child(6){display:none;}
+  .rnd-compare-table .col-product{width:36%;}
+  .rnd-compare-table .col-price{width:22%;}
+  .rnd-compare-table .col-rating{width:18%;}
+  .rnd-compare-table .col-bestfor{width:24%;}
 }
 </style>
 
