@@ -305,7 +305,7 @@ $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 				<h2 class="rnd-card-name"><?php echo esc_html( $card_name ); ?></h2>
 				<div class="rnd-card-stat-price-row">
 					<div>
-						<div class="rnd-card-review-count"><?php echo esc_html( $card_review_count ); ?>+</div>
+						<div class="rnd-card-review-count"><?php echo esc_html( $card_review_count ); ?></div>
 						<div class="rnd-card-review-label">Verified reviews</div>
 					</div>
 					<div class="rnd-price-block">
