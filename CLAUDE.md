@@ -179,6 +179,7 @@ Rule: If product data is missing from the prompt — STOP and report what is mis
 2. Always note "at time of writing — price may vary" next to any price cited
 3. Never cherry-pick only positive reviews — complaints must be represented honestly
 4. Never claim data is from Amazon if it was not verified there directly
+5. Tier 1 research by default: max 5 web searches, max 10 minutes, one clear recommendation with honest caveats. Deep Research tool only when Varun explicitly requests it. Never use Deep Research for standard keyword or product validation.
 
 ---
 

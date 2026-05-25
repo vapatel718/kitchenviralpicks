@@ -129,3 +129,43 @@
 - APPROVED — Varun approved, ready to publish
 - PUBLISHED — live on site, URL recorded below
 - URL: [paste live URL here when published]
+
+---
+
+## Seasonal Calendar — Hard Deadlines
+
+| Event | Brief Due | Publish Date | Notes |
+|-------|-----------|--------------|-------|
+| Amazon Prime Day | Late June | July 1 | High-traffic window — air fryers always spike |
+| Black Friday | October 25 | November 1 | Biggest revenue window of the year |
+| Christmas Gift Guides | November 15 | November 22 | Must be indexed before December |
+| Birthday Gift Guides | Rolling | Rolling | Evergreen — no deadline, publish when ready |
+
+---
+
+## Quarterly Maintenance Schedule
+
+Every 90 days, re-verify all published articles:
+- Re-check Amazon star ratings (update if changed by 0.1+ stars)
+- Re-check review counts (update if grown significantly)
+- Re-check prices (update if changed by more than 10%)
+- Update "Last Updated" stamp on any article that was changed
+- Log verified date in RESEARCH_VAULT.md under each product entry
+
+Next scheduled maintenance: 2026-08-24
+
+---
+
+## June Week 1 — APPROVED
+
+- Type: Roundup
+- Primary keyword: air fryer under $100 with most reviews
+- Title: "The Air Fryers Under $100 That 600,000+ Verified Amazon Buyers Keep Coming Back To"
+- Status: APPROVED — ready to write
+- Products (re-verify review counts at time of writing):
+  * Ninja AF141 — ~386,000 reviews / 4.7★ / ~$89–99
+  * Cosori TurboBlaze 6Qt — ~19,600 reviews / 4.8★ / ~$89–99
+  * Instant Vortex Plus 6Qt — ~71,000 reviews / 4.5★ / ~$80–99
+  * Ninja AF101 4Qt — ~83,000 reviews / 4.7★ / ~$79–99
+  * Chefman TurboFry 2Qt — ~15,000 reviews / 4.6★ / ~$30–40
+- Note: all review counts are Amazon US only — label as such in article

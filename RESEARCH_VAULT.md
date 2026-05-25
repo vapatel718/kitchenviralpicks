@@ -162,5 +162,25 @@ Before starting any new article, read the relevant category section first.
 
 ---
 
+---
+
+## Air Fryer Roundup — Keyword Research (2026-05-24)
+- Keyword: air fryer under $100 with most reviews
+- Angle: buyer-signal / verified review count
+- Competitor DR on head term: 79–93 (locked for new sites)
+- Gap identified: no page-1 result leads with cumulative review counts + under $100 filter
+- Combined est. volume: 700–1,200/month direct, 2,000–3,500 via related long-tail
+- KD for new low-DR site: Low (20–30)
+- Product shortlist with approx review counts at research date:
+  * Ninja AF141: ~386,000 reviews / 4.7★ / ~$89–99
+  * Cosori TurboBlaze 6Qt: ~19,600 reviews / 4.8★ / ~$89–99
+  * Instant Vortex Plus 6Qt: ~71,000 reviews / 4.5★ / ~$80–99
+  * Ninja AF101 4Qt: ~83,000 reviews / 4.7★ / ~$79–99
+  * Chefman TurboFry 2Qt: ~15,000 reviews / 4.6★ / ~$30–40
+- All review counts must be re-verified at time of writing
+- 12 caveats documented in session — key ones: pricing volatility, US-only review counts (label as Amazon US), FTC disclosure required, quarterly refresh mandatory
+
+---
+
 *Last updated: 2026-05-24*
 *Updated by: Claude Code on instruction from Varun*
