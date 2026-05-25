@@ -117,8 +117,9 @@ get_header();
   .rnd-toppick-body{grid-template-columns:1fr;gap:12px;}
   .rnd-toppick-cta{align-items:flex-start;}
   .rnd-toppick-note{text-align:left;}
-  .rnd-card-title-row{grid-template-columns:1fr 72px;}
-  .rnd-card-img{width:72px;height:72px;}
+  .rnd-card-title-row{grid-template-columns:1fr;gap:10px;}
+  .rnd-card-img{width:100%;height:140px;border-radius:8px;order:-1;flex-direction:row;gap:8px;}
+  .rnd-card-img span{font-size:10px;}
   .rnd-card-review-count{font-size:18px;}
   .rnd-usecase-grid{grid-template-columns:1fr;}
   .rnd-compare-table{font-size:11px;}
