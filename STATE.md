@@ -1,29 +1,36 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-25
-Last commit: 9b9f050 — chore: update STATE.md — single-roundup.php complete
+Last commit: bcfccfe — fix: single.php — remove inline style from kvp_product_image img, let CSS control sizing
 
 ## Current Phase
-Phase 7A — Infrastructure + Content Growth
+Phase 7 — Content Growth
 
 ## Last Completed Task
-Roundup article deployed to live — Post ID 103 on Hostinger. Template single-roundup.php SCP'd to live server. All 88 custom fields set (5 products, top pick, 4 scenarios, methodology, final verdict, Rank Math SEO). Category: Air Fryers. Status: publish. Slug: air-fryers-under-100-most-reviewed. Live URL: kitchenviralpicks.com/?p=103
+Ninja review (Post 14) fully fixed on live server — all known issues resolved:
+- kvp_price corrected: ~$139.99 → ~$129.99 (AF141 current price)
+- kvp_amazon_url corrected: AF142 (B0DW4KG8VM) → AF141 (B0CSZ7WBYW)
+- kvp_product_image added: Amazon CDN image URL set on live post
+- post_content: $89.99 → $129.99 (1 instance corrected)
+- Duplicate wp:post-featured-image block removed from post_content
+- single.php updated: reads kvp_product_image first, falls back to featured image
+- Inline style removed from score bar img tag — CSS now controls sizing
+- Roundup post (Post 103) verified live and approved
 
 ## Next Task
-Verify roundup live in browser at kitchenviralpicks.com/?p=103 — approve, then fix Ninja review issues (Known Issues #1 and #2 below)
+Update CONTENT_PLAN.md to mark June Week 1 roundup as PUBLISHED, then begin June Week 2 article keyword approval
 
 ## Known Issues
-1. Ninja review (live) — article says AF141 but links to AF142 at $139.99. Body copy also shows wrong price. Needs SSH fix: correct model references + all price mentions throughout article.
-2. Ninja review (live) — product image rendering mid-content instead of in score bar area. Same SSH fix session.
+None
 
 ## Live Server Status
-Fully deployed — all Phase 6 + Phase 7A changes live on Hostinger as of 2026-05-25. Roundup article live on Hostinger as Post ID 103 (slug: air-fryers-under-100-most-reviewed). Local post ID 83 is the local copy.
+Fully deployed — all Phase 6 + Phase 7 changes live on Hostinger as of 2026-05-25. Roundup article live as Post ID 103 (slug: air-fryers-under-100-most-reviewed). Ninja review (Post 14) fully corrected — price, affiliate link, product image, post_content all fixed. single.php deployed to live 2026-05-25.
 
 ---
 
 ## Templates
 header.php | approved
-single.php | approved
+single.php | approved — updated 2026-05-25 (kvp_product_image score bar support, deployed to live)
 single-roundup.php | approved — committed 2026-05-25, deployed to live 2026-05-25
 archive.php | approved
 index.php | approved
@@ -65,7 +72,8 @@ page-contact.php | approved — all viewports (390px, 768px, 1280px)
 DEBORAH (never Rick, never anything else)
 
 ## Phase History
-- Phase 7A in progress: single-roundup.php built + deployed, roundup article live on Hostinger (Post 103)
+- Phase 7 in progress: Ninja review (Post 14) fully corrected on live, single.php updated + deployed, roundup (Post 103) live and approved
+- Phase 7A complete: single-roundup.php built + deployed, roundup article live on Hostinger (Post 103)
 - Phase 6 complete: 10 articles live, SEO'd, GA4 + Rank Math live, all indexing requests submitted, SSH resolved, all CSS deployed to live server, CONTENT_PLAN.md + RESEARCH_VAULT.md created (2026-05-24)
 - Phase 5 complete: all 10 affiliate links live on Hostinger, dynamic homepage deployed
 - Phase 3 complete: all pages built — Homepage, Single, Category, About, Contact, Privacy Policy, Affiliate Disclosure, Terms of Use
