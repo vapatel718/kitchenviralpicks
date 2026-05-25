@@ -121,7 +121,7 @@ get_header();
   .rnd-toppick-body{grid-template-columns:1fr;gap:12px;}
   .rnd-toppick-cta{align-items:flex-start;}
   .rnd-toppick-note{text-align:left;}
-  .rnd-card-img-strip{height:180px;overflow:hidden;}
+  .rnd-card-img-strip{height:200px;overflow:hidden;padding-top:38px;align-items:flex-start;justify-content:center;}
   .rnd-card-badge-overlay{bottom:auto;top:12px;left:12px;}
   .rnd-card-review-count{font-size:18px;}
   .rnd-usecase-grid{grid-template-columns:1fr;}
