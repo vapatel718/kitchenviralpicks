@@ -1,7 +1,7 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-25
-Last commit: 6762ae8 — chore: record Phase 7A decisions — blog section, Creators API plan, seasonal calendar, roundup article approved
+Last commit: 1c8cb4f — feat: add single-roundup.php — roundup article template
 
 ## Current Phase
 Phase 7A — Infrastructure + Content Growth
@@ -49,7 +49,10 @@ Phase 7A — Infrastructure + Content Growth
 5. Activate live data after 10 sales
 
 ## Last Completed Task
-Roundup strategy session — layout approved (Magazine hero + card stack hybrid), word count target 2,800–3,200 words, content queue confirmed, button mapping locked (2026-05-25)
+single-roundup.php built, verified, and committed — template confirmed working in browser with correct conditional rendering (2026-05-25)
+
+## Next Task
+Write roundup article content and populate custom fields via WP-CLI
 
 ## Known Issues
 None
@@ -62,6 +65,7 @@ Fully deployed — all Phase 6 CSS and content changes live on Hostinger as of 2
 ## Templates
 header.php | approved
 single.php | approved
+single-roundup.php | approved — committed 2026-05-25
 archive.php | approved
 index.php | approved
 footer.php | approved
