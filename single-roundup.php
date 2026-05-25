@@ -70,15 +70,16 @@ get_header();
 .rnd-cards{padding:0 1.5rem 2rem;}
 .rnd-card{border:0.5px solid #e8d5cc;border-radius:12px;overflow:hidden;margin-bottom:16px;background:#fff;}
 .rnd-card-header{padding:16px 18px 0;}
-.rnd-card-badge{display:inline-block;background:#FFF8F5;border:0.5px solid rgba(232,64,28,0.2);color:#E8401C;font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-bottom:12px;}
-.rnd-card-title-row{display:grid;grid-template-columns:1fr 160px;gap:16px;align-items:start;margin-bottom:14px;}
+.rnd-card-title-row{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
 .rnd-card-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:#1A1A1A;line-height:1.3;margin-bottom:8px;}
 .rnd-card-review-count{font-size:22px;font-weight:700;color:#E8401C;line-height:1.1;margin-bottom:3px;}
 .rnd-card-review-label{font-size:11px;color:#aaa;line-height:1.4;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;}
 .rnd-card-meta{font-size:13px;color:#888;}
-.rnd-card-img{width:160px;height:160px;border-radius:12px;background:#F0EBE8;border:1px solid rgba(232,64,28,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex-shrink:0;overflow:hidden;}
-.rnd-card-img img{width:100%;height:100%;object-fit:contain;}
-.rnd-card-img span{font-size:9px;color:#bbb;letter-spacing:0.04em;}
+.rnd-card-img-strip{width:100%;height:200px;background:#fff;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 -1px 0 rgba(0,0,0,0.06);}
+.rnd-card-img-strip img{width:100%;height:100%;object-fit:contain;padding:16px;}
+.rnd-card-img-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;width:100%;height:100%;}
+.rnd-card-img-placeholder span{font-size:11px;color:rgba(232,64,28,0.4);letter-spacing:0.04em;}
+.rnd-card-badge-overlay{position:absolute;bottom:10px;left:10px;background:rgba(26,26,26,0.75);color:#fff;font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:5px 12px;border-radius:999px;}
 .rnd-card-body{padding:0 18px 16px;}
 .rnd-card-divider{height:0.5px;background:#f0ece8;margin:0 0 14px;}
 .rnd-body-label{font-size:10px;font-weight:700;color:#999;letter-spacing:0.07em;text-transform:uppercase;margin-bottom:7px;}
@@ -120,9 +121,7 @@ get_header();
   .rnd-toppick-body{grid-template-columns:1fr;gap:12px;}
   .rnd-toppick-cta{align-items:flex-start;}
   .rnd-toppick-note{text-align:left;}
-  .rnd-card-title-row{grid-template-columns:1fr;gap:10px;}
-  .rnd-card-img{width:100%;height:140px;border-radius:8px;order:-1;flex-direction:row;gap:8px;}
-  .rnd-card-img span{font-size:10px;}
+  .rnd-card-img-strip{height:180px;}
   .rnd-card-review-count{font-size:18px;}
   .rnd-usecase-grid{grid-template-columns:1fr;}
   .rnd-compare-table{font-size:11px;}
@@ -142,7 +141,7 @@ get_header();
   .rnd-compare-table .col-bestfor{width:24%;}
   .rnd-cards{padding:0 1.5rem 1rem;}
   .rnd-usecase-section{padding:1rem 1.5rem;}
-  .rnd-card-badge{font-size:11px;padding:5px 13px;}
+
   .rnd-section-label{padding-left:1.5rem;}
   .rnd-btn-verdict{margin-bottom:4px;}
 }
@@ -305,10 +304,28 @@ $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 	$is_external       = ( 'external' === $card_btn_type );
 ?>
 <div class="rnd-card" id="product-<?php echo esc_attr( $n ); ?>">
-	<div class="rnd-card-header">
-		<?php if ( $card_label ) : ?>
-		<span class="rnd-card-badge"><?php echo esc_html( $card_label ); ?></span>
+	<div class="rnd-card-img-strip">
+		<?php if ( $card_image_url ) : ?>
+		<img
+			src="<?php echo esc_url( $card_image_url ); ?>"
+			alt="<?php echo esc_attr( $card_name ); ?>"
+			loading="lazy"
+		>
+		<?php else : ?>
+		<div class="rnd-card-img-placeholder">
+			<svg width="32" height="32" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+				<rect x="4" y="10" width="40" height="28" rx="3" stroke="rgba(232,64,28,0.35)" stroke-width="2" fill="none"/>
+				<circle cx="16" cy="20" r="4" stroke="rgba(232,64,28,0.35)" stroke-width="2" fill="none"/>
+				<path d="M4 32 L14 22 L22 30 L30 24 L44 34" stroke="rgba(232,64,28,0.35)" stroke-width="2" fill="none"/>
+			</svg>
+			<span>Product image</span>
+		</div>
 		<?php endif; ?>
+		<?php if ( $card_label ) : ?>
+		<span class="rnd-card-badge-overlay"><?php echo esc_html( $card_label ); ?></span>
+		<?php endif; ?>
+	</div>
+	<div class="rnd-card-header">
 		<div class="rnd-card-title-row">
 			<div>
 				<h2 class="rnd-card-name"><?php echo esc_html( $card_name ); ?></h2>
@@ -324,24 +341,6 @@ $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 				</div>
 				<?php if ( $card_rating ) : ?>
 				<p class="rnd-card-meta"><?php echo esc_html( $card_rating ); ?></p>
-				<?php endif; ?>
-			</div>
-			<div class="rnd-card-img">
-				<?php if ( $card_image_url ) : ?>
-				<img
-					src="<?php echo esc_url( $card_image_url ); ?>"
-					alt="<?php echo esc_attr( $card_name ); ?>"
-					width="96"
-					height="96"
-					loading="lazy"
-				>
-				<?php else : ?>
-				<svg width="32" height="32" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-					<rect x="4" y="10" width="40" height="28" rx="3" stroke="rgba(232,64,28,0.35)" stroke-width="2" fill="none"/>
-					<circle cx="18" cy="21" r="5" stroke="rgba(232,64,28,0.35)" stroke-width="2" fill="none"/>
-					<path d="M4 34 L16 24 L26 32 L34 26 L44 34" stroke="rgba(232,64,28,0.35)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-				</svg>
-				<span><?php esc_html_e( 'Product image', 'kvp-theme' ); ?></span>
 				<?php endif; ?>
 			</div>
 		</div>
