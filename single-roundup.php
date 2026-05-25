@@ -71,13 +71,13 @@ get_header();
 .rnd-card{border:0.5px solid #e8d5cc;border-radius:12px;overflow:hidden;margin-bottom:16px;background:#fff;}
 .rnd-card-header{padding:16px 18px 0;}
 .rnd-card-badge{display:inline-block;background:#FFF8F5;border:0.5px solid rgba(232,64,28,0.2);color:#E8401C;font-size:10px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-bottom:12px;}
-.rnd-card-title-row{display:grid;grid-template-columns:1fr 120px;gap:14px;align-items:start;margin-bottom:14px;}
+.rnd-card-title-row{display:grid;grid-template-columns:1fr 160px;gap:16px;align-items:start;margin-bottom:14px;}
 .rnd-card-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:#1A1A1A;line-height:1.3;margin-bottom:8px;}
 .rnd-card-review-count{font-size:22px;font-weight:700;color:#E8401C;line-height:1.1;margin-bottom:3px;}
 .rnd-card-review-label{font-size:11px;color:#aaa;line-height:1.4;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;}
 .rnd-card-meta{font-size:13px;color:#888;}
-.rnd-card-img{width:120px;height:120px;border-radius:10px;background:#FFF8F5;border:0.5px solid rgba(232,64,28,0.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex-shrink:0;overflow:hidden;}
-.rnd-card-img img{width:100%;height:100%;object-fit:contain;padding:6px;}
+.rnd-card-img{width:160px;height:160px;border-radius:12px;background:#F0EBE8;border:1px solid rgba(232,64,28,0.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;flex-shrink:0;overflow:hidden;}
+.rnd-card-img img{width:100%;height:100%;object-fit:contain;}
 .rnd-card-img span{font-size:9px;color:#bbb;letter-spacing:0.04em;}
 .rnd-card-body{padding:0 18px 16px;}
 .rnd-card-divider{height:0.5px;background:#f0ece8;margin:0 0 14px;}
