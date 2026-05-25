@@ -121,7 +121,7 @@ get_header();
   .rnd-toppick-body{grid-template-columns:1fr;gap:12px;}
   .rnd-toppick-cta{align-items:flex-start;}
   .rnd-toppick-note{text-align:left;}
-  .rnd-card-img-strip{height:180px;}
+  .rnd-card-img-strip{height:180px;overflow:hidden;}
   .rnd-card-review-count{font-size:18px;}
   .rnd-usecase-grid{grid-template-columns:1fr;}
   .rnd-compare-table{font-size:11px;}
