@@ -7,13 +7,13 @@ Last commit: 3f7f6bb — fix: index.php card images — read kvp_product_image f
 Phase 7 — Content Growth
 
 ## Last Completed Task
-index.php updated — card images now read kvp_product_image first, fall back to featured image, fall back to SVG placeholder. Applied to all 4 card locations (hero, Air Fryers, Cookware, Kettles). Deployed to live. Ninja homepage card (Post 14) now showing correct AF141 Amazon image on both local and live.
+index.php card image fix complete — all 4 card locations now read kvp_product_image first, fall back to featured image, fall back to SVG placeholder. Deployed to live. Ninja homepage card (Post 14) showing correct AF141 image on local and live. kvp_product_image set on Post 14 local and live to https://m.media-amazon.com/images/I/71jfzcXideL._AC_SL1500_.jpg. Roundup Post 83 (local) featured image set to Pexels air fryer photo (attachment ID 85) as temporary placeholder — will be replaced with original photography tomorrow.
 
 ## Next Task
-(1) Find lifestyle/category image on Unsplash or Pexels for roundup Post 103 thumbnail, (2) Set as featured image for Post 103 on local and live, (3) Update CONTENT_PLAN.md to mark June Week 1 roundup as PUBLISHED, (4) Keyword approval for June Week 2 article.
+(1) Replace roundup Post 83/103 featured image with original air fryer photo (Varun uploading tomorrow — photo taken by wife's friend). Upload here in chat, Claude edits/crops, then set as featured image on local and deploy to live. (2) Update CONTENT_PLAN.md to mark June Week 1 roundup as PUBLISHED. (3) Keyword approval for June Week 2 article.
 
 ## Known Issues
-None
+Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
 
 ## Live Server Status
 Fully deployed — all Phase 6 + Phase 7 changes live on Hostinger as of 2026-05-26. index.php deployed 2026-05-26 (kvp_product_image card image support).
