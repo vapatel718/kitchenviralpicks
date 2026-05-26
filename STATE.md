@@ -7,16 +7,16 @@ Last commit: 3f7f6bb — fix: index.php card images — read kvp_product_image f
 Phase 7 — Content Growth
 
 ## Last Completed Task
-index.php card image fix — all four card sections (Hero, Air Fryers, Cookware, Kettles & Multicooker) now read kvp_product_image first, fall back to featured image, then SVG placeholder. Commit: 3f7f6bb.
+index.php updated — card images now read kvp_product_image first, fall back to featured image, fall back to SVG placeholder. Applied to all 4 card locations (hero, Air Fryers, Cookware, Kettles). Deployed to live. Ninja homepage card (Post 14) now showing correct AF141 Amazon image on both local and live.
 
 ## Next Task
-Update CONTENT_PLAN.md to mark June Week 1 roundup as PUBLISHED, then begin June Week 2 article keyword approval
+(1) Find lifestyle/category image on Unsplash or Pexels for roundup Post 103 thumbnail, (2) Set as featured image for Post 103 on local and live, (3) Update CONTENT_PLAN.md to mark June Week 1 roundup as PUBLISHED, (4) Keyword approval for June Week 2 article.
 
 ## Known Issues
 None
 
 ## Live Server Status
-Fully deployed — all Phase 6 + Phase 7 changes live on Hostinger as of 2026-05-25. Roundup article live as Post ID 103 (slug: air-fryers-under-100-most-reviewed). Ninja review (Post 14) fully corrected — price, affiliate link, product image, post_content all fixed. single.php deployed to live 2026-05-25.
+Fully deployed — all Phase 6 + Phase 7 changes live on Hostinger as of 2026-05-26. index.php deployed 2026-05-26 (kvp_product_image card image support).
 
 ---
 
