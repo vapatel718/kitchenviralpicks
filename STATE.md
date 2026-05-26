@@ -1,21 +1,13 @@
 # STATE.md — KitchenViralPicks
 
-Last updated: 2026-05-25
-Last commit: bcfccfe — fix: single.php — remove inline style from kvp_product_image img, let CSS control sizing
+Last updated: 2026-05-26
+Last commit: 3f7f6bb — fix: index.php card images — read kvp_product_image first, fall back to featured image
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Ninja review (Post 14) fully fixed on live server — all known issues resolved:
-- kvp_price corrected: ~$139.99 → ~$129.99 (AF141 current price)
-- kvp_amazon_url corrected: AF142 (B0DW4KG8VM) → AF141 (B0CSZ7WBYW)
-- kvp_product_image added: Amazon CDN image URL set on live post
-- post_content: $89.99 → $129.99 (1 instance corrected)
-- Duplicate wp:post-featured-image block removed from post_content
-- single.php updated: reads kvp_product_image first, falls back to featured image
-- Inline style removed from score bar img tag — CSS now controls sizing
-- Roundup post (Post 103) verified live and approved
+index.php card image fix — all four card sections (Hero, Air Fryers, Cookware, Kettles & Multicooker) now read kvp_product_image first, fall back to featured image, then SVG placeholder. Commit: 3f7f6bb.
 
 ## Next Task
 Update CONTENT_PLAN.md to mark June Week 1 roundup as PUBLISHED, then begin June Week 2 article keyword approval
@@ -33,7 +25,7 @@ header.php | approved
 single.php | approved — updated 2026-05-25 (kvp_product_image score bar support, deployed to live)
 single-roundup.php | approved — committed 2026-05-25, deployed to live 2026-05-25
 archive.php | approved
-index.php | approved
+index.php | approved — updated 2026-05-26 (kvp_product_image card image support)
 footer.php | approved
 page.php | approved
 page-contact.php | approved — all viewports (390px, 768px, 1280px)
