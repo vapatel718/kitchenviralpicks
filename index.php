@@ -98,7 +98,8 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         $h_verdict = get_post_meta( get_the_ID(), 'kvp_card_verdict', true )
                      ?: get_post_meta( get_the_ID(), 'kvp_verdict_line', true )
                      ?: $h_verdict;
-        $h_img_url = has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'medium' ) : '';
+        $h_img_url = get_post_meta( get_the_ID(), 'kvp_product_image', true )
+                     ?: ( has_post_thumbnail() ? get_the_post_thumbnail_url( get_the_ID(), 'medium' ) : '' );
         wp_reset_postdata();
     }
     ?>
@@ -194,15 +195,14 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           $price  = get_post_meta( get_the_ID(), 'kvp_price', true );
       ?>
       <div class="kvp-rc kvp-rc--horiz-mobile">
+        <?php $kvp_img = get_post_meta( get_the_ID(), 'kvp_product_image', true ); ?>
         <div class="kvp-rc-img" role="presentation">
-          <?php if ( has_post_thumbnail() ) : ?>
+          <?php if ( $kvp_img ) : ?>
+            <img src="<?php echo esc_url( $kvp_img ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" loading="lazy" />
+          <?php elseif ( has_post_thumbnail() ) : ?>
             <?php the_post_thumbnail( 'medium', array( 'alt' => esc_attr( get_the_title() ) ) ); ?>
           <?php else : ?>
-            <svg width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C" opacity="0.15"/>
-              <path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C" opacity="0.15"/>
-              <path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round" opacity="0.15"/>
-            </svg>
+            <svg width="36" height="36" viewBox="0 0 48 48" fill="none" opacity="0.15" aria-hidden="true"><path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/><path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/><path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/></svg>
           <?php endif; ?>
         </div>
         <div class="kvp-rc-body">
@@ -268,15 +268,14 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           $price  = get_post_meta( get_the_ID(), 'kvp_price', true );
       ?>
       <div class="kvp-rc">
+        <?php $kvp_img = get_post_meta( get_the_ID(), 'kvp_product_image', true ); ?>
         <div class="kvp-rc-img" role="presentation">
-          <?php if ( has_post_thumbnail() ) : ?>
+          <?php if ( $kvp_img ) : ?>
+            <img src="<?php echo esc_url( $kvp_img ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" loading="lazy" />
+          <?php elseif ( has_post_thumbnail() ) : ?>
             <?php the_post_thumbnail( 'medium', array( 'alt' => esc_attr( get_the_title() ) ) ); ?>
           <?php else : ?>
-            <svg width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C" opacity="0.15"/>
-              <path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C" opacity="0.15"/>
-              <path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round" opacity="0.15"/>
-            </svg>
+            <svg width="36" height="36" viewBox="0 0 48 48" fill="none" opacity="0.15" aria-hidden="true"><path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/><path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/><path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/></svg>
           <?php endif; ?>
         </div>
         <div class="kvp-rc-body">
@@ -345,15 +344,14 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           $cname  = ( $cats && ! is_wp_error( $cats ) ) ? $cats[0]->name : '';
       ?>
       <div class="kvp-rc kvp-rc--horiz-mobile">
+        <?php $kvp_img = get_post_meta( get_the_ID(), 'kvp_product_image', true ); ?>
         <div class="kvp-rc-img" role="presentation">
-          <?php if ( has_post_thumbnail() ) : ?>
+          <?php if ( $kvp_img ) : ?>
+            <img src="<?php echo esc_url( $kvp_img ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" loading="lazy" />
+          <?php elseif ( has_post_thumbnail() ) : ?>
             <?php the_post_thumbnail( 'medium', array( 'alt' => esc_attr( get_the_title() ) ) ); ?>
           <?php else : ?>
-            <svg width="28" height="28" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C" opacity="0.15"/>
-              <path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C" opacity="0.15"/>
-              <path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round" opacity="0.15"/>
-            </svg>
+            <svg width="36" height="36" viewBox="0 0 48 48" fill="none" opacity="0.15" aria-hidden="true"><path d="M7 34 L7 22 Q7 20 9 20 L31 20 Q33 20 33 22 L33 34 Q33 36 31 36 L9 36 Q7 36 7 34Z" fill="#E8401C"/><path d="M7.5 20 Q8 15 20 15 Q32 15 32.5 20" fill="#E8401C"/><path d="M33 28 L43 25" stroke="#E8401C" stroke-width="3.2" stroke-linecap="round"/></svg>
           <?php endif; ?>
         </div>
         <div class="kvp-rc-body">
