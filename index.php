@@ -404,7 +404,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         'exclude'    => $uncategorized_id,
     ] );
     $cat_icons = [
-        'air-fryers'   => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        'air-fryers'   => '<svg width="64" height="64" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <rect x="14" y="18" width="52" height="50" rx="8" stroke="#E8401C" stroke-width="1.8"/>
   <line x1="14" y1="32" x2="66" y2="32" stroke="#E8401C" stroke-width="1.5" opacity="0.5"/>
   <circle cx="40" cy="24" r="5" stroke="#E8401C" stroke-width="2"/>
@@ -417,7 +417,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
   <rect x="19" y="65" width="8" height="4" rx="2" stroke="#E8401C" stroke-width="1.5"/>
   <rect x="53" y="65" width="8" height="4" rx="2" stroke="#E8401C" stroke-width="1.5"/>
 </svg>',
-        'bakeware'     => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        'bakeware'     => '<svg width="64" height="64" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <rect x="10" y="38" width="64" height="8" rx="3" stroke="#E8401C" stroke-width="2"/>
   <rect x="10" y="42" width="64" height="22" rx="4" stroke="#E8401C" stroke-width="2.5"/>
   <ellipse cx="26" cy="40" rx="8" ry="7" stroke="#E8401C" stroke-width="2"/>
@@ -432,7 +432,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
   <rect x="6" y="44" width="6" height="12" rx="3" stroke="#E8401C" stroke-width="2"/>
   <rect x="72" y="44" width="6" height="12" rx="3" stroke="#E8401C" stroke-width="2"/>
 </svg>',
-        'blenders'     => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        'blenders'     => '<svg width="64" height="64" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <path d="M26 58 L22 28 Q22 24 26 24 L54 24 Q58 24 58 28 L54 58 Z" stroke="#E8401C" stroke-width="1.8" stroke-linejoin="round"/>
   <rect x="26" y="18" width="28" height="8" rx="4" stroke="#E8401C" stroke-width="2"/>
   <rect x="35" y="12" width="10" height="8" rx="4" stroke="#E8401C" stroke-width="2"/>
@@ -443,7 +443,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
   <line x1="30" y1="56" x2="50" y2="56" stroke="#E8401C" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
   <line x1="48" y1="28" x2="50" y2="52" stroke="#E8401C" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
 </svg>',
-        'cookware'     => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        'cookware'     => '<svg width="64" height="64" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <ellipse cx="40" cy="46" rx="26" ry="22" stroke="#E8401C" stroke-width="2.5"/>
   <ellipse cx="40" cy="43" rx="20" ry="16" stroke="#E8401C" stroke-width="1.5" opacity="0.5"/>
   <ellipse cx="40" cy="43" rx="14" ry="11" stroke="#E8401C" stroke-width="1" opacity="0.4"/>
@@ -453,7 +453,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
   <circle cx="68" cy="43.5" r="1.5" fill="#E8401C"/>
   <circle cx="73" cy="43.5" r="1.5" fill="#E8401C"/>
 </svg>',
-        'kettles'      => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        'kettles'      => '<svg width="64" height="64" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <path d="M18 62 Q18 66 22 66 L54 66 Q58 66 58 62 L58 32 Q58 28 54 28 L22 28 Q18 28 18 32 Z" stroke="#E8401C" stroke-width="2.5"/>
   <path d="M54 40 Q66 38 68 30 Q70 22 64 20 Q60 18 58 24" fill="none" stroke="#E8401C" stroke-width="2.5" stroke-linecap="round"/>
   <ellipse cx="61" cy="19" rx="4" ry="3" stroke="#E8401C" stroke-width="2"/>
@@ -463,7 +463,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
   <rect x="16" y="63" width="44" height="6" rx="3" stroke="#E8401C" stroke-width="2"/>
   <line x1="20" y1="50" x2="56" y2="50" stroke="#E8401C" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
 </svg>',
-        'multicooker'  => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        'multicooker'  => '<svg width="64" height="64" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <rect x="14" y="22" width="52" height="50" rx="10" stroke="#E8401C" stroke-width="2.5"/>
   <ellipse cx="40" cy="24" rx="24" ry="7" stroke="#E8401C" stroke-width="2"/>
   <rect x="36" y="14" width="8" height="12" rx="4" stroke="#E8401C" stroke-width="2"/>
@@ -480,7 +480,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
   <circle cx="34" cy="58" r="1.5" fill="#E8401C" opacity="0.3"/>
   <rect x="16" y="66" width="48" height="6" rx="3" stroke="#E8401C" stroke-width="2"/>
 </svg>',
-        'stand-mixers' => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        'stand-mixers' => '<svg width="64" height="64" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <path d="M28 18 Q28 14 32 14 L52 14 Q58 14 58 20 L58 46 Q58 50 54 50 L32 50 Q28 50 28 46 Z" stroke="#E8401C" stroke-width="1.8"/>
   <rect x="26" y="46" width="16" height="16" rx="4" stroke="#E8401C" stroke-width="2"/>
   <path d="M22 62 Q22 74 40 74 Q58 74 58 62" stroke="#E8401C" stroke-width="2.5" stroke-linecap="round" fill="none"/>

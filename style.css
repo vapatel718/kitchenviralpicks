@@ -625,15 +625,17 @@ main,
 }
 
 .kvp-cat-card {
-  background: #fff;
-  border-radius: 10px;
-  border: 0.5px solid rgba(232,64,28,0.12);
-  padding: 14px 8px;
-  text-align: center;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    border: 0.5px solid rgba(232,64,28,0.12);
+    border-bottom: 3px solid #E8401C;
+    padding: 14px 10px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.15s ease;
 }
 
 .kvp-cat-icon {
@@ -648,8 +650,7 @@ main,
 }
 
 .kvp-cat {
-    border-bottom: 3px solid #E8401C;
-    padding: 12px 8px 10px;
+    padding: 0;
 }
 
 .kvp-cat-name {
@@ -682,8 +683,8 @@ main,
   }
 
   .kvp-cat-icon {
-    width: 32px;
-    height: 32px;
+    width: 56px;
+    height: 56px;
     font-size: 16px;
   }
 
