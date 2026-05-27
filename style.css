@@ -640,16 +640,16 @@ main,
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 52px;
-    height: 52px;
+    width: 64px;
+    height: 64px;
     background: transparent;
-    margin: 0 auto 6px;
+    margin: 0 auto 4px;
     flex-shrink: 0;
 }
 
 .kvp-cat {
     border-bottom: 3px solid #E8401C;
-    padding: 16px 10px 12px;
+    padding: 12px 8px 10px;
 }
 
 .kvp-cat-name {
