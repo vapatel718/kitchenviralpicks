@@ -640,10 +640,10 @@ main,
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
+    width: 64px;
+    height: 64px;
     border-radius: 10px;
-    background: #E8401C;
+    background: #FFF0EB;
     color: #fff;
     font-size: 18px;
     font-weight: 700;
@@ -656,6 +656,9 @@ main,
 .kvp-cat-icon--kettles     { background: #EDFAF3; }
 .kvp-cat-icon--multicooker { background: #FAEEDA; }
 .kvp-cat-icon--bakeware    { background: #F1EFE8; }
+.kvp-cat-icon--air-fryers  { background: #FFF0EB; }
+.kvp-cat-icon--blenders    { background: #F1EFE8; }
+.kvp-cat-icon--stand-mixers { background: #EDFAF3; }
 
 .kvp-cat-name {
   font-size: 11px;
