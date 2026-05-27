@@ -1,13 +1,13 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: style: category cards — larger icon 64px, tighter padding
+Last commit: fix: category cards — correct card class, red bottom border, icon size, remove double padding
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-style.css category cards tweaked — .kvp-cat-icon size 52px→64px, margin 6px→4px; .kvp-cat padding 16px 10px 12px→12px 8px 10px. Commit eb74c60. Local only — not yet deployed to live.
+Category card full fix — .kvp-cat-card gets border-bottom: 3px #E8401C + transition; .kvp-cat padding→0; breakpoint icon 32px→56px; SVG dimensions 80→64 in index.php. Commit 0d54b46. Local only — not yet deployed to live. NOTE: a second .kvp-cat-icon override exists at line ~1012 (40px) inside a larger breakpoint — flagged for review.
 
 ## Next Task
 Deploy index.php + style.css to live (Hostinger via SSH) once Varun approves the category card appearance locally. Then: Post 103 featured image when original photo is ready.
