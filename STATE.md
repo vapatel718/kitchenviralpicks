@@ -1,16 +1,16 @@
 # STATE.md — KitchenViralPicks
 
-Last updated: 2026-05-26
-Last commit: 3f7f6bb — fix: index.php card images — read kvp_product_image first, fall back to featured image
+Last updated: 2026-05-27
+Last commit: content: mark June Week 1 roundup as PUBLISHED in CONTENT_PLAN.md
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-index.php card image fix complete — all 4 card locations now read kvp_product_image first, fall back to featured image, fall back to SVG placeholder. Deployed to live. Ninja homepage card (Post 14) showing correct AF141 image on local and live. kvp_product_image set on Post 14 local and live to https://m.media-amazon.com/images/I/71jfzcXideL._AC_SL1500_.jpg. Roundup Post 83 (local) featured image set to Pexels air fryer photo (attachment ID 85) as temporary placeholder — will be replaced with original photography tomorrow.
+CONTENT_PLAN.md updated — June Week 1 roundup status marked PUBLISHED in both the calendar table and the detail block.
 
 ## Next Task
-(1) Replace roundup Post 83/103 featured image with original air fryer photo (Varun uploading tomorrow — photo taken by wife's friend). Upload here in chat, Claude edits/crops, then set as featured image on local and deploy to live. (2) Update CONTENT_PLAN.md to mark June Week 1 roundup as PUBLISHED. (3) Keyword approval for June Week 2 article.
+(1) Replace roundup Post 83/103 featured image with original air fryer photo (Varun uploading — photo taken by wife's friend). Upload here in chat, Claude edits/crops, then set as featured image on local and deploy to live. (2) Keyword approval for June Week 2 article (Ninja AF141 review).
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
