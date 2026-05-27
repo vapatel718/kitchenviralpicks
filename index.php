@@ -405,9 +405,8 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
     ] );
     $cat_icons = [
         'air-fryers'   => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <rect x="14" y="18" width="52" height="50" rx="8" stroke="#E8401C" stroke-width="2.5"/>
-  <rect x="14" y="18" width="52" height="14" rx="8" stroke="#E8401C" stroke-width="2"/>
-  <rect x="14" y="25" width="52" height="7" stroke="#E8401C" stroke-width="1" opacity="0.4"/>
+  <rect x="14" y="18" width="52" height="50" rx="8" stroke="#E8401C" stroke-width="1.8"/>
+  <line x1="14" y1="32" x2="66" y2="32" stroke="#E8401C" stroke-width="1.5" opacity="0.5"/>
   <circle cx="40" cy="24" r="5" stroke="#E8401C" stroke-width="2"/>
   <circle cx="40" cy="24" r="2.5" fill="#E8401C"/>
   <rect x="20" y="36" width="40" height="8" rx="3" stroke="#E8401C" stroke-width="2"/>
@@ -434,7 +433,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
   <rect x="72" y="44" width="6" height="12" rx="3" stroke="#E8401C" stroke-width="2"/>
 </svg>',
         'blenders'     => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M26 58 L22 28 Q22 24 26 24 L54 24 Q58 24 58 28 L54 58 Z" stroke="#E8401C" stroke-width="2.5" stroke-linejoin="round"/>
+  <path d="M26 58 L22 28 Q22 24 26 24 L54 24 Q58 24 58 28 L54 58 Z" stroke="#E8401C" stroke-width="1.8" stroke-linejoin="round"/>
   <rect x="26" y="18" width="28" height="8" rx="4" stroke="#E8401C" stroke-width="2"/>
   <rect x="35" y="12" width="10" height="8" rx="4" stroke="#E8401C" stroke-width="2"/>
   <rect x="22" y="58" width="36" height="14" rx="5" stroke="#E8401C" stroke-width="2.5"/>
@@ -482,7 +481,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
   <rect x="16" y="66" width="48" height="6" rx="3" stroke="#E8401C" stroke-width="2"/>
 </svg>',
         'stand-mixers' => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M28 18 Q28 14 32 14 L52 14 Q58 14 58 20 L58 46 Q58 50 54 50 L32 50 Q28 50 28 46 Z" stroke="#E8401C" stroke-width="2.5"/>
+  <path d="M28 18 Q28 14 32 14 L52 14 Q58 14 58 20 L58 46 Q58 50 54 50 L32 50 Q28 50 28 46 Z" stroke="#E8401C" stroke-width="1.8"/>
   <rect x="26" y="46" width="16" height="16" rx="4" stroke="#E8401C" stroke-width="2"/>
   <path d="M22 62 Q22 74 40 74 Q58 74 58 62" stroke="#E8401C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
   <rect x="14" y="62" width="52" height="8" rx="4" stroke="#E8401C" stroke-width="2"/>
