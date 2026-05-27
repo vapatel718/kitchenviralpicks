@@ -1,16 +1,16 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: style: replace category icons with outline-only SVGs — remove red bg fills
+Last commit: fix: reduce stroke-width on large SVG shapes — air fryers, blenders, stand mixers
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-index.php category icons replaced — all 7 SVGs converted from filled to outline-only (stroke="#E8401C", no background fills). Commit 5ba0e4a. Local only — not yet deployed to live.
+index.php SVG icon stroke-widths reduced — air-fryers outer body 2.5→1.8 + overlapping header rects replaced with single divider line; blenders pitcher 2.5→1.8; stand-mixers motor body 2.5→1.8. Commit 2385381. Local only — not yet deployed to live.
 
 ## Next Task
-Deploy outline icon change to live: push index.php to Hostinger via SSH. Then: Post 103 featured image — replace with original air fryer photo once Varun's photo is ready.
+Deploy index.php to live (Hostinger via SSH) once Varun approves the icon appearance locally. Then: Post 103 featured image when original photo is ready.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
