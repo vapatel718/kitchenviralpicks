@@ -1,16 +1,16 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: chore: update STATE.md — category icon polish deployed to live
+Last commit: 3eaa54c — content: add Nordic Ware Half Sheet Pan review — Bakeware category article 1
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Category icons updated to outline SVGs + red bottom border cards deployed to live — git pull on Hostinger, live now at commit 70f0172. Cache flushed.
+Nordic Ware Half Sheet Pan review published locally — Post ID 90, slug: nordic-ware-half-sheet-pan-review. Bakeware category now has its first article. All 16 custom meta fields set. Ready for local review and approval before deploying to live.
 
 ## Next Task
-Post 103 featured image — set original air fryer photo when ready. Then June Week 3 article keyword approval.
+Varun reviews article at kitchenviralpicks.local/?p=90. On approval — deploy to live via SSH, set featured image, update CONTENT_PLAN.md to mark article as published.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
@@ -45,6 +45,7 @@ page-contact.php | approved — all viewports (390px, 768px, 1280px)
 10 cuisinart-dutch-oven | published — Post ID 44, slug: cuisinart-chefs-classic-enameled-cast-iron-dutch-oven-review-2026 — 4.6★ / 5,273 reviews / $129.50
 11 roundup-air-fryers   | published LIVE — Local ID 83, Live ID 103, slug: air-fryers-under-100-most-reviewed — DEPLOYED 2026-05-25
 12 instant-vortex-plus  | published LIVE — Local ID 86, Live ID 106, slug: instant-pot-vortex-plus-6qt-air-fryer-review — DEPLOYED 2026-05-27
+13 nordic-ware-half-sheet | published LOCAL ONLY — Post ID 90, slug: nordic-ware-half-sheet-pan-review — 4.7★ / 48,000+ reviews / ~$32.99 — 2026-05-27
 
 ---
 
