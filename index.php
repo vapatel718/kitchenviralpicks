@@ -405,119 +405,92 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
     ] );
     $cat_icons = [
         'air-fryers'   => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <rect x="14" y="18" width="52" height="50" rx="8" fill="#E8401C"/>
-  <rect x="14" y="18" width="52" height="14" rx="8" fill="#C4300F"/>
-  <rect x="14" y="25" width="52" height="7" fill="#C4300F"/>
-  <circle cx="40" cy="24" r="5" fill="#FF6B45"/>
-  <circle cx="40" cy="24" r="2.5" fill="#C4300F"/>
-  <rect x="20" y="36" width="40" height="8" rx="3" fill="#C4300F"/>
-  <rect x="24" y="38" width="12" height="4" rx="1.5" fill="#FF6B45" opacity="0.7"/>
-  <rect x="40" y="38" width="16" height="4" rx="1.5" fill="#FF6B45" opacity="0.4"/>
-  <rect x="16" y="48" width="48" height="16" rx="5" fill="#C4300F"/>
-  <rect x="18" y="50" width="44" height="12" rx="4" fill="#B8220A"/>
-  <rect x="30" y="56" width="20" height="4" rx="2" fill="#FF6B45"/>
-  <rect x="19" y="65" width="8" height="4" rx="2" fill="#B8220A"/>
-  <rect x="53" y="65" width="8" height="4" rx="2" fill="#B8220A"/>
+  <rect x="14" y="18" width="52" height="50" rx="8" stroke="#E8401C" stroke-width="2.5"/>
+  <rect x="14" y="18" width="52" height="14" rx="8" stroke="#E8401C" stroke-width="2"/>
+  <rect x="14" y="25" width="52" height="7" stroke="#E8401C" stroke-width="1" opacity="0.4"/>
+  <circle cx="40" cy="24" r="5" stroke="#E8401C" stroke-width="2"/>
+  <circle cx="40" cy="24" r="2.5" fill="#E8401C"/>
+  <rect x="20" y="36" width="40" height="8" rx="3" stroke="#E8401C" stroke-width="2"/>
+  <rect x="24" y="38" width="12" height="4" rx="1.5" stroke="#E8401C" stroke-width="1.2" opacity="0.6"/>
+  <rect x="40" y="38" width="16" height="4" rx="1.5" stroke="#E8401C" stroke-width="1.2" opacity="0.4"/>
+  <rect x="16" y="48" width="48" height="16" rx="5" stroke="#E8401C" stroke-width="2"/>
+  <rect x="30" y="56" width="20" height="4" rx="2" stroke="#E8401C" stroke-width="1.5"/>
+  <rect x="19" y="65" width="8" height="4" rx="2" stroke="#E8401C" stroke-width="1.5"/>
+  <rect x="53" y="65" width="8" height="4" rx="2" stroke="#E8401C" stroke-width="1.5"/>
 </svg>',
         'bakeware'     => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <rect x="10" y="42" width="64" height="22" rx="4" fill="#D4CBC7"/>
-  <rect x="10" y="38" width="64" height="8" rx="3" fill="#D4CBC7"/>
-  <ellipse cx="26" cy="42" rx="9" ry="5" fill="#B8ABA6"/>
-  <ellipse cx="42" cy="42" rx="9" ry="5" fill="#B8ABA6"/>
-  <ellipse cx="58" cy="42" rx="9" ry="5" fill="#B8ABA6"/>
-  <ellipse cx="26" cy="40" rx="8" ry="7" fill="#E8401C"/>
-  <ellipse cx="26" cy="37" rx="8" ry="5" fill="#FF6B45"/>
-  <ellipse cx="42" cy="40" rx="8" ry="7" fill="#E8401C"/>
-  <ellipse cx="42" cy="37" rx="8" ry="5" fill="#FF6B45"/>
-  <ellipse cx="58" cy="40" rx="8" ry="7" fill="#E8401C"/>
-  <ellipse cx="58" cy="37" rx="8" ry="5" fill="#FF6B45"/>
-  <circle cx="24" cy="35" r="1.2" fill="white" opacity="0.8"/>
-  <circle cx="28" cy="33" r="1.2" fill="white" opacity="0.8"/>
-  <circle cx="40" cy="34" r="1.2" fill="white" opacity="0.8"/>
-  <circle cx="44" cy="36" r="1.2" fill="white" opacity="0.8"/>
-  <circle cx="56" cy="33" r="1.2" fill="white" opacity="0.8"/>
-  <circle cx="61" cy="36" r="1.2" fill="white" opacity="0.8"/>
-  <rect x="6" y="44" width="6" height="12" rx="3" fill="#D4CBC7"/>
-  <rect x="72" y="44" width="6" height="12" rx="3" fill="#D4CBC7"/>
+  <rect x="10" y="38" width="64" height="8" rx="3" stroke="#E8401C" stroke-width="2"/>
+  <rect x="10" y="42" width="64" height="22" rx="4" stroke="#E8401C" stroke-width="2.5"/>
+  <ellipse cx="26" cy="40" rx="8" ry="7" stroke="#E8401C" stroke-width="2"/>
+  <ellipse cx="42" cy="40" rx="8" ry="7" stroke="#E8401C" stroke-width="2"/>
+  <ellipse cx="58" cy="40" rx="8" ry="7" stroke="#E8401C" stroke-width="2"/>
+  <circle cx="24" cy="35" r="1.2" fill="#E8401C" opacity="0.7"/>
+  <circle cx="28" cy="33" r="1.2" fill="#E8401C" opacity="0.7"/>
+  <circle cx="40" cy="34" r="1.2" fill="#E8401C" opacity="0.7"/>
+  <circle cx="44" cy="36" r="1.2" fill="#E8401C" opacity="0.7"/>
+  <circle cx="56" cy="33" r="1.2" fill="#E8401C" opacity="0.7"/>
+  <circle cx="61" cy="36" r="1.2" fill="#E8401C" opacity="0.7"/>
+  <rect x="6" y="44" width="6" height="12" rx="3" stroke="#E8401C" stroke-width="2"/>
+  <rect x="72" y="44" width="6" height="12" rx="3" stroke="#E8401C" stroke-width="2"/>
 </svg>',
         'blenders'     => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <rect x="22" y="58" width="36" height="14" rx="5" fill="#C4300F"/>
-  <rect x="24" y="60" width="32" height="4" rx="2" fill="#FF6B45" opacity="0.5"/>
-  <circle cx="32" cy="66" r="3" fill="#FF6B45"/>
-  <circle cx="40" cy="66" r="3" fill="#FF6B45" opacity="0.5"/>
-  <circle cx="48" cy="66" r="3" fill="#FF6B45" opacity="0.3"/>
-  <path d="M26 58 L22 28 Q22 24 26 24 L54 24 Q58 24 58 28 L54 58 Z" fill="#E8401C"/>
-  <path d="M27 55 L24 36 Q24 32 27 32 L53 32 Q56 32 56 36 L53 55 Z" fill="#FF6B45" opacity="0.6"/>
-  <line x1="30" y1="56" x2="50" y2="56" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-  <line x1="40" y1="51" x2="40" y2="61" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
-  <rect x="26" y="18" width="28" height="8" rx="4" fill="#C4300F"/>
-  <rect x="35" y="12" width="10" height="8" rx="4" fill="#C4300F"/>
-  <line x1="48" y1="28" x2="50" y2="52" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.25"/>
+  <path d="M26 58 L22 28 Q22 24 26 24 L54 24 Q58 24 58 28 L54 58 Z" stroke="#E8401C" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="26" y="18" width="28" height="8" rx="4" stroke="#E8401C" stroke-width="2"/>
+  <rect x="35" y="12" width="10" height="8" rx="4" stroke="#E8401C" stroke-width="2"/>
+  <rect x="22" y="58" width="36" height="14" rx="5" stroke="#E8401C" stroke-width="2.5"/>
+  <circle cx="32" cy="66" r="3" stroke="#E8401C" stroke-width="2"/>
+  <circle cx="40" cy="66" r="3" stroke="#E8401C" stroke-width="2"/>
+  <circle cx="48" cy="66" r="3" stroke="#E8401C" stroke-width="2"/>
+  <line x1="30" y1="56" x2="50" y2="56" stroke="#E8401C" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <line x1="48" y1="28" x2="50" y2="52" stroke="#E8401C" stroke-width="1.5" stroke-linecap="round" opacity="0.3"/>
 </svg>',
         'cookware'     => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <ellipse cx="40" cy="50" rx="26" ry="8" fill="#B8220A" opacity="0.4"/>
-  <ellipse cx="40" cy="46" rx="26" ry="22" fill="#C4300F"/>
-  <ellipse cx="40" cy="44" rx="24" ry="20" fill="#E8401C"/>
-  <ellipse cx="40" cy="43" rx="20" ry="16" fill="#C4300F"/>
-  <ellipse cx="40" cy="43" rx="14" ry="11" fill="none" stroke="#B8220A" stroke-width="1" opacity="0.5"/>
-  <ellipse cx="40" cy="43" rx="7" ry="6" fill="none" stroke="#B8220A" stroke-width="1" opacity="0.4"/>
-  <rect x="62" y="40" width="16" height="7" rx="3.5" fill="#C4300F"/>
-  <rect x="63" y="41.5" width="14" height="4" rx="2" fill="#E8401C"/>
-  <rect x="4" y="41" width="10" height="6" rx="3" fill="#C4300F"/>
-  <circle cx="68" cy="43.5" r="1.5" fill="#B8220A"/>
-  <circle cx="73" cy="43.5" r="1.5" fill="#B8220A"/>
+  <ellipse cx="40" cy="46" rx="26" ry="22" stroke="#E8401C" stroke-width="2.5"/>
+  <ellipse cx="40" cy="43" rx="20" ry="16" stroke="#E8401C" stroke-width="1.5" opacity="0.5"/>
+  <ellipse cx="40" cy="43" rx="14" ry="11" stroke="#E8401C" stroke-width="1" opacity="0.4"/>
+  <ellipse cx="40" cy="43" rx="7" ry="6" stroke="#E8401C" stroke-width="1" opacity="0.3"/>
+  <rect x="62" y="40" width="16" height="7" rx="3.5" stroke="#E8401C" stroke-width="2"/>
+  <rect x="4" y="41" width="10" height="6" rx="3" stroke="#E8401C" stroke-width="2"/>
+  <circle cx="68" cy="43.5" r="1.5" fill="#E8401C"/>
+  <circle cx="73" cy="43.5" r="1.5" fill="#E8401C"/>
 </svg>',
         'kettles'      => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M18 62 Q18 66 22 66 L54 66 Q58 66 58 62 L58 32 Q58 28 54 28 L22 28 Q18 28 18 32 Z" fill="#E8401C"/>
-  <line x1="50" y1="30" x2="52" y2="62" stroke="white" stroke-width="3" stroke-linecap="round" opacity="0.15"/>
-  <path d="M54 40 Q66 38 68 30 Q70 22 64 20 Q60 18 58 24" fill="none" stroke="#C4300F" stroke-width="6" stroke-linecap="round"/>
-  <path d="M54 40 Q66 38 68 30 Q70 22 64 20 Q60 18 58 24" fill="none" stroke="#E8401C" stroke-width="4" stroke-linecap="round"/>
-  <ellipse cx="61" cy="19" rx="4" ry="3" fill="#C4300F"/>
-  <path d="M18 36 Q6 42 6 52 Q6 62 18 60" fill="none" stroke="#C4300F" stroke-width="7" stroke-linecap="round"/>
-  <path d="M18 36 Q7 42 7 52 Q7 61 18 60" fill="none" stroke="#E8401C" stroke-width="5" stroke-linecap="round"/>
-  <rect x="20" y="22" width="38" height="8" rx="4" fill="#C4300F"/>
-  <circle cx="39" cy="19" r="4" fill="#C4300F"/>
-  <circle cx="39" cy="18" r="3" fill="#E8401C"/>
-  <rect x="16" y="63" width="44" height="6" rx="3" fill="#C4300F"/>
-  <line x1="20" y1="50" x2="56" y2="50" stroke="white" stroke-width="1" stroke-linecap="round" opacity="0.3"/>
+  <path d="M18 62 Q18 66 22 66 L54 66 Q58 66 58 62 L58 32 Q58 28 54 28 L22 28 Q18 28 18 32 Z" stroke="#E8401C" stroke-width="2.5"/>
+  <path d="M54 40 Q66 38 68 30 Q70 22 64 20 Q60 18 58 24" fill="none" stroke="#E8401C" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="61" cy="19" rx="4" ry="3" stroke="#E8401C" stroke-width="2"/>
+  <path d="M18 36 Q7 42 7 52 Q7 61 18 60" fill="none" stroke="#E8401C" stroke-width="2.5" stroke-linecap="round"/>
+  <rect x="20" y="22" width="38" height="8" rx="4" stroke="#E8401C" stroke-width="2"/>
+  <circle cx="39" cy="18" r="3" stroke="#E8401C" stroke-width="2"/>
+  <rect x="16" y="63" width="44" height="6" rx="3" stroke="#E8401C" stroke-width="2"/>
+  <line x1="20" y1="50" x2="56" y2="50" stroke="#E8401C" stroke-width="1.2" stroke-linecap="round" opacity="0.5"/>
 </svg>',
         'multicooker'  => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <rect x="14" y="22" width="52" height="50" rx="10" fill="#C4300F"/>
-  <rect x="14" y="26" width="52" height="42" rx="8" fill="#E8401C"/>
-  <ellipse cx="40" cy="26" rx="26" ry="8" fill="#C4300F"/>
-  <ellipse cx="40" cy="24" rx="24" ry="7" fill="#E8401C"/>
-  <rect x="36" y="14" width="8" height="12" rx="4" fill="#C4300F"/>
-  <rect x="37" y="13" width="6" height="6" rx="3" fill="#FF6B45"/>
-  <rect x="6" y="36" width="8" height="14" rx="4" fill="#C4300F"/>
-  <rect x="66" y="36" width="8" height="14" rx="4" fill="#C4300F"/>
-  <rect x="18" y="44" width="44" height="18" rx="4" fill="#C4300F"/>
-  <rect x="20" y="46" width="24" height="10" rx="2" fill="#B8220A"/>
-  <rect x="21" y="47" width="22" height="8" rx="1.5" fill="#FF6B45" opacity="0.3"/>
-  <circle cx="54" cy="51" r="6" fill="#B8220A"/>
-  <circle cx="54" cy="51" r="4" fill="#C4300F"/>
-  <line x1="54" y1="46" x2="54" y2="49" stroke="#FF6B45" stroke-width="1.5" stroke-linecap="round"/>
-  <circle cx="24" cy="58" r="1.5" fill="#FF6B45" opacity="0.8"/>
-  <circle cx="29" cy="58" r="1.5" fill="#FF6B45" opacity="0.5"/>
-  <circle cx="34" cy="58" r="1.5" fill="#FF6B45" opacity="0.3"/>
-  <rect x="16" y="66" width="48" height="6" rx="3" fill="#C4300F"/>
+  <rect x="14" y="22" width="52" height="50" rx="10" stroke="#E8401C" stroke-width="2.5"/>
+  <ellipse cx="40" cy="24" rx="24" ry="7" stroke="#E8401C" stroke-width="2"/>
+  <rect x="36" y="14" width="8" height="12" rx="4" stroke="#E8401C" stroke-width="2"/>
+  <circle cx="40" cy="13" r="3" fill="#E8401C"/>
+  <rect x="6" y="36" width="8" height="14" rx="4" stroke="#E8401C" stroke-width="2"/>
+  <rect x="66" y="36" width="8" height="14" rx="4" stroke="#E8401C" stroke-width="2"/>
+  <rect x="18" y="44" width="44" height="18" rx="4" stroke="#E8401C" stroke-width="2"/>
+  <rect x="20" y="46" width="24" height="10" rx="2" stroke="#E8401C" stroke-width="1.5"/>
+  <circle cx="54" cy="51" r="6" stroke="#E8401C" stroke-width="2"/>
+  <circle cx="54" cy="51" r="3" fill="#E8401C"/>
+  <line x1="54" y1="46" x2="54" y2="49" stroke="#E8401C" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="24" cy="58" r="1.5" fill="#E8401C" opacity="0.8"/>
+  <circle cx="29" cy="58" r="1.5" fill="#E8401C" opacity="0.5"/>
+  <circle cx="34" cy="58" r="1.5" fill="#E8401C" opacity="0.3"/>
+  <rect x="16" y="66" width="48" height="6" rx="3" stroke="#E8401C" stroke-width="2"/>
 </svg>',
         'stand-mixers' => '<svg width="80" height="80" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <rect x="14" y="62" width="52" height="8" rx="4" fill="#C4300F"/>
-  <rect x="16" y="60" width="48" height="6" rx="3" fill="#E8401C"/>
-  <path d="M22 62 Q22 74 40 74 Q58 74 58 62" fill="none" stroke="#C4300F" stroke-width="5" stroke-linecap="round"/>
-  <path d="M23 62 Q23 72 40 72 Q57 72 57 62" fill="none" stroke="#E8401C" stroke-width="3" stroke-linecap="round"/>
-  <path d="M28 18 Q28 14 32 14 L52 14 Q58 14 58 20 L58 46 Q58 50 54 50 L32 50 Q28 50 28 46 Z" fill="#C4300F"/>
-  <path d="M30 18 Q30 16 33 16 L51 16 Q56 16 56 20 L56 46 Q56 48 53 48 L33 48 Q30 48 30 46 Z" fill="#E8401C"/>
-  <rect x="26" y="46" width="16" height="16" rx="4" fill="#C4300F"/>
-  <rect x="28" y="47" width="12" height="14" rx="3" fill="#E8401C"/>
-  <line x1="34" y1="60" x2="34" y2="75" stroke="#C4300F" stroke-width="3" stroke-linecap="round"/>
-  <path d="M30 68 Q34 64 38 68" fill="none" stroke="#C4300F" stroke-width="2" stroke-linecap="round"/>
-  <path d="M30 72 Q34 68 38 72" fill="none" stroke="#C4300F" stroke-width="2" stroke-linecap="round"/>
-  <circle cx="50" cy="34" r="7" fill="#C4300F"/>
-  <circle cx="50" cy="34" r="5" fill="#C4300F"/>
-  <line x1="50" y1="29" x2="50" y2="33" stroke="#FF6B45" stroke-width="2" stroke-linecap="round"/>
-  <rect x="33" y="26" width="14" height="8" rx="2" fill="#C4300F"/>
-  <line x1="32" y1="18" x2="32" y2="46" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.15"/>
+  <path d="M28 18 Q28 14 32 14 L52 14 Q58 14 58 20 L58 46 Q58 50 54 50 L32 50 Q28 50 28 46 Z" stroke="#E8401C" stroke-width="2.5"/>
+  <rect x="26" y="46" width="16" height="16" rx="4" stroke="#E8401C" stroke-width="2"/>
+  <path d="M22 62 Q22 74 40 74 Q58 74 58 62" stroke="#E8401C" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <rect x="14" y="62" width="52" height="8" rx="4" stroke="#E8401C" stroke-width="2"/>
+  <circle cx="50" cy="34" r="7" stroke="#E8401C" stroke-width="2"/>
+  <circle cx="50" cy="34" r="3" fill="#E8401C"/>
+  <line x1="50" y1="29" x2="50" y2="31" stroke="#E8401C" stroke-width="2" stroke-linecap="round"/>
+  <rect x="33" y="26" width="14" height="8" rx="2" stroke="#E8401C" stroke-width="1.5"/>
+  <line x1="32" y1="18" x2="32" y2="46" stroke="#E8401C" stroke-width="1.5" stroke-linecap="round" opacity="0.2"/>
 </svg>',
     ];
     ?>
