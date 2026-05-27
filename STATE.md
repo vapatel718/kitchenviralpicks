@@ -1,16 +1,16 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: content: mark June Week 2 Instant Pot Vortex Plus review as PUBLISHED in CONTENT_PLAN.md
+Last commit: style: replace category icons with outline-only SVGs — remove red bg fills
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-CONTENT_PLAN.md updated — June Week 2 table row and detail block marked PUBLISHED for Instant Pot Vortex Plus 6QT review (Local Post 86, Live Post 106).
+index.php category icons replaced — all 7 SVGs converted from filled to outline-only (stroke="#E8401C", no background fills). Commit 5ba0e4a. Local only — not yet deployed to live.
 
 ## Next Task
-Post 103 featured image — replace with original air fryer photo once Varun's photo is ready (taken by wife's friend). Upload in chat, Claude edits/crops, set as featured image on local and deploy to live.
+Deploy outline icon change to live: push index.php to Hostinger via SSH. Then: Post 103 featured image — replace with original air fryer photo once Varun's photo is ready.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
@@ -25,7 +25,7 @@ header.php | approved
 single.php | approved — updated 2026-05-25 (kvp_product_image score bar support, deployed to live)
 single-roundup.php | approved — committed 2026-05-25, deployed to live 2026-05-25
 archive.php | approved
-index.php | approved — updated 2026-05-26 (kvp_product_image card image support)
+index.php | approved — updated 2026-05-27 (outline-only category SVG icons — local only, deploy pending)
 footer.php | approved
 page.php | approved
 page-contact.php | approved — all viewports (390px, 768px, 1280px)
