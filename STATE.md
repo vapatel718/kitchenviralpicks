@@ -1,13 +1,13 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: style: category cards option B — transparent icon bg, tight padding, red bottom border
+Last commit: style: category cards — larger icon 64px, tighter padding
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-style.css category cards option B — .kvp-cat-icon bg→transparent, size 64px→52px, stripped slug overrides; .kvp-cat gets border-bottom: 3px solid #E8401C + padding. Commit 7bf05fc. Local only — not yet deployed to live.
+style.css category cards tweaked — .kvp-cat-icon size 52px→64px, margin 6px→4px; .kvp-cat padding 16px 10px 12px→12px 8px 10px. Commit eb74c60. Local only — not yet deployed to live.
 
 ## Next Task
 Deploy index.php + style.css to live (Hostinger via SSH) once Varun approves the category card appearance locally. Then: Post 103 featured image when original photo is ready.
