@@ -1,22 +1,22 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: content: mark June Week 1 roundup as PUBLISHED in CONTENT_PLAN.md
+Last commit: content: publish Instant Pot Vortex Plus 6QT review — Post 86
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-CONTENT_PLAN.md updated — June Week 1 roundup status marked PUBLISHED in both the calendar table and the detail block.
+Post 86 (Instant Pot Vortex Plus 6QT review) deployed from local to live — imported as Post 106 on live. All 17 post meta fields confirmed. Live at kitchenviralpicks.com/instant-pot-vortex-plus-6qt-air-fryer-review/
 
 ## Next Task
-(1) Replace roundup Post 83/103 featured image with original air fryer photo (Varun uploading — photo taken by wife's friend). Upload here in chat, Claude edits/crops, then set as featured image on local and deploy to live. (2) Keyword approval for June Week 2 article (Ninja AF141 review).
+Post 103 featured image — replace with original air fryer photo once Varun's photo is ready (taken by wife's friend). Upload in chat, Claude edits/crops, set as featured image on local and deploy to live.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
 
 ## Live Server Status
-Fully deployed — all Phase 6 + Phase 7 changes live on Hostinger as of 2026-05-26. index.php deployed 2026-05-26 (kvp_product_image card image support).
+Fully deployed — all Phase 6 + Phase 7 changes live on Hostinger as of 2026-05-27. Post 106 (Instant Pot Vortex Plus 6QT) published live 2026-05-27.
 
 ---
 
@@ -44,6 +44,7 @@ page-contact.php | approved — all viewports (390px, 768px, 1280px)
 9  ninja-bn701-blender  | published — Post ID 43, slug: ninja-bn701-professional-plus-blender-review-2026 — 4.7★ / 19,114 reviews / $109.99
 10 cuisinart-dutch-oven | published — Post ID 44, slug: cuisinart-chefs-classic-enameled-cast-iron-dutch-oven-review-2026 — 4.6★ / 5,273 reviews / $129.50
 11 roundup-air-fryers   | published LIVE — Local ID 83, Live ID 103, slug: air-fryers-under-100-most-reviewed — DEPLOYED 2026-05-25
+12 instant-vortex-plus  | published LIVE — Local ID 86, Live ID 106, slug: instant-pot-vortex-plus-6qt-air-fryer-review — DEPLOYED 2026-05-27
 
 ---
 
@@ -59,6 +60,7 @@ page-contact.php | approved — all viewports (390px, 768px, 1280px)
 - Post 43 (Ninja Blender): live
 - Post 44 (Cuisinart Dutch Oven): live
 - Post 103 (Roundup — Air Fryers Under $100): live
+- Post 106 (Instant Pot Vortex Plus 6QT): live
 
 ## Pen Name
 DEBORAH (never Rick, never anything else)
@@ -86,7 +88,7 @@ DEBORAH (never Rick, never anything else)
 ### Roundup Button Mapping
 - Ninja AF101 → Check price on Amazon (no review yet)
 - Cosori TurboBlaze → Read full review (live)
-- Instant Vortex Plus → Check price on Amazon (no review yet)
+- Instant Vortex Plus → Read full review (live — Post 106)
 - Chefman TurboFry → Check price on Amazon (no review yet)
 - Dash Tasti-Crisp → Check price on Amazon (no review yet)
 
@@ -98,6 +100,6 @@ DEBORAH (never Rick, never anything else)
 ### Content Queue (in order)
 1. Roundup article — COMPLETE (live as Post 103)
 2. Ninja AF101 review
-3. Instant Vortex Plus review
+3. Instant Vortex Plus review — COMPLETE (live as Post 106)
 4. Chefman TurboFry review
 5. Update roundup links (after reviews are live)
