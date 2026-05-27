@@ -1,16 +1,16 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: fix: reduce stroke-width on large SVG shapes — air fryers, blenders, stand mixers
+Last commit: fix: category icon base bg cream, add missing slug overrides for air-fryers blenders stand-mixers
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-index.php SVG icon stroke-widths reduced — air-fryers outer body 2.5→1.8 + overlapping header rects replaced with single divider line; blenders pitcher 2.5→1.8; stand-mixers motor body 2.5→1.8. Commit 2385381. Local only — not yet deployed to live.
+style.css category icon fixes — base .kvp-cat-icon bg changed from #E8401C to #FFF0EB, size 44px→64px; added slug overrides for air-fryers (#FFF0EB), blenders (#F1EFE8), stand-mixers (#EDFAF3). Commit ff54014. Local only — not yet deployed to live.
 
 ## Next Task
-Deploy index.php to live (Hostinger via SSH) once Varun approves the icon appearance locally. Then: Post 103 featured image when original photo is ready.
+Deploy index.php + style.css to live (Hostinger via SSH) once Varun approves the icon appearance locally. Then: Post 103 featured image when original photo is ready.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
