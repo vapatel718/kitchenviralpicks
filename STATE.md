@@ -1,22 +1,22 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: fix: category cards — correct card class, red bottom border, icon size, remove double padding
+Last commit: chore: update STATE.md — category icon polish deployed to live
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Category card full fix — .kvp-cat-card gets border-bottom: 3px #E8401C + transition; .kvp-cat padding→0; breakpoint icon 32px→56px; SVG dimensions 80→64 in index.php. Commit 0d54b46. Local only — not yet deployed to live. NOTE: a second .kvp-cat-icon override exists at line ~1012 (40px) inside a larger breakpoint — flagged for review.
+Category icons updated to outline SVGs + red bottom border cards deployed to live — git pull on Hostinger, live now at commit 70f0172. Cache flushed.
 
 ## Next Task
-Deploy index.php + style.css to live (Hostinger via SSH) once Varun approves the category card appearance locally. Then: Post 103 featured image when original photo is ready.
+Post 103 featured image — set original air fryer photo when ready. Then June Week 3 article keyword approval.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
 
 ## Live Server Status
-Fully deployed — all Phase 6 + Phase 7 changes live on Hostinger as of 2026-05-27. Post 106 (Instant Pot Vortex Plus 6QT) published live 2026-05-27.
+Fully deployed — live at commit 70f0172 as of 2026-05-27. Category icon SVG overhaul + card styling deployed. Post 106 (Instant Pot Vortex Plus 6QT) live.
 
 ---
 
