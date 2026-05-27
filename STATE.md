@@ -1,13 +1,13 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: content: publish Instant Pot Vortex Plus 6QT review — Post 86
+Last commit: content: mark June Week 2 Instant Pot Vortex Plus review as PUBLISHED in CONTENT_PLAN.md
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Post 86 (Instant Pot Vortex Plus 6QT review) deployed from local to live — imported as Post 106 on live. All 17 post meta fields confirmed. Live at kitchenviralpicks.com/instant-pot-vortex-plus-6qt-air-fryer-review/
+CONTENT_PLAN.md updated — June Week 2 table row and detail block marked PUBLISHED for Instant Pot Vortex Plus 6QT review (Local Post 86, Live Post 106).
 
 ## Next Task
 Post 103 featured image — replace with original air fryer photo once Varun's photo is ready (taken by wife's friend). Upload in chat, Claude edits/crops, set as featured image on local and deploy to live.

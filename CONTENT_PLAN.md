@@ -70,7 +70,7 @@
 | Week | Type | Title | Primary Keyword | Status |
 |------|------|-------|----------------|--------|
 | Week 1 | ROUNDUP | 5 Air Fryers Under $100 That Real Buyers Keep Repurchasing | best air fryer under 100 dollars | PUBLISHED |
-| Week 2 | REVIEW | Ninja AF141 Air Fryer Review — What 7,000 Buyers Actually Think | ninja af141 air fryer review | PLANNED |
+| Week 2 | REVIEW | Instant Pot Vortex Plus 6QT Air Fryer Review (2026): Plastic Smell, Coating Concerns, and What 71,000 Buyers Actually Experienced | instant pot vortex plus 6qt review | PUBLISHED |
 | Week 3 | INFORMATIONAL | Air Fryer vs Oven — Which One Actually Saves Time and Money | air fryer vs oven cooking time | PLANNED |
 | Week 4 | ROUNDUP | The Most Repurchased Nonstick Pans on Amazon in 2026 | best nonstick frying pan 2026 | PLANNED |
 
@@ -169,3 +169,15 @@ Next scheduled maintenance: 2026-08-24
   * Ninja AF101 4Qt — ~83,000 reviews / 4.7★ / ~$79–99
   * Chefman TurboFry 2Qt — ~15,000 reviews / 4.6★ / ~$30–40
 - Note: all review counts are Amazon US only — label as such in article
+
+---
+
+## June Week 2 — PUBLISHED
+
+- Type: Review
+- Primary keyword: instant pot vortex plus 6qt review
+- Title: "Instant Pot Vortex Plus 6QT Air Fryer Review (2026): Plastic Smell, Coating Concerns, and What 71,000 Buyers Actually Experienced"
+- Status: PUBLISHED
+- URL: https://kitchenviralpicks.com/instant-pot-vortex-plus-6qt-air-fryer-review/
+- Local Post ID: 86 | Live Post ID: 106
+- Published: 2026-05-27
