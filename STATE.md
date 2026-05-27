@@ -1,16 +1,16 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: fix: category icon base bg cream, add missing slug overrides for air-fryers blenders stand-mixers
+Last commit: style: category cards option B — transparent icon bg, tight padding, red bottom border
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-style.css category icon fixes — base .kvp-cat-icon bg changed from #E8401C to #FFF0EB, size 44px→64px; added slug overrides for air-fryers (#FFF0EB), blenders (#F1EFE8), stand-mixers (#EDFAF3). Commit ff54014. Local only — not yet deployed to live.
+style.css category cards option B — .kvp-cat-icon bg→transparent, size 64px→52px, stripped slug overrides; .kvp-cat gets border-bottom: 3px solid #E8401C + padding. Commit 7bf05fc. Local only — not yet deployed to live.
 
 ## Next Task
-Deploy index.php + style.css to live (Hostinger via SSH) once Varun approves the icon appearance locally. Then: Post 103 featured image when original photo is ready.
+Deploy index.php + style.css to live (Hostinger via SSH) once Varun approves the category card appearance locally. Then: Post 103 featured image when original photo is ready.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
