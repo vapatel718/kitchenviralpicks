@@ -640,25 +640,17 @@ main,
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 64px;
-    height: 64px;
-    border-radius: 10px;
-    background: #FFF0EB;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 700;
-    font-family: 'Lato', sans-serif;
-    margin: 0 auto 10px;
+    width: 52px;
+    height: 52px;
+    background: transparent;
+    margin: 0 auto 6px;
     flex-shrink: 0;
 }
 
-.kvp-cat-icon--cookware    { background: #E6F1FB; }
-.kvp-cat-icon--kettles     { background: #EDFAF3; }
-.kvp-cat-icon--multicooker { background: #FAEEDA; }
-.kvp-cat-icon--bakeware    { background: #F1EFE8; }
-.kvp-cat-icon--air-fryers  { background: #FFF0EB; }
-.kvp-cat-icon--blenders    { background: #F1EFE8; }
-.kvp-cat-icon--stand-mixers { background: #EDFAF3; }
+.kvp-cat {
+    border-bottom: 3px solid #E8401C;
+    padding: 16px 10px 12px;
+}
 
 .kvp-cat-name {
   font-size: 11px;
