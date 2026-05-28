@@ -1,28 +1,28 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-28
-Last commit: chore: update STATE.md — roundup card final polish deployed
+Last commit: chore: update STATE.md — live git sync fixed, known issues cleared
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Roundup card final polish — above section header, badge pill fixed — 2026-05-28
+Live git repo sync fixed — 2026-05-28
 
-1. FIX 1 — BADGE WIDTH: .kvp-buyers-guide-badge got align-self: flex-start + width: fit-content. Pill no longer stretches full width in flex column parent.
-2. FIX 2 — ORDER: Roundup card now renders BEFORE the "Air Fryers" section header. Two separate foreach loops: $af_roundup renders first (no header above), then kvp-sec-hdr, then $af_regular in the grid. $af_sorted array removed entirely.
-3. Deployed via SCP (style.css + index.php). Cache flushed.
+archive.php, index.php, single.php, style.css were SCP-deployed in past sessions without git commits on the live server. Fix steps:
+1. Set git identity on live server (user.email + user.name).
+2. Committed the 4 modified files on live server (commit c91fa6d).
+3. Removed index.php.bak (was blocking merge).
+4. git pull origin main --no-rebase → clean merge (commit 77e8ccc on live).
+5. Verified latest code present on live (af_roundup/af_regular loops, badge pill fix).
+6. Cache flushed. Future deploys via git pull are now unblocked.
 
 ## Next Task
-- Fix live git repo sync issue — archive.php and single.php SCP changes uncommitted on server
-- Next article decision — Ninja AF101 review OR second Kettles/Bakeware article (pending Varun decision)
+- Content plan review — next article decision (Ninja AF101 vs Kettles/Bakeware second article)
 - Submit Nordic Ware URL to Google Search Console for indexing: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
 
-## Known Issue — Live Server Git Sync
-Live server git repo is out of sync. archive.php and single.php were SCP'd directly in past sessions and never committed to the live git working tree. Git pull on live is blocked by these untracked local changes. Deployment method going forward: SCP individual files rather than git pull, until live git is reconciled.
-
 ## Known Issues
-Live server git out of sync — see "Known Issue — Live Server Git Sync" section below.
+None
 
 ---
 
@@ -54,7 +54,7 @@ Use ONLY these key names when publishing articles. Single.php reads these exact 
 - kvp_card_verdict as verdict text → it only triggers the KVP badge, not the verdict line
 
 ## Live Server Status
-Fully deployed — live as of 2026-05-28. Roundup featured card live (style.css + index.php SCP'd). Post 103 featured image live (kvp-roundup-hero.jpg). Post 107 (Nordic Ware Half Sheet Pan) live.
+Fully deployed and git-synced — live as of 2026-05-28. Live server on branch main, merge commit 77e8ccc. Git pull now unblocked. Roundup featured card live. Post 103 featured image live (kvp-roundup-hero.jpg). Post 107 (Nordic Ware Half Sheet Pan) live.
 
 ---
 
