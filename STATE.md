@@ -1,21 +1,20 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-28
-Last commit: chore: update STATE.md — roundup card polish deployed
+Last commit: chore: update STATE.md — roundup card final polish deployed
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Roundup card polish — cream wrapper, Buyer's Guide badge, pinned first — 2026-05-28
+Roundup card final polish — above section header, badge pill fixed — 2026-05-28
 
-1. FIX 1 — ORDER: Air Fryers loop refactored. $af_q->posts split into $af_roundup / $af_regular arrays before rendering. array_merge() guarantees roundup always renders first regardless of publish date. while loop replaced with foreach + setup_postdata().
-2. FIX 2 — WRAP: .kvp-featured-card now wrapped in .kvp-featured-wrap (cream #FFF0EB background, 16px padding, rounded border). grid-column: 1/-1 moved to wrapper. Mobile: padding reduces to 10px.
-3. FIX 3 — BADGE: .kvp-roundup-ribbon removed from template and CSS. .kvp-buyers-guide-badge added above eyebrow in .kvp-featured-body (cream pill, dark red text).
-4. Deployed via SCP (style.css + index.php). Cache flushed.
+1. FIX 1 — BADGE WIDTH: .kvp-buyers-guide-badge got align-self: flex-start + width: fit-content. Pill no longer stretches full width in flex column parent.
+2. FIX 2 — ORDER: Roundup card now renders BEFORE the "Air Fryers" section header. Two separate foreach loops: $af_roundup renders first (no header above), then kvp-sec-hdr, then $af_regular in the grid. $af_sorted array removed entirely.
+3. Deployed via SCP (style.css + index.php). Cache flushed.
 
 ## Next Task
-- Fix live git repo sync issue — archive.php and single.php SCP changes not committed on server side
+- Fix live git repo sync issue — archive.php and single.php SCP changes uncommitted on server
 - Next article decision — Ninja AF101 review OR second Kettles/Bakeware article (pending Varun decision)
 - Submit Nordic Ware URL to Google Search Console for indexing: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
 
@@ -64,7 +63,7 @@ header.php | approved
 single.php | approved — updated 2026-05-27 (Pack Size fourth metric added; content safeguard filter; kvp_product_image score bar support)
 single-roundup.php | approved — committed 2026-05-25, deployed to live 2026-05-25
 archive.php | approved — updated 2026-05-27 (outline-only category icons; kvp_product_image first with featured image fallback — deployed to live)
-index.php | approved — updated 2026-05-28 (roundup pinned first via pre-sort; cream wrapper; Buyer's Guide badge; ribbon removed)
+index.php | approved — updated 2026-05-28 (roundup renders above sec-hdr; two separate foreach loops; badge pill fixed)
 footer.php | approved
 page.php | approved
 page-contact.php | approved — all viewports (390px, 768px, 1280px)
