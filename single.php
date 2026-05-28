@@ -15,11 +15,12 @@ while ( have_posts() ) : the_post();
 	$kvp_best_for       = get_post_meta( $post_id, 'kvp_best_for',       true );
 	$kvp_skip_if_detail = get_post_meta( $post_id, 'kvp_skip_if_detail', true );
 
-	$buy_if_raw  = get_post_meta( $post_id, 'kvp_buy_if',  true );
-	$skip_if_raw = get_post_meta( $post_id, 'kvp_skip_if', true );
-	$pros_raw    = get_post_meta( $post_id, 'kvp_pros',    true );
-	$cons_raw    = get_post_meta( $post_id, 'kvp_cons',    true );
-	$specs_raw   = get_post_meta( $post_id, 'kvp_specs',   true );
+	$buy_if_raw   = get_post_meta( $post_id, 'kvp_buy_if',        true );
+	$skip_if_raw  = get_post_meta( $post_id, 'kvp_skip_if',       true );
+	$pros_raw     = get_post_meta( $post_id, 'kvp_pros',          true );
+	$cons_raw     = get_post_meta( $post_id, 'kvp_cons',          true );
+	$specs_raw    = get_post_meta( $post_id, 'kvp_specs',         true );
+	$kvp_pack_size = get_post_meta( $post_id, 'kvp_spec_pack_size', true );
 
 	// Parse specs: rows separated by \n, each row is Key|Value
 	$spec_pairs   = array();
@@ -140,7 +141,7 @@ while ( have_posts() ) : the_post();
 	</div>
 
 	<!-- METRICS -->
-	<?php if ( $kvp_rating || $kvp_review_count || $kvp_price || $kvp_capacity ) : ?>
+	<?php if ( $kvp_rating || $kvp_review_count || $kvp_price || $kvp_capacity || $kvp_pack_size ) : ?>
 	<div class="metrics">
 		<?php if ( $kvp_rating ) : ?>
 		<div class="mbox">
@@ -164,6 +165,11 @@ while ( have_posts() ) : the_post();
 		<div class="mbox">
 			<div class="mnum"><?php echo esc_html( $kvp_capacity ); ?></div>
 			<div class="mlbl"><?php esc_html_e( 'Capacity', 'kvp-theme' ); ?></div>
+		</div>
+		<?php elseif ( $kvp_pack_size ) : ?>
+		<div class="mbox">
+			<div class="mnum"><?php echo esc_html( $kvp_pack_size ); ?></div>
+			<div class="mlbl"><?php esc_html_e( 'Pack Size', 'kvp-theme' ); ?></div>
 		</div>
 		<?php endif; ?>
 	</div>
