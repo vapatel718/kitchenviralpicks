@@ -1,19 +1,20 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: d7ffd03 — fix: add permanent content safeguard filter to single.php — strips kvp structured blocks from post content before render
+Last commit: 1799208 — fix: add Pack Size as fourth metric in metrics bar — bakeware articles; set kvp_spec_pack_size on Post 90
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Two fixes completed 2026-05-27:
-1. Nordic Ware Post 90 post_content stripped to narrative-only (DB change) — kept: What Is / What Buyers Praise / What Buyers Complain sections; removed: How It Compares comparison section. No kvp- structured blocks were present in post_content.
-2. Permanent safeguard added to single.php lines 175–191 — add_filter('the_content') strips any kvp- classed div/section blocks from post content before render. Prevents double-rendering on all future articles.
+Post 90 Nordic Ware — two fixes completed 2026-05-27:
+1. Numbered bold paragraphs converted to proper h3 tags (DB change) — 4 items in "The Four Things That Will Surprise You" section now render as h3 + p pairs. Non-numbered bold items in praise section unchanged.
+2. Pack Size added as fourth metric in single.php metrics bar — shows when kvp_spec_pack_size is set and kvp_capacity is not. kvp_spec_pack_size set to "2 pans" on Post 90. Air fryer / multicooker articles unaffected (capacity still shows when set).
 
 ## Next Task
-- Varun verifies Post 90 (Nordic Ware) on kitchenviralpicks.local/?p=90 — confirm all sections render correctly (score bar, verdict line, Deborah quote, buy/skip grid, specs table, pros/cons, final verdict)
-- On approval — deploy Post 90 to live server via SSH, set featured image, update CONTENT_PLAN.md
+- Varun confirms both fixes in browser at kitchenviralpicks.local/nordic-ware-half-sheet-pan-review/
+- Confirm: h3 subheadings have red left border style; metrics bar shows 4 boxes (Amazon Rating · Verified Reviews · Current Price · Pack Size)
+- On approval — deploy Post 90 to live server via SSH
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
@@ -54,7 +55,7 @@ Fully deployed — live at commit 70f0172 as of 2026-05-27. Category icon SVG ov
 
 ## Templates
 header.php | approved
-single.php | approved — updated 2026-05-27 (permanent content safeguard filter added — strips kvp structured blocks from post_content before render)
+single.php | approved — updated 2026-05-27 (Pack Size fourth metric added; content safeguard filter; kvp_product_image score bar support)
 single-roundup.php | approved — committed 2026-05-25, deployed to live 2026-05-25
 archive.php | approved
 index.php | approved — updated 2026-05-27 (outline-only category SVG icons — local only, deploy pending)
