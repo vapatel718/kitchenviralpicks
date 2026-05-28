@@ -1,21 +1,21 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-28
-Last commit: chore: update STATE.md — roundup featured card deployed
+Last commit: chore: update STATE.md — roundup card polish deployed
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Roundup featured card redesigned and deployed — 2026-05-28
+Roundup card polish — cream wrapper, Buyer's Guide badge, pinned first — 2026-05-28
 
-1. kvp_is_roundup = 1 set on local post 83 and live post 103.
-2. style.css: new .kvp-featured-card block added (full-width 2-col grid spanning both columns, photo left, body right, ribbon badge, pills, red CTA button). Mobile breakpoint stacks to 1-col.
-3. index.php: Air Fryers loop updated with $is_roundup check. When flag = '1', renders featured card template (uses featured image / kvp_product_image). Standard card renders for all other posts unchanged.
-4. Deployed via SCP (style.css + index.php) to live — git pull blocked due to unsynced SCP history on live server.
-5. Cache flushed.
+1. FIX 1 — ORDER: Air Fryers loop refactored. $af_q->posts split into $af_roundup / $af_regular arrays before rendering. array_merge() guarantees roundup always renders first regardless of publish date. while loop replaced with foreach + setup_postdata().
+2. FIX 2 — WRAP: .kvp-featured-card now wrapped in .kvp-featured-wrap (cream #FFF0EB background, 16px padding, rounded border). grid-column: 1/-1 moved to wrapper. Mobile: padding reduces to 10px.
+3. FIX 3 — BADGE: .kvp-roundup-ribbon removed from template and CSS. .kvp-buyers-guide-badge added above eyebrow in .kvp-featured-body (cream pill, dark red text).
+4. Deployed via SCP (style.css + index.php). Cache flushed.
 
 ## Next Task
+- Fix live git repo sync issue — archive.php and single.php SCP changes not committed on server side
 - Next article decision — Ninja AF101 review OR second Kettles/Bakeware article (pending Varun decision)
 - Submit Nordic Ware URL to Google Search Console for indexing: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
 
@@ -64,7 +64,7 @@ header.php | approved
 single.php | approved — updated 2026-05-27 (Pack Size fourth metric added; content safeguard filter; kvp_product_image score bar support)
 single-roundup.php | approved — committed 2026-05-25, deployed to live 2026-05-25
 archive.php | approved — updated 2026-05-27 (outline-only category icons; kvp_product_image first with featured image fallback — deployed to live)
-index.php | approved — updated 2026-05-28 (roundup featured card — kvp_is_roundup flag check, full-width card template)
+index.php | approved — updated 2026-05-28 (roundup pinned first via pre-sort; cream wrapper; Buyer's Guide badge; ribbon removed)
 footer.php | approved
 page.php | approved
 page-contact.php | approved — all viewports (390px, 768px, 1280px)
