@@ -1,19 +1,21 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: fix: sync archive.php category icons to match approved index.php SVG style
+Last commit: fix: archive.php product image uses kvp_product_image with featured image fallback
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-archive.php category icons synced to outline-only SVG style (2026-05-27):
-- All 7 category icons replaced: air-fryers, bakeware, blenders, cookware, kettles, multicooker, stand-mixers
-- Old style: filled/colored, width="40" — New style: stroke-only #E8401C, width="64", matches index.php exactly
-- Deployed to live Hostinger via SCP
+Two fixes deployed to live 2026-05-27:
+1. Junk category "6" (term_id 28) deleted from live — was created by wp post term set bug (no --by=id). Only 8 valid categories remain.
+2. archive.php product image fixed — now reads kvp_product_image first; falls back to featured image; falls back to placeholder. Deployed to live. Nordic Ware card on Bakeware category page will now show product image.
 
 ## Next Task
-Continue Phase 7 — next article in content queue (Ninja AF101 review or Chefman TurboFry review).
+Verify both fixes on live site:
+- Category list: no "6" junk term visible
+- Bakeware category page: Nordic Ware card shows product image
+Then continue Phase 7 — next article in content queue (Ninja AF101 review).
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
@@ -56,7 +58,7 @@ Fully deployed — live as of 2026-05-27. single.php + style.css synced (Pack Si
 header.php | approved
 single.php | approved — updated 2026-05-27 (Pack Size fourth metric added; content safeguard filter; kvp_product_image score bar support)
 single-roundup.php | approved — committed 2026-05-25, deployed to live 2026-05-25
-archive.php | approved — updated 2026-05-27 (outline-only category icons synced from index.php, deployed to live)
+archive.php | approved — updated 2026-05-27 (outline-only category icons; kvp_product_image first with featured image fallback — deployed to live)
 index.php | approved — updated 2026-05-27 (outline-only category SVG icons — local only, deploy pending)
 footer.php | approved
 page.php | approved
