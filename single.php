@@ -172,7 +172,23 @@ while ( have_posts() ) : the_post();
 	<!-- ARTICLE BODY -->
 	<?php if ( get_the_content() ) : ?>
 	<div class="article-body">
-		<?php the_content(); ?>
+		<?php
+		add_filter( 'the_content', function( $content ) {
+			$patterns = [
+				'/<!--\s*kvp[^>]*-->/i',
+				'/<div[^>]*class="[^"]*kvp-verdict-box[^"]*"[^>]*>.*?<\/div>/is',
+				'/<div[^>]*class="[^"]*kvp-buy[^"]*"[^>]*>.*?<\/div>/is',
+				'/<div[^>]*class="[^"]*kvp-skip[^"]*"[^>]*>.*?<\/div>/is',
+				'/<div[^>]*class="[^"]*kvp-pros[^"]*"[^>]*>.*?<\/div>/is',
+				'/<div[^>]*class="[^"]*kvp-cons[^"]*"[^>]*>.*?<\/div>/is',
+				'/<div[^>]*class="[^"]*kvp-specs[^"]*"[^>]*>.*?<\/div>/is',
+				'/<div[^>]*class="[^"]*kvp-final[^"]*"[^>]*>.*?<\/div>/is',
+				'/<section[^>]*class="[^"]*kvp-[^"]*"[^>]*>.*?<\/section>/is',
+			];
+			return preg_replace( $patterns, '', $content );
+		}, 10, 1 );
+		the_content();
+		?>
 	</div>
 	<?php endif; ?>
 
