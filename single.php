@@ -211,8 +211,8 @@ while ( have_posts() ) : the_post();
 
 	<!-- PROS / CONS -->
 	<?php
-	$pros_items = $pros_raw ? kvp_split_lines( $pros_raw ) : array();
-	$cons_items = $cons_raw ? kvp_split_lines( $cons_raw ) : array();
+	$pros_items = $pros_raw ? array_filter( array_map( 'trim', explode( '|', $pros_raw ) ) ) : array();
+	$cons_items = $cons_raw ? array_filter( array_map( 'trim', explode( '|', $cons_raw ) ) ) : array();
 	if ( $pros_items || $cons_items ) :
 	?>
 	<div class="sec">
