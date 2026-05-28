@@ -1,21 +1,54 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: 11ca745 — chore: update STATE.md — pros/cons pipe-parsing fixed permanently in single.php
+Last commit: 5d31d60 — fix: strip Nordic Ware post content to narrative-only, set product image — Post 90
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Post 90 (Nordic Ware Half Sheet Pan) — two fixes applied:
-1. Post content stripped to narrative sections only (verdict box, who-to-buy, pros/cons, FAQ, final verdict removed — all rendered from custom fields by single.php template).
-2. kvp_product_image meta set to https://m.media-amazon.com/images/I/41WV2LvX6BL._AC_SL1000_.jpg — product image will now render in the score bar section. Both fixes match the same pattern used on Post 86 (Instant Pot Vortex Plus).
+Post 90 (Nordic Ware Half Sheet Pan) — all 5 missing sections fixed via correct meta keys (database-only, zero template changes):
+1. kvp_verdict_line — set (renders as italic line in score bar hero card)
+2. kvp_final_verdict — set (renders in Deborah's quote block AND red final verdict paragraph)
+3. kvp_buy_if — set with newline-separated items (renders "Who should buy this" buy grid)
+4. kvp_skip_if — set with newline-separated items (renders "Who should buy this" skip grid)
+5. kvp_specs — set in Key|Value\n format (renders Quick Specs table — 8 rows)
+Root cause: article prompt used wrong key names (kvp_buy_conditions, kvp_skip_conditions, kvp_spec_* individual fields) instead of what single.php actually reads.
 
 ## Next Task
-Varun reviews Post 90 at kitchenviralpicks.local/?p=90 — confirm product image renders in score bar, pros/cons render as individual list items, no duplicate sections. On approval — deploy to live via SSH, set featured image, update CONTENT_PLAN.md to mark article as published.
+Varun refreshes kitchenviralpicks.local/?p=90 and confirms all sections render: score bar verdict line, Deborah's quote, buy/skip grid, specs table, pros/cons list, final verdict paragraph. On approval — deploy to live via SSH, set featured image, update CONTENT_PLAN.md.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
+
+---
+
+## CRITICAL — Correct Meta Keys for All Future Articles
+Use ONLY these key names when publishing articles. Single.php reads these exact keys.
+
+### Keys and formats:
+| Key | Format | Notes |
+|---|---|---|
+| kvp_verdict_line | plain string | Short one-liner for hero score bar |
+| kvp_final_verdict | plain string (one paragraph) | Used in Deborah block AND red verdict block |
+| kvp_buy_if | newline-separated items | Parsed by kvp_split_lines() — NOT pipe-separated |
+| kvp_skip_if | newline-separated items | Parsed by kvp_split_lines() — NOT pipe-separated |
+| kvp_specs | Key\|Value per line, newline between rows | e.g. "Material\|Aluminum\nWeight\|1.5 lbs" |
+| kvp_pros | pipe-separated items | e.g. "Item one\|Item two\|Item three" |
+| kvp_cons | pipe-separated items | same format as kvp_pros |
+| kvp_product_name | plain string | Full product name for score bar title |
+| kvp_card_verdict | plain string | Triggers KVP Pick badge only — NOT the verdict line |
+| kvp_price | plain string | e.g. "~$32.99" |
+| kvp_rating | numeric | e.g. "4.7" |
+| kvp_review_count | plain string | e.g. "48,000+" |
+| kvp_amazon_url | URL | Full URL with affiliate tag |
+| kvp_product_image | URL | Amazon image URL |
+
+### WRONG keys — never use these again:
+- kvp_buy_conditions → use kvp_buy_if
+- kvp_skip_conditions → use kvp_skip_if
+- kvp_spec_material / kvp_spec_* (individual) → use kvp_specs (unified Key\|Value format)
+- kvp_card_verdict as verdict text → it only triggers the KVP badge, not the verdict line
 
 ## Live Server Status
 Fully deployed — live at commit 70f0172 as of 2026-05-27. Category icon SVG overhaul + card styling deployed. Post 106 (Instant Pot Vortex Plus 6QT) live.
