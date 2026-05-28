@@ -1,16 +1,18 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: 44bd19e — fix: parse pipe-separated pros/cons into list items in single.php — permanent fix for all articles
+Last commit: 11ca745 — chore: update STATE.md — pros/cons pipe-parsing fixed permanently in single.php
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Pros/cons pipe-parsing bug fixed permanently in single.php (lines 214-215). `kvp_split_lines()` (newline splitter) replaced with `explode('|', ...)` for pros and cons only — specs and buy_if/skip_if unchanged. All articles now render pros/cons as individual styled list items.
+Post 90 (Nordic Ware Half Sheet Pan) — two fixes applied:
+1. Post content stripped to narrative sections only (verdict box, who-to-buy, pros/cons, FAQ, final verdict removed — all rendered from custom fields by single.php template).
+2. kvp_product_image meta set to https://m.media-amazon.com/images/I/41WV2LvX6BL._AC_SL1000_.jpg — product image will now render in the score bar section. Both fixes match the same pattern used on Post 86 (Instant Pot Vortex Plus).
 
 ## Next Task
-Varun reviews Nordic Ware article at kitchenviralpicks.local/?p=90 to confirm pros/cons now render correctly. On approval — deploy to live via SSH, set featured image, update CONTENT_PLAN.md to mark article as published.
+Varun reviews Post 90 at kitchenviralpicks.local/?p=90 — confirm product image renders in score bar, pros/cons render as individual list items, no duplicate sections. On approval — deploy to live via SSH, set featured image, update CONTENT_PLAN.md to mark article as published.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
