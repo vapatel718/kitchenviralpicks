@@ -1,20 +1,22 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: fix: correct remaining 48k→34k in post title and kvp_specs on Post 90
+Last commit: deploy: single.php and style.css synced to live — Post 90 Nordic Ware published as Live ID 107
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Post 90 Nordic Ware — all data corrections complete (DB changes):
-- post_title: "48,000" → "34,000" ✓
-- kvp_specs Amazon Rating row: "48,000+" → "34,000+" ✓
-- kvp_review_count, kvp_price, post_content, kvp_final_verdict: corrected in previous session
-All local data verified clean. Ready for live deployment.
+Post 90 Nordic Ware Half Sheet Pan fully deployed to live 2026-05-27:
+- single.php and style.css synced to live via SCP (Pack Size metric + content safeguard now live)
+- Post created on live as Post ID 107, slug: nordic-ware-half-sheet-pan-review
+- Category: Bakeware (term_id 6) — first published Bakeware article
+- All 15 custom fields set: kvp_product_name, kvp_price, kvp_amazon_url, kvp_review_count, kvp_rating, kvp_verdict_line, kvp_card_verdict, kvp_final_verdict, kvp_pros, kvp_cons, kvp_buy_if, kvp_skip_if, kvp_specs, kvp_product_image, kvp_spec_pack_size
+- All data verified: review count 34,000+, price ~$32.00, rating 4.7, Pack Size 2 pans
 
 ## Next Task
-Deploy single.php to live, then deploy Post 90 to live Hostinger server via SSH.
+Varun confirms live URL renders correctly: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
+Then continue Phase 7 — next article in content queue.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
@@ -49,7 +51,7 @@ Use ONLY these key names when publishing articles. Single.php reads these exact 
 - kvp_card_verdict as verdict text → it only triggers the KVP badge, not the verdict line
 
 ## Live Server Status
-Fully deployed — live at commit 70f0172 as of 2026-05-27. Category icon SVG overhaul + card styling deployed. Post 106 (Instant Pot Vortex Plus 6QT) live.
+Fully deployed — live as of 2026-05-27. single.php + style.css synced (Pack Size metric live). Post 107 (Nordic Ware Half Sheet Pan) live.
 
 ---
 
@@ -78,7 +80,7 @@ page-contact.php | approved — all viewports (390px, 768px, 1280px)
 10 cuisinart-dutch-oven | published — Post ID 44, slug: cuisinart-chefs-classic-enameled-cast-iron-dutch-oven-review-2026 — 4.6★ / 5,273 reviews / $129.50
 11 roundup-air-fryers   | published LIVE — Local ID 83, Live ID 103, slug: air-fryers-under-100-most-reviewed — DEPLOYED 2026-05-25
 12 instant-vortex-plus  | published LIVE — Local ID 86, Live ID 106, slug: instant-pot-vortex-plus-6qt-air-fryer-review — DEPLOYED 2026-05-27
-13 nordic-ware-half-sheet | published LOCAL ONLY — Post ID 90, slug: nordic-ware-half-sheet-pan-review — 4.7★ / 34,000+ reviews / ~$32.00 — 2026-05-27
+13 nordic-ware-half-sheet | published LIVE — Local ID 90, Live ID 107, slug: nordic-ware-half-sheet-pan-review — 4.7★ / 34,000+ reviews / ~$32.00 — DEPLOYED 2026-05-27
 
 ---
 
@@ -95,6 +97,7 @@ page-contact.php | approved — all viewports (390px, 768px, 1280px)
 - Post 44 (Cuisinart Dutch Oven): live
 - Post 103 (Roundup — Air Fryers Under $100): live
 - Post 106 (Instant Pot Vortex Plus 6QT): live
+- Post 107 (Nordic Ware Half Sheet Pan 2-Pack): live
 
 ## Pen Name
 DEBORAH (never Rick, never anything else)
