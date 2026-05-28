@@ -181,3 +181,30 @@ Next scheduled maintenance: 2026-08-24
 - URL: https://kitchenviralpicks.com/instant-pot-vortex-plus-6qt-air-fryer-review/
 - Local Post ID: 86 | Live Post ID: 106
 - Published: 2026-05-27
+
+---
+
+## Nordic Ware Half Sheet Pan — PUBLISHED
+
+- Type: Review
+- Category: Bakeware (first published Bakeware article — category now has 1 article)
+- Primary keyword: nordic ware half sheet pan review
+- Title: "Nordic Ware Baker's Half Sheet Pan Review: What 34,000 Buyers Say After Years of Daily Use"
+- Status: PUBLISHED
+- URL: https://kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
+- Local Post ID: 90 | Live Post ID: 107
+- Published: May 2026
+- Review count at publish: 34,000+
+- Price at publish: ~$32.00
+- Score: 4.7★
+
+---
+
+## Next Priority
+
+Bakeware and Kettles are the weakest categories — each has only 1 published article.
+Next article should be one of:
+- Bakeware review (e.g. Nordic Ware Half Sheet Cooling Rack, USA Pan loaf pan, or similar)
+- Kettles review (e.g. second kettle to build out category depth)
+
+Publish Ninja AF101 review next (already in content queue — completes roundup internal links).
