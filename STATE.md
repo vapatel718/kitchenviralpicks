@@ -1,20 +1,22 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: 1799208 — fix: add Pack Size as fourth metric in metrics bar — bakeware articles; set kvp_spec_pack_size on Post 90
+Last commit: fix: correct review count 48k→34k and price 32.99→32.00 on Post 90 Nordic Ware
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Post 90 Nordic Ware — two fixes completed 2026-05-27:
-1. Numbered bold paragraphs converted to proper h3 tags (DB change) — 4 items in "The Four Things That Will Surprise You" section now render as h3 + p pairs. Non-numbered bold items in praise section unchanged.
-2. Pack Size added as fourth metric in single.php metrics bar — shows when kvp_spec_pack_size is set and kvp_capacity is not. kvp_spec_pack_size set to "2 pans" on Post 90. Air fryer / multicooker articles unaffected (capacity still shows when set).
+Post 90 Nordic Ware — data corrected 2026-05-27 (DB changes):
+- kvp_review_count: 48,000+ → 34,000+
+- kvp_price: ~$32.99 → ~$32.00
+- post_content: two instances of "48,000" replaced with "34,000" (intro paragraph + h2 heading)
+- kvp_final_verdict: "48,000" replaced with "34,000"
+- kvp_card_verdict: clean, no changes needed
+Article fully verified — all fields and content confirmed correct.
 
 ## Next Task
-- Varun confirms both fixes in browser at kitchenviralpicks.local/nordic-ware-half-sheet-pan-review/
-- Confirm: h3 subheadings have red left border style; metrics bar shows 4 boxes (Amazon Rating · Verified Reviews · Current Price · Pack Size)
-- On approval — deploy Post 90 to live server via SSH
+Deploy Post 90 to live Hostinger server via SSH.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
@@ -78,7 +80,7 @@ page-contact.php | approved — all viewports (390px, 768px, 1280px)
 10 cuisinart-dutch-oven | published — Post ID 44, slug: cuisinart-chefs-classic-enameled-cast-iron-dutch-oven-review-2026 — 4.6★ / 5,273 reviews / $129.50
 11 roundup-air-fryers   | published LIVE — Local ID 83, Live ID 103, slug: air-fryers-under-100-most-reviewed — DEPLOYED 2026-05-25
 12 instant-vortex-plus  | published LIVE — Local ID 86, Live ID 106, slug: instant-pot-vortex-plus-6qt-air-fryer-review — DEPLOYED 2026-05-27
-13 nordic-ware-half-sheet | published LOCAL ONLY — Post ID 90, slug: nordic-ware-half-sheet-pan-review — 4.7★ / 48,000+ reviews / ~$32.99 — 2026-05-27
+13 nordic-ware-half-sheet | published LOCAL ONLY — Post ID 90, slug: nordic-ware-half-sheet-pan-review — 4.7★ / 34,000+ reviews / ~$32.00 — 2026-05-27
 
 ---
 
