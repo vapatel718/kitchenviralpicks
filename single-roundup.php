@@ -178,11 +178,12 @@ get_header();
      2. AT-A-GLANCE COMPARISON TABLE
      ============================================================ -->
 <?php
+$price_keys = array( 1 => 'ninja_af101', 2 => 'cosori_turboblaze', 3 => 'instant_vortex_plus', 4 => 'chefman_turbofry', 5 => 'dash_tasti_crisp' );
 $products = array();
 for ( $n = 1; $n <= 5; $n++ ) {
 	$products[ $n ] = array(
 		'name'     => get_post_meta( $post_id, "kvp_p{$n}_name", true ),
-		'price'    => get_post_meta( $post_id, "kvp_p{$n}_price", true ),
+		'price'    => kvp_get_price( $price_keys[ $n ], "kvp_p{$n}_price", $post_id ),
 		'reviews'  => get_post_meta( $post_id, "kvp_p{$n}_reviews", true ),
 		'rating'   => get_post_meta( $post_id, "kvp_p{$n}_rating", true ),
 		'capacity' => get_post_meta( $post_id, "kvp_p{$n}_capacity", true ),
@@ -249,7 +250,7 @@ $functions_count = array( 1 => 4, 2 => 9, 3 => 6, 4 => 4, 5 => 4 );
 <?php
 $toppick_name      = get_post_meta( $post_id, 'kvp_toppick_name', true );
 $toppick_reason    = get_post_meta( $post_id, 'kvp_toppick_reason', true );
-$toppick_price     = get_post_meta( $post_id, 'kvp_toppick_price', true );
+$toppick_price     = kvp_get_price( 'ninja_af101', 'kvp_toppick_price', $post_id );
 $toppick_btn_label = get_post_meta( $post_id, 'kvp_toppick_btn_label', true );
 $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 ?>
@@ -295,7 +296,7 @@ $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 	$card_image_url    = get_post_meta( $post_id, "kvp_p{$n}_image_url", true );
 	$card_review_count = get_post_meta( $post_id, "kvp_p{$n}_review_count", true );
 	$card_rating       = get_post_meta( $post_id, "kvp_p{$n}_rating", true );
-	$card_price        = get_post_meta( $post_id, "kvp_p{$n}_price", true );
+	$card_price        = kvp_get_price( $price_keys[ $n ], "kvp_p{$n}_price", $post_id );
 	$card_buyer_says   = get_post_meta( $post_id, "kvp_p{$n}_buyer_says", true );
 	$card_complaint    = get_post_meta( $post_id, "kvp_p{$n}_complaint", true );
 	$card_who          = get_post_meta( $post_id, "kvp_p{$n}_who_its_for", true );

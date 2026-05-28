@@ -162,6 +162,20 @@ function kvp_split_lines( $raw ) {
 	return array_filter( array_map( 'trim', preg_split( '/\r?\n/', (string) $raw ) ) );
 }
 
+// Price registry: reads from WP options (kvp_price_{key}) with post-meta fallback.
+// To update a price site-wide: wp option update kvp_price_{key} "~$XX.XX"
+function kvp_get_price( $key, $post_meta_fallback = 'kvp_price', $post_id = null ) {
+	$option_key = 'kvp_price_' . $key;
+	$price      = get_option( $option_key, '' );
+	if ( $price ) {
+		return esc_html( $price );
+	}
+	if ( $post_id ) {
+		$price = get_post_meta( $post_id, $post_meta_fallback, true );
+	}
+	return $price ? esc_html( $price ) : '';
+}
+
 // Remove featured image from article body — image is output manually in score bar via single.php
 add_filter( 'the_content', 'kvp_remove_featured_from_content', 5 );
 function kvp_remove_featured_from_content( $content ) {

@@ -92,7 +92,9 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
         if ( $top_pick ) :
             $tp_rating       = get_post_meta( $top_pick->ID, 'kvp_rating',       true );
             $tp_count        = get_post_meta( $top_pick->ID, 'kvp_review_count', true );
-            $tp_price        = str_replace( ' at time of writing', '', get_post_meta( $top_pick->ID, 'kvp_price', true ) );
+            $slug            = get_post_field( 'post_name', $top_pick->ID );
+            $price_key       = str_replace( '-', '_', $slug );
+            $tp_price        = str_replace( ' at time of writing', '', kvp_get_price( $price_key, 'kvp_price', $top_pick->ID ) );
             $tp_product_name = get_post_meta( $top_pick->ID, 'kvp_product_name', true );
             $tp_display_name = $tp_product_name ? $tp_product_name : get_the_title( $top_pick->ID );
         ?>
@@ -155,7 +157,9 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                 $card_cat     = $card_cats ? $card_cats[0]->name : $cat_name;
                 $card_rating  = get_post_meta( get_the_ID(), 'kvp_rating', true );
                 $card_count   = get_post_meta( get_the_ID(), 'kvp_review_count', true );
-                $card_price   = str_replace( ' at time of writing', '', get_post_meta( get_the_ID(), 'kvp_price', true ) );
+                $slug         = get_post_field( 'post_name', get_the_ID() );
+                $price_key    = str_replace( '-', '_', $slug );
+                $card_price   = str_replace( ' at time of writing', '', kvp_get_price( $price_key, 'kvp_price', get_the_ID() ) );
                 $card_product_name    = get_post_meta( get_the_ID(), 'kvp_product_name', true );
                 $card_verdict         = get_post_meta( get_the_ID(), 'kvp_verdict', true );
                 $card_verdict_snippet = get_post_meta( get_the_ID(), 'kvp_card_verdict', true );

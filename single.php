@@ -6,7 +6,9 @@ while ( have_posts() ) : the_post();
 
 	$post_id = get_the_ID();
 
-	$kvp_price          = get_post_meta( $post_id, 'kvp_price',          true );
+	$slug               = get_post_field( 'post_name', $post_id );
+	$price_key          = str_replace( '-', '_', $slug );
+	$kvp_price          = kvp_get_price( $price_key, 'kvp_price', $post_id );
 	$kvp_rating         = get_post_meta( $post_id, 'kvp_rating',         true );
 	$kvp_review_count   = get_post_meta( $post_id, 'kvp_review_count',   true );
 	$kvp_verdict_line   = get_post_meta( $post_id, 'kvp_verdict_line',   true );
