@@ -1,22 +1,29 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-28
-Last commit: chore: update STATE.md — roundup featured image deployed
+Last commit: chore: update STATE.md — roundup featured card deployed
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Roundup Post 103 featured image set — 2026-05-28
+Roundup featured card redesigned and deployed — 2026-05-28
 
-kvp-roundup-hero.jpg (original photography, 206KB) imported to local WordPress media (attachment 97) and set as featured image on local Post 83. Image SCP'd to live server, imported to live WordPress media (attachment 108), and set as featured image on live Post 103. Cache flushed. Image and import script removed from theme folder.
+1. kvp_is_roundup = 1 set on local post 83 and live post 103.
+2. style.css: new .kvp-featured-card block added (full-width 2-col grid spanning both columns, photo left, body right, ribbon badge, pills, red CTA button). Mobile breakpoint stacks to 1-col.
+3. index.php: Air Fryers loop updated with $is_roundup check. When flag = '1', renders featured card template (uses featured image / kvp_product_image). Standard card renders for all other posts unchanged.
+4. Deployed via SCP (style.css + index.php) to live — git pull blocked due to unsynced SCP history on live server.
+5. Cache flushed.
 
 ## Next Task
 - Next article decision — Ninja AF101 review OR second Kettles/Bakeware article (pending Varun decision)
 - Submit Nordic Ware URL to Google Search Console for indexing: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
 
+## Known Issue — Live Server Git Sync
+Live server git repo is out of sync. archive.php and single.php were SCP'd directly in past sessions and never committed to the live git working tree. Git pull on live is blocked by these untracked local changes. Deployment method going forward: SCP individual files rather than git pull, until live git is reconciled.
+
 ## Known Issues
-None
+Live server git out of sync — see "Known Issue — Live Server Git Sync" section below.
 
 ---
 
@@ -48,7 +55,7 @@ Use ONLY these key names when publishing articles. Single.php reads these exact 
 - kvp_card_verdict as verdict text → it only triggers the KVP badge, not the verdict line
 
 ## Live Server Status
-Fully deployed — live as of 2026-05-28. Post 103 (Roundup) now has featured image live (attachment 108 — kvp-roundup-hero.jpg). Post 107 (Nordic Ware Half Sheet Pan) live.
+Fully deployed — live as of 2026-05-28. Roundup featured card live (style.css + index.php SCP'd). Post 103 featured image live (kvp-roundup-hero.jpg). Post 107 (Nordic Ware Half Sheet Pan) live.
 
 ---
 
@@ -57,7 +64,7 @@ header.php | approved
 single.php | approved — updated 2026-05-27 (Pack Size fourth metric added; content safeguard filter; kvp_product_image score bar support)
 single-roundup.php | approved — committed 2026-05-25, deployed to live 2026-05-25
 archive.php | approved — updated 2026-05-27 (outline-only category icons; kvp_product_image first with featured image fallback — deployed to live)
-index.php | approved — updated 2026-05-27 (outline-only category SVG icons — local only, deploy pending)
+index.php | approved — updated 2026-05-28 (roundup featured card — kvp_is_roundup flag check, full-width card template)
 footer.php | approved
 page.php | approved
 page-contact.php | approved — all viewports (390px, 768px, 1280px)
