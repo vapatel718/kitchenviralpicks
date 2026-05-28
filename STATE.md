@@ -1,22 +1,20 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: fix: correct review count 48k→34k and price 32.99→32.00 on Post 90 Nordic Ware
+Last commit: fix: correct remaining 48k→34k in post title and kvp_specs on Post 90
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Post 90 Nordic Ware — data corrected 2026-05-27 (DB changes):
-- kvp_review_count: 48,000+ → 34,000+
-- kvp_price: ~$32.99 → ~$32.00
-- post_content: two instances of "48,000" replaced with "34,000" (intro paragraph + h2 heading)
-- kvp_final_verdict: "48,000" replaced with "34,000"
-- kvp_card_verdict: clean, no changes needed
-Article fully verified — all fields and content confirmed correct.
+Post 90 Nordic Ware — all data corrections complete (DB changes):
+- post_title: "48,000" → "34,000" ✓
+- kvp_specs Amazon Rating row: "48,000+" → "34,000+" ✓
+- kvp_review_count, kvp_price, post_content, kvp_final_verdict: corrected in previous session
+All local data verified clean. Ready for live deployment.
 
 ## Next Task
-Deploy Post 90 to live Hostinger server via SSH.
+Deploy single.php to live, then deploy Post 90 to live Hostinger server via SSH.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
