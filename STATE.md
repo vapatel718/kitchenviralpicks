@@ -1,16 +1,16 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: 3eaa54c — content: add Nordic Ware Half Sheet Pan review — Bakeware category article 1
+Last commit: 44bd19e — fix: parse pipe-separated pros/cons into list items in single.php — permanent fix for all articles
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Nordic Ware Half Sheet Pan review published locally — Post ID 90, slug: nordic-ware-half-sheet-pan-review. Bakeware category now has its first article. All 16 custom meta fields set. Ready for local review and approval before deploying to live.
+Pros/cons pipe-parsing bug fixed permanently in single.php (lines 214-215). `kvp_split_lines()` (newline splitter) replaced with `explode('|', ...)` for pros and cons only — specs and buy_if/skip_if unchanged. All articles now render pros/cons as individual styled list items.
 
 ## Next Task
-Varun reviews article at kitchenviralpicks.local/?p=90. On approval — deploy to live via SSH, set featured image, update CONTENT_PLAN.md to mark article as published.
+Varun reviews Nordic Ware article at kitchenviralpicks.local/?p=90 to confirm pros/cons now render correctly. On approval — deploy to live via SSH, set featured image, update CONTENT_PLAN.md to mark article as published.
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
