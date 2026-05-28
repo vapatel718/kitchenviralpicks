@@ -1,22 +1,19 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: 5d31d60 — fix: strip Nordic Ware post content to narrative-only, set product image — Post 90
+Last commit: d7ffd03 — fix: add permanent content safeguard filter to single.php — strips kvp structured blocks from post content before render
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Post 90 (Nordic Ware Half Sheet Pan) — all 5 missing sections fixed via correct meta keys (database-only, zero template changes):
-1. kvp_verdict_line — set (renders as italic line in score bar hero card)
-2. kvp_final_verdict — set (renders in Deborah's quote block AND red final verdict paragraph)
-3. kvp_buy_if — set with newline-separated items (renders "Who should buy this" buy grid)
-4. kvp_skip_if — set with newline-separated items (renders "Who should buy this" skip grid)
-5. kvp_specs — set in Key|Value\n format (renders Quick Specs table — 8 rows)
-Root cause: article prompt used wrong key names (kvp_buy_conditions, kvp_skip_conditions, kvp_spec_* individual fields) instead of what single.php actually reads.
+Two fixes completed 2026-05-27:
+1. Nordic Ware Post 90 post_content stripped to narrative-only (DB change) — kept: What Is / What Buyers Praise / What Buyers Complain sections; removed: How It Compares comparison section. No kvp- structured blocks were present in post_content.
+2. Permanent safeguard added to single.php lines 175–191 — add_filter('the_content') strips any kvp- classed div/section blocks from post content before render. Prevents double-rendering on all future articles.
 
 ## Next Task
-Varun refreshes kitchenviralpicks.local/?p=90 and confirms all sections render: score bar verdict line, Deborah's quote, buy/skip grid, specs table, pros/cons list, final verdict paragraph. On approval — deploy to live via SSH, set featured image, update CONTENT_PLAN.md.
+- Varun verifies Post 90 (Nordic Ware) on kitchenviralpicks.local/?p=90 — confirm all sections render correctly (score bar, verdict line, Deborah quote, buy/skip grid, specs table, pros/cons, final verdict)
+- On approval — deploy Post 90 to live server via SSH, set featured image, update CONTENT_PLAN.md
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
@@ -57,7 +54,7 @@ Fully deployed — live at commit 70f0172 as of 2026-05-27. Category icon SVG ov
 
 ## Templates
 header.php | approved
-single.php | approved — updated 2026-05-25 (kvp_product_image score bar support, deployed to live)
+single.php | approved — updated 2026-05-27 (permanent content safeguard filter added — strips kvp structured blocks from post_content before render)
 single-roundup.php | approved — committed 2026-05-25, deployed to live 2026-05-25
 archive.php | approved
 index.php | approved — updated 2026-05-27 (outline-only category SVG icons — local only, deploy pending)
