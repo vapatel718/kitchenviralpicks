@@ -1,28 +1,40 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-28
-Last commit: chore: update STATE.md — live git sync fixed, known issues cleared
+Last commit: e27948e — feat: global price registry — kvp_get_price() replaces all scattered price reads
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Live git repo sync fixed — 2026-05-28
+Global price registry implemented — 2026-05-28
 
-archive.php, index.php, single.php, style.css were SCP-deployed in past sessions without git commits on the live server. Fix steps:
-1. Set git identity on live server (user.email + user.name).
-2. Committed the 4 modified files on live server (commit c91fa6d).
-3. Removed index.php.bak (was blocking merge).
-4. git pull origin main --no-rebase → clean merge (commit 77e8ccc on live).
-5. Verified latest code present on live (af_roundup/af_regular loops, badge pill fix).
-6. Cache flushed. Future deploys via git pull are now unblocked.
+kvp_get_price() helper added to functions.php. All templates updated:
+- functions.php: kvp_get_price( $key, $fallback_meta, $post_id ) — reads WP option kvp_price_{key}, falls back to post meta
+- index.php: 4 price reads updated (hero card hardcoded ~$89.87 fallback removed)
+- archive.php: 2 price reads updated
+- single.php: 1 price read updated
+- single-roundup.php: 3 price reads updated (comparison table loop + toppick + product cards loop)
+To update any price site-wide: wp option update kvp_price_{key} "~$XX.XX"
 
 ## Next Task
-- Content plan review — next article decision (Ninja AF101 vs Kettles/Bakeware second article)
-- Submit Nordic Ware URL to Google Search Console for indexing: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
+- REQUIRED IN SITE SHELL (local): Register canonical prices as WP options (see commands below)
+- REQUIRED IN SITE SHELL (live): Register same options on Hostinger after git pull
+- Content decision — Ninja AF101 review vs second Kettles/Bakeware article
+- Submit Nordic Ware URL to Google Search Console: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
 
 ## Known Issues
-None
+WP options NOT YET registered — kvp_get_price() will fall back to post meta until these are run in Site Shell:
+
+LOCAL (run in Local by Flywheel Site Shell):
+wp option add kvp_price_ninja_af101 "~$89.99"
+wp option add kvp_price_cosori_turboblaze "~$99.99"
+wp option add kvp_price_instant_vortex_plus "~$89.99"
+wp option add kvp_price_chefman_turbofry "~$49.99"
+wp option add kvp_price_dash_tasti_crisp "~$49.99"
+
+LIVE (run via SSH Site Shell after deploy):
+Same 5 commands above with --path=/home/u834996894/domains/kitchenviralpicks.com/public_html
 
 ---
 
@@ -60,10 +72,10 @@ Fully deployed and git-synced — live as of 2026-05-28. Live server on branch m
 
 ## Templates
 header.php | approved
-single.php | approved — updated 2026-05-27 (Pack Size fourth metric added; content safeguard filter; kvp_product_image score bar support)
-single-roundup.php | approved — committed 2026-05-25, deployed to live 2026-05-25
-archive.php | approved — updated 2026-05-27 (outline-only category icons; kvp_product_image first with featured image fallback — deployed to live)
-index.php | approved — updated 2026-05-28 (roundup renders above sec-hdr; two separate foreach loops; badge pill fixed)
+single.php | approved — updated 2026-05-28 (kvp_get_price registry; slug-based price key)
+single-roundup.php | approved — updated 2026-05-28 (kvp_get_price with $price_keys map for p1–p5 + toppick)
+archive.php | approved — updated 2026-05-28 (kvp_get_price registry; slug-based price key)
+index.php | approved — updated 2026-05-28 (kvp_get_price registry; hardcoded ~$89.87 fallback removed)
 footer.php | approved
 page.php | approved
 page-contact.php | approved — all viewports (390px, 768px, 1280px)
