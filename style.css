@@ -604,6 +604,15 @@ main,
    HOMEPAGE — Featured Roundup Card
    ================================================ */
 
+.kvp-featured-wrap {
+    background: #FFF0EB;
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 14px;
+    border: 0.5px solid rgba(232,64,28,0.2);
+    grid-column: 1 / -1;
+}
+
 .kvp-featured-card {
     background: #fff;
     border-radius: 12px;
@@ -611,7 +620,6 @@ main,
     overflow: hidden;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column: 1 / -1;
 }
 
 .kvp-featured-img {
@@ -638,18 +646,17 @@ main,
     justify-content: center;
 }
 
-.kvp-roundup-ribbon {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    background: #E8401C;
-    color: #fff;
+.kvp-buyers-guide-badge {
+    display: inline-block;
+    background: #FFF0EB;
+    color: #A32D0D;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 5px 12px;
     border-radius: 999px;
+    margin-bottom: 10px;
 }
 
 .kvp-featured-body {
@@ -719,6 +726,9 @@ main,
 
 /* Mobile: stack featured card vertically */
 @media (max-width: 767px) {
+    .kvp-featured-wrap {
+        padding: 10px;
+    }
     .kvp-featured-card {
         grid-template-columns: 1fr;
     }

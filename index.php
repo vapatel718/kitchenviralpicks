@@ -178,6 +178,17 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
     ] );
     if ( $af_q->have_posts() ) :
         $af_cat = get_category_by_slug( 'air-fryers' );
+        // Pin roundup post first regardless of query date order
+        $af_roundup = [];
+        $af_regular = [];
+        foreach ( $af_q->posts as $af_post ) {
+            if ( get_post_meta( $af_post->ID, 'kvp_is_roundup', true ) === '1' ) {
+                $af_roundup[] = $af_post;
+            } else {
+                $af_regular[] = $af_post;
+            }
+        }
+        $af_sorted = array_merge( $af_roundup, $af_regular );
     ?>
     <div class="kvp-sec-hdr">
       <h2 class="kvp-sec-title"><?php esc_html_e( 'Air Fryers', 'kvp-theme' ); ?></h2>
@@ -188,7 +199,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
       <?php endif; ?>
     </div>
     <div class="kvp-grid kvp-grid-2 kvp-grid--af">
-      <?php while ( $af_q->have_posts() ) : $af_q->the_post();
+      <?php foreach ( $af_sorted as $post ) : setup_postdata( $post );
           $pname      = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
           $rating     = get_post_meta( get_the_ID(), 'kvp_rating', true );
           $count      = get_post_meta( get_the_ID(), 'kvp_review_count', true );
@@ -204,6 +215,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
               }
           }
       ?>
+      <div class="kvp-featured-wrap">
       <div class="kvp-featured-card">
           <div class="kvp-featured-img">
               <?php if ( $featured_img_url ) : ?>
@@ -211,9 +223,9 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
               <?php else : ?>
                   <div class="kvp-featured-img-placeholder"></div>
               <?php endif; ?>
-              <span class="kvp-roundup-ribbon"><?php esc_html_e( 'Roundup guide', 'kvp-theme' ); ?></span>
           </div>
           <div class="kvp-featured-body">
+              <span class="kvp-buyers-guide-badge"><?php esc_html_e( "Buyer's Guide", 'kvp-theme' ); ?></span>
               <p class="kvp-featured-eyebrow"><?php esc_html_e( 'Air Fryers', 'kvp-theme' ); ?> &middot; <?php esc_html_e( '4 picks compared', 'kvp-theme' ); ?></p>
               <p class="kvp-featured-title"><?php echo esc_html( get_the_title() ); ?></p>
               <p class="kvp-featured-desc"><?php esc_html_e( 'Deborah analyzed 200,000+ verified buyer reviews to find the air fryers that actually earn repeat buyers.', 'kvp-theme' ); ?></p>
@@ -224,6 +236,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
               </div>
               <a href="<?php echo esc_url( get_permalink() ); ?>" class="kvp-featured-btn"><?php esc_html_e( 'See all picks', 'kvp-theme' ); ?> &rarr;</a>
           </div>
+      </div>
       </div>
       <?php else : ?>
       <div class="kvp-rc kvp-rc--horiz-mobile">
@@ -253,7 +266,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         </div>
       </div>
       <?php endif; ?>
-      <?php endwhile; wp_reset_postdata(); ?>
+      <?php endforeach; wp_reset_postdata(); ?>
     </div>
     <?php else : ?>
     <div class="kvp-sec-hdr">
