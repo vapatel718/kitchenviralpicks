@@ -1,39 +1,22 @@
 # STATE.md — KitchenViralPicks
 
-Last updated: 2026-05-27
-Last commit: chore: update STATE.md — full session recap, Nordic Ware live, all fixes deployed
+Last updated: 2026-05-28
+Last commit: chore: update STATE.md — roundup featured image deployed
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Full session recap — all completed 2026-05-27:
+Roundup Post 103 featured image set — 2026-05-28
 
-1. Recurring article rendering issue root cause identified and permanently fixed — single.php content safeguard filter added (add_filter the_content) stripping kvp- structured blocks from post_content before render. All future articles protected automatically.
-
-2. Nordic Ware Post 90 (local) — post_content stripped to 3 narrative sections only. Numbered bold paragraphs converted to proper h3 tags. h3 subheadings now render with red left border style matching live site design.
-
-3. Pack Size added as fourth metric in metrics bar — single.php updated with kvp_spec_pack_size elseif block. kvp_spec_pack_size set to "2 pans" on Post 90.
-
-4. Data corrections on Post 90 — review count corrected 48,000+ → 34,000+ everywhere (post title, post_content, kvp_review_count, kvp_final_verdict, kvp_specs). Price corrected ~$32.99 → ~$32.00 everywhere (kvp_price, post_content).
-
-5. single.php and style.css deployed to live Hostinger via SCP.
-
-6. Nordic Ware Post 90 deployed to live as Post ID 107 — published at kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/. Bakeware category now has its first live article.
-
-7. archive.php category icons synced to match approved index.php SVG style — all 7 slugs replaced with stroke-only #E8401C width="64" icons. Deployed to live.
-
-8. Junk category "6" (term_id 28, 0 posts) deleted from live WordPress — root cause was WP-CLI syntax error (wp post term set 107 category 6 without --by=id) which created a new term named "6" instead of assigning existing Bakeware term_id 6.
-
-9. Nordic Ware product image now rendering on Bakeware category page card — archive.php fixed to read kvp_product_image first; falls back to featured image; falls back to placeholder emoji. Deployed to live.
+kvp-roundup-hero.jpg (original photography, 206KB) imported to local WordPress media (attachment 97) and set as featured image on local Post 83. Image SCP'd to live server, imported to live WordPress media (attachment 108), and set as featured image on live Post 103. Cache flushed. Image and import script removed from theme folder.
 
 ## Next Task
-- Upload Roundup Homepage image — Varun has images ready
+- Next article decision — Ninja AF101 review OR second Kettles/Bakeware article (pending Varun decision)
 - Submit Nordic Ware URL to Google Search Console for indexing: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
-- Write next article — Bakeware or Kettles category (weakest with 1 article each)
 
 ## Known Issues
-Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
+None
 
 ---
 
@@ -65,7 +48,7 @@ Use ONLY these key names when publishing articles. Single.php reads these exact 
 - kvp_card_verdict as verdict text → it only triggers the KVP badge, not the verdict line
 
 ## Live Server Status
-Fully deployed — live as of 2026-05-27. single.php + style.css synced (Pack Size metric live). Post 107 (Nordic Ware Half Sheet Pan) live.
+Fully deployed — live as of 2026-05-28. Post 103 (Roundup) now has featured image live (attachment 108 — kvp-roundup-hero.jpg). Post 107 (Nordic Ware Half Sheet Pan) live.
 
 ---
 
