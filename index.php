@@ -178,7 +178,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
     ] );
     if ( $af_q->have_posts() ) :
         $af_cat = get_category_by_slug( 'air-fryers' );
-        // Pin roundup post first regardless of query date order
+        // Split into roundup and regular — render roundup above section header
         $af_roundup = [];
         $af_regular = [];
         foreach ( $af_q->posts as $af_post ) {
@@ -188,8 +188,40 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
                 $af_regular[] = $af_post;
             }
         }
-        $af_sorted = array_merge( $af_roundup, $af_regular );
     ?>
+    <?php foreach ( $af_roundup as $post ) : setup_postdata( $post );
+        $featured_img_url = get_post_meta( get_the_ID(), 'kvp_product_image', true );
+        if ( ! $featured_img_url ) {
+            $thumb_id = get_post_thumbnail_id();
+            if ( $thumb_id ) {
+                $featured_img_url = wp_get_attachment_image_url( $thumb_id, 'large' );
+            }
+        }
+    ?>
+    <div class="kvp-featured-wrap">
+    <div class="kvp-featured-card">
+        <div class="kvp-featured-img">
+            <?php if ( $featured_img_url ) : ?>
+                <img src="<?php echo esc_url( $featured_img_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" loading="lazy">
+            <?php else : ?>
+                <div class="kvp-featured-img-placeholder"></div>
+            <?php endif; ?>
+        </div>
+        <div class="kvp-featured-body">
+            <span class="kvp-buyers-guide-badge"><?php esc_html_e( "Buyer's Guide", 'kvp-theme' ); ?></span>
+            <p class="kvp-featured-eyebrow"><?php esc_html_e( 'Air Fryers', 'kvp-theme' ); ?> &middot; <?php esc_html_e( '4 picks compared', 'kvp-theme' ); ?></p>
+            <p class="kvp-featured-title"><?php echo esc_html( get_the_title() ); ?></p>
+            <p class="kvp-featured-desc"><?php esc_html_e( 'Deborah analyzed 200,000+ verified buyer reviews to find the air fryers that actually earn repeat buyers.', 'kvp-theme' ); ?></p>
+            <div class="kvp-featured-pills">
+                <span class="kvp-featured-pill"><?php esc_html_e( '4 picks', 'kvp-theme' ); ?></span>
+                <span class="kvp-featured-pill"><?php esc_html_e( 'Under $100', 'kvp-theme' ); ?></span>
+                <span class="kvp-featured-pill"><?php esc_html_e( '200K+ reviews', 'kvp-theme' ); ?></span>
+            </div>
+            <a href="<?php echo esc_url( get_permalink() ); ?>" class="kvp-featured-btn"><?php esc_html_e( 'See all picks', 'kvp-theme' ); ?> &rarr;</a>
+        </div>
+    </div>
+    </div>
+    <?php endforeach; wp_reset_postdata(); ?>
     <div class="kvp-sec-hdr">
       <h2 class="kvp-sec-title"><?php esc_html_e( 'Air Fryers', 'kvp-theme' ); ?></h2>
       <?php if ( $af_cat ) : ?>
@@ -199,46 +231,12 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
       <?php endif; ?>
     </div>
     <div class="kvp-grid kvp-grid-2 kvp-grid--af">
-      <?php foreach ( $af_sorted as $post ) : setup_postdata( $post );
-          $pname      = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
-          $rating     = get_post_meta( get_the_ID(), 'kvp_rating', true );
-          $count      = get_post_meta( get_the_ID(), 'kvp_review_count', true );
-          $price      = get_post_meta( get_the_ID(), 'kvp_price', true );
-          $is_roundup = get_post_meta( get_the_ID(), 'kvp_is_roundup', true );
+      <?php foreach ( $af_regular as $post ) : setup_postdata( $post );
+          $pname  = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
+          $rating = get_post_meta( get_the_ID(), 'kvp_rating', true );
+          $count  = get_post_meta( get_the_ID(), 'kvp_review_count', true );
+          $price  = get_post_meta( get_the_ID(), 'kvp_price', true );
       ?>
-      <?php if ( $is_roundup === '1' ) :
-          $featured_img_url = get_post_meta( get_the_ID(), 'kvp_product_image', true );
-          if ( ! $featured_img_url ) {
-              $thumb_id = get_post_thumbnail_id();
-              if ( $thumb_id ) {
-                  $featured_img_url = wp_get_attachment_image_url( $thumb_id, 'large' );
-              }
-          }
-      ?>
-      <div class="kvp-featured-wrap">
-      <div class="kvp-featured-card">
-          <div class="kvp-featured-img">
-              <?php if ( $featured_img_url ) : ?>
-                  <img src="<?php echo esc_url( $featured_img_url ); ?>" alt="<?php echo esc_attr( get_the_title() ); ?>" loading="lazy">
-              <?php else : ?>
-                  <div class="kvp-featured-img-placeholder"></div>
-              <?php endif; ?>
-          </div>
-          <div class="kvp-featured-body">
-              <span class="kvp-buyers-guide-badge"><?php esc_html_e( "Buyer's Guide", 'kvp-theme' ); ?></span>
-              <p class="kvp-featured-eyebrow"><?php esc_html_e( 'Air Fryers', 'kvp-theme' ); ?> &middot; <?php esc_html_e( '4 picks compared', 'kvp-theme' ); ?></p>
-              <p class="kvp-featured-title"><?php echo esc_html( get_the_title() ); ?></p>
-              <p class="kvp-featured-desc"><?php esc_html_e( 'Deborah analyzed 200,000+ verified buyer reviews to find the air fryers that actually earn repeat buyers.', 'kvp-theme' ); ?></p>
-              <div class="kvp-featured-pills">
-                  <span class="kvp-featured-pill"><?php esc_html_e( '4 picks', 'kvp-theme' ); ?></span>
-                  <span class="kvp-featured-pill"><?php esc_html_e( 'Under $100', 'kvp-theme' ); ?></span>
-                  <span class="kvp-featured-pill"><?php esc_html_e( '200K+ reviews', 'kvp-theme' ); ?></span>
-              </div>
-              <a href="<?php echo esc_url( get_permalink() ); ?>" class="kvp-featured-btn"><?php esc_html_e( 'See all picks', 'kvp-theme' ); ?> &rarr;</a>
-          </div>
-      </div>
-      </div>
-      <?php else : ?>
       <div class="kvp-rc kvp-rc--horiz-mobile">
         <?php $kvp_img = get_post_meta( get_the_ID(), 'kvp_product_image', true ); ?>
         <div class="kvp-rc-img" role="presentation">
@@ -265,7 +263,6 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           <a href="<?php the_permalink(); ?>" class="kvp-rc-btn"><?php esc_html_e( 'Read review', 'kvp-theme' ); ?></a>
         </div>
       </div>
-      <?php endif; ?>
       <?php endforeach; wp_reset_postdata(); ?>
     </div>
     <?php else : ?>

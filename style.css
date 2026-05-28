@@ -657,6 +657,8 @@ main,
     padding: 5px 12px;
     border-radius: 999px;
     margin-bottom: 10px;
+    align-self: flex-start;
+    width: fit-content;
 }
 
 .kvp-featured-body {
