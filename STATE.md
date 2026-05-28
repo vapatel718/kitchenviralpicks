@@ -1,52 +1,51 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-28
-Last commit: e526f63 — fix: price registry — explicit slug-to-key map replaces broken dynamic slug derivation
+Last commit: 05de78c — fix: roundup card eyebrow — reads kvp_card_picks from meta instead of hardcoded 4 picks
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Price registry slug mapping fixed — 2026-05-28
+Price registry fully implemented + roundup card pick count fixed — 2026-05-28
 
-kvp_get_price_key( $post_id ) added to functions.php with hardcoded slug→key map for all 13 published posts.
-All templates updated — dynamic str_replace slug derivation removed:
-- functions.php: kvp_get_price_key() explicit map added directly below kvp_get_price()
-- index.php: 4 slug derivation blocks replaced with kvp_get_price_key()
-- archive.php: 2 slug derivation blocks replaced with kvp_get_price_key()
-- single.php: 1 slug derivation block replaced with kvp_get_price_key()
-To add new articles to registry: add slug → key entry to kvp_get_price_key() in functions.php
-To update any price site-wide: wp option update kvp_price_{key} "~$XX.XX"
+- Price registry: kvp_get_price() + kvp_get_price_key() in functions.php. All templates updated (index.php, archive.php, single.php, single-roundup.php).
+- Roundup card eyebrow: index.php line 213 now reads kvp_card_picks from meta (was hardcoded "4 picks compared").
+- All product prices updated to May 2026 Amazon values in post meta.
+- To update any price site-wide: wp option update kvp_price_{key} "~$XX.XX"
+- To add new articles to registry: add slug→key to kvp_get_price_key() in functions.php.
 
 ## Next Task
-- REQUIRED IN SITE SHELL (local): Register all canonical prices as WP options
-- REQUIRED IN SITE SHELL (live): git pull + register same options on Hostinger
+- DEPLOY TO LIVE: git pull on Hostinger + register WP options (see commands below)
 - Content decision — Ninja AF101 review vs second Kettles/Bakeware article
+- Update KitchenAid article body text: kvp_final_verdict and kvp_skip_if still reference $439.95
 - Submit Nordic Ware URL to Google Search Console: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
 
 ## Known Issues
-WP options NOT YET registered — kvp_get_price() falls back to post meta until run in Site Shell.
+LIVE NOT YET DEPLOYED — SSH auth failed in Claude Code terminal. Run manually:
 
-LOCAL (run in Local by Flywheel Site Shell — 5 roundup products first registered in prev session, use update):
-wp option update kvp_price_ninja_af101 "~$89.99"
-wp option update kvp_price_cosori_turboblaze "~$99.99"
-wp option update kvp_price_instant_vortex_plus "~$89.99"
-wp option update kvp_price_chefman_turbofry "~$49.99"
-wp option update kvp_price_dash_tasti_crisp "~$49.99"
-wp option add kvp_price_nordic_ware_half_sheet_pan "~$32.00"
-wp option add kvp_price_cuisinart_dutch_oven "~$59.99"
-wp option add kvp_price_ninja_blender_bn701 "~$99.99"
-wp option add kvp_price_kitchenaid_artisan_5qt "~$449.99"
-wp option add kvp_price_instant_pot_rio "~$119.99"
-wp option add kvp_price_lodge_enamel_braiser "~$79.99"
-wp option add kvp_price_cosori_electric_kettle "~$25.99"
-wp option add kvp_price_tramontina_frying_pan "~$28.99"
-wp option add kvp_price_carote_pots_pans "~$49.99"
-wp option add kvp_price_ninja_air_fryer_5qt "~$129.99"
-wp cache flush
+DEPLOY COMMAND:
+ssh -p 65002 u834996894@157.173.208.147 "cd /home/u834996894/domains/kitchenviralpicks.com/public_html/wp-content/themes/kvp-theme && git pull origin main && wp cache flush --path=/home/u834996894/domains/kitchenviralpicks.com/public_html"
 
-LIVE (via SSH after git pull — use wp option update for roundup 5, wp option add for rest):
-Same commands above with --path=/home/u834996894/domains/kitchenviralpicks.com/public_html
+WP OPTIONS — register on live via SSH after deploy:
+wp option update kvp_price_ninja_af101 "~$89.99" --path=/home/...
+wp option update kvp_price_cosori_turboblaze "~$99.99" --path=/home/...
+wp option update kvp_price_instant_vortex_plus "~$89.99" --path=/home/...
+wp option update kvp_price_chefman_turbofry "~$49.99" --path=/home/...
+wp option update kvp_price_dash_tasti_crisp "~$49.99" --path=/home/...
+wp option add kvp_price_nordic_ware_half_sheet_pan "~$32.00" --path=/home/...
+wp option add kvp_price_cuisinart_dutch_oven "~$59.99" --path=/home/...
+wp option add kvp_price_ninja_blender_bn701 "~$99.99" --path=/home/...
+wp option add kvp_price_kitchenaid_artisan_5qt "~$449.99" --path=/home/...
+wp option add kvp_price_instant_pot_rio "~$119.99" --path=/home/...
+wp option add kvp_price_lodge_enamel_braiser "~$79.99" --path=/home/...
+wp option add kvp_price_cosori_electric_kettle "~$25.99" --path=/home/...
+wp option add kvp_price_tramontina_frying_pan "~$28.99" --path=/home/...
+wp option add kvp_price_carote_pots_pans "~$49.99" --path=/home/...
+wp option add kvp_price_ninja_air_fryer_5qt "~$129.99" --path=/home/...
+(replace /home/... with /home/u834996894/domains/kitchenviralpicks.com/public_html)
+
+LOCAL badge pill also hardcoded: index.php line 217 has <?php esc_html_e( '4 picks', 'kvp-theme' ); ?> — fix separately if needed.
 
 ---
 
@@ -87,7 +86,7 @@ header.php | approved
 single.php | approved — updated 2026-05-28 (kvp_get_price_key explicit map)
 single-roundup.php | approved — updated 2026-05-28 (kvp_get_price with $price_keys map for p1–p5 + toppick)
 archive.php | approved — updated 2026-05-28 (kvp_get_price_key explicit map)
-index.php | approved — updated 2026-05-28 (kvp_get_price_key explicit map; hardcoded ~$89.87 fallback removed)
+index.php | approved — updated 2026-05-28 (kvp_get_price_key; eyebrow line 213 reads kvp_card_picks from meta)
 footer.php | approved
 page.php | approved
 page-contact.php | approved — all viewports (390px, 768px, 1280px)
