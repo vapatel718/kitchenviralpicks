@@ -7,19 +7,10 @@ Last commit: 05de78c — fix: roundup card eyebrow — reads kvp_card_picks from
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Price registry fully implemented + roundup card pick count fixed — 2026-05-28
-
-- Price registry: kvp_get_price() + kvp_get_price_key() in functions.php. All templates updated (index.php, archive.php, single.php, single-roundup.php).
-- Roundup card eyebrow: index.php line 213 now reads kvp_card_picks from meta (was hardcoded "4 picks compared").
-- All product prices updated to May 2026 Amazon values in post meta.
-- To update any price site-wide: wp option update kvp_price_{key} "~$XX.XX"
-- To add new articles to registry: add slug→key to kvp_get_price_key() in functions.php.
+- Global price registry complete — kvp_get_price() + kvp_get_price_key() added to functions.php. All 15 products registered as WP options on local and live. All prices, ratings, review counts updated to May 2026 Amazon data. Roundup card fixed to 5 picks. Live git conflict resolved via reset --hard.
 
 ## Next Task
-- DEPLOY TO LIVE: git pull on Hostinger + register WP options (see commands below)
-- Content decision — Ninja AF101 review vs second Kettles/Bakeware article
-- Update KitchenAid article body text: kvp_final_verdict and kvp_skip_if still reference $439.95
-- Submit Nordic Ware URL to Google Search Console: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
+- Content decision — Ninja AF101 review vs second Kettles/Bakeware article. Also fix KitchenAid body text ($439.95 → $449.99 in kvp_final_verdict and kvp_skip_if on Post 42/live).
 
 ## Known Issues
 LIVE NOT YET DEPLOYED — SSH auth failed in Claude Code terminal. Run manually:
