@@ -1,22 +1,19 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-27
-Last commit: deploy: single.php and style.css synced to live — Post 90 Nordic Ware published as Live ID 107
+Last commit: fix: sync archive.php category icons to match approved index.php SVG style
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Post 90 Nordic Ware Half Sheet Pan fully deployed to live 2026-05-27:
-- single.php and style.css synced to live via SCP (Pack Size metric + content safeguard now live)
-- Post created on live as Post ID 107, slug: nordic-ware-half-sheet-pan-review
-- Category: Bakeware (term_id 6) — first published Bakeware article
-- All 15 custom fields set: kvp_product_name, kvp_price, kvp_amazon_url, kvp_review_count, kvp_rating, kvp_verdict_line, kvp_card_verdict, kvp_final_verdict, kvp_pros, kvp_cons, kvp_buy_if, kvp_skip_if, kvp_specs, kvp_product_image, kvp_spec_pack_size
-- All data verified: review count 34,000+, price ~$32.00, rating 4.7, Pack Size 2 pans
+archive.php category icons synced to outline-only SVG style (2026-05-27):
+- All 7 category icons replaced: air-fryers, bakeware, blenders, cookware, kettles, multicooker, stand-mixers
+- Old style: filled/colored, width="40" — New style: stroke-only #E8401C, width="64", matches index.php exactly
+- Deployed to live Hostinger via SCP
 
 ## Next Task
-Varun confirms live URL renders correctly: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
-Then continue Phase 7 — next article in content queue.
+Continue Phase 7 — next article in content queue (Ninja AF101 review or Chefman TurboFry review).
 
 ## Known Issues
 Roundup Post 103 on live has no featured image set yet — waiting for original photography. Temporary Pexels placeholder set on local only (attachment 85).
@@ -59,7 +56,7 @@ Fully deployed — live as of 2026-05-27. single.php + style.css synced (Pack Si
 header.php | approved
 single.php | approved — updated 2026-05-27 (Pack Size fourth metric added; content safeguard filter; kvp_product_image score bar support)
 single-roundup.php | approved — committed 2026-05-25, deployed to live 2026-05-25
-archive.php | approved
+archive.php | approved — updated 2026-05-27 (outline-only category icons synced from index.php, deployed to live)
 index.php | approved — updated 2026-05-27 (outline-only category SVG icons — local only, deploy pending)
 footer.php | approved
 page.php | approved
