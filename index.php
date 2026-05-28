@@ -94,8 +94,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         $h_name    = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
         $h_rating  = get_post_meta( get_the_ID(), 'kvp_rating', true ) ?: '4.8';
         $h_count   = get_post_meta( get_the_ID(), 'kvp_review_count', true ) ?: '19,000';
-        $slug      = get_post_field( 'post_name', get_the_ID() );
-        $price_key = str_replace( '-', '_', $slug );
+        $price_key = kvp_get_price_key( get_the_ID() );
         $h_price   = kvp_get_price( $price_key, 'kvp_price', get_the_ID() );
         $h_verdict = get_post_meta( get_the_ID(), 'kvp_card_verdict', true )
                      ?: get_post_meta( get_the_ID(), 'kvp_verdict_line', true )
@@ -237,8 +236,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           $pname  = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
           $rating = get_post_meta( get_the_ID(), 'kvp_rating', true );
           $count  = get_post_meta( get_the_ID(), 'kvp_review_count', true );
-          $slug       = get_post_field( 'post_name', get_the_ID() );
-          $price_key  = str_replace( '-', '_', $slug );
+          $price_key  = kvp_get_price_key( get_the_ID() );
           $price      = kvp_get_price( $price_key, 'kvp_price', get_the_ID() );
       ?>
       <div class="kvp-rc kvp-rc--horiz-mobile">
@@ -312,8 +310,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           $pname  = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
           $rating = get_post_meta( get_the_ID(), 'kvp_rating', true );
           $count  = get_post_meta( get_the_ID(), 'kvp_review_count', true );
-          $slug       = get_post_field( 'post_name', get_the_ID() );
-          $price_key  = str_replace( '-', '_', $slug );
+          $price_key  = kvp_get_price_key( get_the_ID() );
           $price      = kvp_get_price( $price_key, 'kvp_price', get_the_ID() );
       ?>
       <div class="kvp-rc">
@@ -388,8 +385,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           $pname  = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
           $rating = get_post_meta( get_the_ID(), 'kvp_rating', true );
           $count  = get_post_meta( get_the_ID(), 'kvp_review_count', true );
-          $slug       = get_post_field( 'post_name', get_the_ID() );
-          $price_key  = str_replace( '-', '_', $slug );
+          $price_key  = kvp_get_price_key( get_the_ID() );
           $price      = kvp_get_price( $price_key, 'kvp_price', get_the_ID() );
           $cats   = get_the_terms( get_the_ID(), 'category' );
           $cname  = ( $cats && ! is_wp_error( $cats ) ) ? $cats[0]->name : '';

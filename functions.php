@@ -176,6 +176,27 @@ function kvp_get_price( $key, $post_meta_fallback = 'kvp_price', $post_id = null
 	return $price ? esc_html( $price ) : '';
 }
 
+// Maps post slugs to canonical price registry keys. Add new slugs here when articles are published.
+function kvp_get_price_key( $post_id ) {
+	$slug = get_post_field( 'post_name', $post_id );
+	$map  = [
+		'cosori-turboblaze-air-fryer-review'                               => 'cosori_turboblaze',
+		'instant-pot-vortex-plus-6qt-air-fryer-review'                     => 'instant_vortex_plus',
+		'nordic-ware-half-sheet-pan-review'                                => 'nordic_ware_half_sheet_pan',
+		'cuisinart-chefs-classic-enameled-cast-iron-dutch-oven-review-2026' => 'cuisinart_dutch_oven',
+		'ninja-bn701-professional-plus-blender-review-2026'                => 'ninja_blender_bn701',
+		'kitchenaid-artisan-5qt-stand-mixer-review-2026'                   => 'kitchenaid_artisan_5qt',
+		'instant-pot-7-5qt-rio-wide-review-2026'                           => 'instant_pot_rio',
+		'lodge-essential-enamel-braiser-review-2026'                       => 'lodge_enamel_braiser',
+		'cosori-electric-kettle-1-7l-review-2026'                          => 'cosori_electric_kettle',
+		'tramontina-12-inch-frying-pan-review'                             => 'tramontina_frying_pan',
+		'carote-19-piece-pots-and-pans-set-review'                         => 'carote_pots_pans',
+		'ninja-air-fryer-5-qt-review'                                      => 'ninja_air_fryer_5qt',
+		'air-fryers-under-100-most-reviewed'                               => 'ninja_af101',
+	];
+	return isset( $map[ $slug ] ) ? $map[ $slug ] : '';
+}
+
 // Remove featured image from article body — image is output manually in score bar via single.php
 add_filter( 'the_content', 'kvp_remove_featured_from_content', 5 );
 function kvp_remove_featured_from_content( $content ) {
