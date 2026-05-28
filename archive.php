@@ -168,7 +168,17 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                 </span>
 
                 <div class="kvp-arc-card-img">
-                    <?php if ( has_post_thumbnail() ) : ?>
+                    <?php
+                    $kvp_card_img = get_post_meta( get_the_ID(), 'kvp_product_image', true );
+                    if ( $kvp_card_img ) : ?>
+                        <img
+                            src="<?php echo esc_url( $kvp_card_img ); ?>"
+                            alt="<?php echo esc_attr( get_the_title() ); ?>"
+                            loading="lazy"
+                            width="400"
+                            height="400"
+                        >
+                    <?php elseif ( has_post_thumbnail() ) : ?>
                         <?php the_post_thumbnail( 'medium_large', array(
                             'loading' => 'lazy',
                             'alt'     => esc_attr( get_the_title() ),
