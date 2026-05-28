@@ -1,40 +1,52 @@
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-28
-Last commit: e27948e — feat: global price registry — kvp_get_price() replaces all scattered price reads
+Last commit: e526f63 — fix: price registry — explicit slug-to-key map replaces broken dynamic slug derivation
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-Global price registry implemented — 2026-05-28
+Price registry slug mapping fixed — 2026-05-28
 
-kvp_get_price() helper added to functions.php. All templates updated:
-- functions.php: kvp_get_price( $key, $fallback_meta, $post_id ) — reads WP option kvp_price_{key}, falls back to post meta
-- index.php: 4 price reads updated (hero card hardcoded ~$89.87 fallback removed)
-- archive.php: 2 price reads updated
-- single.php: 1 price read updated
-- single-roundup.php: 3 price reads updated (comparison table loop + toppick + product cards loop)
+kvp_get_price_key( $post_id ) added to functions.php with hardcoded slug→key map for all 13 published posts.
+All templates updated — dynamic str_replace slug derivation removed:
+- functions.php: kvp_get_price_key() explicit map added directly below kvp_get_price()
+- index.php: 4 slug derivation blocks replaced with kvp_get_price_key()
+- archive.php: 2 slug derivation blocks replaced with kvp_get_price_key()
+- single.php: 1 slug derivation block replaced with kvp_get_price_key()
+To add new articles to registry: add slug → key entry to kvp_get_price_key() in functions.php
 To update any price site-wide: wp option update kvp_price_{key} "~$XX.XX"
 
 ## Next Task
-- REQUIRED IN SITE SHELL (local): Register canonical prices as WP options (see commands below)
-- REQUIRED IN SITE SHELL (live): Register same options on Hostinger after git pull
+- REQUIRED IN SITE SHELL (local): Register all canonical prices as WP options
+- REQUIRED IN SITE SHELL (live): git pull + register same options on Hostinger
 - Content decision — Ninja AF101 review vs second Kettles/Bakeware article
 - Submit Nordic Ware URL to Google Search Console: kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
 
 ## Known Issues
-WP options NOT YET registered — kvp_get_price() will fall back to post meta until these are run in Site Shell:
+WP options NOT YET registered — kvp_get_price() falls back to post meta until run in Site Shell.
 
-LOCAL (run in Local by Flywheel Site Shell):
-wp option add kvp_price_ninja_af101 "~$89.99"
-wp option add kvp_price_cosori_turboblaze "~$99.99"
-wp option add kvp_price_instant_vortex_plus "~$89.99"
-wp option add kvp_price_chefman_turbofry "~$49.99"
-wp option add kvp_price_dash_tasti_crisp "~$49.99"
+LOCAL (run in Local by Flywheel Site Shell — 5 roundup products first registered in prev session, use update):
+wp option update kvp_price_ninja_af101 "~$89.99"
+wp option update kvp_price_cosori_turboblaze "~$99.99"
+wp option update kvp_price_instant_vortex_plus "~$89.99"
+wp option update kvp_price_chefman_turbofry "~$49.99"
+wp option update kvp_price_dash_tasti_crisp "~$49.99"
+wp option add kvp_price_nordic_ware_half_sheet_pan "~$32.00"
+wp option add kvp_price_cuisinart_dutch_oven "~$59.99"
+wp option add kvp_price_ninja_blender_bn701 "~$99.99"
+wp option add kvp_price_kitchenaid_artisan_5qt "~$449.99"
+wp option add kvp_price_instant_pot_rio "~$119.99"
+wp option add kvp_price_lodge_enamel_braiser "~$79.99"
+wp option add kvp_price_cosori_electric_kettle "~$25.99"
+wp option add kvp_price_tramontina_frying_pan "~$28.99"
+wp option add kvp_price_carote_pots_pans "~$49.99"
+wp option add kvp_price_ninja_air_fryer_5qt "~$129.99"
+wp cache flush
 
-LIVE (run via SSH Site Shell after deploy):
-Same 5 commands above with --path=/home/u834996894/domains/kitchenviralpicks.com/public_html
+LIVE (via SSH after git pull — use wp option update for roundup 5, wp option add for rest):
+Same commands above with --path=/home/u834996894/domains/kitchenviralpicks.com/public_html
 
 ---
 
@@ -72,10 +84,10 @@ Fully deployed and git-synced — live as of 2026-05-28. Live server on branch m
 
 ## Templates
 header.php | approved
-single.php | approved — updated 2026-05-28 (kvp_get_price registry; slug-based price key)
+single.php | approved — updated 2026-05-28 (kvp_get_price_key explicit map)
 single-roundup.php | approved — updated 2026-05-28 (kvp_get_price with $price_keys map for p1–p5 + toppick)
-archive.php | approved — updated 2026-05-28 (kvp_get_price registry; slug-based price key)
-index.php | approved — updated 2026-05-28 (kvp_get_price registry; hardcoded ~$89.87 fallback removed)
+archive.php | approved — updated 2026-05-28 (kvp_get_price_key explicit map)
+index.php | approved — updated 2026-05-28 (kvp_get_price_key explicit map; hardcoded ~$89.87 fallback removed)
 footer.php | approved
 page.php | approved
 page-contact.php | approved — all viewports (390px, 768px, 1280px)
