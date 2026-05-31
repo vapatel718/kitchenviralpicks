@@ -1528,6 +1528,71 @@ main,
 .kvp-single .article-body li { font-size: 16px; color: #444; line-height: 1.75; margin-bottom: 4px; }
 .kvp-single .article-body img { max-width: 100%; height: auto; display: block; margin: 20px auto; border-radius: 10px; }
 
+/* COMPARISON TABLE */
+.entry-content table,
+.post-content table,
+.kvp-article-body table,
+.kvp-single .article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+}
+.entry-content table thead tr,
+.post-content table thead tr,
+.kvp-article-body table thead tr,
+.kvp-single .article-body table thead tr {
+    background: #E8401C;
+    color: #ffffff;
+}
+.entry-content table thead th,
+.post-content table thead th,
+.kvp-article-body table thead th,
+.kvp-single .article-body table thead th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+}
+.entry-content table tbody tr:nth-child(odd),
+.post-content table tbody tr:nth-child(odd),
+.kvp-article-body table tbody tr:nth-child(odd),
+.kvp-single .article-body table tbody tr:nth-child(odd) {
+    background: #FFF8F5;
+}
+.entry-content table tbody tr:nth-child(even),
+.post-content table tbody tr:nth-child(even),
+.kvp-article-body table tbody tr:nth-child(even),
+.kvp-single .article-body table tbody tr:nth-child(even) {
+    background: #ffffff;
+}
+.entry-content table tbody td,
+.post-content table tbody td,
+.kvp-article-body table tbody td,
+.kvp-single .article-body table tbody td {
+    padding: 11px 16px;
+    border-bottom: 0.5px solid rgba(232,64,28,0.1);
+    color: #1A1A1A;
+    vertical-align: middle;
+}
+.entry-content table tbody td:first-child,
+.post-content table tbody td:first-child,
+.kvp-article-body table tbody td:first-child,
+.kvp-single .article-body table tbody td:first-child {
+    font-weight: 600;
+    color: #555;
+    font-size: 13px;
+    width: 140px;
+}
+.entry-content table tbody tr:last-child td,
+.post-content table tbody tr:last-child td,
+.kvp-article-body table tbody tr:last-child td,
+.kvp-single .article-body table tbody tr:last-child td {
+    border-bottom: none;
+}
+
 /* BUY / SKIP */
 .kvp-single .buy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .kvp-single .buy-card { border-radius: 8px; padding: 13px 14px; }

@@ -125,7 +125,7 @@ while ( have_posts() ) : the_post();
 
 			<?php if ( $kvp_price ) : ?>
 			<div class="price-pill-row">
-				<span class="price-pill"><?php echo esc_html( $kvp_price ); ?></span>
+				<span class="price-pill">~$<?php echo esc_html( $kvp_price ); ?></span>
 				<span class="price-note"><?php esc_html_e( 'at time of writing', 'kvp-theme' ); ?><br><?php esc_html_e( 'price may vary', 'kvp-theme' ); ?></span>
 			</div>
 			<?php endif; ?>
@@ -158,7 +158,7 @@ while ( have_posts() ) : the_post();
 		<?php endif; ?>
 		<?php if ( $kvp_price ) : ?>
 		<div class="mbox">
-			<div class="mnum"><?php echo esc_html( $kvp_price ); ?></div>
+			<div class="mnum">~$<?php echo esc_html( $kvp_price ); ?></div>
 			<div class="mlbl"><?php esc_html_e( 'Current price', 'kvp-theme' ); ?></div>
 		</div>
 		<?php endif; ?>
@@ -286,7 +286,7 @@ while ( have_posts() ) : the_post();
 	<div class="cta1">
 		<div>
 			<?php if ( $kvp_price ) : ?>
-			<div class="cta1-price"><?php echo esc_html( $kvp_price ); ?></div>
+			<div class="cta1-price">~$<?php echo esc_html( $kvp_price ); ?></div>
 			<?php endif; ?>
 			<div class="cta1-note"><?php esc_html_e( 'Price at time of writing · may vary on Amazon', 'kvp-theme' ); ?></div>
 		</div>
