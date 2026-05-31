@@ -128,7 +128,7 @@ Use ONLY these key names when publishing articles. Single.php reads these exact 
 
 ## Live Server Status
 Fully deployed and git-synced. Future deploys: git pull only (no SCP).
-Live server on branch main. Last confirmed live commit: ee9c1ff (2026-05-28).
+Live server on branch main. Last confirmed live commit: 063643d (2026-05-31).
 
 ---
 
@@ -161,12 +161,12 @@ page-contact.php | approved
 | 11 | air-fryers-under-100-most-reviewed (roundup) | 83 / 103 | live ✅ |
 | 12 | instant-pot-vortex-plus-6qt | 86 / 106 | live ✅ |
 | 13 | nordic-ware-half-sheet-pan | 90 / 107 | live ✅ — GSC submitted 2026-05-31 |
-| 14 | lodge-cast-iron-skillet-review | 99 / TBD | local only — all fields set, category fixed 2026-05-31 |
+| 14 | lodge-cast-iron-skillet-review | 99 / 110 | live ✅ — published 2026-05-31 |
 
 ---
 
 ## Affiliate Links — All Live ✅
-Posts 13, 14, 34, 36, 37, 40, 41, 42, 43, 44, 103, 106, 107
+Posts 13, 14, 34, 36, 37, 40, 41, 42, 43, 44, 103, 106, 107, 110
 
 ## Pen Name
 DEBORAH — never Rick, never anything else. Permanent. Locked.
