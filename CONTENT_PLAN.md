@@ -1,210 +1,183 @@
 # KVP Content Plan — Master Calendar
+Last updated: 2026-05-31
+
+---
+
+## Micro-Niche — Locked May 30, 2026
+Healthy Non-Toxic Cookware
+
+Target materials: cast iron, carbon steel, ceramic coated, stainless steel
+Key signals: PFAS-free, PFOA-free, PTFE-free
+Audience: health-conscious buyers with high purchase intent
+Existing air fryer, kettle, bakeware, blender, multicooker articles stay live — no new ones in those categories.
+
+---
 
 ## Publishing Cadence
-- 4 articles per month — one per week, every week
-- Mix: 2 product reviews + 1 roundup + 1 informational/seasonal per month
-- Quality over quantity — never sacrifice research depth to hit a schedule
+- 1–3 articles per month — slow and steady, quality over volume
+- 10–20 hours per week available
+- No deadline pressure — do it right, not fast
 
-## Content Types
-- REVIEW — Individual product deep-dive. High purchase intent. Commission pages.
-- ROUNDUP — Multi-product comparison. Traffic drivers. Internally links to reviews.
-- INFORMATIONAL — How-to, why, what. Builds topical authority. Attracts backlinks.
-- SEASONAL — Gift guides, deal posts. Timed to shopping seasons. Publish 6-8 weeks before event.
+---
+
+## Three Content Tiers — Locked May 30, 2026
+
+### Tier 1 — Response Posts
+- Word count: 1,200–1,500 words
+- Purpose: Answer specific non-toxic cookware questions. Rank fast against forums and Reddit.
+- Template: single-blog.php (NOT YET BUILT — needed before first Response post publishes)
+- Examples: "Is cast iron PFAS-free?", "What does PTFE-free actually mean?", "Is ceramic cookware safe?"
+
+### Tier 2 — Staple Posts
+- Word count: 1,800–2,200 words
+- Purpose: Individual product reviews. Money pages. High purchase intent.
+- Template: single.php
+
+### Tier 3 — Pillar Posts
+- Word count: 2,800–3,200 words
+- Purpose: Roundups. Traffic drivers. Internally links to Staple reviews.
+- Template: single-roundup.php
+
+### Publish Order
+Response first → Staple → Pillar
+Reason: Response posts build topical authority fast. Staple posts are the money pages. Pillar posts amplify once reviews exist to link to.
+
+---
 
 ## Title Formula Library
-### Roundup Formulas
-- Number + Insight: "7 Air Fryers That Actually Live Up to the Hype (2026)"
-- Problem + Solution: "Stop Wasting Money on Loud Air Fryers — Here Are the Quiet Ones"
-- Buyer Data: "50,000 Buyers Rated These Air Fryers — Here's What They Said"
-- Budget: "5 Cast Iron Pans Under $40 That Outperform Expensive Brands"
-- Versus: "Cosori vs Ninja Air Fryer — What 25,000 Buyers Choose"
-- Seasonal: "Kitchen Gifts She'll Use Every Day — Not Just Once"
-- Contrarian: "The Air Fryer Everyone Keeps Returning — And the One Nobody Does"
 
-### Informational Formulas
-- How-To: "How to Season a Cast Iron Pan the Right Way"
-- Why: "Why Your Nonstick Pan Is Losing Its Coating After 6 Months"
+### Staple (Review) Formulas
+- Standard: "Lodge 10.25-Inch Cast Iron Skillet Review (2026)"
+- Buyer Data: "164,000 Buyers Reviewed the Lodge Cast Iron Skillet — Here's What They Said"
+- Verdict-First: "Lodge Cast Iron Skillet Review — What the Data Says After 164,000 Reviews"
+
+### Response (Informational) Formulas
 - What: "What PFAS-Free Cookware Actually Means — Plain English Explanation"
-- Mistake: "The Air Fryer Mistake That's Ruining Your Food"
-- Worth It: "Is a $200 Air Fryer Actually Worth It Over a $90 One?"
+- Is: "Is Cast Iron Cookware PFAS-Free?"
+- Why: "Why Buyers Are Switching From Nonstick to Ceramic Cookware"
+- Safe: "Is Ceramic Cookware Safe? What the Research Says"
 
-### Review Formulas
-- Standard + Year: "COSORI TurboBlaze Air Fryer Review (2026)"
-- Verdict-First: "COSORI TurboBlaze Review — Fast, Quiet, and One Flaw Worth Knowing"
-- Buyer Data: "19,000 Buyers Reviewed the COSORI TurboBlaze — Here's What They Said"
+### Pillar (Roundup) Formulas
+- Buyer Data: "The Most-Reviewed Non-Toxic Pans on Amazon — What 500,000 Buyers Said"
+- Budget: "5 PFAS-Free Pans Under $30 That Outperform Expensive Brands"
+- Best: "Best Non-Toxic Cookware Sets in 2026 — Ranked by Real Buyer Data"
+
+---
 
 ## Title Rules
-- 40-60 characters for highest CTR
-- Include year only for non-evergreen content
+- 50–65 characters for highest CTR
+- Include year only when content is time-sensitive
 - Never clickbait — always deliver exactly what the title promises
 - Deborah's voice: honest, data-backed, zero fluff
+- Never imply physical testing — Deborah analyzes buyer data, she does not cook with products
+
+---
 
 ## Keyword Strategy
 - Primary keyword: one per article, entire article built around it
-- Secondary keywords: 3-5 per article, appear naturally in body
-- Question keywords: 2-3 per article, appear in body and FAQ sections
+- Secondary keywords: 3–5 per article, appear naturally in body
+- Question keywords: 2–3 per article, appear in body and FAQ sections
 - Year 1 focus: long-tail keywords (lower competition, higher buyer intent)
+- Head terms (e.g. "best cast iron skillet") dominated by DR 79–93 sites — do not target yet
 - Progress to mid-tail as domain authority grows after month 12
 
-## Seasonal Publishing Deadlines
-- Mother's Day (May): publish by late March
-- Back to School (August): publish by early July
-- Halloween (October): publish by mid-September
-- Holiday / Christmas (December): publish by mid-October — BIGGEST revenue window
-- Black Friday (November): publish by early October
-- New Year (January): publish by late December
-- Valentine's Day (February): publish by early January
+---
 
 ## Internal Linking Rules
-- Every roundup links to minimum 2 existing reviews
-- Every review links to minimum 1 relevant roundup
-- Every informational post links to minimum 1 review or roundup
+- Every Pillar links to minimum 3 existing Staple reviews
+- Every Staple links to minimum 1 relevant Pillar or Response post
+- Every Response post links to minimum 1 Staple review
 - Never orphan a new article — always link from an existing page
+- Pending: internal links from Cosori (Post 13) and Ninja (Post 14) to roundup (Post 103) — not yet added
 
 ---
 
-## 6-MONTH CONTENT CALENDAR
+## Content Queue — Active Pipeline
 
-### JUNE 2026
+### 1. Lodge 10.25" Cast Iron Skillet — STAPLE POST
+- Status: RESEARCH COMPLETE — keyword approval pending
+- Data: $24.90 · 164,000+ reviews · 4.7★ · PFAS-free · price stable
+- Research report: RESEARCH_VAULT.md
+- Next action: keyword approval in chat, then write article
 
-| Week | Type | Title | Primary Keyword | Status |
-|------|------|-------|----------------|--------|
-| Week 1 | ROUNDUP | 5 Air Fryers Under $100 That Real Buyers Keep Repurchasing | best air fryer under 100 dollars | PUBLISHED |
-| Week 2 | REVIEW | Instant Pot Vortex Plus 6QT Air Fryer Review (2026): Plastic Smell, Coating Concerns, and What 71,000 Buyers Actually Experienced | instant pot vortex plus 6qt review | PUBLISHED |
-| Week 3 | INFORMATIONAL | Air Fryer vs Oven — Which One Actually Saves Time and Money | air fryer vs oven cooking time | PLANNED |
-| Week 4 | ROUNDUP | The Most Repurchased Nonstick Pans on Amazon in 2026 | best nonstick frying pan 2026 | PLANNED |
+### 2. GreenLife 16pc Ceramic Cookware Set — STAPLE POST
+- Status: RESEARCH PENDING — Varun shares Amazon screenshots, Claude builds report
+- Data preview: 46,800+ reviews · $69.99
+- Next action: Varun shares screenshots
 
-### JULY 2026
+### 3. SENSARTE Ceramic Non-Stick Pan — STAPLE POST
+- Status: RESEARCH PENDING — Varun shares Amazon screenshots, Claude builds report
+- Data preview: 33,500+ reviews · $20.89
+- Next action: Varun shares screenshots
 
-| Week | Type | Title | Primary Keyword | Status |
-|------|------|-------|----------------|--------|
-| Week 1 | REVIEW | CAROTE Cookware Set Review — Is the Low Price Worth the Trade-Offs | carote cookware set review | PLANNED |
-| Week 2 | ROUNDUP | Cookware Sets Under $75 That Don't Feel Cheap | best cookware set under 75 dollars | PLANNED |
-| Week 3 | INFORMATIONAL | What PFAS-Free Cookware Actually Means — Plain English Guide | what is pfas free cookware | PLANNED |
-| Week 4 | SEASONAL | Kitchen Gifts for College Students That Actually Get Used | best kitchen gifts for college students 2026 | PLANNED |
+### 4. Response Post — Non-Toxic Cookware Question
+- Status: TOPIC PENDING — decide after first Staple keyword is approved
+- Candidates: "Is cast iron PFAS-free?", "What does PTFE-free mean?", "Is ceramic cookware safe?"
+- Note: single-blog.php template must be built before this publishes
 
-### AUGUST 2026
-
-| Week | Type | Title | Primary Keyword | Status |
-|------|------|-------|----------------|--------|
-| Week 1 | REVIEW | Lodge Cast Iron Braiser Review — Who Should Buy It and Who Shouldn't | lodge cast iron braiser review | PLANNED |
-| Week 2 | ROUNDUP | 50,000 Buyers Rated These Cast Iron Pans — Here's What They Said | best cast iron skillet 2026 | PLANNED |
-| Week 3 | INFORMATIONAL | Why Your Nonstick Pan Loses Its Coating — And What to Buy Instead | why does nonstick pan lose coating | PLANNED |
-| Week 4 | REVIEW | Tramontina 12-Inch Frying Pan Review — Honest Breakdown After the Hype | tramontina frying pan review | PLANNED |
-
-### SEPTEMBER 2026
-
-| Week | Type | Title | Primary Keyword | Status |
-|------|------|-------|----------------|--------|
-| Week 1 | ROUNDUP | Kitchen Gadgets Real Home Cooks Actually Use Every Day in 2026 | best kitchen gadgets for home cooks | PLANNED |
-| Week 2 | INFORMATIONAL | Electric Kettle vs Stovetop — What 9,000 Buyers Actually Prefer | electric kettle vs stovetop kettle | PLANNED |
-| Week 3 | REVIEW | Instant Pot RIO Wide Review — Is the Bigger Size Worth It | instant pot rio wide review | PLANNED |
-| Week 4 | SEASONAL | Kitchen Gifts Anyone Would Actually Want This Holiday Season | best kitchen gifts 2026 | PLANNED |
-
-### OCTOBER 2026
-
-| Week | Type | Title | Primary Keyword | Status |
-|------|------|-------|----------------|--------|
-| Week 1 | REVIEW | MEATER Smart Meat Thermometer Review — Does It Justify the Price | meater smart thermometer review | PLANNED |
-| Week 2 | ROUNDUP | Air Fryer Accessories Worth Buying — And the Ones That Are a Waste of Money | best air fryer accessories | PLANNED |
-| Week 3 | INFORMATIONAL | Is a $200 Air Fryer Actually Worth It Over a $90 One? Real Data Answers | expensive vs cheap air fryer worth it | PLANNED |
-| Week 4 | SEASONAL | Black Friday Kitchen Deals 2026 — What's Actually Worth Buying | black friday air fryer deals 2026 | PLANNED |
-
-### NOVEMBER 2026
-
-| Week | Type | Title | Primary Keyword | Status |
-|------|------|-------|----------------|--------|
-| Week 1 | ROUNDUP | Kitchen Gifts Under $50 That Feel Expensive — Holiday 2026 | best kitchen gifts under 50 | PLANNED |
-| Week 2 | ROUNDUP | Kitchen Gifts Under $100 Real Cooks Will Use — Not Just Unwrap | best kitchen gifts under 100 | PLANNED |
-| Week 3 | INFORMATIONAL | The Air Fryer Mistake That's Ruining Your Food (And How to Fix It) | common air fryer mistakes | PLANNED |
-| Week 4 | ROUNDUP | Smart Kitchen Gadgets That Are Actually Worth the Tech Premium | best smart kitchen gadgets 2026 | PLANNED |
+### 5. Pillar Roundup — Non-Toxic Cookware
+- Status: PLANNED — publish after 3+ Staple posts are live
+- Topic TBD
 
 ---
 
-## Status Key
-- PLANNED — on the calendar, not started
-- KEYWORD APPROVED — primary keyword confirmed by Varun
-- IN RESEARCH — deep research in progress
-- DRAFT READY — article written, awaiting Varun review
-- APPROVED — Varun approved, ready to publish
-- PUBLISHED — live on site, URL recorded below
-- URL: [paste live URL here when published]
+## Retired From Queue — May 30, 2026
+- Ninja AF101 — outside micro-niche
+- Chefman TurboFry — outside micro-niche
+- Dash Tasti-Crisp — outside micro-niche
+- Air Fryer vs Oven informational — outside micro-niche
+- Most Repurchased Nonstick Pans roundup — replace with non-toxic cookware equivalent
+
+---
+
+## Published Articles — All Live
+
+| # | Title | Type | Category | Post ID | URL | Published |
+|---|-------|------|----------|---------|-----|-----------|
+| 1 | COSORI TurboBlaze Air Fryer Review | Staple | Air Fryers | 13/13 | /cosori-turboblaze-air-fryer-review/ | 2026-05 |
+| 2 | Ninja Air Fryer Pro AF141 Review | Staple | Air Fryers | 14/14 | /ninja-air-fryer-pro-review/ | 2026-05 |
+| 3 | CAROTE 19pc Pots and Pans Set Review | Staple | Cookware | 34/34 | /carote-19-piece-pots-and-pans-set-review/ | 2026-05 |
+| 4 | Tramontina 12-Inch Frying Pan Review | Staple | Cookware | 36/36 | /tramontina-12-inch-frying-pan-review/ | 2026-05 |
+| 5 | COSORI Electric Kettle 1.7L Review | Staple | Kettles | 37/37 | /cosori-electric-kettle-1-7l-review-2026/ | 2026-05 |
+| 6 | Lodge Enamel Braiser Review | Staple | Cookware | 40/40 | /lodge-essential-enamel-braiser-review-2026/ | 2026-05 |
+| 7 | Instant Pot 7.5Qt RIO Wide Review | Staple | Multicooker | 41/41 | /instant-pot-7-5qt-rio-wide-review-2026/ | 2026-05 |
+| 8 | KitchenAid Artisan 5Qt Stand Mixer Review | Staple | Stand Mixers | 42/42 | /kitchenaid-artisan-5qt-stand-mixer-review-2026/ | 2026-05 |
+| 9 | Ninja BN701 Professional Plus Blender Review | Staple | Blenders | 43/43 | /ninja-bn701-professional-plus-blender-review-2026/ | 2026-05 |
+| 10 | Cuisinart Chef's Classic Dutch Oven Review | Staple | Cookware | 44/44 | /cuisinart-chefs-classic-enameled-cast-iron-dutch-oven-review-2026/ | 2026-05 |
+| 11 | Air Fryers Under $100 Most Reviewed | Pillar | Air Fryers | 83/103 | /air-fryers-under-100-most-reviewed/ | 2026-05-25 |
+| 12 | Instant Pot Vortex Plus 6QT Review | Staple | Air Fryers | 86/106 | /instant-pot-vortex-plus-6qt-air-fryer-review/ | 2026-05-27 |
+| 13 | Nordic Ware Half Sheet Pan Review | Staple | Bakeware | 90/107 | /nordic-ware-half-sheet-pan-review/ | 2026-05-27 |
 
 ---
 
 ## Seasonal Calendar — Hard Deadlines
 
-| Event | Brief Due | Publish Date | Notes |
-|-------|-----------|--------------|-------|
-| Amazon Prime Day | Late June | July 1 | High-traffic window — air fryers always spike |
-| Black Friday | October 25 | November 1 | Biggest revenue window of the year |
-| Christmas Gift Guides | November 15 | November 22 | Must be indexed before December |
-| Birthday Gift Guides | Rolling | Rolling | Evergreen — no deadline, publish when ready |
+| Event | Content Brief Due | Publish By | Notes |
+|-------|------------------|------------|-------|
+| Amazon Prime Day | Late June 2026 | July 1, 2026 | Non-toxic cookware angle — cast iron deals |
+| Black Friday | October 1, 2026 | November 1, 2026 | Biggest revenue window |
+| Christmas Gift Guides | November 1, 2026 | November 15, 2026 | Must be indexed before December |
+| Birthday Gift Guides | Rolling | Rolling | Evergreen — no deadline |
 
 ---
 
 ## Quarterly Maintenance Schedule
-
 Every 90 days, re-verify all published articles:
 - Re-check Amazon star ratings (update if changed by 0.1+ stars)
 - Re-check review counts (update if grown significantly)
 - Re-check prices (update if changed by more than 10%)
-- Update "Last Updated" stamp on any article that was changed
-- Log verified date in RESEARCH_VAULT.md under each product entry
+- Update "Last Updated" stamp on any changed article
+- Log verified date in RESEARCH_VAULT.md
 
 Next scheduled maintenance: 2026-08-24
 
 ---
 
-## June Week 1 — APPROVED
-
-- Type: Roundup
-- Primary keyword: air fryer under $100 with most reviews
-- Title: "The Air Fryers Under $100 That 600,000+ Verified Amazon Buyers Keep Coming Back To"
-- Status: PUBLISHED
-- Products (re-verify review counts at time of writing):
-  * Ninja AF141 — ~386,000 reviews / 4.7★ / ~$89–99
-  * Cosori TurboBlaze 6Qt — ~19,600 reviews / 4.8★ / ~$89–99
-  * Instant Vortex Plus 6Qt — ~71,000 reviews / 4.5★ / ~$80–99
-  * Ninja AF101 4Qt — ~83,000 reviews / 4.7★ / ~$79–99
-  * Chefman TurboFry 2Qt — ~15,000 reviews / 4.6★ / ~$30–40
-- Note: all review counts are Amazon US only — label as such in article
-
----
-
-## June Week 2 — PUBLISHED
-
-- Type: Review
-- Primary keyword: instant pot vortex plus 6qt review
-- Title: "Instant Pot Vortex Plus 6QT Air Fryer Review (2026): Plastic Smell, Coating Concerns, and What 71,000 Buyers Actually Experienced"
-- Status: PUBLISHED
-- URL: https://kitchenviralpicks.com/instant-pot-vortex-plus-6qt-air-fryer-review/
-- Local Post ID: 86 | Live Post ID: 106
-- Published: 2026-05-27
-
----
-
-## Nordic Ware Half Sheet Pan — PUBLISHED
-
-- Type: Review
-- Category: Bakeware (first published Bakeware article — category now has 1 article)
-- Primary keyword: nordic ware half sheet pan review
-- Title: "Nordic Ware Baker's Half Sheet Pan Review: What 34,000 Buyers Say After Years of Daily Use"
-- Status: PUBLISHED
-- URL: https://kitchenviralpicks.com/nordic-ware-half-sheet-pan-review/
-- Local Post ID: 90 | Live Post ID: 107
-- Published: May 2026
-- Review count at publish: 34,000+
-- Price at publish: ~$32.00
-- Score: 4.7★
-
----
-
-## Next Priority
-
-Bakeware and Kettles are the weakest categories — each has only 1 published article.
-Next article should be one of:
-- Bakeware review (e.g. Nordic Ware Half Sheet Cooling Rack, USA Pan loaf pan, or similar)
-- Kettles review (e.g. second kettle to build out category depth)
-
-Publish Ninja AF101 review next (already in content queue — completes roundup internal links).
+## Status Key
+- PLANNED — on calendar, not started
+- RESEARCH PENDING — waiting for Varun screenshots
+- RESEARCH COMPLETE — 9-field report done, keyword pending
+- KEYWORD APPROVED — primary keyword confirmed
+- DRAFT READY — article written, awaiting Varun review
+- APPROVED — Varun approved, ready to publish
+- PUBLISHED — live on site
