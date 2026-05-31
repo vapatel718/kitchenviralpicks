@@ -22,6 +22,31 @@
 
 ---
 
+## 1B. Site Direction — Locked May 30, 2026
+
+Micro-niche: Healthy Non-Toxic Cookware
+Target materials: cast iron, carbon steel, ceramic coated, stainless steel
+Key signals: PFAS-free, PFOA-free, PTFE-free
+Audience: health-conscious buyers with high purchase intent
+
+New content targets non-toxic cookware only.
+Existing air fryer, kettle, bakeware, blender, multicooker articles stay live — no new ones.
+
+### Three Content Tiers
+- Response posts: 1,200–1,500 words · single-blog.php · informational, ranks fast
+- Staple posts: 1,800–2,200 words · single.php · product reviews, money pages
+- Pillar posts: 2,800–3,200 words · single-roundup.php · roundups, traffic drivers
+
+Publish order: Response first → Staple → Pillar
+
+### Deborah's Voice — Non-Toxic Angle
+- Never claim physical testing — Deborah analyzes verified buyer data only
+- Safe phrasing: "analyzed X verified Amazon buyer reviews"
+- Never: "tested in her kitchen", "after cooking with it", "hands-on testing"
+- Always surface PFAS-free / PFOA-free / PTFE-free where relevant to the product
+
+---
+
 ## 2. Brand — Never Change
 
 Colors:
