@@ -25,7 +25,7 @@ while ( have_posts() ) : the_post();
 
 	// Parse specs: rows separated by \n, each row is Key|Value
 	$spec_pairs   = array();
-	$kvp_capacity = '';
+	$kvp_capacity = get_post_meta( get_the_ID(), 'kvp_capacity', true );
 	if ( $specs_raw ) {
 		foreach ( kvp_split_lines( $specs_raw ) as $row ) {
 			$parts = explode( '|', $row, 2 );
@@ -33,7 +33,7 @@ while ( have_posts() ) : the_post();
 				$key          = trim( $parts[0] );
 				$val          = trim( $parts[1] );
 				$spec_pairs[] = array( $key, $val );
-				if ( ! $kvp_capacity && 'capacity' === strtolower( $key ) ) {
+				if ( empty( $kvp_capacity ) && 'capacity' === strtolower( $key ) ) {
 					$kvp_capacity = $val;
 				}
 			}
