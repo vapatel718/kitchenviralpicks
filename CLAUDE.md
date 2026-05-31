@@ -168,6 +168,7 @@ Never write a fix prompt based on assumption.
 - FTC disclosure must appear BEFORE the first affiliate link on every page
 - NEVER copy Amazon product descriptions — always rewrite in original words
 - Prices always: "at the time of writing, priced around $X"
+- kvp_price field — numeric only, no dollar sign, no tilde. Example: 24.32 not ~$24.32 (single.php adds the $ and ~ automatically)
 - Amazon ratings always: "X.X stars on Amazon (XX,XXX reviews)"
 - All Amazon links must include rel="sponsored nofollow"
 - NEVER use: game-changer, must-have, look no further, boasts, features, we tested

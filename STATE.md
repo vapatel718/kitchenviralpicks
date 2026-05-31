@@ -1,17 +1,55 @@
+# ARTICLE CONTENT RULES — PERMANENT — DO NOT REMOVE
+These rules apply to every article published on KVP without exception.
+
+POST CONTENT (post_content) contains ONLY:
+- Intro paragraphs
+- Narrative H2 and H3 sections (what it is, buyer insights, care guides, comparisons)
+- HTML tables for comparison sections
+- Plain prose paragraphs
+- NO specs tables using the kvp specs field data
+- NO buy it if / skip it if sections
+- NO verdict paragraphs
+- NO pros and cons lists
+- NO final verdict text
+
+CUSTOM FIELDS contain ALL structured sections:
+- kvp_verdict_line — one sentence for hero card
+- kvp_buy_if — newline separated, one item per line
+- kvp_skip_if — newline separated, one item per line
+- kvp_pros — newline separated, one item per line
+- kvp_cons — newline separated, one item per line
+- kvp_specs — Key:Value format, one pair per line
+- kvp_final_verdict — full paragraph for Deborah block and red verdict block
+- kvp_capacity — fourth metrics tile value (weight, capacity, or key spec)
+
+PRICE FORMAT — always store as numeric only, no dollar sign, no tilde:
+- CORRECT: 24.32
+- WRONG: ~$24.32 or $24.32
+
+single.php renders the dollar sign and tilde automatically.
+Never add formatting to the price field value.
+
+NEVER append to post_content after initial creation.
+ALWAYS set post_content in one complete command.
+ALWAYS verify with grep after setting to confirm no structured sections leaked in.
+
+---
+
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-31
-Last commit: ee9c1ff — roundup card redesign + live git sync fixed (2026-05-28)
+Last commit: bad30dd — fix post 99 lodge — add comparison table, fourth metrics tile, breadcrumb category name
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Completed Task
-- Lodge Cast Iron Skillet (Post 99): three database fixes applied 2026-05-31 ✅
-  - kvp_capacity set to '5.35 lbs' (metrics fourth tile)
-  - Comparison table HTML appended to post_content
-  - Category fixed: ghost category "4" deleted, post correctly assigned to Cookware (term_id 4, slug: cookware). Breadcrumb now shows Home > Cookware > Lodge 10.25" Cast Iron Skillet
-  - All custom fields confirmed: kvp_verdict_line, kvp_buy_if, kvp_skip_if, kvp_pros, kvp_cons, kvp_specs, kvp_final_verdict all set
+- Lodge Cast Iron Skillet (Post 99): full content clean rewrite 2026-05-31 ✅
+  - post_content completely replaced — clean narrative only (5 H2 sections + comparison table)
+  - No structured sections in post_content (no specs, no buy/skip, no verdict, no pros/cons)
+  - kvp_capacity confirmed at '5.35 lbs'
+  - ARTICLE CONTENT RULES added permanently to top of STATE.md
+  - kvp_price format corrected in STATE.md (numeric only) and documented in CLAUDE.md
 - Micro-niche pivot locked (May 30): Healthy Non-Toxic Cookware. New content targets cast iron, carbon steel, ceramic coated, stainless steel only. Existing air fryer/kettle/bakeware articles stay live — no new ones.
 - KitchenAid Artisan (Post 42): kvp_cons, kvp_final_verdict, post_content all fixed to $449.99 on local ✅ and live ✅ — browser verified May 31, 2026.
 - Nordic Ware (Post 107): GSC indexing request submitted May 31, 2026 ✅
@@ -74,7 +112,7 @@ Use ONLY these key names when publishing articles. Single.php reads these exact 
 | kvp_cons | pipe-separated items | same format as kvp_pros |
 | kvp_product_name | plain string | Full product name for score bar title |
 | kvp_card_verdict | plain string | Triggers KVP Pick badge only — NOT the verdict line |
-| kvp_price | plain string | e.g. "~$24.90" |
+| kvp_price | numeric only — no $ no ~ | e.g. 24.90 not ~$24.90 |
 | kvp_rating | numeric | e.g. "4.7" |
 | kvp_review_count | plain string | e.g. "164,000+" |
 | kvp_amazon_url | URL | Full URL with affiliate tag |
