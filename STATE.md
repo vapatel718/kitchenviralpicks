@@ -7,17 +7,20 @@ Last commit: ee9c1ff — roundup card redesign + live git sync fixed (2026-05-28
 Phase 7 — Content Growth
 
 ## Last Completed Task
+- Lodge Cast Iron Skillet (Post 99): three database fixes applied 2026-05-31 ✅
+  - kvp_capacity set to '5.35 lbs' (metrics fourth tile)
+  - Comparison table HTML appended to post_content
+  - Category fixed: ghost category "4" deleted, post correctly assigned to Cookware (term_id 4, slug: cookware). Breadcrumb now shows Home > Cookware > Lodge 10.25" Cast Iron Skillet
+  - All custom fields confirmed: kvp_verdict_line, kvp_buy_if, kvp_skip_if, kvp_pros, kvp_cons, kvp_specs, kvp_final_verdict all set
 - Micro-niche pivot locked (May 30): Healthy Non-Toxic Cookware. New content targets cast iron, carbon steel, ceramic coated, stainless steel only. Existing air fryer/kettle/bakeware articles stay live — no new ones.
 - KitchenAid Artisan (Post 42): kvp_cons, kvp_final_verdict, post_content all fixed to $449.99 on local ✅ and live ✅ — browser verified May 31, 2026.
-- Lodge 10.25" Cast Iron Skillet: product research report completed (May 30) — Staple post candidate, $24.90, 164K reviews, 4.7★. Report in RESEARCH_VAULT.md.
-- Google Sheets master tracker live: https://docs.google.com/spreadsheets/d/198BvIWWpYhK8b7Pev5lMdyTaSILVq8c6DLJ9brkaYTI — 5 tabs. First data entry July 2026.
 - Nordic Ware (Post 107): GSC indexing request submitted May 31, 2026 ✅
 - Roundup card (Post 103): full-width featured card, real photo, live ✅ — commit ee9c1ff
 
 ## Next Task
-1. Keyword research and approval for Lodge 10.25" Cast Iron Skillet article
+1. Browser-verify Post 99 at http://kitchenviralpicks.local/?p=99 — confirm layout renders correctly
 2. Research reports for GreenLife 16pc Ceramic Set and SENSARTE Ceramic Pan (Varun shares screenshots, Claude builds report)
-3. Begin writing Lodge article (Staple post — 1,800–2,200 words)
+3. Response post — non-toxic cookware question (topic TBD)
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -120,6 +123,7 @@ page-contact.php | approved
 | 11 | air-fryers-under-100-most-reviewed (roundup) | 83 / 103 | live ✅ |
 | 12 | instant-pot-vortex-plus-6qt | 86 / 106 | live ✅ |
 | 13 | nordic-ware-half-sheet-pan | 90 / 107 | live ✅ — GSC submitted 2026-05-31 |
+| 14 | lodge-cast-iron-skillet-review | 99 / TBD | local only — all fields set, category fixed 2026-05-31 |
 
 ---
 
