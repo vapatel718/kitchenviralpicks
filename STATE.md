@@ -44,6 +44,9 @@ Last commit: bad30dd — fix post 99 lodge — add comparison table, fourth metr
 Phase 7 — Content Growth
 
 ## Last Completed Task
+- archive.php — kvp_verdict_line fallback added for card verdict and snippet 2026-05-31 ✅
+- All future articles using kvp_verdict_line will display correctly on category pages
+- Deployed to live — commit b701897
 - kvp_get_price() fixed — always returns ~$ prefix, strips existing prefix before adding 2026-05-31 ✅
 - Deployed to live — commit 2156867
 - archive.php double ~$ prefix fixed — removed hardcoded prefix, kvp_get_price() handles it 2026-05-31 ✅
