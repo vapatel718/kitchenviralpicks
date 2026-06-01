@@ -44,6 +44,9 @@ Last commit: bad30dd — fix post 99 lodge — add comparison table, fourth metr
 Phase 7 — Content Growth
 
 ## Last Completed Task
+- archive.php price prefix fix — ~$ added to all kvp_price outputs (top-pick pill + card price) 2026-05-31 ✅
+- archive.php price styling — .kvp-arc-card-price updated to 18px bold on category cards ✅
+- Both fixes deployed to live ✅ — commit 89d45db
 - Live server: ghost category term_id 29 ("4") deleted 2026-05-31 ✅
   - Post 110 reassigned to Cookware (term_id 4) via wp post update --post_category (ID-safe)
   - Note: wp post term set treats numeric args as names not IDs — always use wp post update --post_category for category assignment
