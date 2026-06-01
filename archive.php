@@ -161,6 +161,12 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                 $card_product_name    = get_post_meta( get_the_ID(), 'kvp_product_name', true );
                 $card_verdict         = get_post_meta( get_the_ID(), 'kvp_verdict', true );
                 $card_verdict_snippet = get_post_meta( get_the_ID(), 'kvp_card_verdict', true );
+                if ( ! $card_verdict_snippet ) {
+                        $card_verdict_snippet = get_post_meta( get_the_ID(), 'kvp_verdict_line', true );
+                }
+                if ( ! $card_verdict ) {
+                        $card_verdict = get_post_meta( get_the_ID(), 'kvp_verdict_line', true );
+                }
             ?>
 
             <article class="kvp-arc-card" id="review-<?php the_ID(); ?>">
