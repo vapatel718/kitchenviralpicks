@@ -44,6 +44,10 @@ Last commit: bad30dd — fix post 99 lodge — add comparison table, fourth metr
 Phase 7 — Content Growth
 
 ## Last Completed Task
+- kvp_get_price() architecture fixed — returns clean numeric value only 2026-05-31 ✅
+- Templates own ~$ prefix — single.php lines 128/161/289, archive.php lines 113/228
+- This is the permanent correct architecture — do not add prefix inside kvp_get_price() again
+- Deployed to live — commit 90c375d
 - archive.php verdict duplicate fixed — only kvp_card_verdict_snippet falls back to kvp_verdict_line 2026-05-31 ✅
 - kvp_verdict does not fall back to prevent double rendering
 - Deployed to live — commit 61c56e4
