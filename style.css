@@ -2390,9 +2390,13 @@ h1, h2, h3,
 }
 
 .kvp-arc-card-price {
-    font-size: 13px;
+    font-size: 18px;
+    font-weight: 700;
     color: #E8401C;
-    margin: auto 0 10px;
+    font-family: 'Lato', sans-serif;
+    line-height: 1;
+    margin: 6px 0 4px;
+    display: block;
 }
 
 .kvp-arc-card-snippet {
