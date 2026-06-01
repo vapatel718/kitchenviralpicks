@@ -174,7 +174,7 @@ function kvp_get_price( $key, $post_meta_fallback = 'kvp_price', $post_id = null
 		return '';
 	}
 	$price = ltrim( trim( $price ), '~$' );
-	return '~$' . esc_html( $price );
+	return esc_html( $price );
 }
 
 // Maps post slugs to canonical price registry keys. Add new slugs here when articles are published.
