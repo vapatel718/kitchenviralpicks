@@ -44,6 +44,9 @@ Last commit: bad30dd — fix post 99 lodge — add comparison table, fourth metr
 Phase 7 — Content Growth
 
 ## Last Completed Task
+- archive.php verdict duplicate fixed — only kvp_card_verdict_snippet falls back to kvp_verdict_line 2026-05-31 ✅
+- kvp_verdict does not fall back to prevent double rendering
+- Deployed to live — commit 61c56e4
 - archive.php — kvp_verdict_line fallback added for card verdict and snippet 2026-05-31 ✅
 - All future articles using kvp_verdict_line will display correctly on category pages
 - Deployed to live — commit b701897
