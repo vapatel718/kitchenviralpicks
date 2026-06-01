@@ -167,13 +167,14 @@ function kvp_split_lines( $raw ) {
 function kvp_get_price( $key, $post_meta_fallback = 'kvp_price', $post_id = null ) {
 	$option_key = 'kvp_price_' . $key;
 	$price      = get_option( $option_key, '' );
-	if ( $price ) {
-		return esc_html( $price );
-	}
-	if ( $post_id ) {
+	if ( ! $price && $post_id ) {
 		$price = get_post_meta( $post_id, $post_meta_fallback, true );
 	}
-	return $price ? esc_html( $price ) : '';
+	if ( ! $price ) {
+		return '';
+	}
+	$price = ltrim( trim( $price ), '~$' );
+	return '~$' . esc_html( $price );
 }
 
 // Maps post slugs to canonical price registry keys. Add new slugs here when articles are published.
