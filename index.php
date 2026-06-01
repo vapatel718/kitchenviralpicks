@@ -130,7 +130,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           );
           ?>
         </p>
-        <p class="kvp-hero-card-price"><?php echo esc_html( $h_price ); ?></p>
+        <p class="kvp-hero-card-price">~$<?php echo esc_html( $h_price ); ?></p>
         <p class="kvp-hero-card-price-note"><?php esc_html_e( 'at time of writing · price may vary', 'kvp-theme' ); ?></p>
         <div class="kvp-hero-card-verdict">&ldquo;<?php echo esc_html( $h_verdict ); ?>&rdquo;</div>
         <a href="<?php echo esc_url( $h_link ); ?>" class="kvp-hero-card-btn">
@@ -256,7 +256,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
             <?php if ( $count ) : ?>&middot; <?php echo esc_html( $count ); ?>+ <?php esc_html_e( 'reviews', 'kvp-theme' ); ?><?php endif; ?>
           </p>
           <?php if ( $price ) : ?>
-          <p class="kvp-rc-price"><?php echo esc_html( $price ); ?></p>
+          <p class="kvp-rc-price">~$<?php echo esc_html( $price ); ?></p>
           <p class="kvp-rc-price-note"><?php esc_html_e( 'at time of writing · price may vary', 'kvp-theme' ); ?></p>
           <?php endif; ?>
           <div class="kvp-rc-spacer"></div>
@@ -330,7 +330,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
             <?php if ( $count ) : ?>&middot; <?php echo esc_html( $count ); ?>+ <?php esc_html_e( 'reviews', 'kvp-theme' ); ?><?php endif; ?>
           </p>
           <?php if ( $price ) : ?>
-          <p class="kvp-rc-price"><?php echo esc_html( $price ); ?></p>
+          <p class="kvp-rc-price">~$<?php echo esc_html( $price ); ?></p>
           <p class="kvp-rc-price-note"><?php esc_html_e( 'at time of writing · price may vary', 'kvp-theme' ); ?></p>
           <?php endif; ?>
           <div class="kvp-rc-spacer"></div>
@@ -407,7 +407,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
             <?php if ( $count ) : ?>&middot; <?php echo esc_html( $count ); ?>+ <?php esc_html_e( 'reviews', 'kvp-theme' ); ?><?php endif; ?>
           </p>
           <?php if ( $price ) : ?>
-          <p class="kvp-rc-price"><?php echo esc_html( $price ); ?></p>
+          <p class="kvp-rc-price">~$<?php echo esc_html( $price ); ?></p>
           <p class="kvp-rc-price-note"><?php esc_html_e( 'at time of writing · price may vary', 'kvp-theme' ); ?></p>
           <?php endif; ?>
           <div class="kvp-rc-spacer"></div>
