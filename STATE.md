@@ -38,53 +38,33 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-05-31
-Last commit: bad30dd — fix post 99 lodge — add comparison table, fourth metrics tile, breadcrumb category name
+Last commit: 29903cd — update STATE.md — index.php price prefix fix deployed
 
 ## Current Phase
 Phase 7 — Content Growth
 
-## Last Completed Task
-- index.php price prefix fixed — ~$ added to all four price output lines 2026-05-31 ✅
-- All three templates now consistent: single.php, archive.php, index.php
-- Deployed to live — commit 531eb13
-- kvp_get_price() architecture fixed — returns clean numeric value only 2026-05-31 ✅
-- Templates own ~$ prefix — single.php lines 128/161/289, archive.php lines 113/228
-- This is the permanent correct architecture — do not add prefix inside kvp_get_price() again
-- Deployed to live — commit 90c375d
-- archive.php verdict duplicate fixed — only kvp_card_verdict_snippet falls back to kvp_verdict_line 2026-05-31 ✅
-- kvp_verdict does not fall back to prevent double rendering
-- Deployed to live — commit 61c56e4
-- archive.php — kvp_verdict_line fallback added for card verdict and snippet 2026-05-31 ✅
-- All future articles using kvp_verdict_line will display correctly on category pages
-- Deployed to live — commit b701897
-- kvp_get_price() fixed — always returns ~$ prefix, strips existing prefix before adding 2026-05-31 ✅
-- Deployed to live — commit 2156867
-- archive.php double ~$ prefix fixed — removed hardcoded prefix, kvp_get_price() handles it 2026-05-31 ✅
-- Deployed to live — commit 872c5c9
-- All kvp_price fields standardized to numeric only on local and live 2026-05-31 ✅
-  - 12 posts fixed on live (stripped ~$ prefix): 107, 106, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13
-  - 12 posts fixed on local (stripped ~$ prefix): 90, 86, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13
-  - Post 99 / 110 already correct at 24.32 ✅
-  - Price discrepancies noted (local vs live): post 44 (129.50 vs 69.99), post 14 (89.99 vs 129.99) — review separately
-- Lodge post 110 kvp_verdict_line confirmed and corrected on live — ~$24.32 format ✅
-- Double prefix bug resolved — template adds ~$ at render, field stores numeric only
-- archive.php price prefix fix — ~$ added to all kvp_price outputs (top-pick pill + card price) 2026-05-31 ✅
-- archive.php price styling — .kvp-arc-card-price updated to 18px bold on category cards ✅
-- Both fixes deployed to live ✅ — commit 89d45db
-- Live server: ghost category term_id 29 ("4") deleted 2026-05-31 ✅
-  - Post 110 reassigned to Cookware (term_id 4) via wp post update --post_category (ID-safe)
-  - Note: wp post term set treats numeric args as names not IDs — always use wp post update --post_category for category assignment
-  - Cookware count now 5, Uncategorized count 0, no ghost categories remain
-- Lodge Cast Iron Skillet (Post 99): full content clean rewrite 2026-05-31 ✅
-  - post_content completely replaced — clean narrative only (5 H2 sections + comparison table)
-  - No structured sections in post_content (no specs, no buy/skip, no verdict, no pros/cons)
-  - kvp_capacity confirmed at '5.35 lbs'
-  - ARTICLE CONTENT RULES added permanently to top of STATE.md
-  - kvp_price format corrected in STATE.md (numeric only) and documented in CLAUDE.md
-- Micro-niche pivot locked (May 30): Healthy Non-Toxic Cookware. New content targets cast iron, carbon steel, ceramic coated, stainless steel only. Existing air fryer/kettle/bakeware articles stay live — no new ones.
-- KitchenAid Artisan (Post 42): kvp_cons, kvp_final_verdict, post_content all fixed to $449.99 on local ✅ and live ✅ — browser verified May 31, 2026.
-- Nordic Ware (Post 107): GSC indexing request submitted May 31, 2026 ✅
-- Roundup card (Post 103): full-width featured card, real photo, live ✅ — commit ee9c1ff
+## Last Session
+SESSION: 2026-05-31
+COMPLETED:
+- Lodge 10.25 Cast Iron Skillet review written, approved, published
+- Local post ID 99 — Live post ID 110
+- All custom fields set on local and live
+- single.php: ~$ prefix added to lines 128/161/289, kvp_capacity direct meta read added
+- archive.php: ~$ prefix on lines 113/228, kvp_verdict_line fallback for card snippet
+- index.php: ~$ prefix added to all four price output lines
+- kvp_get_price() fixed — returns clean numeric value, templates own ~$ prefix
+- ARTICLE CONTENT RULES added permanently to STATE.md
+- Ghost category deleted on live, post 110 assigned to Cookware
+- Comparison table styled — red header, alternating rows
+- All kvp_price fields standardized to numeric only on local and live
+- Last commit: 29903cd
+
+PENDING NEXT SESSION:
+- Fix price mismatches — Post 44 local vs live, Post 14 local vs live
+- Build single-blog.php template for Response posts
+- Write Response post 1 — Is Cast Iron Cookware Non-Toxic
+- GreenLife 16pc Ceramic Set — next product research
+- Submit Nordic Ware URL to Google Search Console
 
 ## Next Task
 1. Browser-verify Post 99 at http://kitchenviralpicks.local/?p=99 — confirm layout renders correctly
