@@ -44,6 +44,13 @@ Last commit: bad30dd — fix post 99 lodge — add comparison table, fourth metr
 Phase 7 — Content Growth
 
 ## Last Completed Task
+- All kvp_price fields standardized to numeric only on local and live 2026-05-31 ✅
+  - 12 posts fixed on live (stripped ~$ prefix): 107, 106, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13
+  - 12 posts fixed on local (stripped ~$ prefix): 90, 86, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13
+  - Post 99 / 110 already correct at 24.32 ✅
+  - Price discrepancies noted (local vs live): post 44 (129.50 vs 69.99), post 14 (89.99 vs 129.99) — review separately
+- Lodge post 110 kvp_verdict_line confirmed and corrected on live — ~$24.32 format ✅
+- Double prefix bug resolved — template adds ~$ at render, field stores numeric only
 - archive.php price prefix fix — ~$ added to all kvp_price outputs (top-pick pill + card price) 2026-05-31 ✅
 - archive.php price styling — .kvp-arc-card-price updated to 18px bold on category cards ✅
 - Both fixes deployed to live ✅ — commit 89d45db
