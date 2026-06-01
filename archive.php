@@ -110,7 +110,7 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                     </div>
                     <?php if ( $tp_price ) : ?>
                     <div class="kvp-arc-top-price-row">
-                        <span class="kvp-arc-price-pill">~$<?php echo esc_html( $tp_price ); ?></span>
+                        <span class="kvp-arc-price-pill"><?php echo esc_html( $tp_price ); ?></span>
                         <span class="kvp-arc-price-note"><?php esc_html_e( 'at time of writing', 'kvp-theme' ); ?></span>
                     </div>
                     <?php endif; ?>
@@ -222,7 +222,7 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
 
                     <?php if ( $card_price ) : ?>
                     <p class="kvp-arc-card-price">
-                        ~$<?php echo esc_html( $card_price ); ?>
+                        <?php echo esc_html( $card_price ); ?>
                         <span class="kvp-arc-tp-price-note"><?php esc_html_e( 'at time of writing', 'kvp-theme' ); ?></span>
                     </p>
                     <?php endif; ?>
