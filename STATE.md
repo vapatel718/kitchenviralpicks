@@ -44,6 +44,10 @@ Last commit: bad30dd — fix post 99 lodge — add comparison table, fourth metr
 Phase 7 — Content Growth
 
 ## Last Completed Task
+- Live server: ghost category term_id 29 ("4") deleted 2026-05-31 ✅
+  - Post 110 reassigned to Cookware (term_id 4) via wp post update --post_category (ID-safe)
+  - Note: wp post term set treats numeric args as names not IDs — always use wp post update --post_category for category assignment
+  - Cookware count now 5, Uncategorized count 0, no ghost categories remain
 - Lodge Cast Iron Skillet (Post 99): full content clean rewrite 2026-05-31 ✅
   - post_content completely replaced — clean narrative only (5 H2 sections + comparison table)
   - No structured sections in post_content (no specs, no buy/skip, no verdict, no pros/cons)
