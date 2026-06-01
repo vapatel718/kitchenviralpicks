@@ -44,6 +44,8 @@ Last commit: bad30dd — fix post 99 lodge — add comparison table, fourth metr
 Phase 7 — Content Growth
 
 ## Last Completed Task
+- archive.php double ~$ prefix fixed — removed hardcoded prefix, kvp_get_price() handles it 2026-05-31 ✅
+- Deployed to live — commit 872c5c9
 - All kvp_price fields standardized to numeric only on local and live 2026-05-31 ✅
   - 12 posts fixed on live (stripped ~$ prefix): 107, 106, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13
   - 12 posts fixed on local (stripped ~$ prefix): 90, 86, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13
