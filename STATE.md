@@ -44,6 +44,9 @@ Last commit: bad30dd — fix post 99 lodge — add comparison table, fourth metr
 Phase 7 — Content Growth
 
 ## Last Completed Task
+- index.php price prefix fixed — ~$ added to all four price output lines 2026-05-31 ✅
+- All three templates now consistent: single.php, archive.php, index.php
+- Deployed to live — commit 531eb13
 - kvp_get_price() architecture fixed — returns clean numeric value only 2026-05-31 ✅
 - Templates own ~$ prefix — single.php lines 128/161/289, archive.php lines 113/228
 - This is the permanent correct architecture — do not add prefix inside kvp_get_price() again
