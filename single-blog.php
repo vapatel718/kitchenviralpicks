@@ -19,11 +19,27 @@ while ( have_posts() ) : the_post();
 	<!-- HERO -->
 	<div class="kvp-blog-hero">
 		<div class="kvp-blog-hero-inner">
-			<span class="kvp-blog-eyebrow"><?php echo esc_html( $eyebrow ); ?></span>
+			<?php
+			$categories = get_the_category();
+			$cat_name   = ! empty( $categories ) ? esc_html( $categories[0]->name ) : 'Cookware Guides';
+			$cat_link   = ! empty( $categories ) ? get_category_link( $categories[0]->term_id ) : get_home_url() . '/cookware/';
+			?>
+			<nav class="kvp-blog-breadcrumb">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+				<span>›</span>
+				<a href="<?php echo esc_url( $cat_link ); ?>"><?php echo $cat_name; ?></a>
+				<span>›</span>
+				<span><?php the_title(); ?></span>
+			</nav>
+			<span class="kvp-blog-cat-pill"><?php echo $cat_name; ?></span>
 			<h1 class="kvp-blog-title"><?php the_title(); ?></h1>
-			<?php if ( $excerpt ) : ?>
-			<p class="kvp-blog-excerpt"><?php echo esc_html( $excerpt ); ?></p>
-			<?php endif; ?>
+			<div class="kvp-blog-byline">
+				<div class="kvp-blog-avatar">D</div>
+				<div>
+					<span class="kvp-blog-byline-name">Deborah</span>
+					<span class="kvp-blog-byline-meta">Kitchen Researcher &amp; Product Analyst &middot; <?php echo get_the_date( 'F Y' ); ?> &middot; 7 min read</span>
+				</div>
+			</div>
 		</div>
 	</div>
 
