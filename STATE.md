@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-02
-Last commit: c44b1a6 — chore: delete stale files — tasks.md, LOGO.html, PLUGIN_PLAN.md
+Last commit: 9795ce9 — feat: build single-blog.php + single-blog.css — Response post template
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -46,7 +46,7 @@ Phase 7 — Content Growth
 ## Last Session
 SESSION: 2026-06-01
 COMPLETED:
-- File system rebuilt — DECISIONS.md and SPEC.md created, stale files deleted, CLAUDE.md compressed.
+- single-blog.php and single-blog.css built and committed. Inline style block removed. CSS isolated to single-blog.css. Enqueue added to functions.php conditional on template.
 
 PENDING NEXT SESSION:
 - FIX FIRST: Diagnose and resolve theme CSS conflicts in single-blog.php — browser test at kitchenviralpicks.local before any content work
@@ -56,7 +56,7 @@ PENDING NEXT SESSION:
 - Submit Nordic Ware URL to Google Search Console
 
 ## Next Task
-Build single-blog.php — Builder Protocol. Claude Code reads style.css, functions.php, single.php. Reports conflicts. Builds single-blog.php + single-blog.css in one shot.
+Assign Blog Post template to Post 108 in WP admin. Verify in browser at kitchenviralpicks.local.
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
