@@ -1,201 +1,27 @@
 /*
- * single-blog.css — KitchenViralPicks
- * Response Post Template — isolated stylesheet
- * Loaded only when single-blog.php is the active template.
- * Never modify style.css to solve problems in this file.
+ * single-blog.css — Response Post Template
+ * Every rule scoped under #kvp-blog-main for specificity over theme styles.
+ * Loaded only when single-blog.php is active (enqueued in functions.php).
  */
 
-/* ─── RESET OVERRIDES ──────────────────────────────────────────
-   style.css strips p/ul/ol/li margin globally. Restore for reading.
-   Scoped under #kvp-blog-main so these never bleed into other templates. */
-
-#kvp-blog-main .kvp-blog-content p,
-#kvp-blog-main .kvp-blog-content li {
-    margin-bottom: 1.25em;
-}
-
-#kvp-blog-main .kvp-blog-content ul,
-#kvp-blog-main .kvp-blog-content ol {
-    padding-left: 1.5em;
-    margin-bottom: 1.25em;
-}
-
-/* style.css uses !important on .wp-block-group — must match to override */
-#kvp-blog-main .wp-block-group,
-#kvp-blog-main .has-global-padding {
-    padding: revert !important;
-    margin: revert !important;
-}
-
-/* ─── PAGE WRAPPER ─────────────────────────────────────────────── */
-
+/* ── Page wrapper ── */
 #kvp-blog-main {
-    background: var(--color-bg, #FFF8F5);
-    min-height: 60vh;
+    background: #FFF8F5;
 }
 
-.kvp-blog-wrap {
-    width: 100%;
-}
-
-/* ─── HERO ─────────────────────────────────────────────────────── */
-
-.kvp-blog-hero {
+/* ── Hero ── */
+#kvp-blog-main .kvp-blog-hero {
     background: #FFF0EB;
-    padding: 40px 16px 32px;
+    padding: 36px 32px 32px;
 }
-
-.kvp-blog-hero-inner {
-    max-width: 720px;
-    margin: 0 auto;
-}
-
-.kvp-blog-eyebrow {
-    display: inline-block;
-    font-family: var(--font-body, 'Lato', Arial, sans-serif);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--color-primary, #E8401C);
-    margin-bottom: 14px;
-}
-
-.kvp-blog-title {
-    font-family: var(--font-heading, 'Playfair Display', serif);
-    font-size: 30px;
-    line-height: 1.25;
-    color: var(--color-text, #1A1A1A);
-    margin-bottom: 16px;
-}
-
-.kvp-blog-excerpt {
-    font-family: var(--font-body, 'Lato', Arial, sans-serif);
-    font-size: 17px;
-    line-height: 1.65;
-    color: #555;
-    max-width: 640px;
-    margin-bottom: 0;
-}
-
-/* ─── CONTENT AREA ─────────────────────────────────────────────── */
-
-.kvp-blog-content-wrap {
-    padding: 32px 16px 56px;
-}
-
-.kvp-blog-content {
-    max-width: 720px;
-    margin: 0 auto;
-    background: #ffffff;
-    padding: 32px 20px;
-    border-radius: 4px;
-}
-
-/* ─── READING TYPOGRAPHY ───────────────────────────────────────── */
-
-.kvp-blog-content h2 {
-    font-family: var(--font-heading, 'Playfair Display', serif);
-    font-size: 22px;
-    line-height: 1.3;
-    color: var(--color-text, #1A1A1A);
-    margin-top: 36px;
-    margin-bottom: 14px;
-}
-
-.kvp-blog-content h3 {
-    font-family: var(--font-body, 'Lato', Arial, sans-serif);
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--color-text, #1A1A1A);
-    margin-top: 24px;
-    margin-bottom: 10px;
-}
-
-.kvp-blog-content p {
-    font-family: var(--font-body, 'Lato', Arial, sans-serif);
-    font-size: 17px;
-    line-height: 1.85;
-    color: #333;
-}
-
-.kvp-blog-content ul,
-.kvp-blog-content ol {
-    font-family: var(--font-body, 'Lato', Arial, sans-serif);
-    font-size: 17px;
-    line-height: 1.75;
-    color: #333;
-}
-
-.kvp-blog-content a {
-    color: var(--color-primary, #E8401C);
-    text-decoration: underline;
-}
-
-.kvp-blog-content a:hover {
-    color: var(--color-accent, #F76B35);
-}
-
-/* ─── TABLES — comparison tables in post_content ───────────────── */
-
-.kvp-blog-content table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 1.5em;
-    font-size: 15px;
-    font-family: var(--font-body, 'Lato', Arial, sans-serif);
-}
-
-.kvp-blog-content th {
-    background: #FFF0EB;
-    font-weight: 700;
-    padding: 10px 12px;
-    text-align: left;
-    border-bottom: 2px solid var(--color-primary, #E8401C);
-    color: var(--color-text, #1A1A1A);
-}
-
-.kvp-blog-content td {
-    padding: 10px 12px;
-    border-bottom: 1px solid #eee;
-    color: #333;
-}
-
-.kvp-blog-content tr:last-child td {
-    border-bottom: none;
-}
-
-/* ─── DESKTOP (min-width: 768px) ───────────────────────────────── */
-
-@media (min-width: 768px) {
-    .kvp-blog-hero {
-        padding: 56px 32px 48px;
-    }
-
-    .kvp-blog-title {
-        font-size: 38px;
-    }
-
-    .kvp-blog-excerpt {
-        font-size: 18px;
-    }
-
-    .kvp-blog-content-wrap {
-        padding: 48px 32px 80px;
-    }
-
-    .kvp-blog-content {
-        padding: 48px 56px;
-    }
-
-    .kvp-blog-content h2 {
-        font-size: 26px;
-        margin-top: 44px;
+@media (max-width: 767px) {
+    #kvp-blog-main .kvp-blog-hero {
+        padding: 28px 16px 28px;
     }
 }
 
-/* Hero elements */
-.kvp-blog-breadcrumb {
+/* ── Breadcrumb ── */
+#kvp-blog-main .kvp-blog-breadcrumb {
     font-size: 11px;
     color: #A32D0D;
     opacity: 0.7;
@@ -204,10 +30,16 @@
     align-items: center;
     gap: 6px;
 }
-.kvp-blog-breadcrumb span { opacity: 0.5; }
-.kvp-blog-breadcrumb a { color: inherit; text-decoration: none; }
+#kvp-blog-main .kvp-blog-breadcrumb span {
+    opacity: 0.5;
+}
+#kvp-blog-main .kvp-blog-breadcrumb a {
+    color: inherit;
+    text-decoration: none;
+}
 
-.kvp-blog-cat-pill {
+/* ── Category pill ── */
+#kvp-blog-main .kvp-blog-cat-pill {
     display: inline-flex;
     align-items: center;
     background: #E8401C;
@@ -221,7 +53,18 @@
     margin-bottom: 16px;
 }
 
-.kvp-blog-byline {
+/* ── H1 ── */
+#kvp-blog-main .kvp-blog-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #1A1A1A;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+/* ── Byline ── */
+#kvp-blog-main .kvp-blog-byline {
     display: flex;
     align-items: center;
     gap: 12px;
@@ -229,7 +72,7 @@
     border-top: 0.5px solid rgba(232,64,28,0.2);
     margin-top: 16px;
 }
-.kvp-blog-avatar {
+#kvp-blog-main .kvp-blog-avatar {
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -242,26 +85,28 @@
     justify-content: center;
     flex-shrink: 0;
 }
-.kvp-blog-byline-name {
+#kvp-blog-main .kvp-blog-byline-name {
     font-size: 13px;
     font-weight: 700;
     color: #1A1A1A;
     display: block;
 }
-.kvp-blog-byline-meta {
+#kvp-blog-main .kvp-blog-byline-meta {
     font-size: 11px;
     color: #888;
     display: block;
     margin-top: 1px;
 }
 
-/* Content area isolation */
-.kvp-blog-body {
+/* ── Content body — white reading surface ── */
+#kvp-blog-main .kvp-blog-body {
     background: #fff;
     max-width: 720px;
     margin: 0 auto;
-    padding: 32px;
+    padding: 40px 32px;
 }
 @media (max-width: 767px) {
-    .kvp-blog-body { padding: 24px 16px; }
+    #kvp-blog-main .kvp-blog-body {
+        padding: 28px 16px;
+    }
 }

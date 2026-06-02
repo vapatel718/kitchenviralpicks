@@ -28,8 +28,6 @@ while ( have_posts() ) : the_post();
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
 				<span>›</span>
 				<a href="<?php echo esc_url( $cat_link ); ?>"><?php echo $cat_name; ?></a>
-				<span>›</span>
-				<span><?php the_title(); ?></span>
 			</nav>
 			<span class="kvp-blog-cat-pill"><?php echo $cat_name; ?></span>
 			<h1 class="kvp-blog-title"><?php the_title(); ?></h1>
