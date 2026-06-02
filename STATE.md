@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-02
-Last commit: 9795ce9 — feat: build single-blog.php + single-blog.css — Response post template
+Last commit: 06f09fb — chore: update STATE.md — single-blog.php build complete
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -46,7 +46,7 @@ Phase 7 — Content Growth
 ## Last Session
 SESSION: 2026-06-01
 COMPLETED:
-- single-blog.php and single-blog.css built and committed. Inline style block removed. CSS isolated to single-blog.css. Enqueue added to functions.php conditional on template.
+- single-blog.php and single-blog.css built. Post 108 content expanded to 1,318 words. Button text and underline fixed. Excerpt added to fix duplicate intro paragraph.
 
 PENDING NEXT SESSION:
 - FIX FIRST: Diagnose and resolve theme CSS conflicts in single-blog.php — browser test at kitchenviralpicks.local before any content work
@@ -56,7 +56,7 @@ PENDING NEXT SESSION:
 - Submit Nordic Ware URL to Google Search Console
 
 ## Next Task
-Assign Blog Post template to Post 108 in WP admin. Verify in browser at kitchenviralpicks.local.
+Fix single-blog.php hero — add breadcrumb, red category pill, and Deborah byline (avatar + name + title + date + read time) to match approved mockup kvp_response_post.html exactly.
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -85,7 +85,7 @@ Retired from queue:
 - Dash Tasti-Crisp (retired — outside micro-niche)
 
 ## Known Issues
-- PRIORITY: single-blog.php has theme CSS conflicts — must diagnose and fix before any Response post is published.
+- single-blog.php hero missing breadcrumb, category pill, and byline. These are template elements — Claude Code must read single-blog.php first, then add the three missing hero elements.
 - Internal links from Cosori (Post 13) and Ninja (Post 14) reviews pointing to roundup (Post 103) — not yet added.
 
 ## Pending — No Blocker
