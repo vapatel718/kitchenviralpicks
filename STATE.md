@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-02
-Last commit: 06f09fb — chore: update STATE.md — single-blog.php build complete
+Last commit: 56ddb3a — fix: single-blog.php hero — breadcrumb, pill, byline added; eyebrow and excerpt removed
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -56,7 +56,7 @@ PENDING NEXT SESSION:
 - Submit Nordic Ware URL to Google Search Console
 
 ## Next Task
-Fix single-blog.php hero — add breadcrumb, red category pill, and Deborah byline (avatar + name + title + date + read time) to match approved mockup kvp_response_post.html exactly.
+Browser verify at kitchenviralpicks.local/what-is-non-toxic-cookware — confirm hero matches approved mockup, then fix Back to Cookware link in post_content
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -85,7 +85,7 @@ Retired from queue:
 - Dash Tasti-Crisp (retired — outside micro-niche)
 
 ## Known Issues
-- single-blog.php hero missing breadcrumb, category pill, and byline. These are template elements — Claude Code must read single-blog.php first, then add the three missing hero elements.
+- single-blog.php hero fix complete — browser verify required at kitchenviralpicks.local/what-is-non-toxic-cookware before any further content work
 - Internal links from Cosori (Post 13) and Ninja (Post 14) reviews pointing to roundup (Post 103) — not yet added.
 
 ## Pending — No Blocker
@@ -134,7 +134,7 @@ Live server on branch main. Last confirmed live commit: 063643d (2026-05-31).
 header.php | approved
 single.php | approved — updated 2026-05-28
 single-roundup.php | approved — updated 2026-05-28
-single-blog.php | WIP — built 2026-06-01, theme CSS conflicts not yet resolved
+single-blog.php | WIP — hero fixed 2026-06-02, browser verify pending
 archive.php | approved — updated 2026-05-28
 index.php | approved — updated 2026-05-28
 footer.php | approved
