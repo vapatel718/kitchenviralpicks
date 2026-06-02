@@ -37,37 +37,33 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 
 # STATE.md — KitchenViralPicks
 
-Last updated: 2026-05-31
-Last commit: 29903cd — update STATE.md — index.php price prefix fix deployed
+Last updated: 2026-06-01
+Last commit: c87012b — single-blog.php — work in progress, CSS conflicts pending fix
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Session
-SESSION: 2026-05-31
+SESSION: 2026-06-01
 COMPLETED:
-- Lodge 10.25 Cast Iron Skillet review written, approved, published
-- Local post ID 99 — Live post ID 110
-- All custom fields set on local and live
-- single.php: ~$ prefix added to lines 128/161/289, kvp_capacity direct meta read added
-- archive.php: ~$ prefix on lines 113/228, kvp_verdict_line fallback for card snippet
-- index.php: ~$ prefix added to all four price output lines
-- kvp_get_price() fixed — returns clean numeric value, templates own ~$ prefix
-- ARTICLE CONTENT RULES added permanently to STATE.md
-- Ghost category deleted on live, post 110 assigned to Cookware
-- Comparison table styled — red header, alternating rows
-- All kvp_price fields standardized to numeric only on local and live
-- Last commit: 29903cd
+- single-blog.php created and committed (150 lines)
+- Template Name: Blog Post / Template Post Type: post registered
+- Full CSS block scoped to kvp-blog-* and kvp-* prefixes
+- Hero: #FFF0EB background, breadcrumb, cat pill, Playfair Display h1, Deborah byline with read time
+- Body: max-width 740px, 17px Lato, line-height 1.85
+- CSS classes defined for: TOC, sections, callout, decode grid, material grid, internal link box, footer strip
+- Mobile breakpoint at 768px — single column grids, tighter padding
+- KNOWN ISSUE: theme CSS conflicts not yet resolved — template not browser-verified
 
 PENDING NEXT SESSION:
+- FIX FIRST: Diagnose and resolve theme CSS conflicts in single-blog.php — browser test at kitchenviralpicks.local before any content work
 - Fix price mismatches — Post 44 local vs live, Post 14 local vs live
-- Build single-blog.php template for Response posts
-- Write Response post 1 — Is Cast Iron Cookware Non-Toxic
+- Write Response post 1 — Is Cast Iron Cookware Non-Toxic (requires single-blog.php to be conflict-free first)
 - GreenLife 16pc Ceramic Set — next product research
 - Submit Nordic Ware URL to Google Search Console
 
 ## Next Task
-1. Browser-verify Post 99 at http://kitchenviralpicks.local/?p=99 — confirm layout renders correctly
+1. PRIORITY: Open single-blog.php in browser (assign a test post the Blog Post template), identify all theme CSS conflicts, fix them, browser-verify before any content work begins
 2. Research reports for GreenLife 16pc Ceramic Set and SENSARTE Ceramic Pan (Varun shares screenshots, Claude builds report)
 3. Response post — non-toxic cookware question (topic TBD)
 
@@ -98,8 +94,8 @@ Retired from queue:
 - Dash Tasti-Crisp (retired — outside micro-niche)
 
 ## Known Issues
+- PRIORITY: single-blog.php has theme CSS conflicts — must diagnose and fix before any Response post is published.
 - Internal links from Cosori (Post 13) and Ninja (Post 14) reviews pointing to roundup (Post 103) — not yet added.
-- single-blog.php template not yet built — needed for future Response/blog posts.
 
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
@@ -147,7 +143,7 @@ Live server on branch main. Last confirmed live commit: 063643d (2026-05-31).
 header.php | approved
 single.php | approved — updated 2026-05-28
 single-roundup.php | approved — updated 2026-05-28
-single-blog.php | NOT YET BUILT — needed for Response posts
+single-blog.php | WIP — built 2026-06-01, theme CSS conflicts not yet resolved
 archive.php | approved — updated 2026-05-28
 index.php | approved — updated 2026-05-28
 footer.php | approved
