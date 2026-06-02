@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-02
-Last commit: 56ddb3a — fix: single-blog.php hero — breadcrumb, pill, byline added; eyebrow and excerpt removed
+Last commit: 40669bf — fix: scope single-blog.css under #kvp-blog-main, H1 30px, breadcrumb title removed
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -56,7 +56,7 @@ PENDING NEXT SESSION:
 - Submit Nordic Ware URL to Google Search Console
 
 ## Next Task
-Browser verify at kitchenviralpicks.local/what-is-non-toxic-cookware — confirm hero matches approved mockup, then fix Back to Cookware link in post_content
+Full browser verify of Post 108 at kitchenviralpicks.local — check all 8 items on the verify list: hero breadcrumb, category pill, byline, TOC anchors (section 01–05), SVG icon white, footer strip shortened, Section 05 visible, mat-p cards updated
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -85,7 +85,8 @@ Retired from queue:
 - Dash Tasti-Crisp (retired — outside micro-niche)
 
 ## Known Issues
-- single-blog.php hero fix complete — browser verify required at kitchenviralpicks.local/what-is-non-toxic-cookware before any further content work
+- Post 108 word count: 1,850 raw (~1,570 prose). Target was 2,000+ raw. Gap is because ADDITION 1 paragraph and Cast Iron/Carbon Steel mat-p were already in the content from prior session. Within Response post 1,200–1,500 target. Flag to Varun if more content needed.
+- ADDITION 1 paragraph position: currently before the callout in Section 01. Prompt 2 said after the callout. Pending Varun decision: move it or leave it.
 - Internal links from Cosori (Post 13) and Ninja (Post 14) reviews pointing to roundup (Post 103) — not yet added.
 
 ## Pending — No Blocker
