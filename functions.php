@@ -31,6 +31,15 @@ function kvp_enqueue_assets() {
         array(),
         '20260513'
     );
+    // single-blog.css — loaded only when Blog Post template is active
+    if ( is_singular() && 'single-blog.php' === get_page_template_slug() ) {
+        wp_enqueue_style(
+            'kvp-single-blog',
+            get_stylesheet_directory_uri() . '/single-blog.css',
+            array( 'kvp-style' ),
+            '20260602'
+        );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'kvp_enqueue_assets' );
 
