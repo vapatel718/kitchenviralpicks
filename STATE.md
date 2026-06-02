@@ -37,8 +37,8 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 
 # STATE.md — KitchenViralPicks
 
-Last updated: 2026-06-01
-Last commit: c87012b — single-blog.php — work in progress, CSS conflicts pending fix
+Last updated: 2026-06-02
+Last commit: fbda8df — chore: add micro-niche and content tier rules to content-rules.md
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -46,14 +46,7 @@ Phase 7 — Content Growth
 ## Last Session
 SESSION: 2026-06-01
 COMPLETED:
-- single-blog.php created and committed (150 lines)
-- Template Name: Blog Post / Template Post Type: post registered
-- Full CSS block scoped to kvp-blog-* and kvp-* prefixes
-- Hero: #FFF0EB background, breadcrumb, cat pill, Playfair Display h1, Deborah byline with read time
-- Body: max-width 740px, 17px Lato, line-height 1.85
-- CSS classes defined for: TOC, sections, callout, decode grid, material grid, internal link box, footer strip
-- Mobile breakpoint at 768px — single column grids, tighter padding
-- KNOWN ISSUE: theme CSS conflicts not yet resolved — template not browser-verified
+- CLAUDE.md replaced with compressed builder protocol. content-rules.md updated with micro-niche and content tiers.
 
 PENDING NEXT SESSION:
 - FIX FIRST: Diagnose and resolve theme CSS conflicts in single-blog.php — browser test at kitchenviralpicks.local before any content work
@@ -63,9 +56,7 @@ PENDING NEXT SESSION:
 - Submit Nordic Ware URL to Google Search Console
 
 ## Next Task
-1. PRIORITY: Open single-blog.php in browser (assign a test post the Blog Post template), identify all theme CSS conflicts, fix them, browser-verify before any content work begins
-2. Research reports for GreenLife 16pc Ceramic Set and SENSARTE Ceramic Pan (Varun shares screenshots, Claude builds report)
-3. Response post — non-toxic cookware question (topic TBD)
+Build single-blog.php — Builder Protocol. Claude Code reads style.css, functions.php, single.php first. Reports conflicts. Then builds isolated solution with single-blog.css.
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
