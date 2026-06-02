@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-02
-Last commit: fbda8df — chore: add micro-niche and content tier rules to content-rules.md
+Last commit: c44b1a6 — chore: delete stale files — tasks.md, LOGO.html, PLUGIN_PLAN.md
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -46,7 +46,7 @@ Phase 7 — Content Growth
 ## Last Session
 SESSION: 2026-06-01
 COMPLETED:
-- CLAUDE.md replaced with compressed builder protocol. content-rules.md updated with micro-niche and content tiers.
+- File system rebuilt — DECISIONS.md and SPEC.md created, stale files deleted, CLAUDE.md compressed.
 
 PENDING NEXT SESSION:
 - FIX FIRST: Diagnose and resolve theme CSS conflicts in single-blog.php — browser test at kitchenviralpicks.local before any content work
@@ -56,7 +56,7 @@ PENDING NEXT SESSION:
 - Submit Nordic Ware URL to Google Search Console
 
 ## Next Task
-Build single-blog.php — Builder Protocol. Claude Code reads style.css, functions.php, single.php first. Reports conflicts. Then builds isolated solution with single-blog.css.
+Build single-blog.php — Builder Protocol. Claude Code reads style.css, functions.php, single.php. Reports conflicts. Builds single-blog.php + single-blog.css in one shot.
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
