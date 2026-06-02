@@ -117,3 +117,28 @@ Every article must be assigned to exactly one category.
 - Never compare to competitor affiliate sites
 - Never mention the site is monetized beyond the FTC disclosure
 - Never publish an article without the FTC disclosure block
+
+---
+
+## Site Direction — Locked May 30, 2026
+
+Micro-niche: Healthy Non-Toxic Cookware
+Target materials: cast iron, carbon steel, ceramic coated, stainless steel
+Key signals: PFAS-free, PFOA-free, PTFE-free
+Audience: health-conscious buyers with high purchase intent
+
+New content targets non-toxic cookware only.
+Existing air fryer, kettle, bakeware, blender, multicooker articles stay
+live — no new ones in those categories.
+
+### Three Content Tiers
+- Response posts: 1,200–1,500 words · single-blog.php · informational
+- Staple posts: 1,800–2,200 words · single.php · product reviews
+- Pillar posts: 2,800–3,200 words · single-roundup.php · roundups
+
+Publish order: Response first → Staple → Pillar
+
+### Non-Toxic Voice Rules
+- Always surface PFAS-free / PFOA-free / PTFE-free where relevant
+- Safe phrasing: "analyzed X verified Amazon buyer reviews"
+- Never: "tested in her kitchen", "hands-on testing", "after cooking with it"
