@@ -9,6 +9,13 @@
     background: #FFF8F5;
 }
 
+/* ── Wrap — constrains hero and content to same width ── */
+#kvp-blog-main .kvp-blog-wrap {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 /* ── Hero ── */
 #kvp-blog-main .kvp-blog-hero {
     background: #FFF0EB;
