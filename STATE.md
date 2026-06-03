@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-03
-Last commit: 38792f1 — fix: icon top-left alignment, dc-full bottom margin
+Last commit: 3b7fe8b — fix: icon align-self flex-start — pins to top of link box
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -65,7 +65,7 @@ CURRENT STATE:
 HERO STATUS: APPROVED — charcoal bg, contained width, breadcrumb, pill, byline all correct.
 
 CURRENT STATE (2026-06-03):
-- single-blog.css: 517 lines — icon flex-start alignment + padding:6px, dc-full margin-bottom:28px added
+- single-blog.css: 518 lines — icon align-self:flex-start added, pins icon to top of link box
 - single-blog.php: 55 lines — no inline styles, class-only
 - Hero: charcoal bg #1A1A1A, white text, breadcrumb, pill, byline — fully CSS-driven
 - Content wrap padding: 32px 32px 0 desktop, 24px 16px 24px mobile
