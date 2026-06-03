@@ -38,25 +38,44 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-02
-Last commit: 40669bf — fix: scope single-blog.css under #kvp-blog-main, H1 30px, breadcrumb title removed
+Last commit: f8c486f — fix: H1 size, section spacing, internal link icon, footer strip styling
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Session
-SESSION: 2026-06-01
-COMPLETED:
-- single-blog.php and single-blog.css built. Post 108 content expanded to 1,318 words. Button text and underline fixed. Excerpt added to fix duplicate intro paragraph.
+SESSION END — 2026-06-02
+COMMITS THIS SESSION:
+- 40669bf — single-blog.php breadcrumb fixed, single-blog.css scoped under #kvp-blog-main
+- 7810e65 — Post 108 content: TOC anchors, Section 05, material cards expanded
+- c600a90 — enqueue fix: global $post with null check
+- 1146cab — kvp-blog-content-wrap selector fix, cache bust
+- 65a4666 — inline styles on hero bg and H1
+- b67422f — hero padding-top 90px, charcoal bg, H1 white, gap removed
+- f8c486f — H1 size, section spacing, internal link icon, footer strip styling
 
-PENDING NEXT SESSION:
-- FIX FIRST: Diagnose and resolve theme CSS conflicts in single-blog.php — browser test at kitchenviralpicks.local before any content work
-- Fix price mismatches — Post 44 local vs live, Post 14 local vs live
-- Write Response post 1 — Is Cast Iron Cookware Non-Toxic (requires single-blog.php to be conflict-free first)
-- GreenLife 16pc Ceramic Set — next product research
-- Submit Nordic Ware URL to Google Search Console
+CURRENT STATE:
+- Post 108 content: CLEAN — restored from /tmp/post108_content.html after \\n corruption
+- single-blog.php: hero correct — charcoal bg, breadcrumb, pill, byline, padding-top:90px
+- single-blog.css: scoped under #kvp-blog-main, white content surface working
+- Page renders correctly — all sections, cards, TOC anchors, internal link box working
+- Post 108 status: published
+
+TWO ITEMS NOT YET APPLIED — do these first next session:
+1. FIX 3 — internal link box icon: white SVG, rgba(232,64,28,0.4) bg — use wp eval PHP method only
+2. FIX 4 — footer strip inline styles — use wp eval PHP method only
+
+CRITICAL LESSON — POST CONTENT UPDATES:
+- NEVER use wp post update --post_content="$(cat file)" — corrupts HTML with \\n literals
+- ALWAYS use wp eval with file_get_contents() for post_content updates containing HTML:
+  wp eval '$c=file_get_contents("/path/to/file.html");wp_update_post(["ID"=>108,"post_content"=>$c]);echo "Done";' --path=/app/public
 
 ## Next Task
-Full browser verify of Post 108 at kitchenviralpicks.local — check all 8 items on the verify list: hero breadcrumb, category pill, byline, TOC anchors (section 01–05), SVG icon white, footer strip shortened, Section 05 visible, mat-p cards updated
+NEXT SESSION — do in this order:
+1. FIX 3: internal link box icon — wp eval method only (see critical lesson above)
+2. FIX 4: footer strip inline styles — wp eval method only
+3. Deploy single-blog.php, single-blog.css, functions.php to live
+4. Submit Post 108 URL to Google Search Console
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -135,7 +154,7 @@ Live server on branch main. Last confirmed live commit: 063643d (2026-05-31).
 header.php | approved
 single.php | approved — updated 2026-05-28
 single-roundup.php | approved — updated 2026-05-28
-single-blog.php | WIP — hero fixed 2026-06-02, browser verify pending
+single-blog.php | WIP — hero correct, FIX 3 + FIX 4 DB pending next session
 archive.php | approved — updated 2026-05-28
 index.php | approved — updated 2026-05-28
 footer.php | approved
