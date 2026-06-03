@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-03
-Last commit: bc6365c — fix: restore hero charcoal bg and white text via CSS — no inline styles
+Last commit: 38792f1 — fix: icon top-left alignment, dc-full bottom margin
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -65,11 +65,11 @@ CURRENT STATE:
 HERO STATUS: APPROVED — charcoal bg, contained width, breadcrumb, pill, byline all correct.
 
 CURRENT STATE (2026-06-03):
-- single-blog.css: 515 lines — hero bg #1A1A1A, breadcrumb rgba(255,255,255,0.7), all white text via CSS
+- single-blog.css: 517 lines — icon flex-start alignment + padding:6px, dc-full margin-bottom:28px added
 - single-blog.php: 55 lines — no inline styles, class-only
-- Hero: charcoal bg, white text, breadcrumb, pill, byline — fully CSS-driven
-- Content wrap padding: 32px desktop, 24px 16px 24px mobile
-- Hero padding-top: 80px
+- Hero: charcoal bg #1A1A1A, white text, breadcrumb, pill, byline — fully CSS-driven
+- Content wrap padding: 32px 32px 0 desktop, 24px 16px 24px mobile
+- Hero padding-top: 72px
 
 CRITICAL LESSON — POST CONTENT UPDATES:
 - NEVER use wp post update --post_content="$(cat file)" — corrupts HTML with \\n literals
