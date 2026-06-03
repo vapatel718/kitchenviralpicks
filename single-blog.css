@@ -110,3 +110,24 @@
         padding: 28px 16px;
     }
 }
+
+/* ── Override style.css conflicts ── */
+
+#kvp-blog-main .kvp-blog-hero {
+    background: #FFF0EB !important;
+}
+
+#kvp-blog-main .kvp-blog-body {
+    background: #ffffff !important;
+    max-width: 720px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+#kvp-blog-main .kvp-blog-hero h1 {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 30px !important;
+    font-weight: 600 !important;
+    color: #1A1A1A !important;
+    line-height: 1.25 !important;
+}
