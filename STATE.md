@@ -111,6 +111,7 @@ Retired from queue:
 - Post 108 word count: 1,850 raw (~1,570 prose). Target was 2,000+ raw. Gap is because ADDITION 1 paragraph and Cast Iron/Carbon Steel mat-p were already in the content from prior session. Within Response post 1,200–1,500 target. Flag to Varun if more content needed.
 - ADDITION 1 paragraph position: currently before the callout in Section 01. Prompt 2 said after the callout. Pending Varun decision: move it or leave it.
 - Internal links from Cosori (Post 13) and Ninja (Post 14) reviews pointing to roundup (Post 103) — not yet added.
+- Inline CSS architecture migration required for Post 108 — all inline styles must move to single-blog.css
 
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
