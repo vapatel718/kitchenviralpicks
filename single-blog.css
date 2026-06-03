@@ -133,3 +133,20 @@
     color: #fff !important;
     line-height: 1.25 !important;
 }
+
+/* ── Content spacing overrides ── */
+
+#kvp-blog-main .kvp-blog-content-wrap .kvp-section {
+    margin-bottom: 32px !important;
+    padding-bottom: 32px !important;
+}
+
+#kvp-blog-main .kvp-blog-content-wrap p {
+    margin-bottom: 14px !important;
+    margin-top: 0 !important;
+}
+
+#kvp-blog-main .kvp-blog-content-wrap h2 {
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+}

@@ -30,7 +30,7 @@ while ( have_posts() ) : the_post();
 				<a href="<?php echo esc_url( $cat_link ); ?>"><?php echo $cat_name; ?></a>
 			</nav>
 			<span class="kvp-blog-cat-pill"><?php echo $cat_name; ?></span>
-			<h1 class="kvp-blog-title" style="font-size:30px;line-height:1.25;font-family:'Playfair Display',serif;font-weight:600;color:#fff;"><?php the_title(); ?></h1>
+			<h1 class="kvp-blog-title" style="font-size:30px!important;line-height:1.25;font-family:'Playfair Display',serif;font-weight:600;color:#fff;"><?php the_title(); ?></h1>
 			<div class="kvp-blog-byline" style="border-top-color:rgba(255,255,255,0.15);">
 				<div class="kvp-blog-avatar">D</div>
 				<div>
