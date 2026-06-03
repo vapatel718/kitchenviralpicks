@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-02
-Last commit: f8c486f — fix: H1 size, section spacing, internal link icon, footer strip styling
+Last commit: a86ce04 — fix: constrain kvp-blog-wrap to 720px centered — hero and content aligned
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -53,6 +53,7 @@ COMMITS THIS SESSION:
 - 65a4666 — inline styles on hero bg and H1
 - b67422f — hero padding-top 90px, charcoal bg, H1 white, gap removed
 - f8c486f — H1 size, section spacing, internal link icon, footer strip styling
+- a86ce04 — kvp-blog-wrap max-width 720px centered — hero contained
 
 CURRENT STATE:
 - Post 108 content: CLEAN — restored from /tmp/post108_content.html after \\n corruption
@@ -60,6 +61,8 @@ CURRENT STATE:
 - single-blog.css: scoped under #kvp-blog-main, white content surface working
 - Page renders correctly — all sections, cards, TOC anchors, internal link box working
 - Post 108 status: published
+
+HERO STATUS: APPROVED — charcoal bg, contained width, breadcrumb, pill, byline all correct.
 
 TWO ITEMS NOT YET APPLIED — do these first next session:
 1. FIX 3 — internal link box icon: white SVG, rgba(232,64,28,0.4) bg — use wp eval PHP method only
@@ -74,8 +77,9 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 NEXT SESSION — do in this order:
 1. FIX 3: internal link box icon — wp eval method only (see critical lesson above)
 2. FIX 4: footer strip inline styles — wp eval method only
-3. Deploy single-blog.php, single-blog.css, functions.php to live
-4. Submit Post 108 URL to Google Search Console
+3. Any remaining hero issues Varun identifies
+4. Deploy single-blog.php, single-blog.css, functions.php to live
+5. Submit Post 108 URL to Google Search Console
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
