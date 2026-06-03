@@ -99,14 +99,14 @@
 }
 
 /* ── Content body — white reading surface ── */
-#kvp-blog-main .kvp-blog-body {
+#kvp-blog-main .kvp-blog-content-wrap {
     background: #fff;
     max-width: 720px;
     margin: 0 auto;
     padding: 40px 32px;
 }
 @media (max-width: 767px) {
-    #kvp-blog-main .kvp-blog-body {
+    #kvp-blog-main .kvp-blog-content-wrap {
         padding: 28px 16px;
     }
 }
@@ -117,7 +117,7 @@
     background: #FFF0EB !important;
 }
 
-#kvp-blog-main .kvp-blog-body {
+#kvp-blog-main .kvp-blog-content-wrap {
     background: #ffffff !important;
     max-width: 720px !important;
     margin-left: auto !important;

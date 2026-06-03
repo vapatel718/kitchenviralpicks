@@ -40,7 +40,7 @@ function kvp_enqueue_assets() {
                 'kvp-single-blog',
                 get_stylesheet_directory_uri() . '/single-blog.css',
                 array( 'kvp-style' ),
-                '20260602'
+                '20260603'
             );
         }
     }
