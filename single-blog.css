@@ -445,6 +445,7 @@
   justify-content: flex-start;
   flex-shrink: 0;
   padding: 6px;
+  align-self: flex-start;
 }
 
 #kvp-blog-main .kvp-blog-content .kvp-il-text {
