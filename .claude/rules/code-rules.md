@@ -89,3 +89,4 @@
 - Never use !important in CSS unless absolutely unavoidable
 - Never install plugins without Varun approval
 - Never modify wp-config.php
+- Never write inline styles in post_content HTML. All visual styling for post content elements (cards, grids, callouts, TOC, footer strips, internal link boxes) must live in the template's dedicated CSS file. The post_content HTML uses class names only. No style="" attributes in any content written to the database.
