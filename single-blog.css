@@ -296,7 +296,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin: 24px 0 12px;
+  margin: 24px 0 24px;
 }
 
 #kvp-blog-main .kvp-blog-content .kvp-dc {
