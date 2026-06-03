@@ -12,7 +12,7 @@
 /* ── Hero ── */
 #kvp-blog-main .kvp-blog-hero {
     background: #FFF0EB;
-    padding: 36px 32px 32px;
+    padding: 0 32px 40px;
 }
 @media (max-width: 767px) {
     #kvp-blog-main .kvp-blog-hero {
@@ -58,7 +58,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 30px;
     font-weight: 600;
-    color: #1A1A1A;
+    color: #fff;
     line-height: 1.25;
     margin-bottom: 16px;
 }
@@ -88,7 +88,7 @@
 #kvp-blog-main .kvp-blog-byline-name {
     font-size: 13px;
     font-weight: 700;
-    color: #1A1A1A;
+    color: #fff;
     display: block;
 }
 #kvp-blog-main .kvp-blog-byline-meta {
@@ -103,7 +103,8 @@
     background: #fff;
     max-width: 720px;
     margin: 0 auto;
-    padding: 40px 32px;
+    margin-top: 0;
+    padding: 0 32px 40px;
 }
 @media (max-width: 767px) {
     #kvp-blog-main .kvp-blog-content-wrap {
@@ -114,7 +115,7 @@
 /* ── Override style.css conflicts ── */
 
 #kvp-blog-main .kvp-blog-hero {
-    background: #FFF0EB !important;
+    background: #1A1A1A !important;
 }
 
 #kvp-blog-main .kvp-blog-content-wrap {
@@ -122,12 +123,13 @@
     max-width: 720px !important;
     margin-left: auto !important;
     margin-right: auto !important;
+    margin-top: 0 !important;
 }
 
 #kvp-blog-main .kvp-blog-hero h1 {
     font-family: 'Playfair Display', serif !important;
     font-size: 30px !important;
     font-weight: 600 !important;
-    color: #1A1A1A !important;
+    color: #fff !important;
     line-height: 1.25 !important;
 }
