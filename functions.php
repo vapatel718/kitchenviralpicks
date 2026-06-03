@@ -32,7 +32,7 @@ function kvp_enqueue_assets() {
         '20260513'
     );
     // single-blog.css — loaded only when Blog Post template is active
-    if ( is_singular() && 'single-blog.php' === get_page_template_slug() ) {
+    if ( is_singular() && 'single-blog.php' === get_post_meta( get_queried_object_id(), '_wp_page_template', true ) ) {
         wp_enqueue_style(
             'kvp-single-blog',
             get_stylesheet_directory_uri() . '/single-blog.css',
