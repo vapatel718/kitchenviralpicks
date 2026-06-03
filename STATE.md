@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-03
-Last commit: fd892d7 — fix: hero padding 92px, remove stale section rule, icon bg override
+Last commit: b3c4e91 — fix: increase decode-grid bottom margin for Section 2 paragraph spacing
 
 ## Current Phase
 Phase 7 — Content Growth
