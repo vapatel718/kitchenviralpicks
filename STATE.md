@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-03
-Last commit: 8a8fa5a — fix: six CSS fixes — breadcrumb spacing, intro gap, TOC separator, section spacing, card borders, icon bg
+Last commit: fd892d7 — fix: hero padding 92px, remove stale section rule, icon bg override
 
 ## Current Phase
 Phase 7 — Content Growth
