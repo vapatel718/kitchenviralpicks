@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-03
-Last commit: b3c4e91 — fix: increase decode-grid bottom margin for Section 2 paragraph spacing
+Last commit: dd3e8a4 — fix: remove stale hero override, fix content padding, move inline styles to CSS
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -65,9 +65,12 @@ CURRENT STATE:
 HERO STATUS: APPROVED — charcoal bg, contained width, breadcrumb, pill, byline all correct.
 
 CURRENT STATE (2026-06-03):
-- single-blog.css: 498 lines, content styles added and six CSS fixes applied (commit 8a8fa5a)
-- Post 108 content: pending wp eval-file update (/tmp/update_post108.php written, awaiting Varun go-ahead)
-- FIX 1 (hero padding-top) BLOCKED: CSS padding-top = 0; effective 90px comes from inline style in single-blog.php line 20. Needs Varun decision: (a) change inline style in PHP to 70px, or (b) add padding-top: 70px !important to CSS.
+- single-blog.css: 515 lines — stale hero override removed, content padding fixed, inline style CSS rules added
+- single-blog.php: 55 lines — all 5 inline styles removed, now class-only
+- Hero bg: #FFF0EB (coral) now renders correctly — #1A1A1A !important override deleted
+- Content wrap padding: 32px 32px 32px (desktop), 24px 16px 24px (mobile)
+- Hero padding-top: 80px
+- All inline styles moved to CSS: hero-inner, breadcrumb, title, byline, byline-meta
 
 CRITICAL LESSON — POST CONTENT UPDATES:
 - NEVER use wp post update --post_content="$(cat file)" — corrupts HTML with \\n literals
@@ -75,10 +78,10 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 
 ## Next Task
 NEXT SESSION — do in this order:
-1. Varun decision on FIX 1 (hero padding-top: PHP inline style vs CSS !important)
-2. Run in Site Shell: wp eval-file /tmp/update_post108.php --path=/app/public
+1. Verify single-blog.php in browser at kitchenviralpicks.local (hero coral bg, correct padding, white text)
+2. Run in Site Shell: wp eval-file /tmp/update_post108.php --path=/app/public (if still pending)
 3. Verify Post 108 in browser at kitchenviralpicks.local
-4. Deploy single-blog.php, single-blog.css, functions.php to live
+4. Deploy single-blog.php, single-blog.css to live
 5. Submit Post 108 URL to Google Search Console
 
 ## Content Strategy — Locked May 30, 2026
@@ -160,7 +163,7 @@ Live server on branch main. Last confirmed live commit: 063643d (2026-05-31).
 header.php | approved
 single.php | approved — updated 2026-05-28
 single-roundup.php | approved — updated 2026-05-28
-single-blog.php | WIP — hero correct, FIX 3 + FIX 4 DB pending next session
+single-blog.php | WIP — inline styles removed, all styling in CSS, browser verify pending
 archive.php | approved — updated 2026-05-28
 index.php | approved — updated 2026-05-28
 footer.php | approved
