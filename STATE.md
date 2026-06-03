@@ -112,6 +112,7 @@ Retired from queue:
 - ADDITION 1 paragraph position: currently before the callout in Section 01. Prompt 2 said after the callout. Pending Varun decision: move it or leave it.
 - Internal links from Cosori (Post 13) and Ninja (Post 14) reviews pointing to roundup (Post 103) — not yet added.
 - Inline CSS architecture migration required for Post 108 — all inline styles must move to single-blog.css
+- single-blog.php line 20 had inline style — removed and moved to CSS per code-rules.md
 
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
