@@ -19,7 +19,10 @@
 /* ── Hero ── */
 #kvp-blog-main .kvp-blog-hero {
     background: #FFF0EB;
-    padding: 0 32px 40px;
+    padding-top: 70px;
+    padding-right: 32px;
+    padding-bottom: 40px;
+    padding-left: 32px;
 }
 @media (max-width: 767px) {
     #kvp-blog-main .kvp-blog-hero {

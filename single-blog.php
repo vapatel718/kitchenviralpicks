@@ -17,7 +17,7 @@ while ( have_posts() ) : the_post();
 <div class="kvp-blog-wrap">
 
 	<!-- HERO -->
-	<div class="kvp-blog-hero" style="background:#1A1A1A;padding-top:90px;">
+	<div class="kvp-blog-hero">
 		<div class="kvp-blog-hero-inner" style="color:#fff;">
 			<?php
 			$categories = get_the_category();
