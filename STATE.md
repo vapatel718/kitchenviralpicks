@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-03
-Last commit: 3b7fe8b — fix: icon align-self flex-start — pins to top of link box
+Last commit: 4d34a93 — rule: no silent execution method substitution
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -65,11 +65,12 @@ CURRENT STATE:
 HERO STATUS: APPROVED — charcoal bg, contained width, breadcrumb, pill, byline all correct.
 
 CURRENT STATE (2026-06-03):
-- single-blog.css: 518 lines — icon align-self:flex-start added, pins icon to top of link box
+- Response post live — Post ID 112 — https://kitchenviralpicks.com/what-is-non-toxic-cookware/
+- single-blog.css: 518 lines — fully CSS-driven, no inline styles
 - single-blog.php: 55 lines — no inline styles, class-only
 - Hero: charcoal bg #1A1A1A, white text, breadcrumb, pill, byline — fully CSS-driven
-- Content wrap padding: 32px 32px 0 desktop, 24px 16px 24px mobile
-- Hero padding-top: 72px
+- Local post 108 and live post 112 are separate DB entries — content in sync, IDs differ
+- Category assignment pending for Post 112
 
 CRITICAL LESSON — POST CONTENT UPDATES:
 - NEVER use wp post update --post_content="$(cat file)" — corrupts HTML with \\n literals
@@ -77,11 +78,10 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 
 ## Next Task
 NEXT SESSION — do in this order:
-1. Verify single-blog.php in browser at kitchenviralpicks.local (hero charcoal bg, white text, correct padding)
-2. Run in Site Shell: wp eval-file /tmp/update_post108.php --path=/app/public (if still pending)
-3. Verify Post 108 in browser at kitchenviralpicks.local
-4. Deploy single-blog.php, single-blog.css to live
-5. Submit Post 108 URL to Google Search Console
+1. Submit https://kitchenviralpicks.com/what-is-non-toxic-cookware/ to Google Search Console
+2. Assign Rank Math SEO title and meta description to Post 112 on live
+3. Assign category to Post 112 on live (Site Shell: wp post term set 112 category non-toxic-cookware --path=...)
+4. Plan next content piece (Lodge staple post or second response post)
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -110,11 +110,8 @@ Retired from queue:
 - Dash Tasti-Crisp (retired — outside micro-niche)
 
 ## Known Issues
-- Post 108 word count: 1,850 raw (~1,570 prose). Target was 2,000+ raw. Gap is because ADDITION 1 paragraph and Cast Iron/Carbon Steel mat-p were already in the content from prior session. Within Response post 1,200–1,500 target. Flag to Varun if more content needed.
-- ADDITION 1 paragraph position: currently before the callout in Section 01. Prompt 2 said after the callout. Pending Varun decision: move it or leave it.
+- Local post 108 and live post 112 are separate DB entries — content in sync, IDs differ. Category assignment pending for Post 112.
 - Internal links from Cosori (Post 13) and Ninja (Post 14) reviews pointing to roundup (Post 103) — not yet added.
-- Inline CSS architecture migration required for Post 108 — all inline styles must move to single-blog.css
-- single-blog.php line 20 had inline style — removed and moved to CSS per code-rules.md
 
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
@@ -153,8 +150,8 @@ Use ONLY these key names when publishing articles. Single.php reads these exact 
 ---
 
 ## Live Server Status
-Fully deployed and git-synced. Future deploys: git pull only (no SCP).
-Live server on branch main. Last confirmed live commit: 063643d (2026-05-31).
+Deployed — single-blog.css, single-blog.php, functions.php deployed via SCP. Post 112 created directly on live.
+Last confirmed live commit: ccb67b5 (2026-06-03).
 
 ---
 
