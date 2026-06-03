@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-03
-Last commit: 4d34a93 — rule: no silent execution method substitution
+Last commit: c98e8db — fix: hero padding-top 88px for breadcrumb breathing room
 
 ## Current Phase
 Phase 7 — Content Growth
