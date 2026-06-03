@@ -326,6 +326,7 @@
 
 #kvp-blog-main .kvp-blog-content .kvp-dc-full {
   margin-top: 12px;
+  margin-bottom: 28px;
 }
 
 #kvp-blog-main .kvp-blog-content .kvp-dc-top {
@@ -440,9 +441,10 @@
   border-radius: 9px;
   background: rgba(232,64,28,0.4) !important;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-shrink: 0;
+  padding: 6px;
 }
 
 #kvp-blog-main .kvp-blog-content .kvp-il-text {
