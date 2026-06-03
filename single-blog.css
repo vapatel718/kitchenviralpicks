@@ -19,7 +19,7 @@
 /* ── Hero ── */
 #kvp-blog-main .kvp-blog-hero {
     background: #FFF0EB;
-    padding-top: 92px;
+    padding-top: 80px;
     padding-right: 32px;
     padding-bottom: 40px;
     padding-left: 32px;
@@ -108,24 +108,42 @@
     margin-top: 1px;
 }
 
+#kvp-blog-main .kvp-blog-hero-inner {
+    color: #fff;
+}
+
+#kvp-blog-main .kvp-blog-breadcrumb {
+    color: rgba(255,255,255,0.7);
+}
+
+#kvp-blog-main .kvp-blog-title {
+    font-size: 30px;
+    line-height: 1.25;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: #fff;
+}
+
+#kvp-blog-main .kvp-blog-byline {
+    border-top-color: rgba(255,255,255,0.15);
+}
+
+#kvp-blog-main .kvp-blog-byline-meta {
+    color: rgba(255,255,255,0.6);
+}
+
 /* ── Content body — white reading surface ── */
 #kvp-blog-main .kvp-blog-content-wrap {
     background: #fff;
     max-width: 720px;
     margin: 0 auto;
     margin-top: 0;
-    padding: 0 32px 40px;
+    padding: 32px 32px 32px;
 }
 @media (max-width: 767px) {
     #kvp-blog-main .kvp-blog-content-wrap {
-        padding: 28px 16px;
+        padding: 24px 16px 24px;
     }
-}
-
-/* ── Override style.css conflicts ── */
-
-#kvp-blog-main .kvp-blog-hero {
-    background: #1A1A1A !important;
 }
 
 #kvp-blog-main .kvp-blog-content-wrap {
