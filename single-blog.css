@@ -19,7 +19,7 @@
 /* ── Hero ── */
 #kvp-blog-main .kvp-blog-hero {
     background: #1A1A1A;
-    padding-top: 80px;
+    padding-top: 72px;
     padding-right: 32px;
     padding-bottom: 40px;
     padding-left: 32px;
@@ -138,7 +138,7 @@
     max-width: 720px;
     margin: 0 auto;
     margin-top: 0;
-    padding: 32px 32px 32px;
+    padding: 32px 32px 0;
 }
 @media (max-width: 767px) {
     #kvp-blog-main .kvp-blog-content-wrap {
@@ -249,8 +249,8 @@
 
 /* Sections */
 #kvp-blog-main .kvp-blog-content .kvp-section {
-  margin-bottom: 24px;
-  padding-bottom: 24px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
   border-bottom: 0.5px solid rgba(232,64,28,0.08);
 }
 
