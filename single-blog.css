@@ -18,7 +18,7 @@
 
 /* ── Hero ── */
 #kvp-blog-main .kvp-blog-hero {
-    background: #FFF0EB;
+    background: #1A1A1A;
     padding-top: 80px;
     padding-right: 32px;
     padding-bottom: 40px;
@@ -33,7 +33,7 @@
 /* ── Breadcrumb ── */
 #kvp-blog-main .kvp-blog-breadcrumb {
     font-size: 11px;
-    color: #A32D0D;
+    color: rgba(255,255,255,0.7);
     opacity: 0.7;
     margin-bottom: 14px;
     display: flex;
