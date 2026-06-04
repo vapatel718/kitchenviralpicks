@@ -37,8 +37,8 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 
 # STATE.md — KitchenViralPicks
 
-Last updated: 2026-06-03
-Last commit: c98e8db — fix: hero padding-top 88px for breadcrumb breathing room
+Last updated: 2026-06-04
+Last commit: 1c2f1d9 — fix: bump body font to 16px for mobile readability
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,11 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Next Task
-NEXT SESSION — do in this order:
-1. Submit https://kitchenviralpicks.com/what-is-non-toxic-cookware/ to Google Search Console
-2. Assign Rank Math SEO title and meta description to Post 112 on live
-3. Assign category to Post 112 on live (Site Shell: wp post term set 112 category non-toxic-cookware --path=...)
-4. Plan next content piece (Lodge staple post or second response post)
+Fix single-roundup.php comparison table — add ~$ prefix to all price cells
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -110,8 +106,9 @@ Retired from queue:
 - Dash Tasti-Crisp (retired — outside micro-niche)
 
 ## Known Issues
-- Local post 108 and live post 112 are separate DB entries — content in sync, IDs differ. Category assignment pending for Post 112.
+- Local post 108 and live post 112 are separate DB entries — content in sync, IDs differ.
 - Internal links from Cosori (Post 13) and Ninja (Post 14) reviews pointing to roundup (Post 103) — not yet added.
+- single-roundup.php comparison table: price values missing ~$ prefix — fix pending
 
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
@@ -159,7 +156,7 @@ Last confirmed live commit: ccb67b5 (2026-06-03).
 header.php | approved
 single.php | approved — updated 2026-05-28
 single-roundup.php | approved — updated 2026-05-28
-single-blog.php | WIP — inline styles removed, all styling in CSS, browser verify pending
+single-blog.php | approved ✅ — deployed 2026-06-03
 archive.php | approved — updated 2026-05-28
 index.php | approved — updated 2026-05-28
 footer.php | approved
@@ -185,6 +182,7 @@ page-contact.php | approved
 | 12 | instant-pot-vortex-plus-6qt | 86 / 106 | live ✅ |
 | 13 | nordic-ware-half-sheet-pan | 90 / 107 | live ✅ — GSC submitted 2026-05-31 |
 | 14 | lodge-cast-iron-skillet-review | 99 / 110 | live ✅ — published 2026-05-31 |
+| 15 | what-is-non-toxic-cookware | 108 / 112 | live ✅ — Category: assigned ✅ — Rank Math: set ✅ — GSC: submitted and indexed ✅ |
 
 ---
 
