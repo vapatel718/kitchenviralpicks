@@ -226,7 +226,7 @@ $functions_count = array( 1 => 4, 2 => 9, 3 => 6, 4 => 4, 5 => 4 );
 					<span class="rnd-winner-badge">Top pick</span>
 					<?php endif; ?>
 				</td>
-				<td><span class="rnd-table-price"><?php echo esc_html( $products[ $n ]['price'] ); ?></span></td>
+				<td><span class="rnd-table-price"><?php echo $products[ $n ]['price'] !== '' ? '~$' . esc_html( $products[ $n ]['price'] ) : ''; ?></span></td>
 				<td><span class="rnd-reviews-bold"><?php echo esc_html( $products[ $n ]['reviews'] ); ?></span></td>
 				<td>
 					<span class="rnd-rating-pill">
@@ -337,7 +337,7 @@ $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 						<div class="rnd-card-review-label">Verified reviews</div>
 					</div>
 					<div class="rnd-price-block">
-						<span class="rnd-price-tag"><?php echo esc_html( $card_price ); ?></span>
+						<span class="rnd-price-tag"><?php echo $card_price !== '' ? '~$' . esc_html( $card_price ) : ''; ?></span>
 						<span class="rnd-price-note">at time of writing &middot; price may vary</span>
 					</div>
 				</div>
