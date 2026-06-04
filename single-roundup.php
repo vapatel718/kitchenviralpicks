@@ -275,7 +275,7 @@ $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 			</a>
 			<?php if ( $toppick_price ) : ?>
 			<p class="rnd-toppick-note">
-				<span style="font-size:18px;font-weight:700;color:#E8401C;display:block;line-height:1.1;"><?php echo esc_html( $toppick_price ); ?></span>
+				<span style="font-size:18px;font-weight:700;color:#E8401C;display:block;line-height:1.1;"><?php echo $toppick_price !== '' ? '~$' . esc_html( $toppick_price ) : ''; ?></span>
 				<span style="font-size:11px;color:#aaa;">at time of writing &middot; price may vary</span>
 			</p>
 			<?php endif; ?>
