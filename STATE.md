@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-04
-Last commit: 0801875 — fix: use slug-based lookup for cookware-guides exclusion — works on local and live
+Last commit: 289a82f — fix: object-position 30% on featured image cards for better crop
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,7 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Nav restructured — Reviews, Cookware Guides, About. Cookware Guides removed from Browse by Category. Local and live verified.
+Featured image added to Post 112 — Pexels cast iron skillet, archive card cover fit fixed, object-position tuned. Cookware Guides category name corrected on local and live.
 
 ## Next Task
 GreenLife 16pc Ceramic Set research — Varun shares Amazon screenshots, Claude builds 9-field report.
