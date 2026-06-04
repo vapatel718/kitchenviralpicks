@@ -42,10 +42,10 @@
                 'container'      => false,
                 'menu_class'     => 'kvp-nav__list',
                 'fallback_cb'    => function() {
-                    echo '<ul class="kvp-nav-list">';
-                    echo '<li><a href="' . esc_url( home_url( '/category/cookware/' ) ) . '" class="kvp-nav-link">Reviews</a></li>';
-                    echo '<li><a href="' . esc_url( home_url( '/category/cookware-guides/' ) ) . '" class="kvp-nav-link">Cookware Guides</a></li>';
-                    echo '<li><a href="' . esc_url( home_url( '/about/' ) ) . '" class="kvp-nav-link">About</a></li>';
+                    echo '<ul class="kvp-nav__list">';
+                    echo '<li><a href="' . esc_url( home_url( '/category/cookware/' ) ) . '">Reviews</a></li>';
+                    echo '<li><a href="' . esc_url( home_url( '/category/cookware-guides/' ) ) . '">Cookware Guides</a></li>';
+                    echo '<li><a href="' . esc_url( home_url( '/about/' ) ) . '">About</a></li>';
                     echo '</ul>';
                 },
             ) );
