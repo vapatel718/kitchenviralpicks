@@ -442,7 +442,8 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
 
     <?php
     $uncategorized_id = get_cat_ID( 'Uncategorized' );
-    $cookware_guides_id = get_cat_ID( 'Cookware Guides' );
+    $cookware_guides_term = get_term_by( 'slug', 'cookware-guides', 'category' );
+    $cookware_guides_id = $cookware_guides_term ? $cookware_guides_term->term_id : 0;
     $all_cats = get_categories( [
         'hide_empty' => false,
         'orderby'    => 'name',
