@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-04
-Last commit: 289a82f — fix: object-position 30% on featured image cards for better crop
+Last commit: c70a98e — chore: update STATE.md — featured image and archive card fix complete
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -211,4 +211,4 @@ DEBORAH — never Rick, never anything else. Permanent. Locked.
 - 2026-05-28: Real photo only for roundup thumbnails — never a single product image
 - 2026-05-25: Roundup publishes before standalone reviews
 - 2026-05-24: Creators API plugin after 10 qualifying sales
-- 2026-05-24: single-blog.php template needed for blog/guide content type
+- 2026-05-24: single-blog.php template needed for blog/guide content type — COMPLETED 2026-06-03, deployed and verified ✅
