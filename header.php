@@ -42,19 +42,10 @@
                 'container'      => false,
                 'menu_class'     => 'kvp-nav__list',
                 'fallback_cb'    => function() {
-                    $nav_cats = array(
-                        'air-fryers'  => 'Air Fryers',
-                        'cookware'    => 'Cookware',
-                        'kettles'     => 'Kettles',
-                        'bakeware'    => 'Bakeware',
-                        'multicooker' => 'Multicooker',
-                    );
-                    echo '<ul class="kvp-nav__list">';
-                    foreach ( $nav_cats as $slug => $label ) {
-                        $term = get_term_by( 'slug', $slug, 'category' );
-                        $url  = ( $term && ! is_wp_error( $term ) ) ? get_term_link( $term ) : home_url( '/category/' . $slug . '/' );
-                        echo '<li><a href="' . esc_url( $url ) . '">' . esc_html( $label ) . '</a></li>';
-                    }
+                    echo '<ul class="kvp-nav-list">';
+                    echo '<li><a href="' . esc_url( home_url( '/category/cookware/' ) ) . '" class="kvp-nav-link">Reviews</a></li>';
+                    echo '<li><a href="' . esc_url( home_url( '/category/cookware-guides/' ) ) . '" class="kvp-nav-link">Cookware Guides</a></li>';
+                    echo '<li><a href="' . esc_url( home_url( '/about/' ) ) . '" class="kvp-nav-link">About</a></li>';
                     echo '</ul>';
                 },
             ) );
