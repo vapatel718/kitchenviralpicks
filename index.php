@@ -442,11 +442,12 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
 
     <?php
     $uncategorized_id = get_cat_ID( 'Uncategorized' );
+    $cookware_guides_id = get_cat_ID( 'Cookware Guides' );
     $all_cats = get_categories( [
         'hide_empty' => false,
         'orderby'    => 'name',
         'order'      => 'ASC',
-        'exclude'    => $uncategorized_id,
+        'exclude'    => [ $uncategorized_id, $cookware_guides_id ],
     ] );
     $cat_icons = [
         'air-fryers'   => '<svg width="64" height="64" viewBox="0 0 84 84" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
