@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-04
-Last commit: df33686 — fix: add ~$ prefix to Editor's Top Pick price in roundup
+Last commit: 0801875 — fix: use slug-based lookup for cookware-guides exclusion — works on local and live
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,10 +77,10 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-fix: ~$ prefix added to all three price output points in single-roundup.php — local and live verified
+Nav restructured — Reviews, Cookware Guides, About. Cookware Guides removed from Browse by Category. Local and live verified.
 
 ## Next Task
-Nav restructure — remove Cookware Guide from Browse by Category, add to header nav. Mockup first, then build.
+GreenLife 16pc Ceramic Set research — Varun shares Amazon screenshots, Claude builds 9-field report.
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
