@@ -110,7 +110,7 @@ Retired from queue:
 
 ## Known Issues
 - Local post 108 and live post 112 are separate DB entries — content in sync, IDs differ.
-- Internal links from Cosori (Post 13) and Ninja (Post 14) reviews pointing to roundup (Post 103) — not yet added.
+- Internal links Post 13/14 → Post 103: DEPRIORITIZED 2026-06-04 — air fryer content not part of active content strategy.
 
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
