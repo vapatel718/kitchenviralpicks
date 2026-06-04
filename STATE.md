@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-04
-Last commit: 1c2f1d9 — fix: bump body font to 16px for mobile readability
+Last commit: df33686 — fix: add ~$ prefix to Editor's Top Pick price in roundup
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -76,8 +76,11 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - NEVER use wp post update --post_content="$(cat file)" — corrupts HTML with \\n literals
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
+## Last Completed Task
+fix: ~$ prefix added to all three price output points in single-roundup.php — local and live verified
+
 ## Next Task
-Fix single-roundup.php comparison table — add ~$ prefix to all price cells
+Nav restructure — remove Cookware Guide from Browse by Category, add to header nav. Mockup first, then build.
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -108,7 +111,6 @@ Retired from queue:
 ## Known Issues
 - Local post 108 and live post 112 are separate DB entries — content in sync, IDs differ.
 - Internal links from Cosori (Post 13) and Ninja (Post 14) reviews pointing to roundup (Post 103) — not yet added.
-- single-roundup.php comparison table: price values missing ~$ prefix — fix pending
 
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
