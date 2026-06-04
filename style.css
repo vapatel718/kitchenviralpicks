@@ -2333,6 +2333,11 @@ h1, h2, h3,
     display: block;
 }
 
+.kvp-arc-card-img--featured img {
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+}
 .kvp-arc-card-img-placeholder {
     width: 100%;
     aspect-ratio: 16 / 9;

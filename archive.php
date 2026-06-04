@@ -172,7 +172,7 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                     <?php echo esc_html( $rank ); ?>
                 </span>
 
-                <div class="kvp-arc-card-img">
+                <div class="kvp-arc-card-img<?php if ( has_post_thumbnail() && ! get_post_meta( get_the_ID(), 'kvp_product_image', true ) ) { echo ' kvp-arc-card-img--featured'; } ?>">
                     <?php
                     $kvp_card_img = get_post_meta( get_the_ID(), 'kvp_product_image', true );
                     if ( $kvp_card_img ) : ?>
