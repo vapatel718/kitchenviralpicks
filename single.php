@@ -242,7 +242,7 @@ while ( have_posts() ) : the_post();
 		<h2 class="sec-title"><?php esc_html_e( 'Pros and cons', 'kvp-theme' ); ?></h2>
 		<div class="pc-grid">
 			<?php if ( $pros_items ) : ?>
-			<div class="pc-col">
+			<div class="pc-col p">
 				<div class="pc-head p">&#8593; <?php esc_html_e( 'What buyers love', 'kvp-theme' ); ?></div>
 				<ul class="pc-list">
 					<?php foreach ( $pros_items as $item ) : ?>
@@ -252,7 +252,7 @@ while ( have_posts() ) : the_post();
 			</div>
 			<?php endif; ?>
 			<?php if ( $cons_items ) : ?>
-			<div class="pc-col">
+			<div class="pc-col c">
 				<div class="pc-head c">&#8595; <?php esc_html_e( 'What buyers dislike', 'kvp-theme' ); ?></div>
 				<ul class="pc-list">
 					<?php foreach ( $cons_items as $item ) : ?>
