@@ -77,7 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Fix 1: Archive card image reverted to contain — background #F5F5F5, object-fit:contain, padding:12px (style.css lines 2326–2343). Mobile/tablet overrides updated (lines 2575–2584). Fix 2: Comparison table upgraded — overflow-x:scroll, width:max-content, table-layout:fixed, first-col 140px, other cols 130px (style.css lines 1653–1658). Fix 3: GreenLife thead label already present — no change needed.
+Fix: GreenLife comparison table header text color — Post 123. Second <th> had color:#E8401C (red text invisible on red background). Changed to color:#fff via wp eval-file. Verified with grep — GreenLife Soft Grip 16pc header now white.
 
 ## Next Task
 GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
