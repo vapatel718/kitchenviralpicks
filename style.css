@@ -1325,14 +1325,14 @@ main,
 
 .kvp-pros {
   background: #EDFAF3;
-  border-top: 3px solid #2ECC71;
+  border: 1.5px solid #1a7a4a;
   border-radius: 10px;
   padding: 20px;
 }
 
 .kvp-cons {
   background: #FFF8F5;
-  border-top: 3px solid #E8401C;
+  border: 1.5px solid #A32D0D;
   border-radius: 10px;
   padding: 20px;
 }
@@ -1516,7 +1516,7 @@ main,
 
 /* ARTICLE SECTIONS */
 .kvp-single .sec { margin: 0 0 26px; }
-.kvp-single .sec-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: #1A1A1A; margin: 0 0 13px; padding-bottom: 8px; border-bottom: 2px solid #E8401C; }
+.kvp-single .sec-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 600; color: #1A1A1A; margin: 0 0 13px; padding-bottom: 8px; border-bottom: 2.5px solid #E8401C; }
 
 /* ARTICLE BODY */
 .kvp-single .article-body { font-size: 16px; color: #444; line-height: 1.75; margin: 0 0 26px; }
@@ -1596,7 +1596,7 @@ main,
 /* BUY / SKIP */
 .kvp-single .buy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .kvp-single .buy-card { border-radius: 8px; padding: 13px 14px; }
-.kvp-single .buy-card.b { background: #EDFAF3; border: 1.5px solid #1A7A48; }
+.kvp-single .buy-card.b { background: #EDFAF3; border: 1.5px solid #1a7a4a; }
 .kvp-single .buy-card.s { background: #FEF0EE; border: 1.5px solid #A32D0D; }
 .kvp-single .buy-title { font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; margin: 0 0 9px; display: flex; align-items: center; gap: 5px; }
 .kvp-single .buy-title.b { color: #1A7A48; }
