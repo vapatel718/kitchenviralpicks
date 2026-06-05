@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-05
-Last commit: (see git log)
+Last commit: b53e46d — fix: GreenLife post 123 — capacity field, inline link, section borders, pros/cons borders, featured image
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,10 +77,10 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Rank Math SEO fields set for Post 123 — focus keyword, title, and description all verified via wp post meta list.
+Post 123 fixes — kvp_capacity shortened, inline link added to Section 1, section H2 border strengthened (2px→2.5px), pros/cons box borders changed to full border (border-top removed), buy-if/skip-if border colours updated, featured image set (attachment ID 125).
 
 ## Next Task
-GreenLife review Post 123 — set featured image, then publish and deploy to live.
+GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -185,7 +185,7 @@ page-contact.php | approved
 | 13 | nordic-ware-half-sheet-pan | 90 / 107 | live ✅ — GSC submitted 2026-05-31 |
 | 14 | lodge-cast-iron-skillet-review | 99 / 110 | live ✅ — published 2026-05-31 |
 | 15 | what-is-non-toxic-cookware | 108 / 112 | live ✅ — Category: assigned ✅ — Rank Math: set ✅ — GSC: submitted and indexed ✅ |
-| 16 | greenlife-cookware-review | 123 / — | draft 🟡 — local only — Rank Math: set ✅ — featured image: pending |
+| 16 | greenlife-cookware-review | 123 / — | draft 🟡 — local only — Rank Math: set ✅ — featured image: set ✅ (attachment 125) |
 
 ---
 
