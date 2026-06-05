@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-05
-Last commit: b53e46d — fix: GreenLife post 123 — capacity field, inline link, section borders, pros/cons borders, featured image
+Last commit: 915a128 — fix: pros/cons borders, table header consistency, internal link highlight style
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,7 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Post 123 fixes — kvp_capacity shortened, inline link added to Section 1, section H2 border strengthened (2px→2.5px), pros/cons box borders changed to full border (border-top removed), buy-if/skip-if border colours updated, featured image set (attachment ID 125).
+Three fixes: pc-col modifier classes added (single.php lines 245/255), pc-col border split into .p/#1a7a4a and .c/#A32D0D (style.css lines 1613-1614), GreenLife post 123 table header changed to #E8401C, Lodge post 99 table first th set to "Feature", kvp-internal-link CSS added (style.css line 1623), class applied to inline link in post 123.
 
 ## Next Task
 GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
