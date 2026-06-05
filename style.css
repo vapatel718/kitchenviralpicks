@@ -1649,6 +1649,14 @@ main,
 .kvp-single .final-sub { font-size: 10px; color: rgba(255,255,255,0.55); margin-top: 3px; }
 .kvp-single .final-text { font-size: 15px; color: rgba(255,255,255,0.88); line-height: 1.75; margin: 0 0 16px; }
 
+/* COMPARISON TABLE — scrollable on mobile */
+.kvp-comparison-table { overflow-x: auto; -webkit-overflow-scrolling: touch; display: block; width: 100%; }
+.kvp-comparison-table table { min-width: 480px; width: 100%; }
+.kvp-comparison-table table td:first-child,
+.kvp-comparison-table table th:first-child { min-width: 110px; font-weight: 700; }
+.kvp-comparison-table table td,
+.kvp-comparison-table table th { min-width: 110px; }
+
 /* TABLET — 769px to 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
     .kvp-single .article-body p, .kvp-single .article-body li { font-size: 16px; line-height: 1.75; }
@@ -2317,7 +2325,7 @@ h1, h2, h3,
 
 .kvp-arc-card-img {
     width: 100%;
-    height: 200px;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
     background: #ffffff;
     display: flex;
@@ -2329,10 +2337,8 @@ h1, h2, h3,
 .kvp-arc-card-img img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
-    padding: 12px;
-    box-sizing: border-box;
     display: block;
 }
 
@@ -2567,15 +2573,15 @@ h1, h2, h3,
     .kvp-arc-tp-right { width: 100%; }
     .kvp-arc-top-pick-btn { display: block; text-align: center; width: 100%; box-sizing: border-box; }
     .kvp-arc-also-grid { grid-template-columns: 1fr 1fr; }
-    .kvp-arc-card-img { height: 220px; background: #ffffff; }
-    .kvp-arc-card-img img { object-fit: contain; object-position: center; }
+    .kvp-arc-card-img { aspect-ratio: 4 / 3; height: auto; background: #ffffff; }
+    .kvp-arc-card-img img { object-fit: cover; object-position: center; }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .kvp-arc-banner { padding-top: 90px; }
     .kvp-arc-wrap { padding: 0 24px; }
     .kvp-arc-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-    .kvp-arc-card-img { height: 180px; }
+    .kvp-arc-card-img { aspect-ratio: 4 / 3; height: auto; }
     .kvp-arc-also-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
