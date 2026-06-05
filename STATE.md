@@ -37,8 +37,8 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 
 # STATE.md — KitchenViralPicks
 
-Last updated: 2026-06-04
-Last commit: c70a98e — chore: update STATE.md — featured image and archive card fix complete
+Last updated: 2026-06-05
+Last commit: (pending — see below)
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,10 +77,10 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Featured image added to Post 112 — Pexels cast iron skillet, archive card cover fit fixed, object-position tuned. Cookware Guides category name corrected on local and live.
+GreenLife Soft Grip 16-Piece Cookware Set review created as draft Staple post — Post ID 123 (local), slug: greenlife-cookware-review, Category: Cookware. All 16 custom fields set. Post content includes 4 narrative sections + comparison table. Awaiting Varun approval before Rank Math and featured image.
 
 ## Next Task
-GreenLife 16pc Ceramic Set research — Varun shares Amazon screenshots, Claude builds 9-field report.
+GreenLife review — Step 2: Set Rank Math SEO fields (title, description, focus keyword) after Varun approves this draft.
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -97,8 +97,8 @@ Publish order: Response first → Staple → Pillar
 Cadence: 1–3 articles/month, quality over volume
 
 Content queue (in priority order):
-1. Lodge 10.25" Cast Iron Skillet — Staple post (research complete, keyword pending)
-2. GreenLife 16pc Ceramic Set — Staple post (research pending)
+1. GreenLife 16pc Ceramic Set — Staple post (draft created Post 123 — awaiting Rank Math + featured image + publish)
+2. Lodge 10.25" Cast Iron Skillet — Staple post (research complete, keyword pending)
 3. SENSARTE Ceramic Pan — Staple post (research pending)
 4. Response post — non-toxic cookware question (topic TBD)
 5. Pillar roundup — TBD after 3+ staple posts published
@@ -185,6 +185,7 @@ page-contact.php | approved
 | 13 | nordic-ware-half-sheet-pan | 90 / 107 | live ✅ — GSC submitted 2026-05-31 |
 | 14 | lodge-cast-iron-skillet-review | 99 / 110 | live ✅ — published 2026-05-31 |
 | 15 | what-is-non-toxic-cookware | 108 / 112 | live ✅ — Category: assigned ✅ — Rank Math: set ✅ — GSC: submitted and indexed ✅ |
+| 16 | greenlife-cookware-review | 123 / — | draft 🟡 — local only — Rank Math: pending — featured image: pending |
 
 ---
 
