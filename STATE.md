@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-05
-Last commit: f832842 — fix: mobile table overflow surgical fix, cookware-guides exclusion corrected
+Last commit: 6af2e8b — fix: archive images contain, mobile table scroll, greenlife table header label
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,7 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Comparison table CSS replaced (style.css lines 1653–1658): max-width:100%, margin:28px 0 added, min-width raised to 560px, first-col 130px, other cols 120px. Inline overflow-x style removed from post 123 wrapper via eval-file. Fix 2 (Cookware Guides exclusion): already correct at archive.php line 263 (term_id 30 in array_filter exclude) and index.php lines 445-452 — no change needed.
+Fix 1: Archive card image reverted to contain — background #F5F5F5, object-fit:contain, padding:12px (style.css lines 2326–2343). Mobile/tablet overrides updated (lines 2575–2584). Fix 2: Comparison table upgraded — overflow-x:scroll, width:max-content, table-layout:fixed, first-col 140px, other cols 130px (style.css lines 1653–1658). Fix 3: GreenLife thead label already present — no change needed.
 
 ## Next Task
 GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
