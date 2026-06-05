@@ -1650,12 +1650,12 @@ main,
 .kvp-single .final-text { font-size: 15px; color: rgba(255,255,255,0.88); line-height: 1.75; margin: 0 0 16px; }
 
 /* COMPARISON TABLE — scrollable on mobile */
-.kvp-comparison-table { display: block; width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 28px 0; }
-.kvp-comparison-table table { min-width: 560px; width: 100%; border-collapse: collapse; }
+.kvp-comparison-table { display: block; width: 100%; max-width: 100%; overflow-x: scroll; -webkit-overflow-scrolling: touch; margin: 28px 0; padding: 0; position: relative; }
+.kvp-comparison-table table { min-width: 600px; width: max-content; border-collapse: collapse; table-layout: fixed; }
 .kvp-comparison-table table th:first-child,
-.kvp-comparison-table table td:first-child { min-width: 130px; max-width: 130px; font-weight: 700; }
+.kvp-comparison-table table td:first-child { min-width: 140px; max-width: 140px; width: 140px; font-weight: 700; padding-left: 12px; }
 .kvp-comparison-table table th,
-.kvp-comparison-table table td { min-width: 120px; }
+.kvp-comparison-table table td { min-width: 130px; width: 130px; }
 
 /* TABLET — 769px to 1024px */
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -2327,19 +2327,18 @@ h1, h2, h3,
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    background: #ffffff;
+    background: #F5F5F5;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
 }
 
 .kvp-arc-card-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
-    display: block;
+    padding: 12px;
 }
 
 .kvp-arc-card-img--featured img {
@@ -2573,8 +2572,8 @@ h1, h2, h3,
     .kvp-arc-tp-right { width: 100%; }
     .kvp-arc-top-pick-btn { display: block; text-align: center; width: 100%; box-sizing: border-box; }
     .kvp-arc-also-grid { grid-template-columns: 1fr 1fr; }
-    .kvp-arc-card-img { aspect-ratio: 4 / 3; height: auto; background: #ffffff; }
-    .kvp-arc-card-img img { object-fit: cover; object-position: center; }
+    .kvp-arc-card-img { aspect-ratio: 4 / 3; height: auto; }
+    .kvp-arc-card-img img { object-fit: contain; object-position: center; }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -2582,6 +2581,7 @@ h1, h2, h3,
     .kvp-arc-wrap { padding: 0 24px; }
     .kvp-arc-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
     .kvp-arc-card-img { aspect-ratio: 4 / 3; height: auto; }
+    .kvp-arc-card-img img { object-fit: contain; object-position: center; }
     .kvp-arc-also-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
