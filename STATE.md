@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-05
-Last commit: 915a128 — fix: pros/cons borders, table header consistency, internal link highlight style
+Last commit: d75c511 — fix: mobile table scroll, archive image ratio, exclude cookware-guides from related widget
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,7 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Three fixes: pc-col modifier classes added (single.php lines 245/255), pc-col border split into .p/#1a7a4a and .c/#A32D0D (style.css lines 1613-1614), GreenLife post 123 table header changed to #E8401C, Lodge post 99 table first th set to "Feature", kvp-internal-link CSS added (style.css line 1623), class applied to inline link in post 123.
+Mobile comparison table scroll rules added (style.css lines 1653–1658, min-width 480px, min-col 110px). Archive card image consistency: aspect-ratio 4/3 + cover on base, mobile (2576/2577), and tablet (2584) breakpoints. Cookware Guides (term_id 30) excluded from "Also in our reviews" widget (archive.php line 263).
 
 ## Next Task
 GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
