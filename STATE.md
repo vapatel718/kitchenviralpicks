@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-05
-Last commit: (pending — see below)
+Last commit: (see git log)
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,10 +77,10 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-GreenLife Soft Grip 16-Piece Cookware Set review created as draft Staple post — Post ID 123 (local), slug: greenlife-cookware-review, Category: Cookware. All 16 custom fields set. Post content includes 4 narrative sections + comparison table. Awaiting Varun approval before Rank Math and featured image.
+Rank Math SEO fields set for Post 123 — focus keyword, title, and description all verified via wp post meta list.
 
 ## Next Task
-GreenLife review — Step 2: Set Rank Math SEO fields (title, description, focus keyword) after Varun approves this draft.
+GreenLife review Post 123 — set featured image, then publish and deploy to live.
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -185,7 +185,7 @@ page-contact.php | approved
 | 13 | nordic-ware-half-sheet-pan | 90 / 107 | live ✅ — GSC submitted 2026-05-31 |
 | 14 | lodge-cast-iron-skillet-review | 99 / 110 | live ✅ — published 2026-05-31 |
 | 15 | what-is-non-toxic-cookware | 108 / 112 | live ✅ — Category: assigned ✅ — Rank Math: set ✅ — GSC: submitted and indexed ✅ |
-| 16 | greenlife-cookware-review | 123 / — | draft 🟡 — local only — Rank Math: pending — featured image: pending |
+| 16 | greenlife-cookware-review | 123 / — | draft 🟡 — local only — Rank Math: set ✅ — featured image: pending |
 
 ---
 
