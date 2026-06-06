@@ -2324,22 +2324,24 @@ h1, h2, h3,
 }
 
 .kvp-arc-card-img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    background: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 220px;
+    overflow: hidden;
+    background: #ffffff;
     flex-shrink: 0;
+    width: 100%;
 }
 
 .kvp-arc-card-img img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center;
     display: block;
+    padding: 8px;
+    box-sizing: border-box;
 }
 
 .kvp-arc-card-img--featured img {
@@ -2573,15 +2575,16 @@ h1, h2, h3,
     .kvp-arc-tp-right { width: 100%; }
     .kvp-arc-top-pick-btn { display: block; text-align: center; width: 100%; box-sizing: border-box; }
     .kvp-arc-also-grid { grid-template-columns: 1fr 1fr; }
-    .kvp-arc-card-img { aspect-ratio: 4 / 3; height: auto; background: #ffffff; }
-    .kvp-arc-card-img img { object-fit: cover; object-position: center; }
+    .kvp-arc-card-img { height: 220px; background: #ffffff; }
+    .kvp-arc-card-img img { object-fit: contain; object-position: center; }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .kvp-arc-banner { padding-top: 90px; }
     .kvp-arc-wrap { padding: 0 24px; }
     .kvp-arc-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-    .kvp-arc-card-img { aspect-ratio: 4 / 3; height: auto; }
+    .kvp-arc-card-img { height: 220px; }
+    .kvp-arc-card-img img { object-fit: contain; object-position: center; }
     .kvp-arc-also-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
