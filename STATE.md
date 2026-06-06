@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-05
-Last commit: 06b81e5 — chore: STATE.md after archive CSS restore
+Last commit: 170545b — fix: archive card image CSS — flex contain with fixed height, all images consistent
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,7 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-DB update (no theme files changed): kvp_product_image set for posts 43 (Ninja Blender), 42 (KitchenAid), 41 (Instant Pot Rio), 37 (Cosori Kettle), 13 (Cosori TurboBlaze). All 5 verified via wp post meta list. kvp_product_image now set on all published posts that had URLs provided.
+Fix: archive card image CSS (style.css lines 2326–2344). Container: removed aspect-ratio, added height:220px, kept display:flex + align/justify center. IMG: object-fit changed cover→contain, added padding:8px + box-sizing:border-box. Mobile/tablet overrides: removed aspect-ratio/height:auto, set height:220px + object-fit:contain on both.
 
 ## Next Task
 GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
