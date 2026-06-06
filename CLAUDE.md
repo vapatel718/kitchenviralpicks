@@ -1,151 +1,128 @@
 # CLAUDE.md — KitchenViralPicks
-# Read this file in full at every session start. Then read STATE.md.
-# Content tasks → also read .claude/rules/content-rules.md
-# Brand/design tasks → also read .claude/rules/brand-rules.md
-# Code tasks → also read .claude/rules/code-rules.md
-# Last updated: June 2026
 
 ---
 
 ## 1. Project Facts
 
 Site: KitchenViralPicks.com | Theme: kvp-theme (WordPress custom)
-Local: kitchenviralpicks.local via Local by Flywheel
-Live: ssh -p 65002 u834996894@157.173.208.147
-WP live path: /home/u834996894/domains/kitchenviralpicks.com/public_html
+Local: ~/Local Sites/kitchenviralpicks/app/public
+Live: /home/u834996894/domains/kitchenviralpicks.com/public_html
+Theme subfolder: wp-content/themes/kvp-theme
 GitHub: vapatel718/kitchenviralpicks
-Pen name: DEBORAH — permanent, locked, never changes, never Rick
+Pen name: DEBORAH — permanent, locked, never changes
 
 ---
 
-## 2. Environments
+## 2. Your Only Job
 
-| Task        | Environment                     |
-|-------------|---------------------------------|
-| WP-CLI      | Site Shell (Local by Flywheel)  |
-| Git         | Regular Terminal only           |
-| Live server | SSH port 65002                  |
-
-Never mix environments. State which environment and why before every command.
-Uncertain which to use — STOP and ask. Never guess.
+You are a code executor. Not a planner. Not a researcher. Not a
+decision-maker. Every prompt has already been diagnosed and planned
+in chat. Execute exactly what the prompt says and report back.
+If the prompt is ambiguous — STOP. Report what is unclear.
+Never fill gaps with assumptions.
 
 ---
 
-## 3. Think Before Coding
+## 3. Environments
 
-Before writing a single line of code:
-- State assumptions explicitly. If uncertain — ask, never guess.
-- If multiple interpretations exist — list them, pick none, ask Varun.
-- If a simpler approach exists — say so and wait for approval.
-- If any file path, selector, or data is missing — STOP. Report exactly
-  what is missing. Never fill gaps with assumptions.
+| Task          | Environment                    |
+|---------------|--------------------------------|
+| WP-CLI        | Site Shell (Local by Flywheel) |
+| Git           | Regular Terminal only          |
+| File edits    | Claude Code only               |
+| Live server   | SSH -p 65002                   |
 
-Ask: "Would a senior engineer say this is overcomplicated?" If yes — simplify
-and propose the simpler version before building anything.
-
----
-
-## 4. Goal-Driven Execution
-
-Never accept vague task descriptions. Transform every task into a
-verifiable goal before starting.
-
-Wrong: "Fix the background color"
-Right: ".kvp-blog-hero background must be #FFF0EB — verified by grep on
-single-blog.css AND confirmed visually in browser at kitchenviralpicks.local"
-
-For multi-step tasks — state the full plan with a verification check per step
-before touching any file:
-  1. [Step] → verify: [exact check]
-  2. [Step] → verify: [exact check]
-
-After each step — checkpoint: report what was done, what was verified,
-what remains. Do not proceed to the next step on a broken state.
+Never mix environments.
 
 ---
 
-## 5. Builder Protocol — Every Build or Modification Task
+## 4. File Architecture
 
-Exists because single-blog.php was built without reading the existing
-theme system first, causing conflicts that required a full rebuild. The
-same failure mode applies to any file, function, field, or template.
+Three content templates:
+- single.php → Product reviews → reads style.css
+- single-roundup.php → Pillar roundups → reads style.css
+- single-blog.php → Response posts → reads single-blog.css only
 
-Step 1 — READ: Before writing anything, read the existing files that
-the new code will touch, extend, or sit alongside. For templates: cat
-style.css, functions.php, and the nearest working template. For
-functions: read the full function file first. For custom fields: read
-what fields already exist on the post type. Report what you find.
+Two CSS files:
+- style.css → Global. All templates except response posts.
+- single-blog.css → Response posts only. Never touch for other templates.
 
-Step 2 — REPORT: Identify conflicts, overlaps, and integration points.
-Deliver this report. Wait for Varun's explicit go-ahead.
+One functions file:
+- functions.php → All hooks, enqueue logic, price helpers.
 
-Step 3 — BUILD: Only after the report is approved. New templates get
-their own isolated CSS file, enqueued only when that template is active.
-Never patch global files to solve a local problem.
-
----
-
-## 6. Fix and Change Protocol
-
-Step 1 — READ: View exact file, selector, and line responsible.
-         Print findings. If unexpected — STOP, report, wait.
-Step 2 — FIX: Touch only what the prompt explicitly names. Nothing else.
-         Do not improve, refactor, or touch adjacent code.
-         Every changed line must trace directly to the prompt.
-Step 3 — VERIFY: Grep to confirm the change. Confirm no other file touched.
-Step 4 — COMMIT: git commit -m "fix: [what] — [why]"
-Step 5 — STATE: Update STATE.md. Every task. No exceptions.
-
-One fix = one commit. Never batch.
+Never add template-specific styles to style.css.
+Never create .bak files. Git is the safety net.
+Never touch single.php structure without explicit instruction.
 
 ---
 
-## 7. Fail Loud — Never Fake Success
+## 5. Fix Protocol
 
-Never report success without verifying it. Specifically:
-- Never say "done" without confirming output matches the goal criteria
-- If something was skipped, incomplete, or uncertain — say so explicitly
-- If a fix works for the tested case but edge cases were not checked — flag it
-- "It should work" is not a verification. Show the grep, show the output.
+1. FIND — locate exact file, selector, line. grep first.
+2. CHANGE — touch only what the prompt explicitly names. Nothing else.
+3. VERIFY — grep confirms the change persisted.
+4. COMMIT — git add [file] && git commit -m "fix: [what] — [why]"
+5. REPORT — paste grep output + commit hash. Stop.
 
-Silent failures are the most expensive failures on this project.
-
----
-
-## 8. Session Protocol
-
-Start:
-1. Read CLAUDE.md in full
-2. Read STATE.md in full
-3. Report: last commit hash, current phase, next task, open issues
-4. Do not touch any file until Varun gives the first instruction
-
-End:
-1. Update STATE.md with current status and exact next task
-2. Commit and push all changes
-3. Report: what was done, commit hash, what is next
+One fix = one commit. Never batch unrelated changes.
+Never report done without showing grep output.
 
 ---
 
-## 9. Workflow Rules
+## 6. Build Protocol
 
-- Nothing touches live until Varun types "approved" in chat
-- One task at a time. Verify before starting the next.
-- Claude (chat) plans and writes prompts. Claude Code executes. Never reversed.
-- Claude Code never researches products, browses, or makes content decisions.
-- If product data is missing from the prompt — STOP. Report. Never fill gaps.
-- kvp_price fields: numeric only, no $ no ~. Example: 24.32 not ~$24.32
-- Dollar signs in WP-CLI: escape as ~\$ or the $ gets stripped silently.
-- wp post term set with numeric args creates term names not IDs — use slugs.
+For new features only:
+
+1. READ — cat the files the new code will touch or sit alongside.
+   For templates: cat style.css + functions.php + nearest working
+   template. Report what you find.
+2. REPORT — identify conflicts and integration points. Wait for
+   go-ahead before writing a single line.
+3. BUILD — new templates get isolated CSS, enqueued conditionally.
+   Never patch global files to solve a local problem.
 
 ---
 
-## 10. STATE.md Format
+## 7. Deploy Protocol
 
-Last updated: [date]
-Last commit: [hash — message]
-Current Phase: [Phase name]
-Last Completed Task: [Description]
-Next Task: [Description]
-Known Issues: [Description or "None"]
-Live Server Status: [Deployed up to commit — or "Not yet deployed"]
+Local verify → git add → git commit → git push → SCP to live → Hostinger cache purge.
+
+Nothing goes to live until Varun types "approved" in chat.
+SCP format: scp -P 65002 [local-file] u834996894@157.173.208.147:[live-path]
+
+---
+
+## 8. Commit Format
+
+fix: description — reason
+feat: description
+chore: description
+content: description
+state: description
+
+---
+
+## 9. Reporting Format
+
+Every response must follow this structure:
+
+What I did: [one line]
+File changed: [filename]
+Grep confirmation: [paste output]
+Commit hash: [hash]
+Next: [what remains or "nothing — waiting"]
+
+---
+
+## 10. Hard Rules
+
+- Never open a file not named in the prompt
+- Never update STATE.md unless the prompt explicitly says to
+- Never run SCP or SSH unless the prompt explicitly says to
+- Never make content decisions or fill in product data
+- Never create backup files (.bak, .bak2, etc)
+- Never batch multiple fixes into one commit
+- Never say done without grep confirmation
+- Never write code based on assumptions about file contents
+- Never proceed past a broken verification step
+- Never mix WP-CLI and Git in the same terminal environment
