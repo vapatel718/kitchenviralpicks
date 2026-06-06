@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-05
-Last commit: f5cf48d — fix: restore archive card image CSS to pre-session working state
+Last commit: 06b81e5 — chore: STATE.md after archive CSS restore
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,7 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Restore: archive card image CSS reverted to pre-session state (commit d75c511). Container back to display:flex, background:#ffffff, flex-shrink:0. IMG back to object-fit:cover, display:block, no absolute positioning. Mobile override restored with background:#ffffff and object-fit:cover. Tablet img override removed (was not in original).
+DB update (no theme files changed): kvp_product_image set for posts 44 (Cuisinart), 40 (Lodge Braiser), 36 (Tramontina), 34 (CAROTE). kvp_amazon_url fixed with tag=kitchenviralp-20 for posts 44, 40, 34. Post 36 Tramontina amazon_url not in task scope — left as-is.
 
 ## Next Task
 GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
