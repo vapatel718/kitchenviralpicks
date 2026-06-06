@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-05
-Last commit: c42ebaf — fix: archive.php — plain img tag for featured images, remove figure wrapper
+Last commit: f5cf48d — fix: restore archive card image CSS to pre-session working state
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,7 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Fix: archive.php featured image output (lines 186–197). Replaced the_post_thumbnail() (which wraps in a figure tag) with wp_get_attachment_image_url() + plain img tag. Now matches kvp_product_image path exactly — no figure wrapper, CSS contain pattern applies consistently to all cards.
+Restore: archive card image CSS reverted to pre-session state (commit d75c511). Container back to display:flex, background:#ffffff, flex-shrink:0. IMG back to object-fit:cover, display:block, no absolute positioning. Mobile override restored with background:#ffffff and object-fit:cover. Tablet img override removed (was not in original).
 
 ## Next Task
 GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
