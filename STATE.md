@@ -77,7 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-DB update (no theme files changed): kvp_product_image set for posts 44 (Cuisinart), 40 (Lodge Braiser), 36 (Tramontina), 34 (CAROTE). kvp_amazon_url fixed with tag=kitchenviralp-20 for posts 44, 40, 34. Post 36 Tramontina amazon_url not in task scope — left as-is.
+DB update (no theme files changed): kvp_product_image set for posts 43 (Ninja Blender), 42 (KitchenAid), 41 (Instant Pot Rio), 37 (Cosori Kettle), 13 (Cosori TurboBlaze). All 5 verified via wp post meta list. kvp_product_image now set on all published posts that had URLs provided.
 
 ## Next Task
 GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
