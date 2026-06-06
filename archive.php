@@ -184,10 +184,18 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                             height="400"
                         >
                     <?php elseif ( has_post_thumbnail() ) : ?>
-                        <?php the_post_thumbnail( 'medium_large', array(
-                            'loading' => 'lazy',
-                            'alt'     => esc_attr( get_the_title() ),
-                        ) ); ?>
+                        <?php
+                        $kvp_thumb_id  = get_post_thumbnail_id();
+                        $kvp_thumb_src = wp_get_attachment_image_url( $kvp_thumb_id, 'medium_large' );
+                        if ( $kvp_thumb_src ) : ?>
+                            <img
+                                src="<?php echo esc_url( $kvp_thumb_src ); ?>"
+                                alt="<?php echo esc_attr( get_the_title() ); ?>"
+                                loading="lazy"
+                                width="400"
+                                height="400"
+                            >
+                        <?php endif; ?>
                     <?php else : ?>
                         <div class="kvp-arc-card-img-placeholder" aria-hidden="true">🍳</div>
                     <?php endif; ?>
