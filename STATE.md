@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-05
-Last commit: 404e219 — fix: archive card image — absolute position contain pattern, permanent fix
+Last commit: c42ebaf — fix: archive.php — plain img tag for featured images, remove figure wrapper
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,7 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Fix: Archive card image permanent fix (style.css lines 2326–2345). Container changed from display:flex to position:relative/display:block. IMG rule updated to position:absolute with top/left/width/height 100%, object-fit:contain, padding:12px, box-sizing:border-box. Mobile/tablet overrides already correct — no change needed.
+Fix: archive.php featured image output (lines 186–197). Replaced the_post_thumbnail() (which wraps in a figure tag) with wp_get_attachment_image_url() + plain img tag. Now matches kvp_product_image path exactly — no figure wrapper, CSS contain pattern applies consistently to all cards.
 
 ## Next Task
 GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
