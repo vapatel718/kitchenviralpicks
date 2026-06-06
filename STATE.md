@@ -38,49 +38,44 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-05
-Last commit: 170545b — fix: archive card image CSS — flex contain with fixed height, all images consistent
+Last commit: 19be684 — chore: STATE.md after archive card image contain fix
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Session
-SESSION END — 2026-06-02
-COMMITS THIS SESSION:
-- 40669bf — single-blog.php breadcrumb fixed, single-blog.css scoped under #kvp-blog-main
-- 7810e65 — Post 108 content: TOC anchors, Section 05, material cards expanded
-- c600a90 — enqueue fix: global $post with null check
-- 1146cab — kvp-blog-content-wrap selector fix, cache bust
-- 65a4666 — inline styles on hero bg and H1
-- b67422f — hero padding-top 90px, charcoal bg, H1 white, gap removed
-- f8c486f — H1 size, section spacing, internal link icon, footer strip styling
-- a86ce04 — kvp-blog-wrap max-width 720px centered — hero contained
-
-CURRENT STATE:
-- Post 108 content: CLEAN — restored from /tmp/post108_content.html after \\n corruption
-- single-blog.php: hero correct — charcoal bg, breadcrumb, pill, byline, padding-top:90px
-- single-blog.css: scoped under #kvp-blog-main, white content surface working
-- Page renders correctly — all sections, cards, TOC anchors, internal link box working
-- Post 108 status: published
-
-HERO STATUS: APPROVED — charcoal bg, contained width, breadcrumb, pill, byline all correct.
-
-CURRENT STATE (2026-06-03):
-- Response post live — Post ID 112 — https://kitchenviralpicks.com/what-is-non-toxic-cookware/
-- single-blog.css: 518 lines — fully CSS-driven, no inline styles
-- single-blog.php: 55 lines — no inline styles, class-only
-- Hero: charcoal bg #1A1A1A, white text, breadcrumb, pill, byline — fully CSS-driven
-- Local post 108 and live post 112 are separate DB entries — content in sync, IDs differ
-- Category assignment pending for Post 112
+SESSION END — 2026-06-05
+FIXES COMPLETED THIS SESSION:
+- single.php: pc-col.p and pc-col.c border classes added
+- style.css: kvp-internal-link class added
+- style.css: comparison table mobile scroll fix
+- style.css: archive card image CSS — flex contain with 220px height
+- archive.php: plain img tag output (removed figure wrapper)
+- archive.php: Cookware Guides excluded from related widget (term_id 30)
+- Lodge comparison table: Feature header label added
+- All posts: kvp_product_image set for posts 44, 40, 36, 34, 43, 42, 41, 37, 13 on both local and live
+- Affiliate URLs fixed for posts 44, 40, 36, 34 on both local and live
+- STATE.md: Post 13/14 internal links formally marked deprioritized
 
 CRITICAL LESSON — POST CONTENT UPDATES:
 - NEVER use wp post update --post_content="$(cat file)" — corrupts HTML with \\n literals
-- ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
+- ALWAYS use wp eval-file /tmp/update_post.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Fix: archive card image CSS (style.css lines 2326–2344). Container: removed aspect-ratio, added height:220px, kept display:flex + align/justify center. IMG: object-fit changed cover→contain, added padding:8px + box-sizing:border-box. Mobile/tablet overrides: removed aspect-ratio/height:auto, set height:220px + object-fit:contain on both.
+GreenLife Soft Grip 16-Piece Cookware Set review — fully published on local and live.
+- Local post ID: 123 | Live post ID: 114
+- URL: kitchenviralpicks.com/greenlife-cookware-review/
+- All 16 custom fields set on both local and live
+- Rank Math SEO fields set on both local and live
+- Featured image set (attachment 125 local)
+- GSC indexing requested: June 5 2026
+- Comparison table: all headers visible, mobile scroll working
+- Internal link to /what-is-non-toxic-cookware/ styled with kvp-internal-link class
+- Pros/cons and Buy/Skip borders: solid green and dark red confirmed live
 
 ## Next Task
-GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
+SENSARTE Ceramic Pan research — Varun shares Amazon screenshots, Claude builds 9-field report.
+(33.5K reviews, ~$20.89 — second in research pipeline)
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -97,9 +92,9 @@ Publish order: Response first → Staple → Pillar
 Cadence: 1–3 articles/month, quality over volume
 
 Content queue (in priority order):
-1. GreenLife 16pc Ceramic Set — Staple post (draft created Post 123 — awaiting Rank Math + featured image + publish)
-2. Lodge 10.25" Cast Iron Skillet — Staple post (research complete, keyword pending)
-3. SENSARTE Ceramic Pan — Staple post (research pending)
+1. GreenLife 16pc Ceramic Set — Staple post (PUBLISHED ✅ — live 2026-06-05)
+2. SENSARTE Ceramic Pan — Staple post (research next — 33.5K reviews, ~$20.89)
+3. Lodge 10.25" Cast Iron Skillet — Staple post (research complete, keyword pending)
 4. Response post — non-toxic cookware question (topic TBD)
 5. Pillar roundup — TBD after 3+ staple posts published
 
@@ -185,7 +180,7 @@ page-contact.php | approved
 | 13 | nordic-ware-half-sheet-pan | 90 / 107 | live ✅ — GSC submitted 2026-05-31 |
 | 14 | lodge-cast-iron-skillet-review | 99 / 110 | live ✅ — published 2026-05-31 |
 | 15 | what-is-non-toxic-cookware | 108 / 112 | live ✅ — Category: assigned ✅ — Rank Math: set ✅ — GSC: submitted and indexed ✅ |
-| 16 | greenlife-cookware-review | 123 / — | draft 🟡 — local only — Rank Math: set ✅ — featured image: set ✅ (attachment 125) |
+| 16 | greenlife-cookware-review | 123 / 114 | live ✅ — GSC: submitted 2026-06-05 |
 
 ---
 
