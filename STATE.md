@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: 2026-06-05
-Last commit: 6af2e8b — fix: archive images contain, mobile table scroll, greenlife table header label
+Last commit: 404e219 — fix: archive card image — absolute position contain pattern, permanent fix
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -77,7 +77,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post108.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-Fix: GreenLife comparison table header text color — Post 123. Second <th> had color:#E8401C (red text invisible on red background). Changed to color:#fff via wp eval-file. Verified with grep — GreenLife Soft Grip 16pc header now white.
+Fix: Archive card image permanent fix (style.css lines 2326–2345). Container changed from display:flex to position:relative/display:block. IMG rule updated to position:absolute with top/left/width/height 100%, object-fit:contain, padding:12px, box-sizing:border-box. Mobile/tablet overrides already correct — no change needed.
 
 ## Next Task
 GreenLife review Post 123 — publish on local, then deploy to live Hostinger.
