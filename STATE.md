@@ -37,8 +37,8 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 
 # STATE.md — KitchenViralPicks
 
-Last updated: 2026-06-05
-Last commit: 19be684 — chore: STATE.md after archive card image contain fix
+Last updated: June 6, 2026
+Last commit: bc66143 — chore: rewrite CLAUDE.md executor-only format
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -62,7 +62,7 @@ CRITICAL LESSON — POST CONTENT UPDATES:
 - ALWAYS use wp eval-file /tmp/update_post.php --path=/app/public (PHP HEREDOC method)
 
 ## Last Completed Task
-GreenLife Soft Grip 16-Piece Cookware Set review — fully published on local and live.
+Workflow overhaul — new CLAUDE.md, deleted SPEC.md and .bak files, created PROJECT.md
 - Local post ID: 123 | Live post ID: 114
 - URL: kitchenviralpicks.com/greenlife-cookware-review/
 - All 16 custom fields set on both local and live
@@ -74,8 +74,7 @@ GreenLife Soft Grip 16-Piece Cookware Set review — fully published on local an
 - Pros/cons and Buy/Skip borders: solid green and dark red confirmed live
 
 ## Next Task
-SENSARTE Ceramic Pan research — Varun shares Amazon screenshots, Claude builds 9-field report.
-(33.5K reviews, ~$20.89 — second in research pipeline)
+SENSARTE Ceramic Pan research — Varun shares Amazon screenshots, Claude builds 9-field report
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
