@@ -28,3 +28,7 @@
 | June 1 2026 | single-blog.php gets isolated CSS file (single-blog.css) | Enqueued only when single-blog.php is active. Conflicting theme styles dequeued for that template. Prevents CSS conflicts permanently. |
 | June 2 2026 | CLAUDE.md compressed to 151 lines — builder protocol added | Removed explanations, kept instructions. Builder Protocol added as Section 5. Goal-Driven Execution added as Section 4. Fail Loud added as Section 7. |
 | June 2 2026 | tasks.md deleted — STATE.md is sole source of truth | tasks.md was unreliable and contradicted STATE.md. One source of truth only. |
+| June 2 2026 | post_content corruption fix — use wp eval with file_get_contents | wp post update --post_content corrupts HTML with literal \n. Only safe method is wp eval with file_get_contents(). Permanent rule. |
+| June 3 2026 | single-blog.php gets isolated single-blog.css | Enqueued only when single-blog.php is active. Never patch style.css for response post styles. |
+| June 6 2026 | CLAUDE.md rewritten to executor-only format | Claude Code is hands not brain. Diagnosis and planning happen in chat. Claude Code executes atomic prompts only. 128 lines. |
+| June 6 2026 | No .bak files ever — git is the safety net | Deleted 5 stale .bak files. Git history replaces manual backups permanently. |
