@@ -132,7 +132,7 @@ Existing air fryer, kettle, bakeware, blender, multicooker articles stay
 live — no new ones in those categories.
 
 ### Three Content Tiers
-- Response posts: 1,200–1,500 words · single-blog.php · informational
+- Response posts: 2,500+ words minimum · single-blog.php · informational
 - Staple posts: 1,800–2,200 words · single.php · product reviews
 - Pillar posts: 2,800–3,200 words · single-roundup.php · roundups
 
