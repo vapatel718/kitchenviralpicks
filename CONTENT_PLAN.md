@@ -1,4 +1,21 @@
 # KVP Content Plan — Master Calendar
+
+## ACTIVE PIPELINE — locked June 9, 2026 (supersedes all earlier queues below)
+Pace: June 2026 = 3 articles. From July 2026 = 4/month (1/week). 5/month only after two consecutive clean months. 6/month never planned.
+Order after SENSARTE Staple:
+1. Staple: 3rd ceramic (likely GreenPan — slot flexible per data)
+2. PILLAR: Best Non-Toxic Ceramic Cookware
+3. Response: Is Cast Iron Cookware Safe?
+4. Staple: carbon steel pan (de Buyer Mineral B or Lodge — slot flexible)
+5. Response: Is Stainless Steel Cookware Safe?
+6. Staple: stainless set (Cuisinart Multiclad or Tramontina — slot flexible)
+7. Response: Ceramic vs Stainless Steel — Which Is Safer?
+8. Response: When to Throw Away Your Nonstick Pans
+9. MASTER PILLAR: Best Non-Toxic Cookware — always last
+Rule: finish one material cluster before opening the next. Every keyword requires Ahrefs validation; every product requires the full 3-layer research system before drafting.
+
+---
+
 Last updated: 2026-05-31
 
 ---

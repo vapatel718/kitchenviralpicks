@@ -142,3 +142,11 @@ Publish order: Response first → Staple → Pillar
 - Always surface PFAS-free / PFOA-free / PTFE-free where relevant
 - Safe phrasing: "analyzed X verified Amazon buyer reviews"
 - Never: "tested in her kitchen", "hands-on testing", "after cooking with it"
+
+---
+
+## RESEARCH SYSTEM — THREE LAYERS (locked June 9, 2026)
+Cap: 60–90 min per article. Sequence: L1 → L2 → L3 → keyword/outline approval → draft.
+L1 PRODUCT DATA (Staples): 9-field report + Camelcamelcamel + complaint frequency (top 3 complaints as % of negative reviews) + review recency check (last 3 months vs lifetime) + exact ASIN/variant verified + safety claims verified on manufacturer site, never Amazon copy.
+L2 SERP INTELLIGENCE (all posts): top-10 teardown (who ranks, format Google rewards) + People Also Ask questions become H3s + information gain test (3 things the top 5 don't say, else re-evaluate keyword).
+L3 PRE-DRAFT (all posts): primary source locked for every safety claim before drafting + internal link map decided at research time + one original visual from L1 data.

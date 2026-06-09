@@ -32,3 +32,8 @@
 | June 3 2026 | single-blog.php gets isolated single-blog.css | Enqueued only when single-blog.php is active. Never patch style.css for response post styles. |
 | June 6 2026 | CLAUDE.md rewritten to executor-only format | Claude Code is hands not brain. Diagnosis and planning happen in chat. Claude Code executes atomic prompts only. 128 lines. |
 | June 6 2026 | No .bak files ever — git is the safety net | Deleted 5 stale .bak files. Git history replaces manual backups permanently. |
+
+June 9, 2026 — Publishing pace: 3 articles June 2026, 4/month from July 2026. 5/month earned only after two consecutive clean months. 6/month never planned. Reason: 4 fits 10–20 hrs/week with QA intact; history shows pace beyond verification capacity creates rework debt.
+June 9, 2026 — 10-article pipeline locked (see CONTENT_PLAN.md Active Pipeline). Reason: finish clusters before opening new ones; master pillar last so cluster pages exist to feed it internal links.
+June 9, 2026 — 3-layer research system adopted (see content-rules.md). Reason: rankings require SERP intelligence and information gain, not only product data; primary-source verification prevents recurrence of past accuracy corrections.
+June 9, 2026 — December 2026 checkpoint: by Dec 31, evaluate niche posts on three criteria — average position under 20, impressions trending up month-over-month, at least one Amazon conversion. Clears → scale KVP in 2027. Badly misses → pivot/second project becomes rational. Reason: converts "what if KVP fails" into a dated decision with written criteria.
