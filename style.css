@@ -1590,7 +1590,19 @@ main,
 .post-content table tbody tr:last-child td,
 .kvp-article-body table tbody tr:last-child td,
 .kvp-single .article-body table tbody tr:last-child td {
-    border-bottom: none;
+
+/* ── In-content links ── */
+.entry-content a,
+.post-content a {
+    color: #E8401C;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+.entry-content a:hover,
+.post-content a:hover {
+    color: #c73516;
+    text-decoration: underline;
+}    border-bottom: none;
 }
 
 /* BUY / SKIP */
