@@ -17,3 +17,5 @@ wp-config.php
 
 # Mac system files
 .DS_Store
+tmp-sensarte-*.php
+tmp-sensarte-*.html
