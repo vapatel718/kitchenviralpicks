@@ -1590,7 +1590,8 @@ main,
 .post-content table tbody tr:last-child td,
 .kvp-article-body table tbody tr:last-child td,
 .kvp-single .article-body table tbody tr:last-child td {
-
+    border-bottom: none;
+}
 /* ── In-content links ── */
 .kvp-article-body a,
 .kvp-single .article-body a {
