@@ -37,44 +37,38 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 
 # STATE.md — KitchenViralPicks
 
-Last updated: June 6, 2026
-Last commit: bc66143 — chore: rewrite CLAUDE.md executor-only format
+Last updated: June 10, 2026
+Last commit: d2197ad — fix(css): restore table last-child closing brace
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Session
-SESSION END — 2026-06-05
+SESSION END — 2026-06-10
 FIXES COMPLETED THIS SESSION:
-- single.php: pc-col.p and pc-col.c border classes added
-- style.css: kvp-internal-link class added
-- style.css: comparison table mobile scroll fix
-- style.css: archive card image CSS — flex contain with 220px height
-- archive.php: plain img tag output (removed figure wrapper)
-- archive.php: Cookware Guides excluded from related widget (term_id 30)
-- Lodge comparison table: Feature header label added
-- All posts: kvp_product_image set for posts 44, 40, 36, 34, 43, 42, 41, 37, 13 on both local and live
-- Affiliate URLs fixed for posts 44, 40, 36, 34 on both local and live
-- STATE.md: Post 13/14 internal links formally marked deprioritized
+- style.css: in-content link selector specificity fixed (.article-body a → .kvp-single .article-body a)
+- style.css: orphaned border-bottom/closing brace restored for table last-child rule
+- SENSARTE post (local 138 / live 122) assigned to Cookware category on both environments
+- Header layout breakage caused by accidental removal of table rule closing brace — diagnosed and fixed same session
 
-CRITICAL LESSON — POST CONTENT UPDATES:
-- NEVER use wp post update --post_content="$(cat file)" — corrupts HTML with \\n literals
-- ALWAYS use wp eval-file /tmp/update_post.php --path=/app/public (PHP HEREDOC method)
+CRITICAL LESSON — CSS EDITS:
+- Before removing any "orphaned" code, verify it isn't the body/closing brace of a rule opened above.
+- A stray } may actually close a parent rule. Removing it swallows all subsequent CSS.
 
 ## Last Completed Task
-Workflow overhaul — new CLAUDE.md, deleted SPEC.md and .bak files, created PROJECT.md
-- Local post ID: 123 | Live post ID: 114
-- URL: kitchenviralpicks.com/greenlife-cookware-review/
-- All 16 custom fields set on both local and live
-- Rank Math SEO fields set on both local and live
-- Featured image set (attachment 125 local)
-- GSC indexing requested: June 5 2026
-- Comparison table: all headers visible, mobile scroll working
-- Internal link to /what-is-non-toxic-cookware/ styled with kvp-internal-link class
-- Pros/cons and Buy/Skip borders: solid green and dark red confirmed live
+SENSARTE Ceramic Saute Pan — Staple post fully published and verified
+- Local post ID: 138 | Live post ID: 122
+- URL: kitchenviralpicks.com/sensarte-ceramic-saute-pan-review/
+- All custom fields set on both local and live
+- Deborah author assigned on both local and live
+- Category: Cookware (assigned June 10)
+- In-content links: 3 links verified red/underlined on live
+- Complaint frequency table: corrected on live (checksum 3546251a5fe45f7f)
+- Internal links from Post 117 and Post 114 to SENSARTE: not yet added (scheduled)
 
 ## Next Task
-SENSARTE Ceramic Pan research — Varun shares Amazon screenshots, Claude builds 9-field report
+Verdict duplication fix — remove DEBORAH'S VERDICT box from single.php (keeps FINAL VERDICT only).
+Affects SENSARTE (138/122) and GreenLife (123/114).
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -83,28 +77,24 @@ Key signals: PFAS-free, PFOA-free, PTFE-free
 Audience: health-conscious buyers with high purchase intent
 
 Three content tiers (Income School model):
-- Response posts: 1,200–1,500 words — informational, answer specific non-toxic cookware questions, rank fast
+- Response posts: 2,500+ words — informational, topical authority, no affiliate links
 - Staple posts: 1,800–2,200 words — individual product reviews, money pages
 - Pillar posts: 2,800–3,200 words — roundups
 
 Publish order: Response first → Staple → Pillar
 Cadence: 1–3 articles/month, quality over volume
 
-Content queue (in priority order):
-1. GreenLife 16pc Ceramic Set — Staple post (PUBLISHED ✅ — live 2026-06-05)
-2. SENSARTE Ceramic Pan — Staple post (research next — 33.5K reviews, ~$20.89)
-3. Lodge 10.25" Cast Iron Skillet — Staple post (research complete, keyword pending)
-4. Response post — non-toxic cookware question (topic TBD)
-5. Pillar roundup — TBD after 3+ staple posts published
-
-Retired from queue:
-- Ninja AF101 (retired May 30 — outside micro-niche)
-- Chefman TurboFry (retired — outside micro-niche)
-- Dash Tasti-Crisp (retired — outside micro-niche)
+Content queue: See CONTENT_PLAN.md Active Pipeline (locked June 9, 2026).
+Next article: 3rd ceramic Staple (likely GreenPan), pending Ahrefs data.
 
 ## Known Issues
-- Local post 108 and live post 112 are separate DB entries — content in sync, IDs differ.
-- Internal links Post 13/14 → Post 103: DEPRIORITIZED 2026-06-04 — air fryer content not part of active content strategy.
+- ACTIVE: Verdict duplication in single.php — DEBORAH'S VERDICT box and FINAL VERDICT box both render kvp_final_verdict. Fix locked: remove DEBORAH'S VERDICT box.
+- ACTIVE: Local Post 138 post_content out of sync with live Post 122 (table fix applied to live only). Fix: wp eval with checksum 3546251a5fe45f7f.
+- ACTIVE: Duplicate "What Is Non-Toxic Cookware?" on local — IDs 118 and 108 both published. Live has only ID 112. Diagnose before touching live.
+- NOTED: single.php audit after verdict fix — expect three small patches at most.
+- NOTED: Response post link styling — verify single-blog.php uses article-body wrapper or needs its own rule.
+- NOTED: Add back-links from Posts 117 and 114 to SENSARTE post.
+- NOTED: Pre-pivot posts (99, 90, 86, 83, 81, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13) assigned to admin. Decision needed: Deborah for E-E-A-T or leave admin on out-of-niche.
 
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
@@ -144,7 +134,8 @@ Use ONLY these key names when publishing articles. Single.php reads these exact 
 
 ## Live Server Status
 Deployed — single-blog.css, single-blog.php, functions.php deployed via SCP. Post 112 created directly on live.
-Last confirmed live commit: ccb67b5 (2026-06-03).
+Last confirmed live commit: d2197ad (2026-06-10).
+Deployed via git pull origin/main.
 
 ---
 
@@ -180,6 +171,8 @@ page-contact.php | approved
 | 14 | lodge-cast-iron-skillet-review | 99 / 110 | live ✅ — published 2026-05-31 |
 | 15 | what-is-non-toxic-cookware | 108 / 112 | live ✅ — Category: assigned ✅ — Rank Math: set ✅ — GSC: submitted and indexed ✅ |
 | 16 | greenlife-cookware-review | 123 / 114 | live ✅ — GSC: submitted 2026-06-05 |
+| 17 | is-ceramic-cookware-safe | 131 / 117 | live ✅ — Response post, category: Cookware Guides |
+| 18 | sensarte-ceramic-saute-pan-review | 138 / 122 | live ✅ — Category: Cookware, Deborah assigned |
 
 ---
 
@@ -207,3 +200,8 @@ DEBORAH — never Rick, never anything else. Permanent. Locked.
 - 2026-05-25: Roundup publishes before standalone reviews
 - 2026-05-24: Creators API plugin after 10 qualifying sales
 - 2026-05-24: single-blog.php template needed for blog/guide content type — COMPLETED 2026-06-03, deployed and verified ✅
+- 2026-06-09: No new Staple post template. Inline HTML for one-off elements. Repeating furniture stays in custom fields.
+- 2026-06-09: 3-layer research system locked (L1 product data, L2 SERP intel, L3 pre-draft). 60–90 min cap.
+- 2026-06-09: 10-article pipeline locked. Material cluster sequencing: ceramic → cast iron/carbon steel → stainless → master pillar.
+- 2026-06-10: CSS in-content link selectors require .kvp-single prefix to match specificity of other .article-body sub-rules.
+- 2026-06-10: Deborah user created on local (ID 2) and live (ID 2). Author assigned to all niche posts.

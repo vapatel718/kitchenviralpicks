@@ -40,9 +40,9 @@ Existing air fryer, kettle, bakeware, blender, multicooker articles stay live �
 ## Three Content Tiers — Locked May 30, 2026
 
 ### Tier 1 — Response Posts
-- Word count: 1,200–1,500 words
+- Word count: 2,500+ words
 - Purpose: Answer specific non-toxic cookware questions. Rank fast against forums and Reddit.
-- Template: single-blog.php (NOT YET BUILT — needed before first Response post publishes)
+- Template: single-blog.php (deployed 2026-06-03, verified)
 - Examples: "Is cast iron PFAS-free?", "What does PTFE-free actually mean?", "Is ceramic cookware safe?"
 
 ### Tier 2 — Staple Posts
@@ -112,29 +112,22 @@ Reason: Response posts build topical authority fast. Staple posts are the money 
 ## Content Queue — Active Pipeline
 
 ### 1. Lodge 10.25" Cast Iron Skillet — STAPLE POST
-- Status: RESEARCH COMPLETE — keyword approval pending
+- Status: PUBLISHED ✅ — live post 110
 - Data: $24.90 · 164,000+ reviews · 4.7★ · PFAS-free · price stable
 - Research report: RESEARCH_VAULT.md
 - Next action: keyword approval in chat, then write article
 
 ### 2. GreenLife 16pc Ceramic Cookware Set — STAPLE POST
-- Status: RESEARCH PENDING — Varun shares Amazon screenshots, Claude builds report
-- Data preview: 46,800+ reviews · $69.99
-- Next action: Varun shares screenshots
+- Status: PUBLISHED ✅ — live post 114
 
 ### 3. SENSARTE Ceramic Non-Stick Pan — STAPLE POST
-- Status: RESEARCH PENDING — Varun shares Amazon screenshots, Claude builds report
-- Data preview: 33,500+ reviews · $20.89
-- Next action: Varun shares screenshots
+- Status: PUBLISHED ✅ — live post 122
 
 ### 4. Response Post — Non-Toxic Cookware Question
-- Status: TOPIC PENDING — decide after first Staple keyword is approved
-- Candidates: "Is cast iron PFAS-free?", "What does PTFE-free mean?", "Is ceramic cookware safe?"
-- Note: single-blog.php template must be built before this publishes
+- Status: PUBLISHED ✅ — two Response posts live (Posts 112 and 117)
 
 ### 5. Pillar Roundup — Non-Toxic Cookware
-- Status: PLANNED — publish after 3+ Staple posts are live
-- Topic TBD
+- Status: PLANNED — next after 3rd ceramic Staple per Active Pipeline
 
 ---
 
@@ -164,6 +157,11 @@ Reason: Response posts build topical authority fast. Staple posts are the money 
 | 11 | Air Fryers Under $100 Most Reviewed | Pillar | Air Fryers | 83/103 | /air-fryers-under-100-most-reviewed/ | 2026-05-25 |
 | 12 | Instant Pot Vortex Plus 6QT Review | Staple | Air Fryers | 86/106 | /instant-pot-vortex-plus-6qt-air-fryer-review/ | 2026-05-27 |
 | 13 | Nordic Ware Half Sheet Pan Review | Staple | Bakeware | 90/107 | /nordic-ware-half-sheet-pan-review/ | 2026-05-27 |
+| 14 | Lodge Cast Iron Skillet Review | Staple | Cookware | 99/110 | /lodge-cast-iron-skillet-review/ | 2026-05-31 |
+| 15 | What Is Non-Toxic Cookware? | Response | Cookware Guides | 108/112 | /what-is-non-toxic-cookware/ | 2026-06-03 |
+| 16 | GreenLife 16pc Ceramic Cookware Set Review | Staple | Cookware | 123/114 | /greenlife-cookware-review/ | 2026-06-05 |
+| 17 | Is Ceramic Cookware Safe? | Response | Cookware Guides | 131/117 | /is-ceramic-cookware-safe/ | 2026-06 |
+| 18 | SENSARTE Ceramic Saute Pan Review | Staple | Cookware | 138/122 | /sensarte-ceramic-saute-pan-review/ | 2026-06 |
 
 ---
 
