@@ -190,6 +190,58 @@ function kvp_get_price( $key, $post_meta_fallback = 'kvp_price', $post_id = null
 	return esc_html( $price );
 }
 
+function kvp_get_top_pick( $cat_term_id ) {
+    if ( ! $cat_term_id ) { return null; }
+
+    // STAGE-3 OPTIONAL OVERRIDE (never required): a post flagged kvp_top_pick=1 wins.
+    $override = new WP_Query( array(
+        'cat'            => $cat_term_id,
+        'posts_per_page' => 1,
+        'post_status'    => 'publish',
+        'meta_key'       => 'kvp_top_pick',
+        'meta_value'     => '1',
+        'fields'         => 'ids',
+    ) );
+    if ( ! empty( $override->posts ) ) {
+        $id = $override->posts[0];
+        wp_reset_postdata();
+        return get_post( $id );
+    }
+    wp_reset_postdata();
+
+    // AUTOMATIC: weighted (Bayesian) rating across the category.
+    $q = new WP_Query( array(
+        'cat'            => $cat_term_id,
+        'posts_per_page' => -1,
+        'post_status'    => 'publish',
+        'fields'         => 'ids',
+        'meta_query'     => array( array( 'key' => 'kvp_rating', 'compare' => 'EXISTS' ) ),
+    ) );
+    $ids = $q->posts;
+    wp_reset_postdata();
+    if ( empty( $ids ) ) { return null; }
+
+    $m = 1000; // minimum-reviews credibility weight; raise to demand more reviews before a high rating is trusted.
+
+    $ratings = array();
+    foreach ( $ids as $id ) {
+        $r = (float) get_post_meta( $id, 'kvp_rating', true );
+        if ( $r > 0 ) { $ratings[] = $r; }
+    }
+    if ( empty( $ratings ) ) { return null; }
+    $C = array_sum( $ratings ) / count( $ratings );
+
+    $best_id = null; $best_score = -1;
+    foreach ( $ids as $id ) {
+        $R = (float) get_post_meta( $id, 'kvp_rating', true );
+        if ( $R <= 0 ) { continue; }
+        $v = (float) preg_replace( '/[^0-9.]/', '', (string) get_post_meta( $id, 'kvp_review_count', true ) );
+        $wr = ( $v / ( $v + $m ) ) * $R + ( $m / ( $v + $m ) ) * $C;
+        if ( $wr > $best_score ) { $best_score = $wr; $best_id = $id; }
+    }
+    return $best_id ? get_post( $best_id ) : null;
+}
+
 // Maps post slugs to canonical price registry keys. Add new slugs here when articles are published.
 function kvp_get_price_key( $post_id ) {
 	$slug = get_post_field( 'post_name', $post_id );

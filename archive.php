@@ -54,39 +54,8 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
         <?php
         $top_pick = null;
 
-        if ( $current_cat ) {
-            $sticky_ids = get_option( 'sticky_posts' );
-
-            if ( ! empty( $sticky_ids ) ) {
-                $sticky_q = new WP_Query( array(
-                    'post__in'            => $sticky_ids,
-                    'cat'                 => $current_cat->term_id,
-                    'posts_per_page'      => 1,
-                    'post_status'         => 'publish',
-                    'ignore_sticky_posts' => false,
-                ) );
-                if ( $sticky_q->have_posts() ) {
-                    $sticky_q->the_post();
-                    $top_pick = get_post();
-                    wp_reset_postdata();
-                }
-            }
-
-            if ( ! $top_pick ) {
-                $first_q = new WP_Query( array(
-                    'cat'            => $current_cat->term_id,
-                    'posts_per_page' => 1,
-                    'post_status'    => 'publish',
-                    'orderby'        => 'meta_value_num',
-                    'meta_key'       => 'kvp_rating',
-                    'order'          => 'DESC',
-                ) );
-                if ( $first_q->have_posts() ) {
-                    $first_q->the_post();
-                    $top_pick = get_post();
-                    wp_reset_postdata();
-                }
-            }
+        if ( $current_cat && isset( $current_cat->term_id ) && ! is_author() ) {
+            $top_pick = kvp_get_top_pick( $current_cat->term_id );
         }
 
         if ( $top_pick ) :
@@ -131,11 +100,13 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
              ================================================================ -->
         <h2 class="kvp-arc-section-label">
             <?php
-            printf(
-                /* translators: %s: category name */
-                esc_html__( 'All %s reviews', 'kvp-theme' ),
-                esc_html( $cat_name )
-            );
+            if ( is_author() ) {
+                $kvp_author      = get_queried_object();
+                $kvp_author_name = ( $kvp_author && isset( $kvp_author->display_name ) ) ? $kvp_author->display_name : '';
+                printf( esc_html__( 'Articles by %s', 'kvp-theme' ), esc_html( $kvp_author_name ) );
+            } else {
+                printf( esc_html__( 'All %s reviews', 'kvp-theme' ), esc_html( $cat_name ) );
+            }
             ?>
         </h2>
 
@@ -164,6 +135,7 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                 if ( ! $card_verdict_snippet ) {
                         $card_verdict_snippet = get_post_meta( get_the_ID(), 'kvp_verdict_line', true );
                 }
+                $card_is_review = (bool) ( $card_product_name || get_post_meta( get_the_ID(), 'kvp_amazon_url', true ) || $card_rating );
             ?>
 
             <article class="kvp-arc-card" id="review-<?php the_ID(); ?>">
@@ -243,7 +215,7 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                     <?php endif; ?>
 
                     <a href="<?php the_permalink(); ?>" class="kvp-arc-card-btn">
-                        <?php esc_html_e( 'Read full review', 'kvp-theme' ); ?>
+                        <?php echo $card_is_review ? esc_html__( 'Read full review', 'kvp-theme' ) : esc_html__( 'Read guide', 'kvp-theme' ); ?>
                     </a>
 
                 </div>
