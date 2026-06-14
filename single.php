@@ -45,12 +45,6 @@ while ( have_posts() ) : the_post();
 	$crumb_title = preg_replace( '/ Review.*$/i', '', get_the_title() );
 	$amazon_href = $kvp_amazon_url ? $kvp_amazon_url : '#';
 
-	// Deborah's quote: first 2 sentences of final verdict
-	$deborah_quote = '';
-	if ( $kvp_final_verdict ) {
-		$sentences     = preg_split( '/(?<=[.!?])\s+/', trim( $kvp_final_verdict ) );
-		$deborah_quote = implode( ' ', array_slice( $sentences, 0, 2 ) );
-	}
 
 ?>
 <main id="kvp-single-main">
@@ -291,25 +285,6 @@ while ( have_posts() ) : the_post();
 			<div class="cta1-note"><?php esc_html_e( 'Price at time of writing · may vary on Amazon', 'kvp-theme' ); ?></div>
 		</div>
 		<a href="<?php echo esc_url( $amazon_href ); ?>" rel="sponsored nofollow" target="_blank" class="btn-cta1">
-			<?php esc_html_e( 'Check price on Amazon', 'kvp-theme' ); ?>
-		</a>
-	</div>
-
-	<!-- CTA 2 — Deborah's verdict (always renders) -->
-	<div class="cta2">
-		<div class="cta2-label">
-			<div class="cta2-avatar" aria-hidden="true">
-				<svg width="13" height="13" viewBox="0 0 24 24" fill="none">
-					<circle cx="12" cy="8" r="4" fill="white"/>
-					<path d="M4 20 Q4 14 12 14 Q20 14 20 20" fill="white"/>
-				</svg>
-			</div>
-			<?php esc_html_e( "Deborah's verdict", 'kvp-theme' ); ?>
-		</div>
-		<?php if ( $deborah_quote ) : ?>
-		<p class="cta2-quote">&#8220;<?php echo esc_html( $deborah_quote ); ?>&#8221;</p>
-		<?php endif; ?>
-		<a href="<?php echo esc_url( $amazon_href ); ?>" rel="sponsored nofollow" target="_blank" class="btn-red">
 			<?php esc_html_e( 'Check price on Amazon', 'kvp-theme' ); ?>
 		</a>
 	</div>
