@@ -38,7 +38,7 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 # STATE.md — KitchenViralPicks
 
 Last updated: June 14, 2026
-Last commit: 7f5ec20 — fix: use slug lookup for Cookware Guides exclusion in archive.php
+Last commit: 17427f5 — style: remove highlight box from kvp-internal-link, unify inline link treatment
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -46,10 +46,22 @@ Phase 7 — Content Growth
 ## Last Session
 SESSION END — 2026-06-14
 FIXES COMPLETED THIS SESSION:
-- single.php: verdict duplication removed — DEBORAH'S VERDICT box deleted, FINAL VERDICT retained (commit 94d582a). Affects SENSARTE (138/122) and GreenLife (123/114).
-- archive.php: Cookware Guides excluded from archive grid on live via slug lookup (commit 7f5ec20).
-- Local Post 138 post_content synced with live Post 122 (complaint frequency table, checksum 3546251a5fe45f7f).
-- Duplicate "What Is Non-Toxic Cookware?" on local resolved — Post 118 (-2 slug) trashed, Post 108 (clean slug) retained.
+- STATE.md updated to June 14 reality; tmp-sensarte files deleted (commit 6307356)
+- single.php: two dead reads removed — kvp_best_for and kvp_skip_if_detail (commit 6064b08)
+- style.css: kvp-internal-link box stripped — background/padding/border-radius removed,
+  clean bold-red underline unified across all post types (commit 17427f5)
+- Post 131/117 (Is Ceramic Cookware Safe?): two plain links classed kvp-internal-link (#2);
+  SENSARTE back-link inserted end of Section 06 (#3)
+- Post 123/114 (GreenLife review): SENSARTE single-pan back-link inserted after
+  data-confidence paragraph (#3)
+- Post 138/122 (SENSARTE review): three plain internal links classed kvp-internal-link
+- All changes verified local + live. Scripts deleted both environments. Cache purged.
+
+CRITICAL LESSON — INTERNAL LINK STYLING:
+- kvp-internal-link is a global class (style.css loads on all post types).
+- The cream box (background/padding/border-radius) caused detached punctuation and
+  inconsistent rendering across post types. Stripped permanently June 14.
+- Standard: red (#E8401C), bold (700), underline only. No box ever again.
 
 ## Last Completed Task
 SENSARTE Ceramic Saute Pan — Staple post fully published and verified
@@ -63,7 +75,10 @@ SENSARTE Ceramic Saute Pan — Staple post fully published and verified
 - Internal links from Post 117 and Post 114 to SENSARTE: not yet added (scheduled)
 
 ## Next Task
-single.php audit against Staple post spec (PROJECT.md §5). Confirm structured sections render from custom fields, post_content is narrative-only, no duplicated template furniture. Expect three small patches at most.
+#4 — Pre-pivot posts author assignment decision.
+Posts 99, 90, 86, 83, 81, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13 assigned to admin on local.
+Decision: assign Deborah for E-E-A-T signal, or leave admin on out-of-niche posts.
+Then: next content piece (3rd ceramic Staple, likely GreenPan — pending Ahrefs data).
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -83,10 +98,9 @@ Content queue: See CONTENT_PLAN.md Active Pipeline (locked June 9, 2026).
 Next article: 3rd ceramic Staple (likely GreenPan), pending Ahrefs data.
 
 ## Known Issues
-- NOTED: single.php audit after verdict fix — expect three small patches at most.
-- NOTED: Response post link styling — verify single-blog.php uses article-body wrapper or needs its own rule.
-- NOTED: Add back-links from Posts 117 and 114 to SENSARTE post.
-- NOTED: Pre-pivot posts (99, 90, 86, 83, 81, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13) assigned to admin. Decision needed: Deborah for E-E-A-T or leave admin on out-of-niche.
+- NOTED: Pre-pivot posts (99, 90, 86, 83, 81, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13)
+  assigned to admin on local. Decision needed: Deborah for E-E-A-T or leave admin
+  on out-of-niche posts.
 
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
