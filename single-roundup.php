@@ -160,7 +160,7 @@ get_header();
 	<h1 class="rnd-title"><?php the_title(); ?></h1>
 	<div class="rnd-byline-row">
 		<div class="rnd-byline-avatar">D</div>
-		<div class="rnd-byline-text"><?php echo 'By <strong>Deborah</strong> &middot; Kitchen Researcher &amp; Product Analyst &middot; ' . esc_html( get_the_date( 'F j, Y' ) ); ?></div>
+		<div class="rnd-byline-text"><?php echo 'By <strong><a href="' . esc_url( get_author_posts_url( 2 ) ) . '" style="color:inherit;text-decoration:none;">Deborah</a></strong> &middot; Kitchen Researcher &amp; Product Analyst &middot; ' . esc_html( get_the_date( 'F j, Y' ) ); ?></div>
 	</div>
 	<div class="rnd-disclosure">
 		<?php esc_html_e( 'KitchenViralPicks.com participates in the Amazon Associates Program. If you buy through our links we may earn a small commission — at no extra cost to you. This never affects our recommendations.', 'kvp-theme' ); ?>

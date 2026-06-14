@@ -64,7 +64,7 @@ while ( have_posts() ) : the_post();
 
 	<!-- BYLINE -->
 	<div class="byline">
-		<strong><?php esc_html_e( 'By Deborah', 'kvp-theme' ); ?></strong>
+		<strong><a href="<?php echo esc_url( get_author_posts_url( 2 ) ); ?>" style="color:inherit;text-decoration:none;"><?php esc_html_e( 'By Deborah', 'kvp-theme' ); ?></a></strong>
 		<span class="bdot" aria-hidden="true"></span>
 		<span><?php esc_html_e( 'Kitchen Researcher &amp; Product Analyst', 'kvp-theme' ); ?></span>
 		<span class="bdot" aria-hidden="true"></span>

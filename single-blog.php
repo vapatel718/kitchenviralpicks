@@ -34,7 +34,7 @@ while ( have_posts() ) : the_post();
 			<div class="kvp-blog-byline">
 				<div class="kvp-blog-avatar">D</div>
 				<div>
-					<span class="kvp-blog-byline-name">Deborah</span>
+					<span class="kvp-blog-byline-name"><a href="<?php echo esc_url( get_author_posts_url( 2 ) ); ?>" style="color:inherit;text-decoration:none;">Deborah</a></span>
 					<span class="kvp-blog-byline-meta">Kitchen Researcher &amp; Product Analyst &middot; <?php echo get_the_date( 'F Y' ); ?> &middot; 7 min read</span>
 				</div>
 			</div>
