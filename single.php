@@ -13,8 +13,6 @@ while ( have_posts() ) : the_post();
 	$kvp_verdict_line   = get_post_meta( $post_id, 'kvp_verdict_line',   true );
 	$kvp_amazon_url     = get_post_meta( $post_id, 'kvp_amazon_url',     true );
 	$kvp_final_verdict  = get_post_meta( $post_id, 'kvp_final_verdict',  true );
-	$kvp_best_for       = get_post_meta( $post_id, 'kvp_best_for',       true );
-	$kvp_skip_if_detail = get_post_meta( $post_id, 'kvp_skip_if_detail', true );
 
 	$buy_if_raw   = get_post_meta( $post_id, 'kvp_buy_if',        true );
 	$skip_if_raw  = get_post_meta( $post_id, 'kvp_skip_if',       true );
