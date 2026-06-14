@@ -37,23 +37,19 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 
 # STATE.md — KitchenViralPicks
 
-Last updated: June 10, 2026
-Last commit: d2197ad — fix(css): restore table last-child closing brace
+Last updated: June 14, 2026
+Last commit: 7f5ec20 — fix: use slug lookup for Cookware Guides exclusion in archive.php
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Session
-SESSION END — 2026-06-10
+SESSION END — 2026-06-14
 FIXES COMPLETED THIS SESSION:
-- style.css: in-content link selector specificity fixed (.article-body a → .kvp-single .article-body a)
-- style.css: orphaned border-bottom/closing brace restored for table last-child rule
-- SENSARTE post (local 138 / live 122) assigned to Cookware category on both environments
-- Header layout breakage caused by accidental removal of table rule closing brace — diagnosed and fixed same session
-
-CRITICAL LESSON — CSS EDITS:
-- Before removing any "orphaned" code, verify it isn't the body/closing brace of a rule opened above.
-- A stray } may actually close a parent rule. Removing it swallows all subsequent CSS.
+- single.php: verdict duplication removed — DEBORAH'S VERDICT box deleted, FINAL VERDICT retained (commit 94d582a). Affects SENSARTE (138/122) and GreenLife (123/114).
+- archive.php: Cookware Guides excluded from archive grid on live via slug lookup (commit 7f5ec20).
+- Local Post 138 post_content synced with live Post 122 (complaint frequency table, checksum 3546251a5fe45f7f).
+- Duplicate "What Is Non-Toxic Cookware?" on local resolved — Post 118 (-2 slug) trashed, Post 108 (clean slug) retained.
 
 ## Last Completed Task
 SENSARTE Ceramic Saute Pan — Staple post fully published and verified
@@ -67,8 +63,7 @@ SENSARTE Ceramic Saute Pan — Staple post fully published and verified
 - Internal links from Post 117 and Post 114 to SENSARTE: not yet added (scheduled)
 
 ## Next Task
-Verdict duplication fix — remove DEBORAH'S VERDICT box from single.php (keeps FINAL VERDICT only).
-Affects SENSARTE (138/122) and GreenLife (123/114).
+single.php audit against Staple post spec (PROJECT.md §5). Confirm structured sections render from custom fields, post_content is narrative-only, no duplicated template furniture. Expect three small patches at most.
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -88,9 +83,6 @@ Content queue: See CONTENT_PLAN.md Active Pipeline (locked June 9, 2026).
 Next article: 3rd ceramic Staple (likely GreenPan), pending Ahrefs data.
 
 ## Known Issues
-- ACTIVE: Verdict duplication in single.php — DEBORAH'S VERDICT box and FINAL VERDICT box both render kvp_final_verdict. Fix locked: remove DEBORAH'S VERDICT box.
-- ACTIVE: Local Post 138 post_content out of sync with live Post 122 (table fix applied to live only). Fix: wp eval with checksum 3546251a5fe45f7f.
-- ACTIVE: Duplicate "What Is Non-Toxic Cookware?" on local — IDs 118 and 108 both published. Live has only ID 112. Diagnose before touching live.
 - NOTED: single.php audit after verdict fix — expect three small patches at most.
 - NOTED: Response post link styling — verify single-blog.php uses article-body wrapper or needs its own rule.
 - NOTED: Add back-links from Posts 117 and 114 to SENSARTE post.
