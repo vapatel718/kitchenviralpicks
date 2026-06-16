@@ -37,14 +37,27 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 
 # STATE.md — KitchenViralPicks
 
-Last updated: June 14, 2026
-Last commit: 17427f5 — style: remove highlight box from kvp-internal-link, unify inline link treatment
+Last updated: June 16, 2026
+Last commit: 1c0f2d1 — feat: byline Deborah name links to author archive across all three post templates
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Session
-SESSION END — 2026-06-14
+SESSION END — 2026-06-14 (session 2)
+FIXES COMPLETED THIS SESSION:
+- All 18 posts reassigned to author Deborah (user ID 2) on local and live (commit 764983b)
+- Post 81 (test fixture) trashed on local — did not exist on live
+- functions.php: kvp_get_top_pick() weighted top-pick helper added — auto-crowns most
+  credible product per category by composite score (rating × log(review_count)) (commit 764983b)
+- archive.php: author-aware rewrite — banner suppressed, heading reads "Articles by Deborah",
+  guide-aware buttons ("Read guide" vs "Read review") (commit 764983b)
+- single.php, single-blog.php, single-roundup.php: Deborah byline now links to
+  /author/deborah/ across all three post templates (commit 1c0f2d1)
+- Lodge confirmed as Top Pick on category archive. Clickable byline verified on live iPhone.
+- Cache purged. No open bugs.
+
+SESSION END — 2026-06-14 (session 1)
 FIXES COMPLETED THIS SESSION:
 - STATE.md updated to June 14 reality; tmp-sensarte files deleted (commit 6307356)
 - single.php: two dead reads removed — kvp_best_for and kvp_skip_if_detail (commit 6064b08)
@@ -64,21 +77,19 @@ CRITICAL LESSON — INTERNAL LINK STYLING:
 - Standard: red (#E8401C), bold (700), underline only. No box ever again.
 
 ## Last Completed Task
-SENSARTE Ceramic Saute Pan — Staple post fully published and verified
-- Local post ID: 138 | Live post ID: 122
-- URL: kitchenviralpicks.com/sensarte-ceramic-saute-pan-review/
-- All custom fields set on both local and live
-- Deborah author assigned on both local and live
-- Category: Cookware (assigned June 10)
-- In-content links: 3 links verified red/underlined on live
-- Complaint frequency table: corrected on live (checksum 3546251a5fe45f7f)
-- Internal links from Post 117 and Post 114 to SENSARTE: not yet added (scheduled)
+Author unification — all 18 posts reassigned to Deborah on local and live
+- 18/18 posts now carry author = Deborah (user ID 2) on both environments
+- Post 81 (test fixture) trashed on local
+- kvp_get_top_pick() helper live in functions.php
+- archive.php author-aware: banner suppressed, "Articles by Deborah" heading
+- Deborah byline clickable to /author/deborah/ on all three post templates
+- Verified live on real iPhone: Lodge = Top Pick, byline links correctly
 
 ## Next Task
-#4 — Pre-pivot posts author assignment decision.
-Posts 99, 90, 86, 83, 81, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13 assigned to admin on local.
-Decision: assign Deborah for E-E-A-T signal, or leave admin on out-of-niche posts.
-Then: next content piece (3rd ceramic Staple, likely GreenPan — pending Ahrefs data).
+3rd ceramic Staple — likely GreenPan (pending Ahrefs keyword data).
+When keyword confirmed: full 3-layer research → keyword approval → outline → draft → publish.
+Also pending (no code needed): Rank Math noindex toggle for author archive
+(WP Admin → Rank Math → Titles & Meta → Author Archives → set to noindex).
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -98,9 +109,7 @@ Content queue: See CONTENT_PLAN.md Active Pipeline (locked June 9, 2026).
 Next article: 3rd ceramic Staple (likely GreenPan), pending Ahrefs data.
 
 ## Known Issues
-- NOTED: Pre-pivot posts (99, 90, 86, 83, 81, 44, 43, 42, 41, 40, 37, 36, 34, 14, 13)
-  assigned to admin on local. Decision needed: Deborah for E-E-A-T or leave admin
-  on out-of-niche posts.
+- None. All 18 posts unified under Deborah. No open bugs.
 
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
@@ -139,9 +148,9 @@ Use ONLY these key names when publishing articles. Single.php reads these exact 
 ---
 
 ## Live Server Status
-Deployed — single-blog.css, single-blog.php, functions.php deployed via SCP. Post 112 created directly on live.
-Last confirmed live commit: d2197ad (2026-06-10).
-Deployed via git pull origin/main.
+All changes deployed via git pull origin/main.
+Last confirmed live commit: 1c0f2d1 (2026-06-14).
+Cache purged after each deploy. No pending deploys.
 
 ---
 
@@ -211,3 +220,5 @@ DEBORAH — never Rick, never anything else. Permanent. Locked.
 - 2026-06-09: 10-article pipeline locked. Material cluster sequencing: ceramic → cast iron/carbon steel → stainless → master pillar.
 - 2026-06-10: CSS in-content link selectors require .kvp-single prefix to match specificity of other .article-body sub-rules.
 - 2026-06-10: Deborah user created on local (ID 2) and live (ID 2). Author assigned to all niche posts.
+- 2026-06-14: All 18 posts unified under Deborah (user ID 2) on local and live. Pre-pivot posts included — single-author byline is the correct E-E-A-T signal site-wide.
+- 2026-06-14: kvp_get_top_pick() — weighted composite score (rating × log(review_count)) auto-crowns top pick per category. Logic lives in functions.php.
