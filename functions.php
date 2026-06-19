@@ -281,3 +281,17 @@ function kvp_remove_featured_from_content( $content ) {
     }
     return $content;
 }
+
+// GA4 Tracking
+function kvp_ga4_tracking() {
+    ?>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1PE28YGJYW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1PE28YGJYW');
+    </script>
+    <?php
+}
+add_action('wp_head', 'kvp_ga4_tracking');
