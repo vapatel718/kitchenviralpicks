@@ -4,6 +4,7 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
+    <meta name="p:domain_verify" content="2be44d4b68fb60a0eb8ca6f054574858"/>
 </head>
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
