@@ -37,13 +37,20 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 
 # STATE.md — KitchenViralPicks
 
-Last updated: June 19, 2026
-Last commit: pending — feat: add GreenPan Valencia Pro Review draft (post 147)
+Last updated: June 21, 2026
+Last commit: chore: STATE.md — GreenPan post 147 published on local, sync confirmed
 
 ## Current Phase
 Phase 7 — Content Growth
 
 ## Last Session
+SESSION END — 2026-06-21
+COMPLETED THIS SESSION:
+- Post 147 (GreenPan Valencia Pro Review) published on local — was stuck as draft from June 19 session
+- wp post update 147 --post_status=publish
+- wp post term set 147 category cookware
+- Local now matches live: 8 articles in Cookware category, both environments in sync
+
 SESSION END — 2026-06-19
 COMPLETED THIS SESSION:
 - GreenPan Valencia Pro Review created as draft (Post ID 147, local only)
@@ -88,19 +95,15 @@ CRITICAL LESSON — INTERNAL LINK STYLING:
 - Standard: red (#E8401C), bold (700), underline only. No box ever again.
 
 ## Last Completed Task
-Author unification — all 18 posts reassigned to Deborah on local and live
-- 18/18 posts now carry author = Deborah (user ID 2) on both environments
-- Post 81 (test fixture) trashed on local
-- kvp_get_top_pick() helper live in functions.php
-- archive.php author-aware: banner suppressed, "Articles by Deborah" heading
-- Deborah byline clickable to /author/deborah/ on all three post templates
-- Verified live on real iPhone: Lodge = Top Pick, byline links correctly
+GreenPan Valencia Pro Review (Post 147) published and category-assigned on local.
+Local now matches live (8 articles in Cookware category).
+- Post 147 was created as draft during June 19 session 2 but never published locally or assigned to Cookware category
+- Ran wp post update 147 --post_status=publish
+- Ran wp post term set 147 category cookware
+- Local and live now in sync
 
 ## Next Task
-- Local browser verification of Post 147 (GreenPan Valencia Pro Review draft)
-- Once verified: publish post and deploy to live (Hostinger)
-- Also pending (no code needed): Rank Math noindex toggle for author archive
-  (WP Admin → Rank Math → Titles & Meta → Author Archives → set to noindex).
+Pillar: Best Non-Toxic Ceramic Cookware (July 2026, first of 4/month pace)
 
 ## Content Strategy — Locked May 30, 2026
 Micro-niche: Healthy Non-Toxic Cookware
@@ -199,7 +202,7 @@ page-contact.php | approved
 | 16 | greenlife-cookware-review | 123 / 114 | live ✅ — GSC: submitted 2026-06-05 |
 | 17 | is-ceramic-cookware-safe | 131 / 117 | live ✅ — Response post, category: Cookware Guides |
 | 18 | sensarte-ceramic-saute-pan-review | 138 / 122 | live ✅ — Category: Cookware, Deborah assigned |
-| 19 | greenpan-valencia-pro-review | 147 / — | draft 🟡 — local only, pending verification |
+| 19 | greenpan-valencia-pro-review | 147 / — | published local ✅ — pending deploy to live |
 
 ---
 
