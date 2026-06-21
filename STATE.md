@@ -125,6 +125,11 @@ Next article: 3rd ceramic Staple (likely GreenPan), pending Ahrefs data.
 ## Known Issues
 - None. All 18 posts unified under Deborah. No open bugs.
 
+## Pinterest
+- Business account created (June 21, 2026)
+- Domain verification meta tag added to header.php (line 7, commit 2722acf)
+- Pending: claim verification on Pinterest — requires deploy to live so tag is visible
+
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
 - Quarterly content refresh first due 2026-08-24
