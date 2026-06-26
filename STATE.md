@@ -37,8 +37,8 @@ ALWAYS verify with grep after setting to confirm no structured sections leaked i
 
 # STATE.md — KitchenViralPicks
 
-Last updated: June 21, 2026
-Last commit: chore: STATE.md — GreenPan post 147 published on local, sync confirmed
+Last updated: June 26, 2026
+Last commit: chore: update STATE.md — 9 Pinterest pins complete (3 live, 6 scheduled)
 
 ## Current Phase
 Phase 7 — Content Growth
@@ -128,7 +128,19 @@ Next article: 3rd ceramic Staple (likely GreenPan), pending Ahrefs data.
 ## Pinterest
 - Business account created (June 21, 2026)
 - Domain verification meta tag added to header.php (line 7, commit 2722acf)
-- Pending: claim verification on Pinterest — requires deploy to live so tag is visible
+- Domain claim: verified ✅
+- Pin generation workflow confirmed: Playwright/Chromium, 3 styles per product
+- Style A redesigned June 25 — Problem/Solution format (image top, red content card bottom), visually distinct from Style C
+
+### Pin Status — 9 total by July 1
+| Product | Style A | Style B | Style C |
+|---|---|---|---|
+| GreenLife | published June 22 ✅ | published June 25 ✅ | published June 21 ✅ |
+| SENSARTE | scheduled June 26 | scheduled June 27 | scheduled June 28 |
+| GreenPan Valencia Pro | scheduled June 29 | scheduled June 30 | scheduled July 1 |
+
+- 3 live + 6 scheduled = 9 pins total by July 1
+- Next Pinterest task: generate pins for remaining cookware articles after July Pillar post
 
 ## Pending — No Blocker
 - June Week 2 keyword approval (non-toxic cookware angle)
