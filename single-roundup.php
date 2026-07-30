@@ -156,7 +156,7 @@ get_header();
      1. HERO
      ============================================================ -->
 <div class="rnd-hero">
-	<div class="rnd-eyebrow"><span class="rnd-eyebrow-dot"></span>Air fryer roundup &middot; <?php echo esc_html( get_the_date( 'F Y' ) ); ?></div>
+	<div class="rnd-eyebrow"><span class="rnd-eyebrow-dot"></span><?php echo esc_html( get_post_meta( $post_id, 'kvp_roundup_eyebrow', true ) ?: 'Roundup' ); ?> &middot; <?php echo esc_html( get_the_date( 'F Y' ) ); ?></div>
 	<h1 class="rnd-title"><?php the_title(); ?></h1>
 	<div class="rnd-byline-row">
 		<div class="rnd-byline-avatar">D</div>
@@ -178,19 +178,17 @@ get_header();
      2. AT-A-GLANCE COMPARISON TABLE
      ============================================================ -->
 <?php
-$price_keys = array( 1 => 'ninja_af101', 2 => 'cosori_turboblaze', 3 => 'instant_vortex_plus', 4 => 'chefman_turbofry', 5 => 'dash_tasti_crisp' );
 $products = array();
 for ( $n = 1; $n <= 5; $n++ ) {
 	$products[ $n ] = array(
 		'name'     => get_post_meta( $post_id, "kvp_p{$n}_name", true ),
-		'price'    => kvp_get_price( $price_keys[ $n ], "kvp_p{$n}_price", $post_id ),
+		'price'    => get_post_meta( $post_id, "kvp_p{$n}_price", true ),
 		'reviews'  => get_post_meta( $post_id, "kvp_p{$n}_reviews", true ),
 		'rating'   => get_post_meta( $post_id, "kvp_p{$n}_rating", true ),
 		'capacity' => get_post_meta( $post_id, "kvp_p{$n}_capacity", true ),
 		'bestfor'  => get_post_meta( $post_id, "kvp_p{$n}_bestfor", true ),
 	);
 }
-$functions_count = array( 1 => 4, 2 => 9, 3 => 6, 4 => 4, 5 => 4 );
 ?>
 <div class="rnd-table-section">
 	<p class="rnd-section-label"><?php esc_html_e( 'At a Glance — How These 5 Compare', 'kvp-theme' ); ?></p>
@@ -235,13 +233,13 @@ $functions_count = array( 1 => 4, 2 => 9, 3 => 6, 4 => 4, 5 => 4 );
 					</span>
 				</td>
 				<td><?php echo esc_html( $products[ $n ]['capacity'] ); ?></td>
-				<td><?php echo esc_html( $functions_count[ $n ] ); ?></td>
+				<td><?php echo esc_html( get_post_meta( $post_id, "kvp_p{$n}_functions", true ) ); ?></td>
 				<td><?php echo esc_html( $products[ $n ]['bestfor'] ); ?></td>
 			</tr>
 			<?php endfor; ?>
 		</tbody>
 	</table>
-	<p class="rnd-table-note">Prices at time of writing &middot; May vary on Amazon &middot; Review counts verified May 2026</p>
+	<p class="rnd-table-note">Prices at time of writing &middot; May vary on Amazon &middot; Review counts verified <?php echo esc_html( get_the_date( 'F Y' ) ); ?></p>
 </div>
 
 <!-- ============================================================
@@ -250,7 +248,7 @@ $functions_count = array( 1 => 4, 2 => 9, 3 => 6, 4 => 4, 5 => 4 );
 <?php
 $toppick_name      = get_post_meta( $post_id, 'kvp_toppick_name', true );
 $toppick_reason    = get_post_meta( $post_id, 'kvp_toppick_reason', true );
-$toppick_price     = kvp_get_price( 'ninja_af101', 'kvp_toppick_price', $post_id );
+$toppick_price     = get_post_meta( $post_id, 'kvp_toppick_price', true );
 $toppick_btn_label = get_post_meta( $post_id, 'kvp_toppick_btn_label', true );
 $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 ?>
@@ -296,7 +294,7 @@ $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 	$card_image_url    = get_post_meta( $post_id, "kvp_p{$n}_image_url", true );
 	$card_review_count = get_post_meta( $post_id, "kvp_p{$n}_review_count", true );
 	$card_rating       = get_post_meta( $post_id, "kvp_p{$n}_rating", true );
-	$card_price        = kvp_get_price( $price_keys[ $n ], "kvp_p{$n}_price", $post_id );
+	$card_price        = get_post_meta( $post_id, "kvp_p{$n}_price", true );
 	$card_buyer_says   = get_post_meta( $post_id, "kvp_p{$n}_buyer_says", true );
 	$card_complaint    = get_post_meta( $post_id, "kvp_p{$n}_complaint", true );
 	$card_who          = get_post_meta( $post_id, "kvp_p{$n}_who_its_for", true );
@@ -375,6 +373,18 @@ $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 </div>
 <?php endfor; ?>
 </div>
+
+<?php
+$content = get_the_content();
+if ( $content ) :
+?>
+<div class="rnd-editorial" style="padding:0 1.5rem 2rem;">
+  <div class="rnd-card-divider" style="margin-bottom:24px;"></div>
+  <div class="rnd-decision-body">
+    <?php the_content(); ?>
+  </div>
+</div>
+<?php endif; ?>
 
 <!-- ============================================================
      5. SIDE-BY-SIDE USE CASE GRID

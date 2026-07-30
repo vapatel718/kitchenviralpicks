@@ -3300,3 +3300,11 @@ h1, h2, h3,
     margin-top: -8px;
     margin-bottom: 24px;
 }
+
+/* ── Roundup: editorial comparison table (post_content) ── */
+.kvp-compare-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:15px;}
+.kvp-compare-table thead tr{background:#E8401C;color:#fff;}
+.kvp-compare-table th,.kvp-compare-table td{padding:12px;border:1px solid #f0d9cf;text-align:left;}
+.kvp-compare-table th:nth-child(n+3),.kvp-compare-table td:nth-child(n+3):not(:last-child){text-align:center;}
+.kvp-compare-table tbody tr:nth-child(even){background:#FFF8F5;}
+.kvp-table-note{font-size:13px;color:#666;margin-top:6px;}
