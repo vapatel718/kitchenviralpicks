@@ -105,6 +105,8 @@ get_header();
 .rnd-decision-body{font-size:15px;color:#444;line-height:1.8;}
 .rnd-decision-body p{margin-bottom:10px;}
 .rnd-decision-body p:last-child{margin-bottom:0;}
+.rnd-decision-body h2{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:#1A1A1A;margin:28px 0 14px;line-height:1.3;}
+.rnd-decision-body h3{font-family:'Playfair Display',serif;font-size:17px;font-weight:600;color:#1A1A1A;margin:22px 0 10px;line-height:1.3;}
 
 /* FINAL VERDICT */
 .rnd-verdict-section{margin:0 1.5rem 2rem;background:#E8401C;border-radius:12px;padding:24px 26px;}
@@ -340,7 +342,7 @@ $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 					</div>
 				</div>
 				<?php if ( $card_rating ) : ?>
-				<p class="rnd-card-meta"><?php echo esc_html( $card_rating ); ?></p>
+				<p class="rnd-card-meta"><?php echo esc_html( $card_rating ); ?> stars across verified buyers</p>
 				<?php endif; ?>
 			</div>
 		</div>
