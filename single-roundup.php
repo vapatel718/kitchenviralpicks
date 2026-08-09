@@ -42,12 +42,10 @@ get_header();
 .rnd-winner-row td{background:rgba(232,64,28,0.04) !important;}
 .rnd-winner-badge{display:inline-block;background:rgba(232,64,28,0.1);color:#E8401C;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle;white-space:nowrap;}
 .rnd-rating-pill{display:inline-flex;align-items:center;gap:3px;background:#FFF8F5;border:0.5px solid #e8d5cc;border-radius:999px;padding:3px 8px;font-size:12px;font-weight:700;color:#1A1A1A;}
-.rnd-reviews-bold{font-weight:700;color:#E8401C;}
 .rnd-table-note{font-size:11px;color:#aaa;margin-top:8px;}
 .rnd-compare-table .col-product{width:28%;}
 .rnd-compare-table .col-price{width:12%;}
-.rnd-compare-table .col-reviews{width:13%;}
-.rnd-compare-table .col-rating{width:11%;}
+.rnd-compare-table .col-rating{width:13%;}
 .rnd-compare-table .col-capacity{width:10%;}
 .rnd-compare-table .col-functions{width:10%;}
 .rnd-compare-table .col-bestfor{width:16%;}
@@ -71,8 +69,6 @@ get_header();
 .rnd-card-header{padding:16px 18px 0;}
 .rnd-card-title-row{display:flex;flex-direction:column;gap:10px;margin-bottom:14px;}
 .rnd-card-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;color:#1A1A1A;line-height:1.3;margin-bottom:8px;}
-.rnd-card-review-count{font-size:22px;font-weight:700;color:#E8401C;line-height:1.1;margin-bottom:3px;}
-.rnd-card-review-label{font-size:11px;color:#aaa;line-height:1.4;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:6px;}
 .rnd-card-meta{font-size:13px;color:#888;}
 .rnd-card-img-strip{width:100%;height:200px;background:#fff;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:inset 0 -1px 0 rgba(0,0,0,0.06);}
 .rnd-card-img-strip img{width:100%;height:100%;object-fit:contain;padding:16px;}
@@ -124,19 +120,15 @@ get_header();
   .rnd-toppick-note{text-align:left;}
   .rnd-card-img-strip{height:200px;overflow:hidden;padding-top:38px;align-items:flex-start;justify-content:center;}
   .rnd-card-badge-overlay{bottom:auto;top:12px;left:12px;}
-  .rnd-card-review-count{font-size:18px;}
   .rnd-usecase-grid{grid-template-columns:1fr;}
   .rnd-compare-table{font-size:11px;}
   .rnd-compare-table td,.rnd-compare-table th{padding:8px 6px;}
-  .rnd-compare-table .col-reviews,
   .rnd-compare-table .col-capacity,
   .rnd-compare-table .col-functions,
-  .rnd-compare-table th:nth-child(3),
+  .rnd-compare-table th:nth-child(4),
   .rnd-compare-table th:nth-child(5),
-  .rnd-compare-table th:nth-child(6),
-  .rnd-compare-table td:nth-child(3),
-  .rnd-compare-table td:nth-child(5),
-  .rnd-compare-table td:nth-child(6){display:none;}
+  .rnd-compare-table td:nth-child(4),
+  .rnd-compare-table td:nth-child(5){display:none;}
   .rnd-compare-table .col-product{width:36%;}
   .rnd-compare-table .col-price{width:22%;}
   .rnd-compare-table .col-rating{width:18%;}
@@ -228,7 +220,6 @@ for ( $n = 1; $n <= 5; $n++ ) {
 		<colgroup>
 			<col class="col-product">
 			<col class="col-price">
-			<col class="col-reviews">
 			<col class="col-rating">
 			<col class="col-capacity">
 			<col class="col-functions">
@@ -238,7 +229,6 @@ for ( $n = 1; $n <= 5; $n++ ) {
 			<tr>
 				<th><?php esc_html_e( 'Product', 'kvp-theme' ); ?></th>
 				<th><?php esc_html_e( 'Price', 'kvp-theme' ); ?></th>
-				<th><?php esc_html_e( 'Reviews', 'kvp-theme' ); ?></th>
 				<th><?php esc_html_e( 'Rating', 'kvp-theme' ); ?></th>
 				<th><?php esc_html_e( 'Capacity', 'kvp-theme' ); ?></th>
 				<th><?php esc_html_e( 'Functions', 'kvp-theme' ); ?></th>
@@ -257,7 +247,6 @@ for ( $n = 1; $n <= 5; $n++ ) {
 					<?php endif; ?>
 				</td>
 				<td><span class="rnd-table-price"><?php echo $products[ $n ]['price'] !== '' ? '~$' . esc_html( $products[ $n ]['price'] ) : ''; ?></span></td>
-				<td><span class="rnd-reviews-bold"><?php echo esc_html( $products[ $n ]['reviews'] ); ?></span></td>
 				<td>
 					<?php if ( ! empty( $products[ $n ]['dr_score'] ) ) : ?>
 					<span class="rnd-rating-pill">
@@ -272,7 +261,7 @@ for ( $n = 1; $n <= 5; $n++ ) {
 			<?php endfor; ?>
 		</tbody>
 	</table>
-	<p class="rnd-table-note">Prices at time of writing &middot; May vary on Amazon &middot; Review counts verified <?php echo esc_html( get_the_date( 'F Y' ) ); ?></p>
+	<p class="rnd-table-note">Prices at time of writing &middot; May vary on Amazon &middot; Ratings last reviewed <?php echo esc_html( get_the_date( 'F Y' ) ); ?></p>
 </div>
 
 <!-- ============================================================
@@ -363,10 +352,6 @@ $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 			<div>
 				<h2 class="rnd-card-name"><?php echo esc_html( $card_name ); ?></h2>
 				<div class="rnd-card-stat-price-row">
-					<div>
-						<div class="rnd-card-review-count"><?php echo esc_html( $card_review_count ); ?></div>
-						<div class="rnd-card-review-label">Verified reviews</div>
-					</div>
 					<div class="rnd-price-block">
 						<span class="rnd-price-tag"><?php echo $card_price !== '' ? '~$' . esc_html( $card_price ) : ''; ?></span>
 						<span class="rnd-price-note">at time of writing &middot; price may vary</span>
