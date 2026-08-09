@@ -3308,3 +3308,33 @@ h1, h2, h3,
 .kvp-compare-table th:nth-child(n+3),.kvp-compare-table td:nth-child(n+3):not(:last-child){text-align:center;}
 .kvp-compare-table tbody tr:nth-child(even){background:#FFF8F5;}
 .kvp-table-note{font-size:13px;color:#666;margin-top:6px;}
+
+/* -- Deborah's Rating Badge -- */
+.dr-badge{display:flex;gap:28px;align-items:flex-start;padding:24px;background:#FFF8F5;border:1px solid #f0e6e0;border-radius:12px;margin:24px 0}
+.dr-circle-col{flex-shrink:0;width:130px;text-align:center}
+.dr-ring{width:130px;height:130px}
+.dr-score-text{font-family:'Playfair Display',serif;font-size:36px;font-weight:600;fill:#1A1A1A}
+.dr-denom{font-family:'Lato',sans-serif;font-size:11px;fill:#888;letter-spacing:.03em}
+.dr-label-pill{display:inline-block;margin-top:6px;padding:3px 10px;border-radius:4px;color:#fff;font-family:'Lato',sans-serif;font-size:11px;font-weight:700;letter-spacing:.03em}
+.dr-bars-col{flex:1;min-width:0}
+.dr-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.dr-header-text{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:#E8401C;letter-spacing:.08em;white-space:nowrap}
+.dr-header-line{width:28px;height:1px;background:#E8401C}
+.dr-header-line--fade{flex:1;opacity:.3}
+.dr-row{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.dr-row-label{font-family:'Lato',sans-serif;font-size:12.5px;font-weight:700;color:#1A1A1A;width:130px;flex-shrink:0}
+.dr-row-track{flex:1;height:7px;background:#E8E5E0;border-radius:3.5px;overflow:hidden}
+.dr-row-fill{height:100%;border-radius:3.5px}
+.dr-row-num{font-family:'Lato',sans-serif;font-size:13px;font-weight:700;width:28px;text-align:right;flex-shrink:0}
+.dr-trust-line{margin-top:10px;font-family:'Lato',sans-serif;font-size:11px;color:#999}
+
+/* DR badge mobile */
+@media(max-width:600px){
+    .dr-badge{flex-direction:column;align-items:center;gap:16px;padding:20px 16px}
+    .dr-circle-col{width:110px}
+    .dr-ring{width:110px;height:110px}
+    .dr-score-text{font-size:30px}
+    .dr-bars-col{width:100%}
+    .dr-row-label{width:110px;font-size:12px}
+    .dr-row-num{font-size:12px}
+}

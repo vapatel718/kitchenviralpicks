@@ -10,6 +10,13 @@ while ( have_posts() ) : the_post();
 	$kvp_price          = kvp_get_price( $price_key, 'kvp_price', $post_id );
 	$kvp_rating         = get_post_meta( $post_id, 'kvp_rating',         true );
 	$kvp_review_count   = get_post_meta( $post_id, 'kvp_review_count',   true );
+	$kvp_dr         = get_post_meta( $post_id, 'kvp_deborah_rating',       true );
+	$kvp_dr_label   = get_post_meta( $post_id, 'kvp_deborah_rating_label', true );
+	$kvp_dr_safety  = get_post_meta( $post_id, 'kvp_deborah_safety',       true );
+	$kvp_dr_buyer   = get_post_meta( $post_id, 'kvp_deborah_buyer',        true );
+	$kvp_dr_long    = get_post_meta( $post_id, 'kvp_deborah_longevity',    true );
+	$kvp_dr_value   = get_post_meta( $post_id, 'kvp_deborah_value',        true );
+	$kvp_dr_ease    = get_post_meta( $post_id, 'kvp_deborah_ease',         true );
 	$kvp_verdict_line   = get_post_meta( $post_id, 'kvp_verdict_line',   true );
 	$kvp_amazon_url     = get_post_meta( $post_id, 'kvp_amazon_url',     true );
 	$kvp_final_verdict  = get_post_meta( $post_id, 'kvp_final_verdict',  true );
@@ -134,20 +141,8 @@ while ( have_posts() ) : the_post();
 	</div>
 
 	<!-- METRICS -->
-	<?php if ( $kvp_rating || $kvp_review_count || $kvp_price || $kvp_capacity || $kvp_pack_size ) : ?>
+	<?php if ( $kvp_dr || $kvp_price || $kvp_capacity || $kvp_pack_size ) : ?>
 	<div class="metrics">
-		<?php if ( $kvp_rating ) : ?>
-		<div class="mbox">
-			<div class="mnum"><?php echo esc_html( $kvp_rating ); ?>&#9733;</div>
-			<div class="mlbl"><?php esc_html_e( 'Amazon rating', 'kvp-theme' ); ?></div>
-		</div>
-		<?php endif; ?>
-		<?php if ( $kvp_review_count ) : ?>
-		<div class="mbox">
-			<div class="mnum"><?php echo esc_html( $kvp_review_count ); ?></div>
-			<div class="mlbl"><?php esc_html_e( 'Verified reviews', 'kvp-theme' ); ?></div>
-		</div>
-		<?php endif; ?>
 		<?php if ( $kvp_price ) : ?>
 		<div class="mbox">
 			<div class="mnum">~$<?php echo esc_html( $kvp_price ); ?></div>
@@ -291,19 +286,59 @@ while ( have_posts() ) : the_post();
 	<div class="final">
 		<div class="final-badge"><?php esc_html_e( 'Final verdict', 'kvp-theme' ); ?></div>
 
-		<?php if ( $kvp_rating ) : ?>
-		<div class="final-score-row">
-			<span class="final-score-num"><?php echo esc_html( $kvp_rating ); ?></span>
-			<div>
-				<div class="final-stars" aria-label="<?php esc_attr_e( '5 stars', 'kvp-theme' ); ?>">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-				<?php if ( $kvp_review_count ) : ?>
-				<div class="final-sub">
-					<?php
-					/* translators: %s: review count */
-					printf( esc_html__( 'Based on %s verified Amazon reviews', 'kvp-theme' ), esc_html( $kvp_review_count ) );
-					?>
-				</div>
+		<?php if ( $kvp_dr ) :
+			$dr_num    = floatval( $kvp_dr );
+			$ring_pct  = ( $dr_num / 10 ) * 100;
+			$ring_off  = 364.4 * ( 1 - $ring_pct / 100 );
+			$ring_color = ( $dr_num >= 7.0 ) ? '#E8401C' : '#F76B35';
+		?>
+		<div class="dr-badge">
+			<div class="dr-circle-col">
+				<svg class="dr-ring" viewBox="0 0 130 130">
+					<circle cx="65" cy="65" r="58" fill="none" stroke="#E8E5E0" stroke-width="6"/>
+					<circle cx="65" cy="65" r="58" fill="none" stroke="<?php echo $ring_color; ?>" stroke-width="6"
+						stroke-dasharray="364.4" stroke-dashoffset="<?php echo esc_attr( $ring_off ); ?>"
+						stroke-linecap="round" transform="rotate(-90 65 65)"/>
+					<text x="65" y="58" text-anchor="middle" dominant-baseline="central" class="dr-score-text">
+						<?php echo esc_html( number_format( $dr_num, 1 ) ); ?>
+					</text>
+					<text x="65" y="80" text-anchor="middle" dominant-baseline="central" class="dr-denom">/10</text>
+				</svg>
+				<?php if ( $kvp_dr_label ) : ?>
+					<span class="dr-label-pill" style="background:<?php echo $ring_color; ?>;">
+						<?php echo esc_html( $kvp_dr_label ); ?>
+					</span>
 				<?php endif; ?>
+			</div>
+			<div class="dr-bars-col">
+				<div class="dr-header">
+					<span class="dr-header-line"></span>
+					<span class="dr-header-text">Deborah's Rating</span>
+					<span class="dr-header-line dr-header-line--fade"></span>
+				</div>
+				<?php
+				$dr_criteria = [
+					[ 'Safety &amp; Materials',  $kvp_dr_safety ],
+					[ 'Buyer Satisfaction',      $kvp_dr_buyer  ],
+					[ 'Longevity',               $kvp_dr_long   ],
+					[ 'Value for Price',         $kvp_dr_value  ],
+					[ 'Ease of Use',             $kvp_dr_ease   ],
+				];
+				foreach ( $dr_criteria as $c ) :
+					if ( ! $c[1] ) continue;
+					$cval   = floatval( $c[1] );
+					$cpct   = ( $cval / 10 ) * 100;
+					$ccolor = ( $cval >= 7.0 ) ? '#E8401C' : '#F76B35';
+				?>
+				<div class="dr-row">
+					<span class="dr-row-label"><?php echo $c[0]; ?></span>
+					<div class="dr-row-track">
+						<div class="dr-row-fill" style="width:<?php echo esc_attr( $cpct ); ?>%;background:<?php echo $ccolor; ?>;"></div>
+					</div>
+					<span class="dr-row-num" style="color:<?php echo $ccolor; ?>;"><?php echo esc_html( number_format( $cval, 1 ) ); ?></span>
+				</div>
+				<?php endforeach; ?>
+				<div class="dr-trust-line">Based on Deborah's editorial analysis of verified buyer data</div>
 			</div>
 		</div>
 		<?php endif; ?>
