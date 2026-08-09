@@ -77,6 +77,13 @@ function kvp_review_meta_box_render( $post ) {
         'kvp_product_name'   => [ 'label' => 'Product name (card display title)',  'type' => 'text'     ],
         'kvp_rating'         => [ 'label' => 'Rating (e.g. 4.8)',              'type' => 'text'     ],
         'kvp_review_count'   => [ 'label' => 'Review count (e.g. 19,265)',      'type' => 'text'     ],
+        'kvp_deborah_rating'       => [ 'label' => 'Deborah Rating (e.g. 8.1)',           'type' => 'text' ],
+        'kvp_deborah_rating_label' => [ 'label' => 'Deborah Label (e.g. Recommended)',    'type' => 'text' ],
+        'kvp_deborah_safety'       => [ 'label' => 'Sub: Safety & Materials (e.g. 9.5)',  'type' => 'text' ],
+        'kvp_deborah_buyer'        => [ 'label' => 'Sub: Buyer Satisfaction (e.g. 8.5)',  'type' => 'text' ],
+        'kvp_deborah_longevity'    => [ 'label' => 'Sub: Longevity (e.g. 6.0)',          'type' => 'text' ],
+        'kvp_deborah_value'        => [ 'label' => 'Sub: Value for Price (e.g. 6.5)',    'type' => 'text' ],
+        'kvp_deborah_ease'         => [ 'label' => 'Sub: Ease of Use (e.g. 9.0)',        'type' => 'text' ],
         'kvp_price'          => [ 'label' => 'Price (e.g. ~$89.87)',            'type' => 'text'     ],
         'kvp_best_for'       => [ 'label' => 'Best for',                        'type' => 'text'     ],
         'kvp_skip_if_detail' => [ 'label' => 'Skip if (one-line summary)',      'type' => 'text'     ],
@@ -135,6 +142,13 @@ function kvp_review_meta_box_save( $post_id ) {
         'kvp_product_name',
         'kvp_rating',
         'kvp_review_count',
+        'kvp_deborah_rating',
+        'kvp_deborah_rating_label',
+        'kvp_deborah_safety',
+        'kvp_deborah_buyer',
+        'kvp_deborah_longevity',
+        'kvp_deborah_value',
+        'kvp_deborah_ease',
         'kvp_price',
         'kvp_best_for',
         'kvp_skip_if_detail',
@@ -190,6 +204,16 @@ function kvp_get_price( $key, $post_meta_fallback = 'kvp_price', $post_id = null
 	return esc_html( $price );
 }
 
+// Rating used for ranking/sorting only (not display).
+// Deborah's editorial rating wins; kvp_rating is the legacy fallback for older posts.
+function kvp_get_sort_rating( $post_id ) {
+	$deborah = trim( (string) get_post_meta( $post_id, 'kvp_deborah_rating', true ) );
+	if ( '' !== $deborah ) {
+		return (float) $deborah;
+	}
+	return (float) get_post_meta( $post_id, 'kvp_rating', true );
+}
+
 function kvp_get_top_pick( $cat_term_id ) {
     if ( ! $cat_term_id ) { return null; }
 
@@ -215,7 +239,11 @@ function kvp_get_top_pick( $cat_term_id ) {
         'posts_per_page' => -1,
         'post_status'    => 'publish',
         'fields'         => 'ids',
-        'meta_query'     => array( array( 'key' => 'kvp_rating', 'compare' => 'EXISTS' ) ),
+        'meta_query'     => array(
+            'relation' => 'OR',
+            array( 'key' => 'kvp_deborah_rating', 'compare' => 'EXISTS' ),
+            array( 'key' => 'kvp_rating',         'compare' => 'EXISTS' ),
+        ),
     ) );
     $ids = $q->posts;
     wp_reset_postdata();
@@ -225,7 +253,7 @@ function kvp_get_top_pick( $cat_term_id ) {
 
     $ratings = array();
     foreach ( $ids as $id ) {
-        $r = (float) get_post_meta( $id, 'kvp_rating', true );
+        $r = (float) kvp_get_sort_rating( $id );
         if ( $r > 0 ) { $ratings[] = $r; }
     }
     if ( empty( $ratings ) ) { return null; }
@@ -233,7 +261,7 @@ function kvp_get_top_pick( $cat_term_id ) {
 
     $best_id = null; $best_score = -1;
     foreach ( $ids as $id ) {
-        $R = (float) get_post_meta( $id, 'kvp_rating', true );
+        $R = (float) kvp_get_sort_rating( $id );
         if ( $R <= 0 ) { continue; }
         $v = (float) preg_replace( '/[^0-9.]/', '', (string) get_post_meta( $id, 'kvp_review_count', true ) );
         $wr = ( $v / ( $v + $m ) ) * $R + ( $m / ( $v + $m ) ) * $C;

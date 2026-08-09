@@ -6,7 +6,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         'category_name'  => 'air-fryers',
         'posts_per_page' => 1,
         'post_status'    => 'publish',
-        'meta_key'       => 'kvp_rating',
+        'meta_key'       => 'kvp_deborah_rating',
         'orderby'        => 'meta_value_num',
         'order'          => 'DESC',
     ] );
@@ -77,7 +77,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         'category_name'  => 'air-fryers',
         'posts_per_page' => 1,
         'post_status'    => 'publish',
-        'meta_key'       => 'kvp_rating',
+        'meta_key'       => 'kvp_deborah_rating',
         'orderby'        => 'meta_value_num',
         'order'          => 'DESC',
     ] );
