@@ -33,7 +33,7 @@ get_header();
                         </span>
                         <span class="kvp-about-trust-item">
                             <span class="kvp-about-trust-dot" aria-hidden="true"></span>
-                            <?php _e( '10,000+ reviews analyzed', 'kvp-theme' ); ?>
+                            <?php _e( '5-point rating system', 'kvp-theme' ); ?>
                         </span>
                         <span class="kvp-about-trust-item">
                             <span class="kvp-about-trust-dot" aria-hidden="true"></span>

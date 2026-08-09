@@ -153,8 +153,8 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         <span class="kvp-stat-lbl"><?php esc_html_e( 'Products reviewed', 'kvp-theme' ); ?></span>
       </div>
       <div class="kvp-stat">
-        <span class="kvp-stat-num">100K+</span>
-        <span class="kvp-stat-lbl"><?php esc_html_e( 'Buyer reviews analyzed', 'kvp-theme' ); ?></span>
+        <span class="kvp-stat-num">5</span>
+        <span class="kvp-stat-lbl"><?php esc_html_e( 'Rating criteria per product', 'kvp-theme' ); ?></span>
       </div>
       <div class="kvp-stat">
         <span class="kvp-stat-num">5</span>
@@ -214,7 +214,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
             <div class="kvp-featured-pills">
                 <span class="kvp-featured-pill"><?php echo esc_html( get_post_meta( get_the_ID(), 'kvp_card_picks', true ) ); ?></span>
                 <span class="kvp-featured-pill"><?php esc_html_e( 'Under $100', 'kvp-theme' ); ?></span>
-                <span class="kvp-featured-pill"><?php esc_html_e( '200K+ reviews', 'kvp-theme' ); ?></span>
+                <span class="kvp-featured-pill"><?php esc_html_e( 'Deborah\'s top pick', 'kvp-theme' ); ?></span>
             </div>
             <a href="<?php echo esc_url( get_permalink() ); ?>" class="kvp-featured-btn"><?php esc_html_e( 'See all picks', 'kvp-theme' ); ?> &rarr;</a>
         </div>
