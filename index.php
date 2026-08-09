@@ -153,8 +153,8 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         <span class="kvp-stat-lbl"><?php esc_html_e( 'Products reviewed', 'kvp-theme' ); ?></span>
       </div>
       <div class="kvp-stat">
-        <span class="kvp-stat-num">5</span>
-        <span class="kvp-stat-lbl"><?php esc_html_e( 'Rating criteria per product', 'kvp-theme' ); ?></span>
+        <span class="kvp-stat-num">0&ndash;10</span>
+        <span class="kvp-stat-lbl"><?php esc_html_e( 'Editorial rating scale', 'kvp-theme' ); ?></span>
       </div>
       <div class="kvp-stat">
         <span class="kvp-stat-num">5</span>
@@ -210,7 +210,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         </div>
         <div class="kvp-featured-body">
             <span class="kvp-buyers-guide-badge"><?php esc_html_e( "Buyer's Guide", 'kvp-theme' ); ?></span>
-            <p class="kvp-featured-eyebrow"><?php esc_html_e( 'Air Fryers', 'kvp-theme' ); ?> &middot; <?php echo esc_html( get_post_meta( get_the_ID(), 'kvp_card_picks', true ) ); ?></p>            <p class="kvp-featured-desc"><?php esc_html_e( 'Deborah analyzed 200,000+ verified buyer reviews to find the air fryers that actually earn repeat buyers.', 'kvp-theme' ); ?></p>
+            <p class="kvp-featured-eyebrow"><?php esc_html_e( 'Air Fryers', 'kvp-theme' ); ?> &middot; <?php echo esc_html( get_post_meta( get_the_ID(), 'kvp_card_picks', true ) ); ?></p>            <p class="kvp-featured-desc"><?php esc_html_e( 'Deborah\'s data-backed picks for air fryers that actually earn repeat buyers.', 'kvp-theme' ); ?></p>
             <div class="kvp-featured-pills">
                 <span class="kvp-featured-pill"><?php echo esc_html( get_post_meta( get_the_ID(), 'kvp_card_picks', true ) ); ?></span>
                 <span class="kvp-featured-pill"><?php esc_html_e( 'Under $100', 'kvp-theme' ); ?></span>
