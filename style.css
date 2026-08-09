@@ -3356,3 +3356,8 @@ h1, h2, h3,
     .rnd-dr-num{font-size:16px}
     .rnd-dr-subs{gap:8px;font-size:10px}
 }
+
+/* -- Archive / index card Deborah Rating -- */
+.kvp-card-dr{display:inline-flex;align-items:center;gap:6px}
+.kvp-card-dr-score{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:#1A1A1A}
+.kvp-card-dr-label{font-size:10px;font-weight:700;color:#fff;padding:2px 7px;border-radius:3px;font-family:'Lato',sans-serif}

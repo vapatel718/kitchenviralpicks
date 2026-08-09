@@ -27,7 +27,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
     ] );
     echo "<!--\n";
     echo "KVP DEBUG — WP_Query found_posts (admin only, temporary)\n";
-    echo "hero_q  (air-fryers, ordered by kvp_rating):  found_posts=" . intval( $dbg_hero->found_posts ) . "\n";
+    echo "hero_q  (air-fryers, ordered by kvp_deborah_rating):  found_posts=" . intval( $dbg_hero->found_posts ) . "\n";
     echo "af_q    (air-fryers, up to 4):                found_posts=" . intval( $dbg_af->found_posts ) . "\n";
     echo "cw_q    (cookware, up to 6):                  found_posts=" . intval( $dbg_cw->found_posts ) . "\n";
     echo "kt_q    (kettles + multicooker, up to 4):     found_posts=" . intval( $dbg_kt->found_posts ) . "\n";
@@ -83,8 +83,9 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
     ] );
     $h_link    = '#';
     $h_name    = 'Cosori TurboBlaze Air Fryer 6 Qt';
-    $h_rating  = '4.8';
-    $h_count   = '19,000';
+    $h_rating   = '8.0';
+    $h_dr_label = '';
+    $h_count    = '19,000';
     $h_price   = '~$89.87';
     $h_verdict = 'Buyers consistently report faster cook times and easier cleanup than older models.';
     $h_img_url = '';
@@ -92,8 +93,9 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         $hero_q->the_post();
         $h_link    = get_permalink();
         $h_name    = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
-        $h_rating  = get_post_meta( get_the_ID(), 'kvp_rating', true ) ?: '4.8';
-        $h_count   = get_post_meta( get_the_ID(), 'kvp_review_count', true ) ?: '19,000';
+        $h_rating   = get_post_meta( get_the_ID(), 'kvp_deborah_rating', true ) ?: '8.0';
+        $h_dr_label = get_post_meta( get_the_ID(), 'kvp_deborah_rating_label', true );
+        $h_count    = get_post_meta( get_the_ID(), 'kvp_review_count', true ) ?: '19,000';
         $price_key = kvp_get_price_key( get_the_ID() );
         $h_price   = kvp_get_price( $price_key, 'kvp_price', get_the_ID() );
         $h_verdict = get_post_meta( get_the_ID(), 'kvp_card_verdict', true )
@@ -121,14 +123,12 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
       <div class="kvp-hero-card-body">
         <p class="kvp-hero-card-title"><?php echo esc_html( $h_name ); ?></p>
         <p class="kvp-hero-card-rating">
-          <em><?php echo esc_html( $h_rating ); ?>&#9733;</em>
-          <?php
-          printf(
-              /* translators: %s: review count */
-              esc_html__( 'on Amazon (%s+ reviews)', 'kvp-theme' ),
-              esc_html( $h_count )
-          );
-          ?>
+          <span class="kvp-card-dr">
+            <span class="kvp-card-dr-score"><?php echo esc_html( $h_rating ); ?></span>
+            <?php if ( $h_dr_label ) : ?>
+            <span class="kvp-card-dr-label" style="background:<?php echo ( floatval( $h_rating ) >= 7.0 ) ? '#E8401C' : '#F76B35'; ?>;"><?php echo esc_html( $h_dr_label ); ?></span>
+            <?php endif; ?>
+          </span>
         </p>
         <p class="kvp-hero-card-price">~$<?php echo esc_html( $h_price ); ?></p>
         <p class="kvp-hero-card-price-note"><?php esc_html_e( 'at time of writing · price may vary', 'kvp-theme' ); ?></p>
@@ -234,6 +234,8 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           $pname  = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
           $rating = get_post_meta( get_the_ID(), 'kvp_rating', true );
           $count  = get_post_meta( get_the_ID(), 'kvp_review_count', true );
+          $dr       = get_post_meta( get_the_ID(), 'kvp_deborah_rating',       true );
+          $dr_label = get_post_meta( get_the_ID(), 'kvp_deborah_rating_label', true );
           $price_key  = kvp_get_price_key( get_the_ID() );
           $price      = kvp_get_price( $price_key, 'kvp_price', get_the_ID() );
       ?>
@@ -252,8 +254,14 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           <p class="kvp-rc-cat"><?php esc_html_e( 'Air Fryers', 'kvp-theme' ); ?></p>
           <p class="kvp-rc-title"><?php echo esc_html( $pname ); ?></p>
           <p class="kvp-rc-meta">
-            <?php if ( $rating ) : ?><em><?php echo esc_html( $rating ); ?>&#9733;</em><?php endif; ?>
-            <?php if ( $count ) : ?>&middot; <?php echo esc_html( $count ); ?>+ <?php esc_html_e( 'reviews', 'kvp-theme' ); ?><?php endif; ?>
+            <?php if ( $dr || $rating ) : ?>
+            <span class="kvp-card-dr">
+              <span class="kvp-card-dr-score"><?php echo esc_html( $dr ? number_format( floatval( $dr ), 1 ) : $rating ); ?></span>
+              <?php if ( $dr && $dr_label ) : ?>
+              <span class="kvp-card-dr-label" style="background:<?php echo ( floatval( $dr ) >= 7.0 ) ? '#E8401C' : '#F76B35'; ?>;"><?php echo esc_html( $dr_label ); ?></span>
+              <?php endif; ?>
+            </span>
+            <?php endif; ?>
           </p>
           <?php if ( $price ) : ?>
           <p class="kvp-rc-price">~$<?php echo esc_html( $price ); ?></p>
@@ -308,6 +316,8 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           $pname  = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
           $rating = get_post_meta( get_the_ID(), 'kvp_rating', true );
           $count  = get_post_meta( get_the_ID(), 'kvp_review_count', true );
+          $dr       = get_post_meta( get_the_ID(), 'kvp_deborah_rating',       true );
+          $dr_label = get_post_meta( get_the_ID(), 'kvp_deborah_rating_label', true );
           $price_key  = kvp_get_price_key( get_the_ID() );
           $price      = kvp_get_price( $price_key, 'kvp_price', get_the_ID() );
       ?>
@@ -326,8 +336,14 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           <p class="kvp-rc-cat"><?php esc_html_e( 'Cookware', 'kvp-theme' ); ?></p>
           <p class="kvp-rc-title"><?php echo esc_html( $pname ); ?></p>
           <p class="kvp-rc-meta">
-            <?php if ( $rating ) : ?><em><?php echo esc_html( $rating ); ?>&#9733;</em><?php endif; ?>
-            <?php if ( $count ) : ?>&middot; <?php echo esc_html( $count ); ?>+ <?php esc_html_e( 'reviews', 'kvp-theme' ); ?><?php endif; ?>
+            <?php if ( $dr || $rating ) : ?>
+            <span class="kvp-card-dr">
+              <span class="kvp-card-dr-score"><?php echo esc_html( $dr ? number_format( floatval( $dr ), 1 ) : $rating ); ?></span>
+              <?php if ( $dr && $dr_label ) : ?>
+              <span class="kvp-card-dr-label" style="background:<?php echo ( floatval( $dr ) >= 7.0 ) ? '#E8401C' : '#F76B35'; ?>;"><?php echo esc_html( $dr_label ); ?></span>
+              <?php endif; ?>
+            </span>
+            <?php endif; ?>
           </p>
           <?php if ( $price ) : ?>
           <p class="kvp-rc-price">~$<?php echo esc_html( $price ); ?></p>
@@ -383,6 +399,8 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           $pname  = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
           $rating = get_post_meta( get_the_ID(), 'kvp_rating', true );
           $count  = get_post_meta( get_the_ID(), 'kvp_review_count', true );
+          $dr       = get_post_meta( get_the_ID(), 'kvp_deborah_rating',       true );
+          $dr_label = get_post_meta( get_the_ID(), 'kvp_deborah_rating_label', true );
           $price_key  = kvp_get_price_key( get_the_ID() );
           $price      = kvp_get_price( $price_key, 'kvp_price', get_the_ID() );
           $cats   = get_the_terms( get_the_ID(), 'category' );
@@ -403,8 +421,14 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           <p class="kvp-rc-cat"><?php echo esc_html( $cname ); ?></p>
           <p class="kvp-rc-title"><?php echo esc_html( $pname ); ?></p>
           <p class="kvp-rc-meta">
-            <?php if ( $rating ) : ?><em><?php echo esc_html( $rating ); ?>&#9733;</em><?php endif; ?>
-            <?php if ( $count ) : ?>&middot; <?php echo esc_html( $count ); ?>+ <?php esc_html_e( 'reviews', 'kvp-theme' ); ?><?php endif; ?>
+            <?php if ( $dr || $rating ) : ?>
+            <span class="kvp-card-dr">
+              <span class="kvp-card-dr-score"><?php echo esc_html( $dr ? number_format( floatval( $dr ), 1 ) : $rating ); ?></span>
+              <?php if ( $dr && $dr_label ) : ?>
+              <span class="kvp-card-dr-label" style="background:<?php echo ( floatval( $dr ) >= 7.0 ) ? '#E8401C' : '#F76B35'; ?>;"><?php echo esc_html( $dr_label ); ?></span>
+              <?php endif; ?>
+            </span>
+            <?php endif; ?>
           </p>
           <?php if ( $price ) : ?>
           <p class="kvp-rc-price">~$<?php echo esc_html( $price ); ?></p>

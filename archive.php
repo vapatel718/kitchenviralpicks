@@ -61,6 +61,8 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
         if ( $top_pick ) :
             $tp_rating       = get_post_meta( $top_pick->ID, 'kvp_rating',       true );
             $tp_count        = get_post_meta( $top_pick->ID, 'kvp_review_count', true );
+            $tp_dr           = get_post_meta( $top_pick->ID, 'kvp_deborah_rating',       true );
+            $tp_dr_label     = get_post_meta( $top_pick->ID, 'kvp_deborah_rating_label', true );
             $price_key       = kvp_get_price_key( $top_pick->ID );
             $tp_price        = str_replace( ' at time of writing', '', kvp_get_price( $price_key, 'kvp_price', $top_pick->ID ) );
             $tp_product_name = get_post_meta( $top_pick->ID, 'kvp_product_name', true );
@@ -73,8 +75,15 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                     <p class="kvp-arc-top-pick-label"><?php esc_html_e( "Deborah's Top Pick", 'kvp-theme' ); ?></p>
                     <p class="kvp-arc-top-pick-title"><?php echo esc_html( $tp_display_name ); ?></p>
                     <div class="kvp-arc-tp-meta">
-                        <?php if ( $tp_rating ) : ?>
-                        <span class="kvp-arc-tp-rating"><span aria-hidden="true">★</span> <?php echo esc_html( $tp_rating ); ?><?php if ( $tp_count ) : ?> &middot; <?php echo esc_html( $tp_count ); ?>+ <?php esc_html_e( 'reviews', 'kvp-theme' ); ?><?php endif; ?></span>
+                        <?php if ( $tp_dr ) :
+                            $tp_dr_color = ( floatval( $tp_dr ) >= 7.0 ) ? '#E8401C' : '#F76B35';
+                        ?>
+                        <span class="kvp-card-dr">
+                            <span class="kvp-card-dr-score"><?php echo esc_html( number_format( floatval( $tp_dr ), 1 ) ); ?></span>
+                            <?php if ( $tp_dr_label ) : ?>
+                            <span class="kvp-card-dr-label" style="background:<?php echo $tp_dr_color; ?>;"><?php echo esc_html( $tp_dr_label ); ?></span>
+                            <?php endif; ?>
+                        </span>
                         <?php endif; ?>
                     </div>
                     <?php if ( $tp_price ) : ?>
@@ -127,6 +136,8 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                 $card_cat     = $card_cats ? $card_cats[0]->name : $cat_name;
                 $card_rating  = get_post_meta( get_the_ID(), 'kvp_rating', true );
                 $card_count   = get_post_meta( get_the_ID(), 'kvp_review_count', true );
+                $card_dr       = get_post_meta( get_the_ID(), 'kvp_deborah_rating',       true );
+                $card_dr_label = get_post_meta( get_the_ID(), 'kvp_deborah_rating_label', true );
                 $price_key    = kvp_get_price_key( get_the_ID() );
                 $card_price   = str_replace( ' at time of writing', '', kvp_get_price( $price_key, 'kvp_price', get_the_ID() ) );
                 $card_product_name    = get_post_meta( get_the_ID(), 'kvp_product_name', true );
@@ -181,21 +192,18 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                         <a href="<?php the_permalink(); ?>"><?php echo esc_html( $card_product_name ? $card_product_name : get_the_title() ); ?></a>
                     </h3>
 
-                    <?php if ( $card_rating ) : ?>
+                    <?php if ( $card_dr || $card_rating ) : ?>
                     <p class="kvp-arc-card-rating">
-                        <span class="kvp-stars" aria-hidden="true">★</span>
-                        <?php
-                        if ( $card_count ) {
-                            printf(
-                                /* translators: 1: rating, 2: review count */
-                                esc_html__( '%1$s on Amazon (%2$s+ reviews)', 'kvp-theme' ),
-                                esc_html( $card_rating ),
-                                esc_html( $card_count )
-                            );
-                        } else {
-                            echo esc_html( $card_rating ) . esc_html__( '★ on Amazon', 'kvp-theme' );
-                        }
-                        ?>
+                        <span class="kvp-card-dr">
+                            <?php if ( $card_dr ) : ?>
+                            <span class="kvp-card-dr-score"><?php echo esc_html( number_format( floatval( $card_dr ), 1 ) ); ?></span>
+                                <?php if ( $card_dr_label ) : ?>
+                                <span class="kvp-card-dr-label" style="background:<?php echo ( floatval( $card_dr ) >= 7.0 ) ? '#E8401C' : '#F76B35'; ?>;"><?php echo esc_html( $card_dr_label ); ?></span>
+                                <?php endif; ?>
+                            <?php else : ?>
+                            <span class="kvp-card-dr-score"><?php echo esc_html( $card_rating ); ?></span>
+                            <?php endif; ?>
+                        </span>
                     </p>
                     <?php endif; ?>
 
