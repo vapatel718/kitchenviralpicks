@@ -3338,3 +3338,21 @@ h1, h2, h3,
     .dr-row-label{width:110px;font-size:12px}
     .dr-row-num{font-size:12px}
 }
+
+/* -- Roundup Deborah Rating Bar -- */
+.rnd-dr-bar{display:flex;align-items:center;gap:14px;padding:14px 16px;background:#FFF8F5;border:1px solid #f0e6e0;border-radius:8px;margin:12px 0}
+.rnd-dr-circle{flex-shrink:0;width:52px;height:52px;border-radius:50%;border:3px solid;display:flex;align-items:center;justify-content:center}
+.rnd-dr-num{font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:#1A1A1A}
+.rnd-dr-info{flex:1;min-width:0}
+.rnd-dr-pills{display:flex;align-items:baseline;gap:8px;margin-bottom:4px;flex-wrap:wrap}
+.rnd-dr-pill-label{font-size:11px;color:#fff;padding:2px 8px;border-radius:3px;font-weight:700;font-family:'Lato',sans-serif}
+.rnd-dr-subs{display:flex;gap:12px;font-family:'Lato',sans-serif;font-size:11px;color:#888}
+.rnd-dr-subs strong{font-weight:700;color:#1A1A1A;margin-left:2px}
+
+/* Roundup DR bar mobile */
+@media(max-width:600px){
+    .rnd-dr-bar{flex-direction:row;gap:10px;padding:12px}
+    .rnd-dr-circle{width:44px;height:44px}
+    .rnd-dr-num{font-size:16px}
+    .rnd-dr-subs{gap:8px;font-size:10px}
+}

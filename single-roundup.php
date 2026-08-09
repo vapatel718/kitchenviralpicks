@@ -42,7 +42,6 @@ get_header();
 .rnd-winner-row td{background:rgba(232,64,28,0.04) !important;}
 .rnd-winner-badge{display:inline-block;background:rgba(232,64,28,0.1);color:#E8401C;font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;margin-left:6px;vertical-align:middle;white-space:nowrap;}
 .rnd-rating-pill{display:inline-flex;align-items:center;gap:3px;background:#FFF8F5;border:0.5px solid #e8d5cc;border-radius:999px;padding:3px 8px;font-size:12px;font-weight:700;color:#1A1A1A;}
-.rnd-rating-pill .rnd-star{color:#E8401C;}
 .rnd-reviews-bold{font-weight:700;color:#E8401C;}
 .rnd-table-note{font-size:11px;color:#aaa;margin-top:8px;}
 .rnd-compare-table .col-product{width:28%;}
@@ -182,13 +181,44 @@ get_header();
 <?php
 $products = array();
 for ( $n = 1; $n <= 5; $n++ ) {
+	// Deborah scores live on the product's own review post, not on the roundup.
+	// Resolve that post from an explicit kvp_p{n}_review_id (ID, slug or URL),
+	// falling back to the card button URL when it points at an internal review.
+	$review_id  = 0;
+	$review_ref = get_post_meta( $post_id, "kvp_p{$n}_review_id", true );
+	if ( $review_ref ) {
+		if ( is_numeric( $review_ref ) ) {
+			$review_id = (int) $review_ref;
+		} else {
+			$review_id = (int) url_to_postid( $review_ref );
+			if ( ! $review_id ) {
+				$by_slug   = get_page_by_path( sanitize_title( $review_ref ), OBJECT, 'post' );
+				$review_id = $by_slug ? (int) $by_slug->ID : 0;
+			}
+		}
+	}
+	if ( ! $review_id ) {
+		$btn_url = get_post_meta( $post_id, "kvp_p{$n}_btn_url", true );
+		if ( $btn_url && 'external' !== get_post_meta( $post_id, "kvp_p{$n}_btn_type", true ) ) {
+			$review_id = (int) url_to_postid( $btn_url );
+		}
+	}
+
 	$products[ $n ] = array(
-		'name'     => get_post_meta( $post_id, "kvp_p{$n}_name", true ),
-		'price'    => get_post_meta( $post_id, "kvp_p{$n}_price", true ),
-		'reviews'  => get_post_meta( $post_id, "kvp_p{$n}_reviews", true ),
-		'rating'   => get_post_meta( $post_id, "kvp_p{$n}_rating", true ),
-		'capacity' => get_post_meta( $post_id, "kvp_p{$n}_capacity", true ),
-		'bestfor'  => get_post_meta( $post_id, "kvp_p{$n}_bestfor", true ),
+		'name'         => get_post_meta( $post_id, "kvp_p{$n}_name", true ),
+		'price'        => get_post_meta( $post_id, "kvp_p{$n}_price", true ),
+		'reviews'      => get_post_meta( $post_id, "kvp_p{$n}_reviews", true ),
+		'rating'       => get_post_meta( $post_id, "kvp_p{$n}_rating", true ),
+		'capacity'     => get_post_meta( $post_id, "kvp_p{$n}_capacity", true ),
+		'bestfor'      => get_post_meta( $post_id, "kvp_p{$n}_bestfor", true ),
+		'review_id'    => $review_id,
+		'dr_score'     => $review_id ? get_post_meta( $review_id, 'kvp_deborah_rating',       true ) : '',
+		'dr_label'     => $review_id ? get_post_meta( $review_id, 'kvp_deborah_rating_label', true ) : '',
+		'dr_safety'    => $review_id ? get_post_meta( $review_id, 'kvp_deborah_safety',       true ) : '',
+		'dr_buyer'     => $review_id ? get_post_meta( $review_id, 'kvp_deborah_buyer',        true ) : '',
+		'dr_longevity' => $review_id ? get_post_meta( $review_id, 'kvp_deborah_longevity',    true ) : '',
+		'dr_value'     => $review_id ? get_post_meta( $review_id, 'kvp_deborah_value',        true ) : '',
+		'dr_ease'      => $review_id ? get_post_meta( $review_id, 'kvp_deborah_ease',         true ) : '',
 	);
 }
 ?>
@@ -229,10 +259,11 @@ for ( $n = 1; $n <= 5; $n++ ) {
 				<td><span class="rnd-table-price"><?php echo $products[ $n ]['price'] !== '' ? '~$' . esc_html( $products[ $n ]['price'] ) : ''; ?></span></td>
 				<td><span class="rnd-reviews-bold"><?php echo esc_html( $products[ $n ]['reviews'] ); ?></span></td>
 				<td>
+					<?php if ( ! empty( $products[ $n ]['dr_score'] ) ) : ?>
 					<span class="rnd-rating-pill">
-						<span class="rnd-star">★</span>
-						<?php echo esc_html( str_replace( '★', '', $products[ $n ]['rating'] ) ); ?>
+						<?php echo esc_html( number_format( floatval( $products[ $n ]['dr_score'] ), 1 ) ); ?>
 					</span>
+					<?php endif; ?>
 				</td>
 				<td><?php echo esc_html( $products[ $n ]['capacity'] ); ?></td>
 				<td><?php echo esc_html( get_post_meta( $post_id, "kvp_p{$n}_functions", true ) ); ?></td>
@@ -341,8 +372,34 @@ $toppick_url       = get_post_meta( $post_id, 'kvp_toppick_url', true );
 						<span class="rnd-price-note">at time of writing &middot; price may vary</span>
 					</div>
 				</div>
-				<?php if ( $card_rating ) : ?>
-				<p class="rnd-card-meta"><?php echo esc_html( $card_rating ); ?> stars across verified buyers</p>
+				<?php if ( ! empty( $products[ $n ]['dr_score'] ) ) :
+					$rdr_num   = floatval( $products[ $n ]['dr_score'] );
+					$rdr_color = ( $rdr_num >= 7.0 ) ? '#E8401C' : '#F76B35';
+					$rdr_label = $products[ $n ]['dr_label'] ?? '';
+				?>
+				<div class="rnd-dr-bar">
+					<div class="rnd-dr-circle" style="border-color:<?php echo $rdr_color; ?>;">
+						<span class="rnd-dr-num"><?php echo esc_html( number_format( $rdr_num, 1 ) ); ?></span>
+					</div>
+					<div class="rnd-dr-info">
+						<div class="rnd-dr-pills">
+							<?php if ( $rdr_label ) : ?>
+								<span class="rnd-dr-pill-label" style="background:<?php echo $rdr_color; ?>;"><?php echo esc_html( $rdr_label ); ?></span>
+							<?php endif; ?>
+						</div>
+						<div class="rnd-dr-subs">
+							<?php if ( ! empty( $products[ $n ]['dr_safety'] ) ) : ?>
+								<span>Safety <strong><?php echo esc_html( number_format( floatval( $products[ $n ]['dr_safety'] ), 1 ) ); ?></strong></span>
+							<?php endif; ?>
+							<?php if ( ! empty( $products[ $n ]['dr_buyer'] ) ) : ?>
+								<span>Buyer <strong><?php echo esc_html( number_format( floatval( $products[ $n ]['dr_buyer'] ), 1 ) ); ?></strong></span>
+							<?php endif; ?>
+							<?php if ( ! empty( $products[ $n ]['dr_longevity'] ) ) : ?>
+								<span>Durability <strong><?php echo esc_html( number_format( floatval( $products[ $n ]['dr_longevity'] ), 1 ) ); ?></strong></span>
+							<?php endif; ?>
+						</div>
+					</div>
+				</div>
 				<?php endif; ?>
 			</div>
 		</div>
