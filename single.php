@@ -17,6 +17,7 @@ while ( have_posts() ) : the_post();
 	$kvp_dr_long    = get_post_meta( $post_id, 'kvp_deborah_longevity',    true );
 	$kvp_dr_value   = get_post_meta( $post_id, 'kvp_deborah_value',        true );
 	$kvp_dr_ease    = get_post_meta( $post_id, 'kvp_deborah_ease',         true );
+	$kvp_best_for   = get_post_meta( $post_id, 'kvp_best_for',            true );
 	$kvp_verdict_line   = get_post_meta( $post_id, 'kvp_verdict_line',   true );
 	$kvp_amazon_url     = get_post_meta( $post_id, 'kvp_amazon_url',     true );
 	$kvp_final_verdict  = get_post_meta( $post_id, 'kvp_final_verdict',  true );
@@ -140,24 +141,22 @@ while ( have_posts() ) : the_post();
 
 	</div>
 
-	<!-- METRICS -->
-	<?php if ( $kvp_dr || $kvp_price || $kvp_capacity || $kvp_pack_size ) : ?>
-	<div class="metrics">
-		<?php if ( $kvp_price ) : ?>
-		<div class="mbox">
-			<div class="mnum">~$<?php echo esc_html( $kvp_price ); ?></div>
-			<div class="mlbl"><?php esc_html_e( 'Current price', 'kvp-theme' ); ?></div>
+	<!-- STATS BAR: Deborah Rating + Best For -->
+	<?php if ( $kvp_dr || $kvp_best_for ) : ?>
+	<div class="stats-bar">
+		<?php if ( $kvp_dr ) : ?>
+		<div class="stats-rating">
+			<div class="stats-rating-label">Deborah's rating</div>
+			<div class="stats-rating-score"><?php echo esc_html( $kvp_dr ); ?><span class="stats-rating-of">/10</span></div>
+			<?php if ( $kvp_dr_label ) : ?>
+			<div class="stats-rating-badge"><?php echo esc_html( $kvp_dr_label ); ?></div>
+			<?php endif; ?>
 		</div>
 		<?php endif; ?>
-		<?php if ( $kvp_capacity ) : ?>
-		<div class="mbox">
-			<div class="mnum"><?php echo esc_html( $kvp_capacity ); ?></div>
-			<div class="mlbl"><?php esc_html_e( 'Capacity', 'kvp-theme' ); ?></div>
-		</div>
-		<?php elseif ( $kvp_pack_size ) : ?>
-		<div class="mbox">
-			<div class="mnum"><?php echo esc_html( $kvp_pack_size ); ?></div>
-			<div class="mlbl"><?php esc_html_e( 'Pack Size', 'kvp-theme' ); ?></div>
+		<?php if ( $kvp_best_for ) : ?>
+		<div class="stats-bestfor">
+			<div class="stats-bestfor-label">Best for</div>
+			<div class="stats-bestfor-text"><?php echo esc_html( $kvp_best_for ); ?></div>
 		</div>
 		<?php endif; ?>
 	</div>
