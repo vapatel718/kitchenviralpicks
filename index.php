@@ -144,21 +144,30 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
 
 
   <!-- ================================================
-       STATS BAR
+       TRUST PILLARS BAR
        ================================================ -->
-  <section class="kvp-stats-bar" aria-label="<?php esc_attr_e( 'Site stats', 'kvp-theme' ); ?>">
+  <section class="kvp-trust-bar" aria-label="<?php esc_attr_e( 'Why trust KitchenViralPicks', 'kvp-theme' ); ?>">
     <div class="kvp-inner">
-      <div class="kvp-stat">
-        <span class="kvp-stat-num">10</span>
-        <span class="kvp-stat-lbl"><?php esc_html_e( 'Products reviewed', 'kvp-theme' ); ?></span>
+      <div class="kvp-trust-pillar">
+        <svg class="kvp-trust-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F76B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="kvp-trust-text">
+          <span class="kvp-trust-headline"><?php esc_html_e( 'No sponsored reviews', 'kvp-theme' ); ?></span>
+          <span class="kvp-trust-sub"><?php esc_html_e( 'Every pick is editorially independent', 'kvp-theme' ); ?></span>
+        </div>
       </div>
-      <div class="kvp-stat">
-        <span class="kvp-stat-num">0&ndash;10</span>
-        <span class="kvp-stat-lbl"><?php esc_html_e( 'Editorial rating scale', 'kvp-theme' ); ?></span>
+      <div class="kvp-trust-pillar">
+        <svg class="kvp-trust-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F76B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <div class="kvp-trust-text">
+          <span class="kvp-trust-headline"><?php esc_html_e( 'Every safety claim source-verified', 'kvp-theme' ); ?></span>
+          <span class="kvp-trust-sub"><?php esc_html_e( 'FDA, EPA, and peer-reviewed citations', 'kvp-theme' ); ?></span>
+        </div>
       </div>
-      <div class="kvp-stat">
-        <span class="kvp-stat-num">5</span>
-        <span class="kvp-stat-lbl"><?php esc_html_e( 'Categories covered', 'kvp-theme' ); ?></span>
+      <div class="kvp-trust-pillar">
+        <svg class="kvp-trust-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#F76B35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+        <div class="kvp-trust-text">
+          <span class="kvp-trust-headline"><?php esc_html_e( 'Zero PFAS. Zero PTFE. Zero compromise.', 'kvp-theme' ); ?></span>
+          <span class="kvp-trust-sub"><?php esc_html_e( 'Non-toxic cookware is all we cover', 'kvp-theme' ); ?></span>
+        </div>
       </div>
     </div><!-- .kvp-inner -->
   </section>

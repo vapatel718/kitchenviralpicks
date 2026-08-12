@@ -325,50 +325,52 @@ main,
 }
 
 /* ================================================
-   HOMEPAGE — Stats Bar
+   HOMEPAGE — Trust Pillars Bar
    ================================================ */
 
-.kvp-stats-bar {
-  background: #1A1A1A;
+.kvp-trust-bar {
+  background: #2A2A2A;
+  padding: 28px 0;
 }
 
-.kvp-stats-bar .kvp-inner {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-items: center;
-  align-items: center;
+.kvp-trust-bar .kvp-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 24px;
+  gap: 16px;
 }
 
-.kvp-stat {
-  padding: 14px 8px;
-  text-align: center;
-  border-right: 0.5px solid rgba(232,64,28,0.2);
-  width: 100%;
+.kvp-trust-pillar {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
 }
 
-.kvp-stat:last-child {
-  border-right: none;
+.kvp-trust-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
-.kvp-stat-num {
-  display: block;
-  font-size: 18px;
+.kvp-trust-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kvp-trust-headline {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
   font-weight: 700;
-  color: #E8401C;
-  line-height: 1;
-  font-family: 'Lato', sans-serif;
-  text-align: center;
+  color: #FFF8F5;
+  letter-spacing: 0.02em;
 }
 
-.kvp-stat-lbl {
-  display: block;
-  font-size: 8px;
-  color: rgba(255,255,255,0.38);
-  margin-top: 4px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+.kvp-trust-sub {
   font-family: 'Lato', sans-serif;
-  text-align: center;
+  font-size: 11px;
+  font-weight: 400;
+  color: #B0ACA9;
 }
 
 /* ================================================
@@ -900,16 +902,20 @@ main,
     padding: 14px;
   }
 
-  .kvp-stat {
-    padding: 16px 12px;
+  /* Trust bar — tablet and up */
+  .kvp-trust-bar .kvp-inner {
+    flex-direction: row;
+    justify-content: center;
+    padding-left: 32px;
+    gap: 48px;
   }
 
-  .kvp-stat-num {
-    font-size: 20px;
+  .kvp-trust-headline {
+    font-size: 14px;
   }
 
-  .kvp-stat-lbl {
-    font-size: 9px;
+  .kvp-trust-sub {
+    font-size: 12px;
   }
 
   .kvp-reviews {
@@ -1070,19 +1076,6 @@ main,
   .kvp-hero-card-btn {
     font-size: 12px;
     padding: 11px;
-  }
-
-  .kvp-stat {
-    padding: 18px 20px;
-  }
-
-  .kvp-stat-num {
-    font-size: 24px;
-  }
-
-  .kvp-stat-lbl {
-    font-size: 10px;
-    letter-spacing: 0.06em;
   }
 
   .kvp-reviews {
