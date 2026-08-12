@@ -67,11 +67,22 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
             $tp_price        = str_replace( ' at time of writing', '', kvp_get_price( $price_key, 'kvp_price', $top_pick->ID ) );
             $tp_product_name = get_post_meta( $top_pick->ID, 'kvp_product_name', true );
             $tp_display_name = $tp_product_name ? $tp_product_name : get_the_title( $top_pick->ID );
+            $tp_image = get_post_meta( $top_pick->ID, 'kvp_product_image', true );
+            if ( ! $tp_image ) {
+                $tp_thumb_id = get_post_thumbnail_id( $top_pick->ID );
+                $tp_image = $tp_thumb_id ? wp_get_attachment_image_url( $tp_thumb_id, 'medium_large' ) : '';
+            }
         ?>
         <div class="kvp-arc-top-pick">
             <div class="kvp-arc-tp-row">
 
-                <div class="kvp-arc-tp-left">
+                <?php if ( $tp_image ) : ?>
+                <div class="kvp-arc-tp-img">
+                    <img src="<?php echo esc_url( $tp_image ); ?>" alt="<?php echo esc_attr( $tp_display_name ); ?>" loading="lazy" width="200" height="200">
+                </div>
+                <?php endif; ?>
+
+                <div class="kvp-arc-tp-content">
                     <p class="kvp-arc-top-pick-label"><?php esc_html_e( "Deborah's Top Pick", 'kvp-theme' ); ?></p>
                     <p class="kvp-arc-top-pick-title"><?php echo esc_html( $tp_display_name ); ?></p>
                     <div class="kvp-arc-tp-meta">
@@ -89,12 +100,9 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                     <?php if ( $tp_price ) : ?>
                     <div class="kvp-arc-top-price-row">
                         <span class="kvp-arc-price-pill">~$<?php echo esc_html( $tp_price ); ?></span>
-                        <span class="kvp-arc-price-note"><?php esc_html_e( 'at time of writing', 'kvp-theme' ); ?></span>
+                        <span class="kvp-arc-price-note"><?php esc_html_e( 'at time of writing · price may vary', 'kvp-theme' ); ?></span>
                     </div>
                     <?php endif; ?>
-                </div>
-
-                <div class="kvp-arc-tp-right">
                     <a href="<?php echo esc_url( get_permalink( $top_pick->ID ) ); ?>" class="kvp-arc-top-pick-btn">
                         <?php esc_html_e( 'Read full review', 'kvp-theme' ); ?>
                     </a>
@@ -122,7 +130,62 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
         <!-- ================================================================
              6. REVIEW CARD GRID — WordPress loop
              ================================================================ -->
+        <?php if ( ! isset( $guide_post_ids ) ) { $guide_post_ids = array(); } ?>
+
         <?php if ( have_posts() ) : ?>
+
+        <?php
+        /* ── Pillar / Roundup guide cards ──────────────────────── */
+        if ( $current_cat && isset( $current_cat->term_id ) ) :
+            $guide_posts = get_posts( array(
+                'post_type'      => 'post',
+                'post_status'    => 'publish',
+                'cat'            => $current_cat->term_id,
+                'meta_key'       => '_wp_page_template',
+                'meta_value'     => 'single-roundup.php',
+                'posts_per_page' => 10,
+                'orderby'        => 'date',
+                'order'          => 'DESC',
+            ) );
+
+            foreach ( $guide_posts as $guide ) :
+                $guide_verdict = get_post_meta( $guide->ID, 'kvp_card_verdict', true );
+                if ( ! $guide_verdict ) {
+                    $guide_verdict = get_post_meta( $guide->ID, 'kvp_verdict_line', true );
+                }
+                $guide_image = get_post_meta( $guide->ID, 'kvp_product_image', true );
+                if ( ! $guide_image ) {
+                    $guide_thumb_id = get_post_thumbnail_id( $guide->ID );
+                    $guide_image = $guide_thumb_id ? wp_get_attachment_image_url( $guide_thumb_id, 'medium_large' ) : '';
+                }
+        ?>
+        <div class="kvp-arc-guide-card">
+            <div class="kvp-arc-guide-header">
+                <span class="kvp-arc-guide-badge"><?php esc_html_e( "Buyer's Guide", 'kvp-theme' ); ?></span>
+            </div>
+            <div class="kvp-arc-guide-body">
+                <?php if ( $guide_image ) : ?>
+                <div class="kvp-arc-guide-img">
+                    <img src="<?php echo esc_url( $guide_image ); ?>" alt="<?php echo esc_attr( get_the_title( $guide->ID ) ); ?>" loading="lazy" width="300" height="200">
+                </div>
+                <?php endif; ?>
+                <div class="kvp-arc-guide-content">
+                    <h3 class="kvp-arc-guide-title"><?php echo esc_html( get_the_title( $guide->ID ) ); ?></h3>
+                    <?php if ( $guide_verdict ) : ?>
+                    <p class="kvp-arc-guide-desc"><?php echo esc_html( $guide_verdict ); ?></p>
+                    <?php endif; ?>
+                    <a href="<?php echo esc_url( get_permalink( $guide->ID ) ); ?>" class="kvp-arc-guide-btn">
+                        <?php esc_html_e( 'See all picks →', 'kvp-theme' ); ?>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <?php
+            endforeach;
+            wp_reset_postdata();
+            $guide_post_ids = wp_list_pluck( $guide_posts, 'ID' );
+        endif;
+        ?>
 
         <div class="kvp-arc-grid">
 
@@ -131,6 +194,11 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
             while ( have_posts() ) :
                 the_post();
                 $rank++;
+
+                if ( in_array( get_the_ID(), $guide_post_ids ) ) {
+                    $rank--;
+                    continue;
+                }
 
                 $card_cats    = get_the_category();
                 $card_cat     = $card_cats ? $card_cats[0]->name : $cat_name;

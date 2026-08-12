@@ -2169,17 +2169,28 @@ h1, h2, h3,
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
+    gap: 24px;
     flex-wrap: wrap;
 }
 
-.kvp-arc-tp-left {
-    flex: 1;
-    min-width: 0;
+.kvp-arc-tp-img {
+    flex-shrink: 0;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.kvp-arc-tp-right {
-    flex-shrink: 0;
+.kvp-arc-tp-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.kvp-arc-tp-content {
+    flex: 1;
+    min-width: 0;
 }
 
 .kvp-arc-top-pick-label {
@@ -2263,11 +2274,85 @@ h1, h2, h3,
     text-decoration: none;
     white-space: nowrap;
     transition: background 0.15s;
+    margin-top: 14px;
 }
 
 .kvp-arc-top-pick-btn:hover {
     background: #F76B35;
     color: #fff;
+}
+
+/* ── Pillar / Guide Card ─────────────────────── */
+.kvp-arc-guide-card {
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.kvp-arc-guide-header {
+  background: #2A2A2A;
+  padding: 8px 16px;
+}
+.kvp-arc-guide-badge {
+  font-family: 'Lato', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFF8F5;
+}
+.kvp-arc-guide-body {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  background: #fff;
+}
+.kvp-arc-guide-img {
+  flex-shrink: 0;
+  width: 160px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.kvp-arc-guide-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.kvp-arc-guide-content {
+  flex: 1;
+}
+.kvp-arc-guide-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin: 0 0 6px;
+}
+.kvp-arc-guide-desc {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+.kvp-arc-guide-btn {
+  display: inline-block;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #E8401C;
+  text-decoration: none;
+  padding: 8px 20px;
+  border: 1px solid #E8401C;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.kvp-arc-guide-btn:hover {
+  background: #E8401C;
+  color: #fff;
 }
 
 /* ----------------------------------------------------------------
@@ -2581,9 +2666,12 @@ h1, h2, h3,
     .kvp-arc-banner { padding-top: 90px; }
     .kvp-arc-wrap { padding: 0 16px; }
     .kvp-arc-grid { grid-template-columns: 1fr; }
-    .kvp-arc-tp-row { flex-direction: column; gap: 12px; }
-    .kvp-arc-tp-right { width: 100%; }
+    .kvp-arc-tp-row { flex-direction: column; align-items: center; gap: 16px; }
+    .kvp-arc-tp-img { width: 100px; height: 100px; }
     .kvp-arc-top-pick-btn { display: block; text-align: center; width: 100%; box-sizing: border-box; }
+    .kvp-arc-guide-body { flex-direction: column; padding: 16px; gap: 12px; }
+    .kvp-arc-guide-img { width: 100%; height: 140px; }
+    .kvp-arc-guide-title { font-size: 16px; }
     .kvp-arc-also-grid { grid-template-columns: 1fr 1fr; }
     .kvp-arc-card-img { height: 220px; background: #ffffff; }
     .kvp-arc-card-img img { object-fit: contain; object-position: center; }
