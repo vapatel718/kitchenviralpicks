@@ -254,7 +254,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           <p class="kvp-rc-cat"><?php esc_html_e( 'Air Fryers', 'kvp-theme' ); ?></p>
           <p class="kvp-rc-title"><?php echo esc_html( $pname ); ?></p>
           <p class="kvp-rc-meta">
-            <?php if ( $dr || $rating ) : ?>
+            <?php if ( $dr ) : ?>
             <span class="kvp-card-dr">
               <span class="kvp-card-dr-score"><?php echo esc_html( $dr ? number_format( floatval( $dr ), 1 ) : $rating ); ?></span>
               <?php if ( $dr && $dr_label ) : ?>
@@ -336,7 +336,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           <p class="kvp-rc-cat"><?php esc_html_e( 'Cookware', 'kvp-theme' ); ?></p>
           <p class="kvp-rc-title"><?php echo esc_html( $pname ); ?></p>
           <p class="kvp-rc-meta">
-            <?php if ( $dr || $rating ) : ?>
+            <?php if ( $dr ) : ?>
             <span class="kvp-card-dr">
               <span class="kvp-card-dr-score"><?php echo esc_html( $dr ? number_format( floatval( $dr ), 1 ) : $rating ); ?></span>
               <?php if ( $dr && $dr_label ) : ?>
@@ -421,7 +421,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
           <p class="kvp-rc-cat"><?php echo esc_html( $cname ); ?></p>
           <p class="kvp-rc-title"><?php echo esc_html( $pname ); ?></p>
           <p class="kvp-rc-meta">
-            <?php if ( $dr || $rating ) : ?>
+            <?php if ( $dr ) : ?>
             <span class="kvp-card-dr">
               <span class="kvp-card-dr-score"><?php echo esc_html( $dr ? number_format( floatval( $dr ), 1 ) : $rating ); ?></span>
               <?php if ( $dr && $dr_label ) : ?>

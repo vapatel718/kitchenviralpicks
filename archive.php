@@ -192,7 +192,7 @@ $display_desc  = ! empty( $cat_desc ) ? $cat_desc : $fallback_desc;
                         <a href="<?php the_permalink(); ?>"><?php echo esc_html( $card_product_name ? $card_product_name : get_the_title() ); ?></a>
                     </h3>
 
-                    <?php if ( $card_dr || $card_rating ) : ?>
+                    <?php if ( $card_dr ) : ?>
                     <p class="kvp-arc-card-rating">
                         <span class="kvp-card-dr">
                             <?php if ( $card_dr ) : ?>
