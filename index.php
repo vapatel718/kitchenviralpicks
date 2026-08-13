@@ -92,7 +92,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         $hero_q->the_post();
         $h_link    = get_permalink();
         $h_name    = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
-        $h_rating   = get_post_meta( get_the_ID(), 'kvp_deborah_rating', true ) ?: '8.0';
+        $h_rating   = get_post_meta( get_the_ID(), 'kvp_deborah_rating', true );
         $h_dr_label = get_post_meta( get_the_ID(), 'kvp_deborah_rating_label', true );
         $price_key = kvp_get_price_key( get_the_ID() );
         $h_price   = kvp_get_price( $price_key, 'kvp_price', get_the_ID() );
@@ -105,6 +105,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
     }
     ?>
 
+    <?php if ( $h_name ) : ?>
     <div class="kvp-hero-card">
       <span class="kvp-hero-card-badge"><?php esc_html_e( 'Top Pick — Non-Toxic Cookware', 'kvp-theme' ); ?></span>
       <div class="kvp-hero-card-img" role="presentation">
@@ -136,6 +137,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         </a>
       </div>
     </div>
+    <?php endif; ?>
 
   </div><!-- .kvp-inner -->
   </section>
