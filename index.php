@@ -3,7 +3,7 @@
 <?php
 if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
     $dbg_hero = new WP_Query( [
-        'category_name'  => 'air-fryers',
+        'category_name'  => 'cookware',
         'posts_per_page' => 1,
         'post_status'    => 'publish',
         'meta_key'       => 'kvp_deborah_rating',
@@ -27,7 +27,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
     ] );
     echo "<!--\n";
     echo "KVP DEBUG — WP_Query found_posts (admin only, temporary)\n";
-    echo "hero_q  (air-fryers, ordered by kvp_deborah_rating):  found_posts=" . intval( $dbg_hero->found_posts ) . "\n";
+    echo "hero_q  (cookware, ordered by kvp_deborah_rating):    found_posts=" . intval( $dbg_hero->found_posts ) . "\n";
     echo "af_q    (air-fryers, up to 4):                found_posts=" . intval( $dbg_af->found_posts ) . "\n";
     echo "cw_q    (cookware, up to 6):                  found_posts=" . intval( $dbg_cw->found_posts ) . "\n";
     echo "kt_q    (kettles + multicooker, up to 4):     found_posts=" . intval( $dbg_kt->found_posts ) . "\n";
@@ -74,7 +74,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
 
     <?php
     $hero_q = new WP_Query( [
-        'category_name'  => 'air-fryers',
+        'category_name'  => 'cookware',
         'posts_per_page' => 1,
         'post_status'    => 'publish',
         'meta_key'       => 'kvp_deborah_rating',
@@ -82,12 +82,11 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         'order'          => 'DESC',
     ] );
     $h_link    = '#';
-    $h_name    = 'Cosori TurboBlaze Air Fryer 6 Qt';
-    $h_rating   = '8.0';
+    $h_name    = '';
+    $h_rating   = '';
     $h_dr_label = '';
-    $h_count    = '19,000';
-    $h_price   = '~$89.87';
-    $h_verdict = 'Buyers consistently report faster cook times and easier cleanup than older models.';
+    $h_price   = '';
+    $h_verdict = '';
     $h_img_url = '';
     if ( $hero_q->have_posts() ) {
         $hero_q->the_post();
@@ -95,7 +94,6 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
         $h_name    = get_post_meta( get_the_ID(), 'kvp_product_name', true ) ?: get_the_title();
         $h_rating   = get_post_meta( get_the_ID(), 'kvp_deborah_rating', true ) ?: '8.0';
         $h_dr_label = get_post_meta( get_the_ID(), 'kvp_deborah_rating_label', true );
-        $h_count    = get_post_meta( get_the_ID(), 'kvp_review_count', true ) ?: '19,000';
         $price_key = kvp_get_price_key( get_the_ID() );
         $h_price   = kvp_get_price( $price_key, 'kvp_price', get_the_ID() );
         $h_verdict = get_post_meta( get_the_ID(), 'kvp_card_verdict', true )
@@ -108,7 +106,7 @@ if ( is_user_logged_in() && current_user_can( 'administrator' ) ) {
     ?>
 
     <div class="kvp-hero-card">
-      <span class="kvp-hero-card-badge"><?php esc_html_e( 'Top pick — Air Fryers', 'kvp-theme' ); ?></span>
+      <span class="kvp-hero-card-badge"><?php esc_html_e( 'Top Pick — Non-Toxic Cookware', 'kvp-theme' ); ?></span>
       <div class="kvp-hero-card-img" role="presentation">
         <?php if ( $h_img_url ) : ?>
           <img src="<?php echo esc_url( $h_img_url ); ?>" alt="<?php echo esc_attr( $h_name ); ?>" style="max-height:100%;max-width:100%;object-fit:contain;">
